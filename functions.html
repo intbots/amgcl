@@ -36,6 +36,7 @@
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li class="current"><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -54,6 +55,7 @@
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_k"><span>k</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
@@ -70,7 +72,7 @@
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>aggregates()
-: <a class="el" href="structamgcl_1_1aggr_1_1plain.html#ab4c4bd941f980ed58d5dfac7b3350d19">amgcl::aggr::plain</a>
+: <a class="el" href="structamgcl_1_1aggr_1_1plain.html#aa9a2e7811d82c5531ba371e3bd30d891">amgcl::aggr::plain</a>
 </li>
 <li>apply()
 : <a class="el" href="classamgcl_1_1solver.html#a30a50c9e322e3312849995d9ff8fb8de">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
@@ -83,7 +85,7 @@
 : <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a06f2189d0b2304cdeb0d5a8fbe40bc03">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
 </li>
 <li>coarse_enough
-: <a class="el" href="structamgcl_1_1params.html#a1422d8927dc3d572de3b9c23d43985bb">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1solver_1_1params.html#af3204a5505c2ef3cc7a37b6a461b770b">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params</a>
 </li>
 <li>col
 : <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#ae98a9f2b2c52eb6e1bb01f348b98611e">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
@@ -98,25 +100,33 @@
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>eps_strong
-: <a class="el" href="structamgcl_1_1params.html#a799e63ee6b00ef3f272a2fd7bee4fcbd">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a1f7ed4971df4d67fbbdca30dde7df299">amgcl::interp::classic::params</a>
 </li>
 <li>eps_tr
-: <a class="el" href="structamgcl_1_1params.html#a430ec666b5000fa9b02c0725ab8d1ae9">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a6c1eaf6f36acfc387cb39e1536889971">amgcl::interp::classic::params</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>interp()
-: <a class="el" href="structamgcl_1_1interp_1_1aggregation.html#ad60e316fd0b71497bb89e5c473c9f720">amgcl::interp::aggregation&lt; aggr_type &gt;</a>
+<li>interp
+: <a class="el" href="structamgcl_1_1solver_1_1params.html#a1c948a3d57170da73ea6f7e0b71371d5">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params</a>
 , <a class="el" href="classamgcl_1_1interp_1_1classic.html#af8992a5d608d1513482766d1a72a8252">amgcl::interp::classic</a>
+, <a class="el" href="structamgcl_1_1interp_1_1aggregation.html#ad60e316fd0b71497bb89e5c473c9f720">amgcl::interp::aggregation&lt; aggr_type &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
 <li>kcycle
-: <a class="el" href="structamgcl_1_1params.html#a86a4081ba5cd145e3f06148c5eb244a4">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1level_1_1params.html#a3e373ce52ae16f49c579d7df4f440ef4">amgcl::level::params</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>level
+: <a class="el" href="structamgcl_1_1solver_1_1params.html#a63eacfb2ca782d5761e769ef4a0c189a">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params</a>
 </li>
 </ul>
 
@@ -129,7 +139,7 @@
 : <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#a248328d2bd6909204c05c80efdfaec5e">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
 </li>
 <li>maxiter
-: <a class="el" href="structamgcl_1_1params.html#a0b7e2795ee80b7e51e20ccc7f6aef391">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1level_1_1params.html#a89b944c37ce87f3d2835a4abded298a9">amgcl::level::params</a>
 , <a class="el" href="structamgcl_1_1cg__tag.html#a39054178af217173585caa1ddfc5d00f">amgcl::cg_tag</a>
 , <a class="el" href="structamgcl_1_1bicg__tag.html#a03d3f4e38bc9aee3f551c8fcb1e4f22e">amgcl::bicg_tag</a>
 </li>
@@ -138,13 +148,13 @@
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
 <li>ncycle
-: <a class="el" href="structamgcl_1_1params.html#a2a70c08fc5444920c8e6348d0e4fe4de">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1level_1_1params.html#af8da1197c4cede731f109756370f0408">amgcl::level::params</a>
 </li>
 <li>npost
-: <a class="el" href="structamgcl_1_1params.html#ada1c54d85ed9bf4c44d9f248658c4401">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1level_1_1params.html#a3e779c58049318b0f96fcb9b916df2a1">amgcl::level::params</a>
 </li>
 <li>npre
-: <a class="el" href="structamgcl_1_1params.html#a3a171f926041766db49362e813b167a5">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1level_1_1params.html#aff1eb9c002cd8ca5e71b7936abdab176">amgcl::level::params</a>
 </li>
 </ul>
 
@@ -154,7 +164,7 @@
 : <a class="el" href="classamgcl_1_1profiler.html#a4ee7785c0d4ea3775f4db072ac504123">amgcl::profiler&lt; clock, SHIFT_WIDTH &gt;</a>
 </li>
 <li>over_interp
-: <a class="el" href="structamgcl_1_1params.html#a1326a245d2c7ab1c75738c82d3dd1fec">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1interp_1_1aggregation_1_1params.html#a2acb360289682688d9ab00e43b754a7e">amgcl::interp::aggregation&lt; aggr_type &gt;::params</a>
 </li>
 </ul>
 
@@ -199,12 +209,12 @@
 : <a class="el" href="classamgcl_1_1profiler.html#ac3f9e6fd58e882afc9d7fc7bee1143d6">amgcl::profiler&lt; clock, SHIFT_WIDTH &gt;</a>
 </li>
 <li>tol
-: <a class="el" href="structamgcl_1_1params.html#a0015d45907cdc94ca27b992bbf556b4c">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1level_1_1params.html#a07f88e91f902efdac8cee6588c10f6a7">amgcl::level::params</a>
 , <a class="el" href="structamgcl_1_1cg__tag.html#a7a7a7edd0ab8d2086fe20a3fc7686571">amgcl::cg_tag</a>
 , <a class="el" href="structamgcl_1_1bicg__tag.html#a4817ba6d3a5fe318e65e68e8a329d908">amgcl::bicg_tag</a>
 </li>
 <li>trunc_int
-: <a class="el" href="structamgcl_1_1params.html#a20f6a63298e6d19d5965f7253bb538ab">amgcl::params</a>
+: <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a12bd0fbe4dc62825ff92e2d2303f69e9">amgcl::interp::classic::params</a>
 </li>
 </ul>
 

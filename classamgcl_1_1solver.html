@@ -36,6 +36,7 @@
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -46,6 +47,7 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classamgcl_1_1solver-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -58,10 +60,16 @@
 
 <p><code>#include &lt;amgcl.hpp&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1params.html">params</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for AMG components.  <a href="structamgcl_1_1solver_1_1params.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad99ee74042b47beb941b11e2690ca28a"><td class="memTemplParams" colspan="2">template&lt;typename spmat &gt; </td></tr>
-<tr class="memitem:ad99ee74042b47beb941b11e2690ca28a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver.html#ad99ee74042b47beb941b11e2690ca28a">solver</a> (const spmat &amp;A, const <a class="el" href="structamgcl_1_1params.html">params</a> &amp;prm=<a class="el" href="structamgcl_1_1params.html">params</a>())</td></tr>
+<tr class="memitem:ad99ee74042b47beb941b11e2690ca28a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver.html#ad99ee74042b47beb941b11e2690ca28a">solver</a> (const spmat &amp;A, const <a class="el" href="structamgcl_1_1solver_1_1params.html">params</a> &amp;prm=<a class="el" href="structamgcl_1_1solver_1_1params.html">params</a>())</td></tr>
 <tr class="memdesc:ad99ee74042b47beb941b11e2690ca28a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the AMG hierarchy from the system matrix.  <a href="#ad99ee74042b47beb941b11e2690ca28a"></a><br/></td></tr>
 <tr class="separator:ad99ee74042b47beb941b11e2690ca28a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17450f0fa1c5eb1300ac1f22417eb56a"><td class="memTemplParams" colspan="2">template&lt;class vector1 , class vector2 &gt; </td></tr>
@@ -108,8 +116,8 @@ template&lt;typename spmat &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structamgcl_1_1params.html">params</a> &amp;&#160;</td>
-          <td class="paramname"><em>prm</em> = <code><a class="el" href="structamgcl_1_1params.html">params</a>()</code>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structamgcl_1_1solver_1_1params.html">params</a> &amp;&#160;</td>
+          <td class="paramname"><em>prm</em> = <code><a class="el" href="structamgcl_1_1solver_1_1params.html">params</a>()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -190,6 +198,8 @@ template&lt;class vector1 , class vector2 &gt; </div>
   </dd>
 </dl>
 
+<p>References <a class="el" href="structamgcl_1_1solver_1_1params.html#a63eacfb2ca782d5761e769ef4a0c189a">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params::level</a>.</p>
+
 <p>Referenced by <a class="el" href="classamgcl_1_1solver.html#a17450f0fa1c5eb1300ac1f22417eb56a">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::solve()</a>.</p>
 
 </div>
@@ -245,7 +255,7 @@ template&lt;class vector1 , class vector2 &gt; </div>
   </dd>
 </dl>
 
-<p>References <a class="el" href="classamgcl_1_1solver.html#a30a50c9e322e3312849995d9ff8fb8de">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::apply()</a>, <a class="el" href="structamgcl_1_1params.html#a0b7e2795ee80b7e51e20ccc7f6aef391">amgcl::params::maxiter</a>, and <a class="el" href="structamgcl_1_1params.html#a0015d45907cdc94ca27b992bbf556b4c">amgcl::params::tol</a>.</p>
+<p>References <a class="el" href="classamgcl_1_1solver.html#a30a50c9e322e3312849995d9ff8fb8de">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::apply()</a>, and <a class="el" href="structamgcl_1_1solver_1_1params.html#a63eacfb2ca782d5761e769ef4a0c189a">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params::level</a>.</p>
 
 </div>
 </div>

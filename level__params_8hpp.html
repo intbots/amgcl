@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>amgcl: params.hpp File Reference</title>
+<title>amgcl: level_params.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -48,26 +48,26 @@
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">params.hpp File Reference</div>  </div>
+<div class="title">level_params.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>AMG parameters.  
+<p>Common parameters for level construction/solution.  
 <a href="#details">More...</a></p>
 <div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="params_8hpp__dep__incl.png" border="0" usemap="#params_8hppdep" alt=""/></div>
-<map name="params_8hppdep" id="params_8hppdep">
-<area shape="rect" id="node3" href="aggregation_8hpp.html" title="Aggregates&#45;based interpolation scheme." alt="" coords="5,80,131,107"/><area shape="rect" id="node5" href="amgcl_8hpp.html" title="Generic algebraic multigrid framework." alt="" coords="177,155,265,181"/><area shape="rect" id="node7" href="interp__classic_8hpp.html" title="Direct interpolation scheme based on (Stuben, 1999)." alt="" coords="207,80,341,107"/></map>
+<div class="center"><img src="level__params_8hpp__dep__incl.png" border="0" usemap="#level__params_8hppdep" alt=""/></div>
+<map name="level__params_8hppdep" id="level__params_8hppdep">
+<area shape="rect" id="node3" href="level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="5,80,115,107"/><area shape="rect" id="node7" href="level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="139,80,257,107"/><area shape="rect" id="node5" href="amgcl_8hpp.html" title="Generic algebraic multigrid framework." alt="" coords="15,155,104,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1params.html">amgcl::params</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">AMG parameters.  <a href="structamgcl_1_1params.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1params.html">amgcl::level::params</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common parameters for level construction/solution.  <a href="structamgcl_1_1level_1_1params.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -75,9 +75,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamgcl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html">amgcl</a></td></tr>
 <tr class="memdesc:namespaceamgcl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the library. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceamgcl_1_1level"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1level.html">amgcl::level</a></td></tr>
+<tr class="memdesc:namespaceamgcl_1_1level"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage schemes for levels of AMG hierarchy. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>AMG parameters. </p>
+<div class="textblock"><p>Common parameters for level construction/solution. </p>
 <dl class="section author"><dt>Author</dt><dd>Denis Demidov <a href="#" onclick="location.href='mai'+'lto:'+'dde'+'mi'+'dov'+'@k'+'su.'+'ru'; return false;">ddemi<span style="display: none;">.nosp@m.</span>dov@<span style="display: none;">.nosp@m.</span>ksu.r<span style="display: none;">.nosp@m.</span>u</a> </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
