@@ -61,7 +61,7 @@ AMG hierarchy building</h1>
 <div class="line">&gt; amg(A);</div>
 </div><!-- fragment --><h1><a class="anchor" id="solution"></a>
 Solution</h1>
-<p>After the hierarchy is constructed, it may be repeatedly used to solve the linear system for different right-hand sides:</p>
+<p>Once the hierarchy is constructed, it may be repeatedly used to solve the linear system for different right-hand sides:</p>
 <div class="fragment"><div class="line"><span class="comment">// std::vector&lt;double&gt; rhs, x;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keyword">auto</span> conv = amg.solve(rhs, x);</div>
