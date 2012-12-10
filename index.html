@@ -50,10 +50,10 @@ AMG hierarchy building</h1>
 <div class="line"><a class="code" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a>&lt;</div>
 <div class="line">    double,                 <span class="comment">// Scalar type</span></div>
 <div class="line">    int,                    <span class="comment">// Index type of the matrix</span></div>
-<div class="line">    <a class="code" href="classamgcl_1_1interp_1_1classic.html" title="Direct interpolation scheme based on (Stuben, 1999).">amgcl::interp::classic</a>, <span class="comment">// Interpolation kind</span></div>
+<div class="line">    <a class="code" href="classamgcl_1_1interp_1_1classic.html" title="Direct interpolation scheme based on Stuben (1999).">amgcl::interp::classic</a>, <span class="comment">// Interpolation kind</span></div>
 <div class="line">    <a class="code" href="structamgcl_1_1level_1_1cpu.html" title="CPU-based AMG hierarchy.">amgcl::level::cpu</a>       <span class="comment">// Where to store the hierarchy</span></div>
 <div class="line">&gt; amg(A);</div>
-</div><!-- fragment --><p>Currently supported interpolation schemes are <a class="el" href="classamgcl_1_1interp_1_1classic.html" title="Direct interpolation scheme based on (Stuben, 1999).">amgcl::interp::classic</a> and amgcl::interp::aggregation&lt;amgcl::aggr::plain&gt;. The aggregation scheme uses less memory and is set up faster than classic interpolation, but its convergence rate is slower. It is well suited for VexCL or ViennaCL containers, where solution phase is accelerated by the OpenCL technology and, therefore, the cost of the setup phase is much more important.</p>
+</div><!-- fragment --><p>Currently supported interpolation schemes are <a class="el" href="classamgcl_1_1interp_1_1classic.html" title="Direct interpolation scheme based on Stuben (1999).">amgcl::interp::classic</a> and amgcl::interp::aggregation&lt;amgcl::aggr::plain&gt;. The aggregation scheme uses less memory and is set up faster than classic interpolation, but its convergence rate is slower. It is well suited for VexCL or ViennaCL containers, where solution phase is accelerated by the OpenCL technology and, therefore, the cost of the setup phase is much more important.</p>
 <div class="fragment"><div class="line"><a class="code" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a>&lt;</div>
 <div class="line">    double, int,</div>
 <div class="line">    <a class="code" href="structamgcl_1_1interp_1_1aggregation.html" title="Aggregation-based interpolation scheme.">amgcl::interp::aggregation&lt;amgcl::aggr::plain&gt;</a>,</div>
@@ -79,7 +79,15 @@ Solution</h1>
 <div class="line"><span class="keyword">auto</span> conv = <a class="code" href="namespaceamgcl.html#a08e4b9669f2583ffe523c3df19d5bdfd" title="Stabilized BiConjugate Gradient method.">amgcl::solve</a>(Agpu, rhs, amg, x, <a class="code" href="structamgcl_1_1cg__tag.html" title="Controlling parameters.">amgcl::cg_tag</a>());</div>
 </div><!-- fragment --><h1><a class="anchor" id="install"></a>
 Installation</h1>
-<p>The library is header-only, so there is nothing to compile or link to. You just need to copy amgcl folder somewhere and tell your compiler to scan it for include files. </p>
+<p>The library is header-only, so there is nothing to compile or link to. You just need to copy amgcl folder somewhere and tell your compiler to scan it for include files.</p>
+<h1><a class="anchor" id="references"></a>
+References</h1>
+<ol type="1">
+<li><a class="anchor" id="Trottenberg_2001"></a><em>U. Trottenberg, C. Oosterlee, A. Shuller,</em> Multigrid, Academic Press, London, 2001.</li>
+<li><a class="anchor" id="Stuben_1999"></a><em>K. Stuben,</em> Algebraic multigrid (AMG): an introduction with applications, Journal of Computational and Applied Mathematics, 2001, Vol. 128, Pp. 281-309.</li>
+<li><a class="anchor" id="Vanek_1996"></a><em>P. Vanek, J. Mandel, M. Brezina,</em> Algebraic multigrid by smoothed aggregation for second and fourth order elliptic problems, Computing 56, 1996, Pp. 179-196.</li>
+<li><a class="anchor" id="Templates_1994"></a><em>R. Barrett, M. Berry, T. F. Chan et al.</em> Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods, 2nd Edition, SIAM, Philadelphia, PA, 1994. </li>
+</ol>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

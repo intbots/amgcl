@@ -1,5 +1,5 @@
 <map id="profiler.hpp" name="profiler.hpp">
 <area shape="rect" id="node3" href="$aggregation_8hpp.html" title="Aggregates&#45;based interpolation scheme." alt="" coords="5,80,131,107"/>
 <area shape="rect" id="node5" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework." alt="" coords="177,155,265,181"/>
-<area shape="rect" id="node7" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on (Stuben, 1999)." alt="" coords="207,80,341,107"/>
+<area shape="rect" id="node7" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999)." alt="" coords="207,80,341,107"/>
 </map>

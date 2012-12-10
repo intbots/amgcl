@@ -1,6 +1,6 @@
 <map id="amgcl.hpp" name="amgcl.hpp">
 <area shape="rect" id="node7" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="614,155,748,181"/>
-<area shape="rect" id="node19" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on (Stuben, 1999)." alt="" coords="465,80,644,107"/>
+<area shape="rect" id="node19" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999)." alt="" coords="465,80,644,107"/>
 <area shape="rect" id="node25" href="$profiler_8hpp.html" title="Profiler class." alt="" coords="323,155,457,181"/>
 <area shape="rect" id="node39" href="$level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="761,80,913,107"/>
 <area shape="rect" id="node44" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="875,155,1053,181"/>
