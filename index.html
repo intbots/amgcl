@@ -71,12 +71,12 @@ Solution</h1>
 </div><!-- fragment --><p>Using the AMG as a preconditioner with a Krylov subspace method like conjugate gradients works even better: </p>
 <div class="fragment"><div class="line"><span class="comment">// Eigen::VectorXd rhs, x;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> conv = <a class="code" href="namespaceamgcl.html#a08e4b9669f2583ffe523c3df19d5bdfd" title="Stabilized BiConjugate Gradient method.">amgcl::solve</a>(A, rhs, amg, x, <a class="code" href="structamgcl_1_1cg__tag.html" title="Controlling parameters.">amgcl::cg_tag</a>());</div>
+<div class="line"><span class="keyword">auto</span> conv = <a class="code" href="namespaceamgcl.html#a09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve</a>(A, rhs, amg, x, <a class="code" href="structamgcl_1_1cg__tag.html" title="Controlling parameters.">amgcl::cg_tag</a>());</div>
 </div><!-- fragment --><p>Types of right-hand side and solution vectors should be compatible with the level type used for construction of the AMG hierarchy. For example, if <a class="el" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">amgcl::level::vexcl</a> is used as a storage backend, then vex::SpMat&lt;&gt; and vex::vector&lt;&gt; types have to be used when solving:</p>
 <div class="fragment"><div class="line"><span class="comment">// vex::SpMat&lt;double,int&gt; Agpu;</span></div>
 <div class="line"><span class="comment">// vex::vector&lt;double&gt; rhs, x;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> conv = <a class="code" href="namespaceamgcl.html#a08e4b9669f2583ffe523c3df19d5bdfd" title="Stabilized BiConjugate Gradient method.">amgcl::solve</a>(Agpu, rhs, amg, x, <a class="code" href="structamgcl_1_1cg__tag.html" title="Controlling parameters.">amgcl::cg_tag</a>());</div>
+<div class="line"><span class="keyword">auto</span> conv = <a class="code" href="namespaceamgcl.html#a09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve</a>(Agpu, rhs, amg, x, <a class="code" href="structamgcl_1_1cg__tag.html" title="Controlling parameters.">amgcl::cg_tag</a>());</div>
 </div><!-- fragment --><h1><a class="anchor" id="install"></a>
 Installation</h1>
 <p>The library is header-only, so there is nothing to compile or link to. You just need to copy amgcl folder somewhere and tell your compiler to scan it for include files.</p>
@@ -86,6 +86,7 @@ References</h1>
 <li><a class="anchor" id="Trottenberg_2001"></a><em>U. Trottenberg, C. Oosterlee, A. Shuller,</em> Multigrid, Academic Press, London, 2001.</li>
 <li><a class="anchor" id="Stuben_1999"></a><em>K. Stuben,</em> Algebraic multigrid (AMG): an introduction with applications, Journal of Computational and Applied Mathematics, 2001, Vol. 128, Pp. 281-309.</li>
 <li><a class="anchor" id="Vanek_1996"></a><em>P. Vanek, J. Mandel, M. Brezina,</em> Algebraic multigrid by smoothed aggregation for second and fourth order elliptic problems, Computing 56, 1996, Pp. 179-196.</li>
+<li><a class="anchor" id="Notay_2008"></a><em>Y. Notay, P. Vassilevski,</em> Recursive Krylov-based multigrid cycles, Numer. Linear Algebra Appl. 2008; 15:473-487.</li>
 <li><a class="anchor" id="Templates_1994"></a><em>R. Barrett, M. Berry, T. F. Chan et al.</em> Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods, 2nd Edition, SIAM, Philadelphia, PA, 1994. </li>
 </ol>
 </div></div><!-- contents -->

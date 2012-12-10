@@ -1,2 +1,12 @@
-\form#0:\[A^H = R A^h P.\]
-\form#1:$R = P^T.$
+\form#0:$\alpha$
+\form#1:$\alpha>1$
+\form#2:$1/\alpha$
+\form#3:\[I_h^HA_hI_H^h \to \frac{1}{\alpha}I_h^HA_hI_H^h.\]
+\form#4:\[A^H = R A^h P.\]
+\form#5:$R = P^T.$
+\form#6:$\varepsilon_{str}$
+\form#7:$i$
+\form#8:$j$
+\form#9:\[-a_{ij} \geq \max\limits_{a_{ik}<0}|a_{ik}|\quad \text{with fixed} \quad 0 < \varepsilon_{str} < 1.\]
+\form#10:$\varepsilon_{tr}$
+\form#11:$\varepsilon_{tr}=0.2$

@@ -61,9 +61,8 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af3204a5505c2ef3cc7a37b6a461b770b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3204a5505c2ef3cc7a37b6a461b770b"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1params.html#af3204a5505c2ef3cc7a37b6a461b770b">coarse_enough</a></td></tr>
-<tr class="memdesc:af3204a5505c2ef3cc7a37b6a461b770b"><td class="mdescLeft">&#160;</td><td class="mdescRight">When level is coarse enough to be solved directly. <br/></td></tr>
+<tr class="memitem:af3204a5505c2ef3cc7a37b6a461b770b"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1params.html#af3204a5505c2ef3cc7a37b6a461b770b">coarse_enough</a></td></tr>
+<tr class="memdesc:af3204a5505c2ef3cc7a37b6a461b770b"><td class="mdescLeft">&#160;</td><td class="mdescRight">When level is coarse enough to be solved directly?  <a href="#af3204a5505c2ef3cc7a37b6a461b770b"></a><br/></td></tr>
 <tr class="separator:af3204a5505c2ef3cc7a37b6a461b770b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c948a3d57170da73ea6f7e0b71371d5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c948a3d57170da73ea6f7e0b71371d5"></a>
 interp_t::params&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1params.html#a1c948a3d57170da73ea6f7e0b71371d5">interp</a></td></tr>
@@ -79,7 +78,25 @@ level_t::params&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 struct amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params</h3>
 
 <p>Parameters for AMG components. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="af3204a5505c2ef3cc7a37b6a461b770b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename value_t  = double, typename index_t  = long long, typename interp_t  = interp::classic, typename level_t  = level::cpu&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned <a class="el" href="classamgcl_1_1solver.html">amgcl::solver</a>&lt; value_t, index_t, interp_t, level_t &gt;::params::coarse_enough</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>When level is coarse enough to be solved directly? </p>
+<p>If number of variables at a next level in hierarchy becomes lower than this threshold, then the hierarchy construction is stopped and the linear system is solved explicitly at this level. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="amgcl_8hpp.html">amgcl.hpp</a></li>
 </ul>
 </div><!-- contents -->

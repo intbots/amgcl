@@ -54,29 +54,64 @@
 </div><!--header-->
 <div class="contents">
 
-<p>Parameters controlling interpolation construction.  
+<p>Parameters controlling direct interpolation.  
  <a href="structamgcl_1_1interp_1_1classic_1_1params.html#details">More...</a></p>
 
 <p><code>#include &lt;interp_classic.hpp&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a1f7ed4971df4d67fbbdca30dde7df299"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f7ed4971df4d67fbbdca30dde7df299"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a1f7ed4971df4d67fbbdca30dde7df299">eps_strong</a></td></tr>
-<tr class="memdesc:a1f7ed4971df4d67fbbdca30dde7df299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter for strong connections. <br/></td></tr>
+<tr class="memitem:a1f7ed4971df4d67fbbdca30dde7df299"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a1f7ed4971df4d67fbbdca30dde7df299">eps_strong</a></td></tr>
+<tr class="memdesc:a1f7ed4971df4d67fbbdca30dde7df299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter <img class="formulaInl" alt="$\varepsilon_{str}$" src="form_6.png"/> defining strong couplings.  <a href="#a1f7ed4971df4d67fbbdca30dde7df299"></a><br/></td></tr>
 <tr class="separator:a1f7ed4971df4d67fbbdca30dde7df299"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12bd0fbe4dc62825ff92e2d2303f69e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12bd0fbe4dc62825ff92e2d2303f69e9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a12bd0fbe4dc62825ff92e2d2303f69e9">trunc_int</a></td></tr>
-<tr class="memdesc:a12bd0fbe4dc62825ff92e2d2303f69e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate prolongation operator? <br/></td></tr>
+<tr class="memitem:a12bd0fbe4dc62825ff92e2d2303f69e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a12bd0fbe4dc62825ff92e2d2303f69e9">trunc_int</a></td></tr>
+<tr class="memdesc:a12bd0fbe4dc62825ff92e2d2303f69e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate prolongation operator?  <a href="#a12bd0fbe4dc62825ff92e2d2303f69e9"></a><br/></td></tr>
 <tr class="separator:a12bd0fbe4dc62825ff92e2d2303f69e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1eaf6f36acfc387cb39e1536889971"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c1eaf6f36acfc387cb39e1536889971"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a6c1eaf6f36acfc387cb39e1536889971">eps_tr</a></td></tr>
-<tr class="memdesc:a6c1eaf6f36acfc387cb39e1536889971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncation parameter. <br/></td></tr>
+<tr class="memdesc:a6c1eaf6f36acfc387cb39e1536889971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncation parameter <img class="formulaInl" alt="$\varepsilon_{tr}$" src="form_10.png"/>. <br/></td></tr>
 <tr class="separator:a6c1eaf6f36acfc387cb39e1536889971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Parameters controlling interpolation construction. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>Parameters controlling direct interpolation. </p>
+<p>See <a class="el" href="index.html#Stuben_1999">Stuben (1999)</a> for detailed description of these parameters. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a1f7ed4971df4d67fbbdca30dde7df299"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float amgcl::interp::classic::params::eps_strong</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parameter <img class="formulaInl" alt="$\varepsilon_{str}$" src="form_6.png"/> defining strong couplings. </p>
+<p>Variable <img class="formulaInl" alt="$i$" src="form_7.png"/> is defined to be strongly negatively coupled to another variable, <img class="formulaInl" alt="$j$" src="form_8.png"/>, if </p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[-a_{ij} \geq \max\limits_{a_{ik}<0}|a_{ik}|\quad \text{with fixed} \quad 0 < \varepsilon_{str} < 1.\]" src="form_9.png"/>
+</p>
+ 
+</div>
+</div>
+<a class="anchor" id="a12bd0fbe4dc62825ff92e2d2303f69e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amgcl::interp::classic::params::trunc_int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Truncate prolongation operator? </p>
+<p>Interpolation operators, and, hence coarse operators may increase substabtially towards coarser levels. Without truncation, this may become too costly. Truncation ignores all interpolatory connections which are smaller (in absolute value) than the largest one by a factor of <img class="formulaInl" alt="$\varepsilon_{tr}$" src="form_10.png"/>. The remaining weights are rescaled so that the total sum remains unchanged. In practice, a value of <img class="formulaInl" alt="$\varepsilon_{tr}=0.2$" src="form_11.png"/> is usually taken. </p>
+
+<p>Referenced by <a class="el" href="classamgcl_1_1interp_1_1classic.html#af8992a5d608d1513482766d1a72a8252">amgcl::interp::classic::interp()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="interp__classic_8hpp.html">interp_classic.hpp</a></li>
 </ul>
 </div><!-- contents -->

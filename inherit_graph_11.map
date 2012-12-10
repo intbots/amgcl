@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structamgcl_1_1level_1_1params.html" title="Common parameters for level construction/solution." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node1" href="$structamgcl_1_1level_1_1params.html" title="Common parameters for level construction/solution." alt="" coords="5,77,160,104"/>
+<area shape="rect" id="node3" href="$structamgcl_1_1level_1_1cpu_1_1params.html" title="Parameters for CPU&#45;based level storage scheme." alt="" coords="223,5,361,46"/>
+<area shape="rect" id="node5" href="$structamgcl_1_1level_1_1vexcl_1_1params.html" title="Parameters for VexCL&#45;based level storage scheme." alt="" coords="223,70,361,111"/>
+<area shape="rect" id="node7" href="$structamgcl_1_1level_1_1ViennaCL_1_1params.html" title="Parameters for CPU&#45;based level storage scheme." alt="" coords="209,135,375,177"/>
 </map>

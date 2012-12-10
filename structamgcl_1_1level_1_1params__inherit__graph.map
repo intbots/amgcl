@@ -1,0 +1,5 @@
+<map id="amgcl::level::params" name="amgcl::level::params">
+<area shape="rect" id="node3" href="$structamgcl_1_1level_1_1cpu_1_1params.html" title="Parameters for CPU&#45;based level storage scheme." alt="" coords="223,5,361,46"/>
+<area shape="rect" id="node5" href="$structamgcl_1_1level_1_1vexcl_1_1params.html" title="Parameters for VexCL&#45;based level storage scheme." alt="" coords="223,70,361,111"/>
+<area shape="rect" id="node7" href="$structamgcl_1_1level_1_1ViennaCL_1_1params.html" title="Parameters for CPU&#45;based level storage scheme." alt="" coords="209,135,375,177"/>
+</map>

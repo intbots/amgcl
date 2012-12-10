@@ -72,10 +72,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad99ee74042b47beb941b11e2690ca28a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver.html#ad99ee74042b47beb941b11e2690ca28a">solver</a> (const spmat &amp;A, const <a class="el" href="structamgcl_1_1solver_1_1params.html">params</a> &amp;prm=<a class="el" href="structamgcl_1_1solver_1_1params.html">params</a>())</td></tr>
 <tr class="memdesc:ad99ee74042b47beb941b11e2690ca28a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the AMG hierarchy from the system matrix.  <a href="#ad99ee74042b47beb941b11e2690ca28a"></a><br/></td></tr>
 <tr class="separator:ad99ee74042b47beb941b11e2690ca28a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17450f0fa1c5eb1300ac1f22417eb56a"><td class="memTemplParams" colspan="2">template&lt;class vector1 , class vector2 &gt; </td></tr>
-<tr class="memitem:a17450f0fa1c5eb1300ac1f22417eb56a"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver.html#a17450f0fa1c5eb1300ac1f22417eb56a">solve</a> (const vector1 &amp;rhs, vector2 &amp;x) const </td></tr>
-<tr class="memdesc:a17450f0fa1c5eb1300ac1f22417eb56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The AMG hierarchy is used as a standalone solver.  <a href="#a17450f0fa1c5eb1300ac1f22417eb56a"></a><br/></td></tr>
-<tr class="separator:a17450f0fa1c5eb1300ac1f22417eb56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a330dbfc5587bb481e09228221af7cf4c"><td class="memTemplParams" colspan="2">template&lt;class vector1 , class vector2 &gt; </td></tr>
+<tr class="memitem:a330dbfc5587bb481e09228221af7cf4c"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver.html#a330dbfc5587bb481e09228221af7cf4c">solve</a> (const vector1 &amp;rhs, vector2 &amp;x) const </td></tr>
+<tr class="memdesc:a330dbfc5587bb481e09228221af7cf4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The AMG hierarchy is used as a standalone solver.  <a href="#a330dbfc5587bb481e09228221af7cf4c"></a><br/></td></tr>
+<tr class="separator:a330dbfc5587bb481e09228221af7cf4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30a50c9e322e3312849995d9ff8fb8de"><td class="memTemplParams" colspan="2">template&lt;class vector1 , class vector2 &gt; </td></tr>
 <tr class="memitem:a30a50c9e322e3312849995d9ff8fb8de"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver.html#a30a50c9e322e3312849995d9ff8fb8de">apply</a> (const vector1 &amp;rhs, vector2 &amp;x) const </td></tr>
 <tr class="memdesc:a30a50c9e322e3312849995d9ff8fb8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single multigrid cycle.  <a href="#a30a50c9e322e3312849995d9ff8fb8de"></a><br/></td></tr>
@@ -200,11 +200,11 @@ template&lt;class vector1 , class vector2 &gt; </div>
 
 <p>References <a class="el" href="structamgcl_1_1solver_1_1params.html#a63eacfb2ca782d5761e769ef4a0c189a">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params::level</a>.</p>
 
-<p>Referenced by <a class="el" href="classamgcl_1_1solver.html#a17450f0fa1c5eb1300ac1f22417eb56a">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::solve()</a>.</p>
+<p>Referenced by <a class="el" href="classamgcl_1_1solver.html#a330dbfc5587bb481e09228221af7cf4c">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::solve()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a17450f0fa1c5eb1300ac1f22417eb56a"></a>
+<a class="anchor" id="a330dbfc5587bb481e09228221af7cf4c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -216,7 +216,7 @@ template&lt;class vector1 , class vector2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; int, value_t &gt; <a class="el" href="classamgcl_1_1solver.html">amgcl::solver</a>&lt; value_t, index_t, interp_t, level_t &gt;::solve </td>
+          <td class="memname">std::pair&lt; int, value_t &gt; <a class="el" href="classamgcl_1_1solver.html">amgcl::solver</a>&lt; value_t, index_t, interp_t, level_t &gt;::solve </td>
           <td>(</td>
           <td class="paramtype">const vector1 &amp;&#160;</td>
           <td class="paramname"><em>rhs</em>, </td>
