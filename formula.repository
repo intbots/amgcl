@@ -1,12 +1,21 @@
-\form#0:$\alpha$
-\form#1:$\alpha>1$
-\form#2:$1/\alpha$
-\form#3:\[I_h^HA_hI_H^h \to \frac{1}{\alpha}I_h^HA_hI_H^h.\]
-\form#4:\[A^H = R A^h P.\]
-\form#5:$R = P^T.$
+\form#0:\[A^H = R A^h P.\]
+\form#1:$R = P^T.$
+\form#2:$\alpha$
+\form#3:$\alpha>1$
+\form#4:$1/\alpha$
+\form#5:\[I_h^HA_hI_H^h \to \frac{1}{\alpha}I_h^HA_hI_H^h.\]
 \form#6:$\varepsilon_{str}$
 \form#7:$i$
 \form#8:$j$
 \form#9:\[-a_{ij} \geq \max\limits_{a_{ik}<0}|a_{ik}|\quad \text{with fixed} \quad 0 < \varepsilon_{str} < 1.\]
 \form#10:$\varepsilon_{tr}$
 \form#11:$\varepsilon_{tr}=0.2$
+\form#12:$\omega$
+\form#13:$\tilde P$
+\form#14:$P$
+\form#15:\[P = \left( I - \omega D^{-1} A^F \right) \tilde P.\]
+\form#16:$A^F = (a_{ij}^F)$
+\form#17:\[ a_{ij}^F = \begin{cases} a_{ij} \quad \text{if} \; j \in N_i(\varepsilon)\\ 0 \quad \text{otherwise} \end{cases}, \quad \text{if}\; i \neq j, \quad a_{ii}^F = a_{ii} - \sum\limits_{j=1,j\neq i}^n \left(a_{ij} - a_{ij}^F \right), \]
+\form#18:$D$
+\form#19:$A^F$
+\form#20:$\varepsilon$

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>amgcl: aggregation.hpp File Reference</title>
+<title>amgcl: interp_smoothed_aggr.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -49,39 +49,33 @@
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">aggregation.hpp File Reference</div>  </div>
+<div class="title">interp_smoothed_aggr.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Aggregates-based interpolation scheme.  
+<p>Smoothed aggregates-based interpolation scheme.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;algorithm&gt;</code><br/>
 <code>#include &lt;<a class="el" href="spmat_8hpp.html">amgcl/spmat.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="profiler_8hpp.html">amgcl/profiler.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for aggregation.hpp:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for interp_smoothed_aggr.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="aggregation_8hpp__incl.png" border="0" usemap="#aggregation_8hpp" alt=""/></div>
-<map name="aggregation_8hpp" id="aggregation_8hpp">
+<div class="center"><img src="interp__smoothed__aggr_8hpp__incl.png" border="0" usemap="#interp__smoothed__aggr_8hpp" alt=""/></div>
+<map name="interp__smoothed__aggr_8hpp" id="interp__smoothed__aggr_8hpp">
 <area shape="rect" id="node7" href="spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="173,80,307,107"/><area shape="rect" id="node17" href="profiler_8hpp.html" title="Profiler class." alt="" coords="617,80,752,107"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1aggr_1_1plain.html">amgcl::aggr::plain</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plain aggregation.  <a href="structamgcl_1_1aggr_1_1plain.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation.html">amgcl::interp::smoothed_aggregation&lt; aggr_type &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smoothed aggregation-based interpolation scheme.  <a href="structamgcl_1_1interp_1_1smoothed__aggregation.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1aggregation.html">amgcl::interp::aggregation&lt; aggr_type &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregation-based interpolation scheme.  <a href="structamgcl_1_1interp_1_1aggregation.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1aggregation_1_1params.html">amgcl::interp::aggregation&lt; aggr_type &gt;::params</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters controlling aggregation.  <a href="structamgcl_1_1interp_1_1aggregation_1_1params.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1aggregated__operator.html">amgcl::interp::aggregated_operator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coarse level computing for aggregation-based AMG.  <a href="structamgcl_1_1interp_1_1aggregated__operator.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation_1_1params.html">amgcl::interp::smoothed_aggregation&lt; aggr_type &gt;::params</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters controlling aggregation.  <a href="structamgcl_1_1interp_1_1smoothed__aggregation_1_1params.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -89,15 +83,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamgcl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html">amgcl</a></td></tr>
 <tr class="memdesc:namespaceamgcl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the library. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceamgcl_1_1aggr"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1aggr.html">amgcl::aggr</a></td></tr>
-<tr class="memdesc:namespaceamgcl_1_1aggr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregation related types and functions. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceamgcl_1_1interp"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1interp.html">amgcl::interp</a></td></tr>
 <tr class="memdesc:namespaceamgcl_1_1interp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation-related types and functions. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Aggregates-based interpolation scheme. </p>
+<div class="textblock"><p>Smoothed aggregates-based interpolation scheme. </p>
 <dl class="section author"><dt>Author</dt><dd>Denis Demidov <a href="#" onclick="location.href='mai'+'lto:'+'dde'+'mi'+'dov'+'@k'+'su.'+'ru'; return false;">ddemi<span style="display: none;">.nosp@m.</span>dov@<span style="display: none;">.nosp@m.</span>ksu.r<span style="display: none;">.nosp@m.</span>u</a> </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
