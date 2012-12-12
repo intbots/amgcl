@@ -37,6 +37,7 @@
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div id="nav-path" class="navpath">
@@ -47,7 +48,8 @@
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">amgcl.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -55,7 +57,9 @@
 
 <p>Generic algebraic multigrid framework.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;utility&gt;</code><br/>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;iomanip&gt;</code><br/>
+<code>#include &lt;utility&gt;</code><br/>
 <code>#include &lt;list&gt;</code><br/>
 <code>#include &lt;<a class="el" href="spmat_8hpp.html">amgcl/spmat.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="interp__classic_8hpp.html">amgcl/interp_classic.hpp</a>&gt;</code><br/>
@@ -68,7 +72,7 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="amgcl_8hpp__incl.png" border="0" usemap="#amgcl_8hpp" alt=""/></div>
 <map name="amgcl_8hpp" id="amgcl_8hpp">
-<area shape="rect" id="node7" href="spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="682,155,816,181"/><area shape="rect" id="node19" href="interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999)." alt="" coords="533,80,712,107"/><area shape="rect" id="node24" href="profiler_8hpp.html" title="Profiler class." alt="" coords="281,155,416,181"/><area shape="rect" id="node38" href="level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="829,80,981,107"/><area shape="rect" id="node43" href="level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="1023,155,1201,181"/></map>
+<area shape="rect" id="node11" href="spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="611,155,745,181"/><area shape="rect" id="node23" href="interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999)." alt="" coords="473,80,652,107"/><area shape="rect" id="node28" href="profiler_8hpp.html" title="Profiler class." alt="" coords="308,155,443,181"/><area shape="rect" id="node40" href="level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="727,80,879,107"/><area shape="rect" id="node45" href="level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="952,155,1131,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -94,6 +98,14 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamgcl_1_1interp"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1interp.html">amgcl::interp</a></td></tr>
 <tr class="memdesc:namespaceamgcl_1_1interp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation-related types and functions. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad6576cb047878e6d2aefc6f49195bb7b"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad6576cb047878e6d2aefc6f49195bb7b"></a>
+template&lt;typename value_t , typename index_t , typename interp_t , typename level_t &gt; </td></tr>
+<tr class="memitem:ad6576cb047878e6d2aefc6f49195bb7b"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="amgcl_8hpp.html#ad6576cb047878e6d2aefc6f49195bb7b">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classamgcl_1_1solver.html">amgcl::solver</a>&lt; value_t, index_t, interp_t, level_t &gt; &amp;amg)</td></tr>
+<tr class="memdesc:ad6576cb047878e6d2aefc6f49195bb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output some general information about the AMG hierarchy. <br/></td></tr>
+<tr class="separator:ad6576cb047878e6d2aefc6f49195bb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Generic algebraic multigrid framework. </p>

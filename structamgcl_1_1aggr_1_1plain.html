@@ -62,18 +62,18 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa9a2e7811d82c5531ba371e3bd30d891"><td class="memTemplParams" colspan="2">template&lt;class spmat &gt; </td></tr>
-<tr class="memitem:aa9a2e7811d82c5531ba371e3bd30d891"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; typename <br class="typebreak"/>
+<tr class="memitem:aebfe0b8f27a391abc6eac11f80547f1e"><td class="memTemplParams" colspan="2">template&lt;class spmat &gt; </td></tr>
+<tr class="memitem:aebfe0b8f27a391abc6eac11f80547f1e"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; typename <br class="typebreak"/>
 <a class="el" href="structamgcl_1_1sparse_1_1matrix__index.html">sparse::matrix_index</a>&lt; spmat &gt;<br class="typebreak"/>
-::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamgcl_1_1aggr_1_1plain.html#aa9a2e7811d82c5531ba371e3bd30d891">aggregates</a> (const spmat &amp;A)</td></tr>
-<tr class="memdesc:aa9a2e7811d82c5531ba371e3bd30d891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs aggregates of variables.  <a href="#aa9a2e7811d82c5531ba371e3bd30d891"></a><br/></td></tr>
-<tr class="separator:aa9a2e7811d82c5531ba371e3bd30d891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamgcl_1_1aggr_1_1plain.html#aebfe0b8f27a391abc6eac11f80547f1e">aggregates</a> (const spmat &amp;A, const std::vector&lt; char &gt; &amp;S)</td></tr>
+<tr class="memdesc:aebfe0b8f27a391abc6eac11f80547f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs aggregates of variables.  <a href="#aebfe0b8f27a391abc6eac11f80547f1e"></a><br/></td></tr>
+<tr class="separator:aebfe0b8f27a391abc6eac11f80547f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Plain aggregation. </p>
 <p>Modification of a greedy aggregation scheme from <a class="el" href="index.html#Vanek_1996">Vanek (1996)</a>. Any nonzero matrix entry forms a connection. Variables without neighbours (resulting, e.g., from Dirichlet conditions) are excluded from aggregation process. The aggregation is completed in a single pass over variables: variables adjacent to a new aggregate are temporarily marked as beloning to this aggregate. Later they may be claimed by other aggregates; if nobody claims them, then they just stay in their initial aggregate. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa9a2e7811d82c5531ba371e3bd30d891"></a>
+<a class="anchor" id="aebfe0b8f27a391abc6eac11f80547f1e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -86,8 +86,18 @@ template&lt;class spmat &gt; </div>
           <td class="memname">static std::vector&lt; typename <a class="el" href="structamgcl_1_1sparse_1_1matrix__index.html">sparse::matrix_index</a>&lt;spmat&gt;::type &gt; amgcl::aggr::plain::aggregates </td>
           <td>(</td>
           <td class="paramtype">const spmat &amp;&#160;</td>
-          <td class="paramname"><em>A</em></td><td>)</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>S</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -101,7 +111,8 @@ template&lt;class spmat &gt; </div>
 <p>Each entry of the return vector corresponds to a variable and contains number of an aggregate the variable belongs to. If an entry is negative, then variable does not belong to any aggregate.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">A</td><td>system matrix.</td></tr>
+    <tr><td class="paramname">A</td><td>The system matrix. </td></tr>
+    <tr><td class="paramname">S</td><td>Strong couplings in A.</td></tr>
   </table>
   </dd>
 </dl>

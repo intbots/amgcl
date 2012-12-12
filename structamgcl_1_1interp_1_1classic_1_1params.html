@@ -70,7 +70,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a12bd0fbe4dc62825ff92e2d2303f69e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1eaf6f36acfc387cb39e1536889971"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c1eaf6f36acfc387cb39e1536889971"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a6c1eaf6f36acfc387cb39e1536889971">eps_tr</a></td></tr>
-<tr class="memdesc:a6c1eaf6f36acfc387cb39e1536889971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncation parameter <img class="formulaInl" alt="$\varepsilon_{tr}$" src="form_10.png"/>. <br/></td></tr>
+<tr class="memdesc:a6c1eaf6f36acfc387cb39e1536889971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncation parameter <img class="formulaInl" alt="$\varepsilon_{tr}$" src="form_12.png"/>. <br/></td></tr>
 <tr class="separator:a6c1eaf6f36acfc387cb39e1536889971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -90,9 +90,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str
 <p>Parameter <img class="formulaInl" alt="$\varepsilon_{str}$" src="form_6.png"/> defining strong couplings. </p>
 <p>Variable <img class="formulaInl" alt="$i$" src="form_7.png"/> is defined to be strongly negatively coupled to another variable, <img class="formulaInl" alt="$j$" src="form_8.png"/>, if </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[-a_{ij} \geq \max\limits_{a_{ik}<0}|a_{ik}|\quad \text{with fixed} \quad 0 < \varepsilon_{str} < 1.\]" src="form_9.png"/>
+<img class="formulaDsp" alt="\[-a_{ij} \geq \varepsilon_{str}\max\limits_{a_{ik}<0}|a_{ik}|\quad \text{with fixed} \quad 0 < \varepsilon_{str} < 1.\]" src="form_10.png"/>
 </p>
- 
+<p> In practice, a value of <img class="formulaInl" alt="$\varepsilon_{str}=0.25$" src="form_11.png"/> is usually taken. </p>
+
 </div>
 </div>
 <a class="anchor" id="a12bd0fbe4dc62825ff92e2d2303f69e9"></a>
@@ -106,7 +107,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str
 </div><div class="memdoc">
 
 <p>Truncate prolongation operator? </p>
-<p>Interpolation operators, and, hence coarse operators may increase substabtially towards coarser levels. Without truncation, this may become too costly. Truncation ignores all interpolatory connections which are smaller (in absolute value) than the largest one by a factor of <img class="formulaInl" alt="$\varepsilon_{tr}$" src="form_10.png"/>. The remaining weights are rescaled so that the total sum remains unchanged. In practice, a value of <img class="formulaInl" alt="$\varepsilon_{tr}=0.2$" src="form_11.png"/> is usually taken. </p>
+<p>Interpolation operators, and, hence coarse operators may increase substabtially towards coarser levels. Without truncation, this may become too costly. Truncation ignores all interpolatory connections which are smaller (in absolute value) than the largest one by a factor of <img class="formulaInl" alt="$\varepsilon_{tr}$" src="form_12.png"/>. The remaining weights are rescaled so that the total sum remains unchanged. In practice, a value of <img class="formulaInl" alt="$\varepsilon_{tr}=0.2$" src="form_13.png"/> is usually taken. </p>
 
 <p>Referenced by <a class="el" href="classamgcl_1_1interp_1_1classic.html#af8992a5d608d1513482766d1a72a8252">amgcl::interp::classic::interp()</a>.</p>
 

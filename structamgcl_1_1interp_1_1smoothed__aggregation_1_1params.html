@@ -63,11 +63,11 @@
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:abb4fba8b868dc0d8272d346998b862b9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation_1_1params.html#abb4fba8b868dc0d8272d346998b862b9">relax</a></td></tr>
-<tr class="memdesc:abb4fba8b868dc0d8272d346998b862b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relaxation factor <img class="formulaInl" alt="$\omega$" src="form_12.png"/>.  <a href="#abb4fba8b868dc0d8272d346998b862b9"></a><br/></td></tr>
+<tr class="memdesc:abb4fba8b868dc0d8272d346998b862b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relaxation factor <img class="formulaInl" alt="$\omega$" src="form_14.png"/>.  <a href="#abb4fba8b868dc0d8272d346998b862b9"></a><br/></td></tr>
 <tr class="separator:abb4fba8b868dc0d8272d346998b862b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9da48d72d09895f7077c25ab673282"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation_1_1params.html#a3c9da48d72d09895f7077c25ab673282">eps</a></td></tr>
-<tr class="memdesc:a3c9da48d72d09895f7077c25ab673282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix filtering parameter <img class="formulaInl" alt="$\varepsilon$" src="form_20.png"/>.  <a href="#a3c9da48d72d09895f7077c25ab673282"></a><br/></td></tr>
-<tr class="separator:a3c9da48d72d09895f7077c25ab673282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd6f03cc6da1ecf4d6e1f2a6370429c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation_1_1params.html#adfd6f03cc6da1ecf4d6e1f2a6370429c">eps_strong</a></td></tr>
+<tr class="memdesc:adfd6f03cc6da1ecf4d6e1f2a6370429c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter <img class="formulaInl" alt="$\varepsilon_{str}$" src="form_6.png"/> defining strong couplings.  <a href="#adfd6f03cc6da1ecf4d6e1f2a6370429c"></a><br/></td></tr>
+<tr class="separator:adfd6f03cc6da1ecf4d6e1f2a6370429c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class aggr_type&gt;<br/>
@@ -75,20 +75,34 @@ struct amgcl::interp::smoothed_aggregation&lt; aggr_type &gt;::params</h3>
 
 <p>Parameters controlling aggregation. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a3c9da48d72d09895f7077c25ab673282"></a>
+<a class="anchor" id="adfd6f03cc6da1ecf4d6e1f2a6370429c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class aggr_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float <a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation.html">amgcl::interp::smoothed_aggregation</a>&lt; aggr_type &gt;::params::eps</td>
+          <td class="memname">float <a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation.html">amgcl::interp::smoothed_aggregation</a>&lt; aggr_type &gt;::params::eps_strong</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Matrix filtering parameter <img class="formulaInl" alt="$\varepsilon$" src="form_20.png"/>. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation_1_1params.html#abb4fba8b868dc0d8272d346998b862b9" title="Relaxation factor .">relax</a> </dd></dl>
+<p>Parameter <img class="formulaInl" alt="$\varepsilon_{str}$" src="form_6.png"/> defining strong couplings. </p>
+<p>Variable <img class="formulaInl" alt="$i$" src="form_7.png"/> is defined to be strongly coupled to another variable, <img class="formulaInl" alt="$j$" src="form_8.png"/>, if </p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[|a_{ij}| \geq \varepsilon\sqrt{a_{ii} a_{jj}}\quad \text{with fixed} \quad \varepsilon = \varepsilon_{str} \left( \frac{1}{2} \right)^l,\]" src="form_23.png"/>
+</p>
+<p> where <img class="formulaInl" alt="$l$" src="form_24.png"/> is level number (finest level is 0). </p>
+
+<p>Referenced by <a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation.html#a1b9e79c060cfcccc8cfbef3dff8eb145">amgcl::interp::smoothed_aggregation&lt; aggr_type &gt;::interp()</a>.</p>
 
 </div>
 </div>
@@ -104,16 +118,16 @@ template&lt;class aggr_type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Relaxation factor <img class="formulaInl" alt="$\omega$" src="form_12.png"/>. </p>
-<p>See <a class="el" href="index.html#Vanek_1996">Vanek (1996)</a>. Piecewise constant prolongation <img class="formulaInl" alt="$\tilde P$" src="form_13.png"/> from <a class="el" href="structamgcl_1_1interp_1_1aggregation.html">amgcl::interp::aggregation</a> is improved by a smoothing to get the final prolongation matrix <img class="formulaInl" alt="$P$" src="form_14.png"/>. Simple Jacobi smoother is used here, giving the prolongation matrix </p>
+<p>Relaxation factor <img class="formulaInl" alt="$\omega$" src="form_14.png"/>. </p>
+<p>See <a class="el" href="index.html#Vanek_1996">Vanek (1996)</a>. Piecewise constant prolongation <img class="formulaInl" alt="$\tilde P$" src="form_15.png"/> from <a class="el" href="structamgcl_1_1interp_1_1aggregation.html">amgcl::interp::aggregation</a> is improved by a smoothing to get the final prolongation matrix <img class="formulaInl" alt="$P$" src="form_16.png"/>. Simple Jacobi smoother is used here, giving the prolongation matrix </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[P = \left( I - \omega D^{-1} A^F \right) \tilde P.\]" src="form_15.png"/>
+<img class="formulaDsp" alt="\[P = \left( I - \omega D^{-1} A^F \right) \tilde P.\]" src="form_17.png"/>
 </p>
-<p> Here <img class="formulaInl" alt="$A^F = (a_{ij}^F)$" src="form_16.png"/> is the filtered matrix given by </p>
+<p> Here <img class="formulaInl" alt="$A^F = (a_{ij}^F)$" src="form_18.png"/> is the filtered matrix given by </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[ a_{ij}^F = \begin{cases} a_{ij} \quad \text{if} \; j \in N_i(\varepsilon)\\ 0 \quad \text{otherwise} \end{cases}, \quad \text{if}\; i \neq j, \quad a_{ii}^F = a_{ii} - \sum\limits_{j=1,j\neq i}^n \left(a_{ij} - a_{ij}^F \right), \]" src="form_17.png"/>
+<img class="formulaDsp" alt="\[ a_{ij}^F = \begin{cases} a_{ij} \quad \text{if} \; j \in N_i\\ 0 \quad \text{otherwise} \end{cases}, \quad \text{if}\; i \neq j, \quad a_{ii}^F = a_{ii} - \sum\limits_{j=1,j\neq i}^n \left(a_{ij} - a_{ij}^F \right), \]" src="form_19.png"/>
 </p>
-<p> where <img class="formulaInl" alt="$D$" src="form_18.png"/> denotes the diagonal of <img class="formulaInl" alt="$A^F$" src="form_19.png"/>. </p>
+<p> where <img class="formulaInl" alt="$N_i$" src="form_20.png"/> is the set of variables, strongly coupled to variable <img class="formulaInl" alt="$i$" src="form_7.png"/>, and <img class="formulaInl" alt="$D$" src="form_21.png"/> denotes the diagonal of <img class="formulaInl" alt="$A^F$" src="form_22.png"/>. </p>
 
 <p>Referenced by <a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation.html#a1b9e79c060cfcccc8cfbef3dff8eb145">amgcl::interp::smoothed_aggregation&lt; aggr_type &gt;::interp()</a>.</p>
 
