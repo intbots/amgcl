@@ -57,7 +57,7 @@ AMG hierarchy building</h1>
 </div><!-- fragment --><p>See documentation for <a class="el" href="group__interpolation.html">Interpolation</a> module to see the list of supported interpolation schemes. The aggregation schemes use less memory and are set up faster than classic interpolation, but their convergence rate is slower. They are well suited for VexCL or ViennaCL containers, where solution phase is accelerated by the OpenCL technology and, therefore, the cost of the setup phase is much more important.</p>
 <div class="fragment"><div class="line"><a class="code" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a>&lt;</div>
 <div class="line">    double, int,</div>
-<div class="line">    <a class="code" href="structamgcl_1_1interp_1_1aggregation.html" title="Aggregation-based interpolation scheme.">amgcl::interp::aggregation&lt;amgcl::aggr::plain&gt;</a>,</div>
+<div class="line">    <a class="code" href="structamgcl_1_1interp_1_1smoothed__aggregation.html" title="Smoothed aggregation-based interpolation scheme.">amgcl::interp::smoothed_aggregation&lt;amgcl::aggr::plain&gt;</a>,</div>
 <div class="line">    <a class="code" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">amgcl::level::vexcl</a></div>
 <div class="line">&gt; amg(A);</div>
 </div><!-- fragment --><h1><a class="anchor" id="solution"></a>
