@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>amgcl: bicgstab.hpp File Reference</title>
+<title>amgcl: common.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -47,45 +47,43 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">bicgstab.hpp File Reference</div>  </div>
+<div class="title">common.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Stabilized BiConjugate Gradient method.  
+<p>Common definitions for amgcl.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;utility&gt;</code><br/>
-<code>#include &lt;stdexcept&gt;</code><br/>
-<code>#include &lt;<a class="el" href="common_8hpp.html">amgcl/common.hpp</a>&gt;</code><br/>
-</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for bicgstab.hpp:</div>
+<div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="bicgstab_8hpp__incl.png" border="0" usemap="#bicgstab_8hpp" alt=""/></div>
-<map name="bicgstab_8hpp" id="bicgstab_8hpp">
-<area shape="rect" id="node7" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="195,80,345,107"/></map>
+<div class="center"><img src="common_8hpp__dep__incl.png" border="0" usemap="#common_8hppdep" alt=""/></div>
+<map name="common_8hppdep" id="common_8hppdep">
+<area shape="rect" id="node3" href="bicgstab_8hpp.html" title="Stabilized BiConjugate Gradient method." alt="" coords="5,80,109,107"/><area shape="rect" id="node5" href="cg_8hpp.html" title="Conjugate Gradient method." alt="" coords="134,80,199,107"/><area shape="rect" id="node7" href="level__cuda_8hpp.html" title="Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution..." alt="" coords="223,80,339,107"/><area shape="rect" id="node9" href="operations__eigen_8hpp.html" title="Adaptors for Eigen types." alt="" coords="364,80,523,107"/><area shape="rect" id="node11" href="operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="548,80,705,107"/></map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1cg__tag.html">amgcl::cg_tag</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control parameters for Conjugate Gradient method.  <a href="structamgcl_1_1cg__tag.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1bicg__tag.html">amgcl::bicg_tag</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control parameters for Stabilized BiConjugate Gradient method.  <a href="structamgcl_1_1bicg__tag.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamgcl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html">amgcl</a></td></tr>
 <tr class="memdesc:namespaceamgcl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the library. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga09895d1c0824481a5c96533827bdae15"><td class="memTemplParams" colspan="2">template&lt;class matrix , class vector , class precond &gt; </td></tr>
-<tr class="memitem:ga09895d1c0824481a5c96533827bdae15"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, typename <br class="typebreak"/>
-value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15">amgcl::solve</a> (const matrix &amp;A, const vector &amp;rhs, const precond &amp;P, vector &amp;x, bicg_tag prm=bicg_tag())</td></tr>
-<tr class="memdesc:ga09895d1c0824481a5c96533827bdae15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stabilized BiConjugate Gradient method.  <a href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15"></a><br/></td></tr>
-<tr class="separator:ga09895d1c0824481a5c96533827bdae15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Stabilized BiConjugate Gradient method. </p>
-<dl class="section author"><dt>Author</dt><dd>Denis Demidov <a href="#" onclick="location.href='mai'+'lto:'+'dde'+'mi'+'dov'+'@k'+'su.'+'ru'; return false;">ddemi<span style="display: none;">.nosp@m.</span>dov@<span style="display: none;">.nosp@m.</span>ksu.r<span style="display: none;">.nosp@m.</span>u</a> Implementation is based on <a class="el" href="index.html#Templates_1994">Barrett (1994)</a> </dd></dl>
+<div class="textblock"><p>Common definitions for amgcl. </p>
+<dl class="section author"><dt>Author</dt><dd>Denis Demidov <a href="#" onclick="location.href='mai'+'lto:'+'dde'+'mi'+'dov'+'@k'+'su.'+'ru'; return false;">ddemi<span style="display: none;">.nosp@m.</span>dov@<span style="display: none;">.nosp@m.</span>ksu.r<span style="display: none;">.nosp@m.</span>u</a> </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

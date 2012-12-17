@@ -64,6 +64,7 @@
 <code>#include &lt;boost/type_traits/is_same.hpp&gt;</code><br/>
 <code>#include &lt;<a class="el" href="level__params_8hpp.html">amgcl/level_params.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="spmat_8hpp.html">amgcl/spmat.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="common_8hpp.html">amgcl/common.hpp</a>&gt;</code><br/>
 <code>#include &lt;thrust/device_vector.h&gt;</code><br/>
 <code>#include &lt;thrust/inner_product.h&gt;</code><br/>
 <code>#include &lt;cusparse_v2.h&gt;</code><br/>
@@ -74,7 +75,7 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="level__cuda_8hpp__incl.png" border="0" usemap="#level__cuda_8hpp" alt=""/></div>
 <map name="level__cuda_8hpp" id="level__cuda_8hpp">
-<area shape="rect" id="node13" href="level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="955,88,1133,115"/><area shape="rect" id="node15" href="spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="286,88,420,115"/></map>
+<area shape="rect" id="node13" href="level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="955,88,1133,115"/><area shape="rect" id="node15" href="spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="286,88,420,115"/><area shape="rect" id="node29" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="1158,88,1308,115"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -103,10 +104,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a10d4940e6e73ffecdfaf291ac11ba711"><td class="memTemplParams" colspan="2"><a class="anchor" id="a10d4940e6e73ffecdfaf291ac11ba711"></a>
-template&lt;class value_t , class precond &gt; </td></tr>
-<tr class="memitem:a10d4940e6e73ffecdfaf291ac11ba711"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::solve</b> (const sparse::cuda_matrix&lt; value_t &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x)</td></tr>
-<tr class="separator:a10d4940e6e73ffecdfaf291ac11ba711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d8f9bddfa886ea6702f00f95e7e8aa"><td class="memTemplParams" colspan="2">template&lt;class value_t , class precond &gt; </td></tr>
+<tr class="memitem:a58d8f9bddfa886ea6702f00f95e7e8aa"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a58d8f9bddfa886ea6702f00f95e7e8aa">amgcl::solve</a> (const sparse::cuda_matrix&lt; value_t &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, cg_tag prm=cg_tag())</td></tr>
+<tr class="memdesc:a58d8f9bddfa886ea6702f00f95e7e8aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stabilized BiConjugate Gradient method.   <a href="#a58d8f9bddfa886ea6702f00f95e7e8aa"></a><br/></td></tr>
+<tr class="separator:a58d8f9bddfa886ea6702f00f95e7e8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution for now. </p>

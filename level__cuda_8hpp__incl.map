@@ -1,4 +1,5 @@
 <map id="level_cuda.hpp" name="level_cuda.hpp">
 <area shape="rect" id="node13" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="955,88,1133,115"/>
 <area shape="rect" id="node15" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="286,88,420,115"/>
+<area shape="rect" id="node29" href="$common_8hpp.html" title="Common definitions for amgcl." alt="" coords="1158,88,1308,115"/>
 </map>

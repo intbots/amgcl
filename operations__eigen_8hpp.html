@@ -47,8 +47,8 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">operations_eigen.hpp File Reference</div>  </div>
@@ -57,7 +57,8 @@
 
 <p>Adaptors for Eigen types.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;Eigen/Dense&gt;</code><br/>
+<div class="textblock"><code>#include &lt;<a class="el" href="common_8hpp.html">amgcl/common.hpp</a>&gt;</code><br/>
+<code>#include &lt;Eigen/Dense&gt;</code><br/>
 <code>#include &lt;Eigen/SparseCore&gt;</code><br/>
 <code>#include &lt;boost/utility/enable_if.hpp&gt;</code><br/>
 <code>#include &lt;boost/type_traits/is_arithmetic.hpp&gt;</code><br/>
@@ -68,9 +69,15 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="operations__eigen_8hpp__incl.png" border="0" usemap="#operations__eigen_8hpp" alt=""/></div>
 <map name="operations__eigen_8hpp" id="operations__eigen_8hpp">
-</map>
+<area shape="rect" id="node3" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="5,88,155,115"/></map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1value__type_3_01T_00_01typename_01boost_1_1enable__if_3_01boost_1_1is__arithmeticca22307570257e7a386e720fe66d91aa.html">amgcl::value_type&lt; T, typename boost::enable_if&lt; boost::is_arithmetic&lt; typename T::Scalar &gt; &gt;::type &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value type for an Eigen vector.  <a href="structamgcl_1_1value__type_3_01T_00_01typename_01boost_1_1enable__if_3_01boost_1_1is__arithmeticca22307570257e7a386e720fe66d91aa.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamgcl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html">amgcl</a></td></tr>
@@ -82,23 +89,23 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6328a54c93cafc74be8193a6c6038b08"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6328a54c93cafc74be8193a6c6038b08"></a>
-template&lt;typename T1 , typename T2 &gt; </td></tr>
-<tr class="memitem:a6328a54c93cafc74be8193a6c6038b08"><td class="memTemplItemLeft" align="right" valign="top">T1::Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::inner_prod</b> (const Eigen::MatrixBase&lt; T1 &gt; &amp;x, const Eigen::MatrixBase&lt; T2 &gt; &amp;y)</td></tr>
+<tr class="memitem:a6328a54c93cafc74be8193a6c6038b08"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
+<tr class="memitem:a6328a54c93cafc74be8193a6c6038b08"><td class="memTemplItemLeft" align="right" valign="top">T1::Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a6328a54c93cafc74be8193a6c6038b08">amgcl::inner_prod</a> (const Eigen::MatrixBase&lt; T1 &gt; &amp;x, const Eigen::MatrixBase&lt; T2 &gt; &amp;y)</td></tr>
+<tr class="memdesc:a6328a54c93cafc74be8193a6c6038b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns inner product of two Eigen vectors.  <a href="#a6328a54c93cafc74be8193a6c6038b08"></a><br/></td></tr>
 <tr class="separator:a6328a54c93cafc74be8193a6c6038b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a2b5cc5f4714bcd1957440661dd32a2"><td class="memTemplParams" colspan="2"><a class="anchor" id="a5a2b5cc5f4714bcd1957440661dd32a2"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5a2b5cc5f4714bcd1957440661dd32a2"><td class="memTemplItemLeft" align="right" valign="top">T::Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::norm</b> (const Eigen::MatrixBase&lt; T &gt; &amp;x)</td></tr>
+<tr class="memitem:a5a2b5cc5f4714bcd1957440661dd32a2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5a2b5cc5f4714bcd1957440661dd32a2"><td class="memTemplItemLeft" align="right" valign="top">T::Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a5a2b5cc5f4714bcd1957440661dd32a2">amgcl::norm</a> (const Eigen::MatrixBase&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a5a2b5cc5f4714bcd1957440661dd32a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns norm of an Eigen vector.  <a href="#a5a2b5cc5f4714bcd1957440661dd32a2"></a><br/></td></tr>
 <tr class="separator:a5a2b5cc5f4714bcd1957440661dd32a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1534c10efb86f89f978f7d914a55703"><td class="memTemplParams" colspan="2"><a class="anchor" id="af1534c10efb86f89f978f7d914a55703"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af1534c10efb86f89f978f7d914a55703"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::clear</b> (Eigen::MatrixBase&lt; T &gt; &amp;x)</td></tr>
+<tr class="memitem:af1534c10efb86f89f978f7d914a55703"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af1534c10efb86f89f978f7d914a55703"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#af1534c10efb86f89f978f7d914a55703">amgcl::clear</a> (Eigen::MatrixBase&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:af1534c10efb86f89f978f7d914a55703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears (sets elements to zero) an Eigen vector.  <a href="#af1534c10efb86f89f978f7d914a55703"></a><br/></td></tr>
 <tr class="separator:af1534c10efb86f89f978f7d914a55703"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a899b7e41ad18cfb005c48d9d8165b511"><td class="memTemplParams" colspan="2"><a class="anchor" id="a899b7e41ad18cfb005c48d9d8165b511"></a>
-template&lt;class Derived &gt; </td></tr>
+<tr class="memitem:a899b7e41ad18cfb005c48d9d8165b511"><td class="memTemplParams" colspan="2">template&lt;class Derived &gt; </td></tr>
 <tr class="memitem:a899b7e41ad18cfb005c48d9d8165b511"><td class="memTemplItemLeft" align="right" valign="top">matrix_map&lt; typename <br class="typebreak"/>
 Derived::Scalar, typename <br class="typebreak"/>
-Derived::Index &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::sparse::map</b> (const Eigen::SparseMatrixBase&lt; Derived &gt; &amp;A)</td></tr>
+Derived::Index &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1sparse.html#a899b7e41ad18cfb005c48d9d8165b511">amgcl::sparse::map</a> (const Eigen::SparseMatrixBase&lt; Derived &gt; &amp;A)</td></tr>
+<tr class="memdesc:a899b7e41ad18cfb005c48d9d8165b511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps Eigen sparse matrix to format supported by amgcl.  <a href="#a899b7e41ad18cfb005c48d9d8165b511"></a><br/></td></tr>
 <tr class="separator:a899b7e41ad18cfb005c48d9d8165b511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

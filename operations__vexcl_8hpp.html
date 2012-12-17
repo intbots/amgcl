@@ -47,8 +47,8 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">operations_vexcl.hpp File Reference</div>  </div>
@@ -58,6 +58,7 @@
 <p>Adaptors for VexCL types.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;type_traits&gt;</code><br/>
+<code>#include &lt;<a class="el" href="common_8hpp.html">amgcl/common.hpp</a>&gt;</code><br/>
 <code>#include &lt;vexcl/vexcl.hpp&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for operations_vexcl.hpp:</div>
@@ -66,9 +67,15 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="operations__vexcl_8hpp__incl.png" border="0" usemap="#operations__vexcl_8hpp" alt=""/></div>
 <map name="operations__vexcl_8hpp" id="operations__vexcl_8hpp">
-</map>
+<area shape="rect" id="node5" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="121,80,271,107"/></map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1value__type_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__arithmetic_3_09464edfcb4891485b53ea63418bd0c41.html">amgcl::value_type&lt; T, typename std::enable_if&lt; std::is_arithmetic&lt; typename T::value_type &gt;::value &gt;::type &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value type of vex::vector.  <a href="structamgcl_1_1value__type_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__arithmetic_3_09464edfcb4891485b53ea63418bd0c41.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamgcl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html">amgcl</a></td></tr>
@@ -77,17 +84,17 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a62b2ff04c8ef4136cf19742484c47ef2"><td class="memTemplParams" colspan="2"><a class="anchor" id="a62b2ff04c8ef4136cf19742484c47ef2"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a62b2ff04c8ef4136cf19742484c47ef2"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::inner_prod</b> (const vex::vector&lt; T &gt; &amp;x, const vex::vector&lt; T &gt; &amp;y)</td></tr>
+<tr class="memitem:a62b2ff04c8ef4136cf19742484c47ef2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a62b2ff04c8ef4136cf19742484c47ef2"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a62b2ff04c8ef4136cf19742484c47ef2">amgcl::inner_prod</a> (const vex::vector&lt; T &gt; &amp;x, const vex::vector&lt; T &gt; &amp;y)</td></tr>
+<tr class="memdesc:a62b2ff04c8ef4136cf19742484c47ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns inner product of two vex::vectors.  <a href="#a62b2ff04c8ef4136cf19742484c47ef2"></a><br/></td></tr>
 <tr class="separator:a62b2ff04c8ef4136cf19742484c47ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4db9eb9c4c406e6d72dc5d17330c037a"><td class="memTemplParams" colspan="2"><a class="anchor" id="a4db9eb9c4c406e6d72dc5d17330c037a"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a4db9eb9c4c406e6d72dc5d17330c037a"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::norm</b> (const vex::vector&lt; T &gt; &amp;x)</td></tr>
+<tr class="memitem:a4db9eb9c4c406e6d72dc5d17330c037a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4db9eb9c4c406e6d72dc5d17330c037a"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a4db9eb9c4c406e6d72dc5d17330c037a">amgcl::norm</a> (const vex::vector&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a4db9eb9c4c406e6d72dc5d17330c037a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns norm of vex::vector.  <a href="#a4db9eb9c4c406e6d72dc5d17330c037a"></a><br/></td></tr>
 <tr class="separator:a4db9eb9c4c406e6d72dc5d17330c037a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21fc10a876fd553ccd979da18aeff727"><td class="memTemplParams" colspan="2"><a class="anchor" id="a21fc10a876fd553ccd979da18aeff727"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a21fc10a876fd553ccd979da18aeff727"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::clear</b> (vex::vector&lt; T &gt; &amp;x)</td></tr>
+<tr class="memitem:a21fc10a876fd553ccd979da18aeff727"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a21fc10a876fd553ccd979da18aeff727"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a21fc10a876fd553ccd979da18aeff727">amgcl::clear</a> (vex::vector&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a21fc10a876fd553ccd979da18aeff727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears (sets elements to zero) vex::vector.  <a href="#a21fc10a876fd553ccd979da18aeff727"></a><br/></td></tr>
 <tr class="separator:a21fc10a876fd553ccd979da18aeff727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
