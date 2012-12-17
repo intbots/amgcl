@@ -93,11 +93,20 @@
 , <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#aad880e3edf8394e5859b2921eb9a3b7f">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
 </li>
 <li>cols
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#aa599821c27c20eb4e4ef245e13b062f0">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
-, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a80b25c2506709006d1ddb22bd3673047">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
+: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a80b25c2506709006d1ddb22bd3673047">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
+, <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#aa599821c27c20eb4e4ef245e13b062f0">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
 </li>
 <li>ctx
 : <a class="el" href="structamgcl_1_1level_1_1vexcl_1_1params.html#a6d66096c296cba19dcb35f1e1f4950ac">amgcl::level::vexcl::params</a>
+</li>
+<li>cuda_matrix()
+: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix.html#a2602e9f2ebb0cd03fa4c4da2b8e384c0">amgcl::sparse::cuda_matrix&lt; value_type &gt;</a>
+</li>
+<li>cusparseCreate()
+: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix.html#ac96221c7c480178c9f47e9c75a120aec">amgcl::sparse::cuda_matrix&lt; value_type &gt;</a>
+</li>
+<li>cusparseDestroy()
+: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix.html#a1b440996af7d67c7cb9f860241ae130c">amgcl::sparse::cuda_matrix&lt; value_type &gt;</a>
 </li>
 </ul>
 
@@ -146,9 +155,12 @@
 : <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#a248328d2bd6909204c05c80efdfaec5e">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
 </li>
 <li>maxiter
-: <a class="el" href="structamgcl_1_1level_1_1params.html#a89b944c37ce87f3d2835a4abded298a9">amgcl::level::params</a>
-, <a class="el" href="structamgcl_1_1cg__tag.html#a39054178af217173585caa1ddfc5d00f">amgcl::cg_tag</a>
+: <a class="el" href="structamgcl_1_1cg__tag.html#a39054178af217173585caa1ddfc5d00f">amgcl::cg_tag</a>
+, <a class="el" href="structamgcl_1_1level_1_1params.html#a89b944c37ce87f3d2835a4abded298a9">amgcl::level::params</a>
 , <a class="el" href="structamgcl_1_1bicg__tag.html#a03d3f4e38bc9aee3f551c8fcb1e4f22e">amgcl::bicg_tag</a>
+</li>
+<li>mul()
+: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix.html#af2b320d666b78373be6ae75e63818542">amgcl::sparse::cuda_matrix&lt; value_type &gt;</a>
 </li>
 </ul>
 
@@ -156,6 +168,9 @@
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
 <li>ncycle
 : <a class="el" href="structamgcl_1_1level_1_1params.html#af8da1197c4cede731f109756370f0408">amgcl::level::params</a>
+</li>
+<li>nonzeros()
+: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix.html#af79d25894cfccb82c3746df391a16f62">amgcl::sparse::cuda_matrix&lt; value_type &gt;</a>
 </li>
 <li>npost
 : <a class="el" href="structamgcl_1_1level_1_1params.html#a3e779c58049318b0f96fcb9b916df2a1">amgcl::level::params</a>
@@ -205,11 +220,18 @@
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>size()
+: <a class="el" href="classamgcl_1_1solver.html#ab8b0f8b8bf46de764e731809790a00c4">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
+, <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix.html#a0497d18513fe24d13c2c93dd912f2fd6">amgcl::sparse::cuda_matrix&lt; value_type &gt;</a>
+</li>
 <li>solve()
 : <a class="el" href="classamgcl_1_1solver.html#a330dbfc5587bb481e09228221af7cf4c">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
 </li>
 <li>solver()
 : <a class="el" href="classamgcl_1_1solver.html#ad99ee74042b47beb941b11e2690ca28a">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
+</li>
+<li>swap()
+: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a770a0a2484cd81bc9bfd08b393acc4c8">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
 </li>
 </ul>
 

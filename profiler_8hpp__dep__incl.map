@@ -1,7 +1,7 @@
 <map id="profiler.hpp" name="profiler.hpp">
 <area shape="rect" id="node3" href="$aggr__plain_8hpp.html" title="Smoothed aggregates&#45;based interpolation scheme." alt="" coords="5,80,120,107"/>
-<area shape="rect" id="node5" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework." alt="" coords="239,155,328,181"/>
-<area shape="rect" id="node7" href="$interp__aggr_8hpp.html" title="Aggregates&#45;based interpolation scheme." alt="" coords="196,80,319,107"/>
-<area shape="rect" id="node9" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999)." alt="" coords="343,80,477,107"/>
-<area shape="rect" id="node12" href="$interp__smoothed__aggr_8hpp.html" title="Smoothed aggregates&#45;based interpolation scheme." alt="" coords="503,80,697,107"/>
+<area shape="rect" id="node5" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework." alt="" coords="145,80,233,107"/>
+<area shape="rect" id="node7" href="$interp__aggr_8hpp.html" title="Aggregates&#45;based interpolation scheme." alt="" coords="259,80,381,107"/>
+<area shape="rect" id="node9" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999)." alt="" coords="405,80,540,107"/>
+<area shape="rect" id="node11" href="$interp__smoothed__aggr_8hpp.html" title="Smoothed aggregates&#45;based interpolation scheme." alt="" coords="565,80,760,107"/>
 </map>

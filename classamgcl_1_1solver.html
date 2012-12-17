@@ -49,6 +49,7 @@
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classamgcl_1_1solver-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -66,6 +67,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1params.html">params</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for AMG components.  <a href="structamgcl_1_1solver_1_1params.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ae8dc43611f2edcf9fa60e774a9b374b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8dc43611f2edcf9fa60e774a9b374b3"></a>
+typedef value_t&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b></td></tr>
+<tr class="separator:ae8dc43611f2edcf9fa60e774a9b374b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac874c33ff2bf7660d5eb5f2e9be53d4d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac874c33ff2bf7660d5eb5f2e9be53d4d"></a>
+typedef index_t&#160;</td><td class="memItemRight" valign="bottom"><b>index_type</b></td></tr>
+<tr class="separator:ac874c33ff2bf7660d5eb5f2e9be53d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -85,15 +95,19 @@ Public Member Functions</h2></td></tr>
 std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver.html#a15e4849c9eb61e0c623ab1ca1d0bd480">print</a> (std::ostream &amp;os) const </td></tr>
 <tr class="memdesc:a15e4849c9eb61e0c623ab1ca1d0bd480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output some general information about the AMG hierarchy. <br/></td></tr>
 <tr class="separator:a15e4849c9eb61e0c623ab1ca1d0bd480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8b0f8b8bf46de764e731809790a00c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8b0f8b8bf46de764e731809790a00c4"></a>
+index_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver.html#ab8b0f8b8bf46de764e731809790a00c4">size</a> () const </td></tr>
+<tr class="memdesc:ab8b0f8b8bf46de764e731809790a00c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of unknowns at the finest level. <br/></td></tr>
+<tr class="separator:ab8b0f8b8bf46de764e731809790a00c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename value_t = double, typename index_t = long long, typename interp_t = interp::classic, typename level_t = level::cpu&gt;<br/>
+<div class="textblock"><h3>template&lt;typename value_t, typename index_t, typename interp_t, typename level_t&gt;<br/>
 class amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</h3>
 
 <p>Algebraic multigrid method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value_t</td><td>Type for matrix entries. </td></tr>
+    <tr><td class="paramname">value_t</td><td>Type for matrix entries (double/float). </td></tr>
     <tr><td class="paramname">index_t</td><td>Type for matrix indices. Should be signed integral type. </td></tr>
     <tr><td class="paramname">interp_t</td><td><a class="el" href="group__interpolation.html">Interpolation scheme</a>. </td></tr>
     <tr><td class="paramname">level_t</td><td>Hierarchy level <a class="el" href="group__levels.html">storage backend</a>. </td></tr>
@@ -105,7 +119,7 @@ class amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename value_t  = double, typename index_t  = long long, typename interp_t  = interp::classic, typename level_t  = level::cpu&gt; </div>
+template&lt;typename value_t , typename index_t , typename interp_t , typename level_t &gt; </div>
 <div class="memtemplate">
 template&lt;typename spmat &gt; </div>
 <table class="mlabels">
@@ -155,7 +169,7 @@ template&lt;typename spmat &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename value_t  = double, typename index_t  = long long, typename interp_t  = interp::classic, typename level_t  = level::cpu&gt; </div>
+template&lt;typename value_t , typename index_t , typename interp_t , typename level_t &gt; </div>
 <div class="memtemplate">
 template&lt;class vector1 , class vector2 &gt; </div>
 <table class="mlabels">
@@ -193,7 +207,7 @@ template&lt;class vector1 , class vector2 &gt; </div>
 <ol type="1">
 <li>Any type with operator[] should work on a CPU.</li>
 <li>vex::vector&lt;value_t&gt; should be used with <a class="el" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">level::vexcl</a>.</li>
-<li>viennacl::vector&lt;value_t&gt; should be used with <a class="el" href="structamgcl_1_1level_1_1ViennaCL.html" title="ViennaCL-based AMG hierarchy.">level::ViennaCL</a>.</li>
+<li>viennacl::vector&lt;value_t&gt; should be used with level::ViennaCL.</li>
 </ol>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -213,7 +227,7 @@ template&lt;class vector1 , class vector2 &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename value_t  = double, typename index_t  = long long, typename interp_t  = interp::classic, typename level_t  = level::cpu&gt; </div>
+template&lt;typename value_t , typename index_t , typename interp_t , typename level_t &gt; </div>
 <div class="memtemplate">
 template&lt;class vector1 , class vector2 &gt; </div>
 <table class="mlabels">
@@ -250,7 +264,7 @@ template&lt;class vector1 , class vector2 &gt; </div>
 <ol type="1">
 <li>Any type with operator[] should work on a CPU.</li>
 <li>vex::vector&lt;value_t&gt; should be used with <a class="el" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">level::vexcl</a>.</li>
-<li>viennacl::vector&lt;value_t&gt; should be used with <a class="el" href="structamgcl_1_1level_1_1ViennaCL.html" title="ViennaCL-based AMG hierarchy.">level::ViennaCL</a>.</li>
+<li>viennacl::vector&lt;value_t&gt; should be used with level::ViennaCL.</li>
 </ol>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

@@ -23,3 +23,4 @@
 \form#22:$A^F$
 \form#23:\[|a_{ij}| \geq \varepsilon\sqrt{a_{ii} a_{jj}}\quad \text{with fixed} \quad \varepsilon = \varepsilon_{str} \left( \frac{1}{2} \right)^l,\]
 \form#24:$l$
+\form#25:\[y = \alpha A x + \beta y \]

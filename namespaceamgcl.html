@@ -80,6 +80,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1cg__tag.html">cg_tag</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controlling parameters.  <a href="structamgcl_1_1cg__tag.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1viennacl__preconditioner.html">viennacl_preconditioner</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around <a class="el" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a> that is compatible with ViennaCL solvers.  <a href="classamgcl_1_1viennacl__preconditioner.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1profiler.html">profiler</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple profiler class.  <a href="classamgcl_1_1profiler.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -96,6 +99,10 @@ value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" va
 value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gac8e0c3c1ec4fdac25537aa7d20c008fd">solve</a> (const matrix &amp;A, const vector &amp;rhs, const precond &amp;P, vector &amp;x, <a class="el" href="structamgcl_1_1cg__tag.html">cg_tag</a> prm=<a class="el" href="structamgcl_1_1cg__tag.html">cg_tag</a>())</td></tr>
 <tr class="memdesc:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method.  <a href="group__iterative.html#gac8e0c3c1ec4fdac25537aa7d20c008fd"></a><br/></td></tr>
 <tr class="separator:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d4940e6e73ffecdfaf291ac11ba711"><td class="memTemplParams" colspan="2"><a class="anchor" id="a10d4940e6e73ffecdfaf291ac11ba711"></a>
+template&lt;class value_t , class precond &gt; </td></tr>
+<tr class="memitem:a10d4940e6e73ffecdfaf291ac11ba711"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>solve</b> (const <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix.html">sparse::cuda_matrix</a>&lt; value_t &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x)</td></tr>
+<tr class="separator:a10d4940e6e73ffecdfaf291ac11ba711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6328a54c93cafc74be8193a6c6038b08"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6328a54c93cafc74be8193a6c6038b08"></a>
 template&lt;typename T1 , typename T2 &gt; </td></tr>
 <tr class="memitem:a6328a54c93cafc74be8193a6c6038b08"><td class="memTemplItemLeft" align="right" valign="top">T1::Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><b>inner_prod</b> (const Eigen::MatrixBase&lt; T1 &gt; &amp;x, const Eigen::MatrixBase&lt; T2 &gt; &amp;y)</td></tr>
@@ -120,6 +127,12 @@ template&lt;typename T &gt; </td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a21fc10a876fd553ccd979da18aeff727"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>clear</b> (vex::vector&lt; T &gt; &amp;x)</td></tr>
 <tr class="separator:a21fc10a876fd553ccd979da18aeff727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad0918a6995797400471f0a9b362df12"><td class="memTemplParams" colspan="2"><a class="anchor" id="aad0918a6995797400471f0a9b362df12"></a>
+template&lt;class vector , class AMG &gt; </td></tr>
+<tr class="memitem:aad0918a6995797400471f0a9b362df12"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamgcl_1_1viennacl__preconditioner.html">viennacl_preconditioner</a><br class="typebreak"/>
+&lt; vector, AMG &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#aad0918a6995797400471f0a9b362df12">make_viennacl_precond</a> (const AMG &amp;amg)</td></tr>
+<tr class="memdesc:aad0918a6995797400471f0a9b362df12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around <a class="el" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a> that is compatible with ViennaCL solvers. <br/></td></tr>
+<tr class="separator:aad0918a6995797400471f0a9b362df12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Primary namespace for the library. </p>
