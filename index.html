@@ -40,45 +40,80 @@
 <div class="title">amgcl Generic algebraic multigrid framework. </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This is a simple and generic AMG hierarchy builder (and a work in progress). May be used as a standalone solver or as a preconditioner. CG and BiCGStab iterative solvers are provided. Solvers from <a href="http://viennacl.sourceforge.net">ViennaCL</a> are supported as well.</p>
-<p><a href="https://github.com/ddemidov/vexcl">VexCL</a>, <a href="http://viennacl.sourceforge.net">ViennaCL</a>, or <a href="http://eigen.tuxfamily.org">Eigen</a> matrix/vector containers may be used with built-in and ViennaCL's solvers. See <a href="https://github.com/ddemidov/amgcl/blob/master/examples/vexcl.cpp">examples/vexcl.cpp</a>, <a href="https://github.com/ddemidov/amgcl/blob/master/examples/viennacl.cpp">examples/viennacl.cpp</a> and <a href="https://github.com/ddemidov/amgcl/blob/master/examples/eigen.cpp">examples/eigen.cpp</a> for respective examples.</p>
-<h1><a class="anchor" id="setup"></a>
-AMG hierarchy building</h1>
-<p>Constructor of amgcl::solver&lt;&gt; object builds the multigrid hierarchy based on algebraic information contained in the system matrix:</p>
-<div class="fragment"><div class="line"><span class="comment">// amgcl::sparse::matrix&lt;double, int&gt; A;</span></div>
-<div class="line"><span class="comment">// or</span></div>
-<div class="line"><span class="comment">// amgcl::sparse::matrix_map&lt;double, int&gt; A;</span></div>
-<div class="line"><a class="code" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a>&lt;</div>
-<div class="line">    double,                 <span class="comment">// Scalar type</span></div>
-<div class="line">    int,                    <span class="comment">// Index type of the matrix</span></div>
-<div class="line">    <a class="code" href="classamgcl_1_1interp_1_1classic.html" title="Direct interpolation scheme based on Stuben (1999).">amgcl::interp::classic</a>, <span class="comment">// Interpolation kind</span></div>
-<div class="line">    <a class="code" href="structamgcl_1_1level_1_1cpu.html" title="CPU-based AMG hierarchy.">amgcl::level::cpu</a>       <span class="comment">// Where to store the hierarchy</span></div>
-<div class="line">&gt; amg(A);</div>
-</div><!-- fragment --><p>See documentation for <a class="el" href="group__interpolation.html">Interpolation</a> module to see the list of supported interpolation schemes. The aggregation schemes use less memory and are set up faster than classic interpolation, but their convergence rate is slower. They are well suited for VexCL or ViennaCL containers, where solution phase is accelerated by the OpenCL technology and, therefore, the cost of the setup phase is much more important.</p>
-<div class="fragment"><div class="line"><a class="code" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a>&lt;</div>
-<div class="line">    double, int,</div>
-<div class="line">    <a class="code" href="structamgcl_1_1interp_1_1smoothed__aggregation.html" title="Smoothed aggregation-based interpolation scheme.">amgcl::interp::smoothed_aggregation&lt;amgcl::aggr::plain&gt;</a>,</div>
-<div class="line">    <a class="code" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">amgcl::level::vexcl</a></div>
-<div class="line">&gt; amg(A);</div>
-</div><!-- fragment --><h1><a class="anchor" id="solution"></a>
-Solution</h1>
-<p>Once the hierarchy is constructed, it may be repeatedly used to solve the linear system for different right-hand sides:</p>
-<div class="fragment"><div class="line"><span class="comment">// std::vector&lt;double&gt; rhs, x;</span></div>
+<div class="textblock"><p>amgcl is a simple and generic algebraic <a href="http://en.wikipedia.org/wiki/Multigrid_method">multigrid</a> (AMG) hierarchy builder (and a work in progress). The constructed hierarchy may be used as a standalone solver or as a preconditioner with some iterative solver. Conjugate Gradient and Stabilized BiConjugate Gradient iterative solvers are provided. It is also possible to use generic solvers from other libraries, e.g. <a href="http://viennacl.sourceforge.net">ViennaCL</a>.</p>
+<p>The setup phase is completely CPU-based. The constructed levels of AMG hierarchy may be stored and used through several <a class="el" href="group__levels.html">backends</a>. This allows for transparent acceleration of the solution phase with help of OpenCL, CUDA, or OpenMP technologies. See <a href="https://github.com/ddemidov/amgcl/blob/master/examples/vexcl.cpp">examples/vexcl.cpp</a>, <a href="https://github.com/ddemidov/amgcl/blob/master/examples/viennacl.cpp">examples/viennacl.cpp</a> and <a href="https://github.com/ddemidov/amgcl/blob/master/examples/eigen.cpp">examples/eigen.cpp</a> for examples of using amgcl with <a href="https://github.com/ddemidov/vexcl">VexCL</a>, <a href="http://viennacl.sourceforge.net">ViennaCL</a>, or <a href="http://eigen.tuxfamily.org">Eigen</a> backends.</p>
+<h1><a class="anchor" id="overview"></a>
+Overview</h1>
+<p>You can use amgcl to solve large sparse system of linear equations in three simple steps: first, you have to select method components (this is a compile time decision); second, the AMG hierarchy has to be constructed from a system matrix; and third, the hierarchy is used to solve the equation system for a given right-hand side.</p>
+<p>The list of interpolation schemes and available backends may be found in <a class="el" href="group__interpolation.html">Interpolation</a> and <a class="el" href="group__levels.html">Level Storage Backends</a> modules. The aggregation and smoothed-aggregation interpolation schemes use less memory and are set up faster than classic interpolation, but their convergence rate is slower. They are well suited for GPU-accelerated backends, where the cost of the setup phase is much more important.</p>
+<div class="fragment"><div class="line"><span class="comment">// First, we need to include relevant headers. Each header basically</span></div>
+<div class="line"><span class="comment">// corresponds to an AMG component. Let&#39;s say we want to use conjugate gradient</span></div>
+<div class="line"><span class="comment">// method preconditioned with smoothed aggregation AMG with VexCL backend:</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> conv = amg.solve(rhs, x);</div>
+<div class="line"><span class="comment">// This is generic hierarchy builder.</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="amgcl_8hpp.html" title="Generic algebraic multigrid framework.">amgcl/amgcl.hpp</a>&gt;</span></div>
+<div class="line"><span class="comment">// It will use the following components:</span></div>
 <div class="line"></div>
-<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Iterations: &quot;</span> &lt;&lt; std::get&lt;0&gt;(conv) &lt;&lt; std::endl</div>
-<div class="line">          &lt;&lt; <span class="stringliteral">&quot;Error:      &quot;</span> &lt;&lt; std::get&lt;1&gt;(conv) &lt;&lt; std::endl;</div>
-</div><!-- fragment --><p>Using the AMG as a preconditioner with a Krylov subspace method like conjugate gradients works even better: </p>
-<div class="fragment"><div class="line"><span class="comment">// Eigen::VectorXd rhs, x;</span></div>
+<div class="line"><span class="comment">// Interpolation scheme based on smoothed aggregation.</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="interp__smoothed__aggr_8hpp.html" title="Smoothed aggregates-based interpolation scheme.">amgcl/interp_smoothed_aggr.hpp</a>&gt;</span></div>
+<div class="line"><span class="comment">// Aggregates will be constructed with plain aggregation:</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="aggr__plain_8hpp.html" title="Plain aggregation.">amgcl/aggr_plain.hpp</a>&gt;</span></div>
+<div class="line"><span class="comment">// VexCL will be used as a backend:</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors.">amgcl/level_vexcl.hpp</a>&gt;</span></div>
+<div class="line"><span class="comment">// The definition of conjugate gradient method:</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="cg_8hpp.html" title="Conjugate Gradient method.">amgcl/cg.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> conv = <a class="code" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve</a>(A, rhs, amg, x, <a class="code" href="structamgcl_1_1cg__tag.html" title="Control parameters for Conjugate Gradient method.">amgcl::cg_tag</a>());</div>
-</div><!-- fragment --><p>Types of right-hand side and solution vectors should be compatible with the level type used for construction of the AMG hierarchy. For example, if <a class="el" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">amgcl::level::vexcl</a> is used as a storage backend, then vex::SpMat&lt;&gt; and vex::vector&lt;&gt; types have to be used when solving:</p>
-<div class="fragment"><div class="line"><span class="comment">// vex::SpMat&lt;double,int&gt; Agpu;</span></div>
-<div class="line"><span class="comment">// vex::vector&lt;double&gt; rhs, x;</span></div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="comment">// VexCL context initialization (let&#39;s use all GPUs that support double precision):</span></div>
+<div class="line">    vex::Context ctx( vex::Filter::Type(CL_DEVICE_TYPE_GPU) &amp;&amp; vex::Filter::DoublePrecision );</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> conv = <a class="code" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve</a>(Agpu, rhs, amg, x, <a class="code" href="structamgcl_1_1cg__tag.html" title="Control parameters for Conjugate Gradient method.">amgcl::cg_tag</a>());</div>
-</div><!-- fragment --><h1><a class="anchor" id="install"></a>
+<div class="line">    <span class="comment">// Here, the system matrix and right-hand side are somehow constructed. The</span></div>
+<div class="line">    <span class="comment">// system matrix data is stored is compressed row storage format in vectors</span></div>
+<div class="line">    <span class="comment">// row, col, and val.</span></div>
+<div class="line">    <span class="keywordtype">int</span> size;</div>
+<div class="line">    std::vector&lt;int&gt;    row, col;</div>
+<div class="line">    std::vector&lt;double&gt; val, rhs;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// We wrap the matrix data into amgcl-compatible type.</span></div>
+<div class="line">    <span class="comment">// No data is copied here:</span></div>
+<div class="line">    <span class="keyword">auto</span> A = <a class="code" href="namespaceamgcl_1_1sparse.html#a899b7e41ad18cfb005c48d9d8165b511" title="Maps Eigen sparse matrix to format supported by amgcl.">amgcl::sparse::map</a>(size, size, row.data(), col.data(), val.data());</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// The AMG builder type:</span></div>
+<div class="line">    <span class="keyword">typedef</span> <a class="code" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a>&lt;</div>
+<div class="line">        double, int,</div>
+<div class="line">        <a class="code" href="structamgcl_1_1interp_1_1smoothed__aggregation.html" title="Smoothed aggregation-based interpolation scheme.">amgcl::interp::smoothed_aggregation&lt;amgcl::aggr::plain&gt;</a>,</div>
+<div class="line">        <a class="code" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">amgcl::level::vexcl</a></div>
+<div class="line">    &gt; AMG;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// The parameters. Most of the parameters have some reasonable defaults.</span></div>
+<div class="line">    <span class="comment">// VexCL backend needs to know what context to use:</span></div>
+<div class="line">    <span class="keyword">typename</span> AMG::params prm;</div>
+<div class="line">    prm.level.ctx = &amp;ctx;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Here we construct the hierarchy:</span></div>
+<div class="line">    AMG amg(A, prm);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Now let&#39;s solve the system of equations. We need to transfer matrix,</span></div>
+<div class="line">    <span class="comment">// right-hand side, and initial approximation to GPUs. The matrix part may</span></div>
+<div class="line">    <span class="comment">// be omitted though, since AMG already has it as part of the hierarchy:</span></div>
+<div class="line">    std::vector&lt;double&gt; x(size, 0.0);</div>
+<div class="line"></div>
+<div class="line">    vex::vector&lt;double&gt; f(ctx.queue(), rhs);</div>
+<div class="line">    vex::vector&lt;double&gt; u(ctx.queue(), x);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Call AMG-preconditioned CG method:</span></div>
+<div class="line">    <span class="keyword">auto</span> cnv = <a class="code" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve</a>(amg.top_matrix(), f, amg, u, <a class="code" href="structamgcl_1_1cg__tag.html" title="Control parameters for Conjugate Gradient method.">amgcl::cg_tag</a>());</div>
+<div class="line"></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Iterations: &quot;</span> &lt;&lt; std::get&lt;0&gt;(cnv) &lt;&lt; std::endl</div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot;Error:      &quot;</span> &lt;&lt; std::get&lt;1&gt;(cnv) &lt;&lt; std::endl;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Copy the solution back to host:</span></div>
+<div class="line">    vex::copy(u, x);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>The following command line would compile the example: </p>
+<pre class="fragment">g++ -o example -std=c++0x -O3 example.cpp -I&lt;path/to/vexcl&gt; -I&lt;path/to/amgcl&gt; -lOpenCL -lboost_chrono
+</pre><p>The C++11 support is enabled here (by -std=c++0x flag) because it is required by VexCL library. amgcl relies on Boost instead (hence the need to link with boost_chrono library).</p>
+<h1><a class="anchor" id="install"></a>
 Installation</h1>
 <p>The library is header-only, so there is nothing to compile or link to. You just need to copy amgcl folder somewhere and tell your compiler to scan it for include files.</p>
 <h1><a class="anchor" id="references"></a>
