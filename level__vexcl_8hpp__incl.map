@@ -1,4 +1,6 @@
 <map id="level_vexcl.hpp" name="level_vexcl.hpp">
-<area shape="rect" id="node3" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="69,80,248,107"/>
-<area shape="rect" id="node5" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="273,80,407,107"/>
+<area shape="rect" id="node3" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="168,80,347,107"/>
+<area shape="rect" id="node5" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="371,80,505,107"/>
+<area shape="rect" id="node21" href="$operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="803,80,1001,107"/>
+<area shape="rect" id="node25" href="$common_8hpp.html" title="Common definitions for amgcl." alt="" coords="901,155,1051,181"/>
 </map>

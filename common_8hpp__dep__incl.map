@@ -4,4 +4,5 @@
 <area shape="rect" id="node7" href="$level__cuda_8hpp.html" title="Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution..." alt="" coords="223,80,339,107"/>
 <area shape="rect" id="node9" href="$operations__eigen_8hpp.html" title="Adaptors for Eigen types." alt="" coords="364,80,523,107"/>
 <area shape="rect" id="node11" href="$operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="548,80,705,107"/>
+<area shape="rect" id="node13" href="$level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="567,155,685,181"/>
 </map>
