@@ -49,6 +49,7 @@
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">level_cuda.hpp File Reference</div>  </div>
@@ -80,13 +81,19 @@
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix.html">amgcl::sparse::cuda_matrix&lt; value_type &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around CUSPARSE matrix in Hybrid format.  <a href="classamgcl_1_1sparse_1_1cuda__matrix.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcuda__matrix.html">cuda_matrix&lt; value_type, cuda_matrix_format &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around CUSPARSE matrix.  <a href="classcuda__matrix.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1cuda.html">amgcl::level::cuda</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01CUDA__MATRIX__HYB_01_4.html">amgcl::sparse::cuda_matrix&lt; value_type, CUDA_MATRIX_HYB &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around CUSPARSE matrix in Hybrid format.  <a href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01CUDA__MATRIX__HYB_01_4.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01CUDA__MATRIX__CRS_01_4.html">amgcl::sparse::cuda_matrix&lt; value_type, CUDA_MATRIX_CRS &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around CUSPARSE matrix in CRS format.  <a href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01CUDA__MATRIX__CRS_01_4.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1cuda.html">amgcl::level::cuda&lt; format &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thrust/CUSPARSE based AMG hierarchy.  <a href="structamgcl_1_1level_1_1cuda.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1level_1_1cuda_1_1params.html">amgcl::level::cuda::params</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1level_1_1cuda_1_1params.html">amgcl::level::cuda&lt; format &gt;::params</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for CUSPARSE-based level storage scheme.  <a href="classamgcl_1_1level_1_1cuda_1_1params.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -102,12 +109,20 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceamgcl_1_1level"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage schemes for levels of AMG hierarchy. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a83ea2c9bcd6450f9e5e1cdafbd06bbf8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8">amgcl::sparse::cuda_matrix_format</a> { <a class="el" href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8aaa92546764bb9f5c9c00b2d8ef4bf111">amgcl::sparse::CUDA_MATRIX_CRS</a>, 
+<a class="el" href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8aab8370f1b98d775a2592c56284e36f68">amgcl::sparse::CUDA_MATRIX_HYB</a>
+ }</td></tr>
+<tr class="memdesc:a83ea2c9bcd6450f9e5e1cdafbd06bbf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible matrix storage formats.  <a href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8">More...</a><br/></td></tr>
+<tr class="separator:a83ea2c9bcd6450f9e5e1cdafbd06bbf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga58d8f9bddfa886ea6702f00f95e7e8aa"><td class="memTemplParams" colspan="2">template&lt;class value_t , class precond &gt; </td></tr>
-<tr class="memitem:ga58d8f9bddfa886ea6702f00f95e7e8aa"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#ga58d8f9bddfa886ea6702f00f95e7e8aa">amgcl::solve</a> (const sparse::cuda_matrix&lt; value_t &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, cg_tag prm=cg_tag())</td></tr>
-<tr class="memdesc:ga58d8f9bddfa886ea6702f00f95e7e8aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method for Thrust/CUSPARSE combination.  <a href="group__iterative.html#ga58d8f9bddfa886ea6702f00f95e7e8aa"></a><br/></td></tr>
-<tr class="separator:ga58d8f9bddfa886ea6702f00f95e7e8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec3820ab42255e2ed1afdab96f7bd1b1"><td class="memTemplParams" colspan="2">template&lt;class value_t , sparse::cuda_matrix_format format, class precond &gt; </td></tr>
+<tr class="memitem:gaec3820ab42255e2ed1afdab96f7bd1b1"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gaec3820ab42255e2ed1afdab96f7bd1b1">amgcl::solve</a> (const sparse::cuda_matrix&lt; value_t, format &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, cg_tag prm=cg_tag())</td></tr>
+<tr class="memdesc:gaec3820ab42255e2ed1afdab96f7bd1b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method for Thrust/CUSPARSE combination.  <a href="group__iterative.html#gaec3820ab42255e2ed1afdab96f7bd1b1"></a><br/></td></tr>
+<tr class="separator:gaec3820ab42255e2ed1afdab96f7bd1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution for now. </p>

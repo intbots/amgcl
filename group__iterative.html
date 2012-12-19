@@ -55,10 +55,10 @@ value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" va
 value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gac8e0c3c1ec4fdac25537aa7d20c008fd">amgcl::solve</a> (const matrix &amp;A, const vector &amp;rhs, const precond &amp;P, vector &amp;x, cg_tag prm=cg_tag())</td></tr>
 <tr class="memdesc:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method.  <a href="#gac8e0c3c1ec4fdac25537aa7d20c008fd"></a><br/></td></tr>
 <tr class="separator:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga58d8f9bddfa886ea6702f00f95e7e8aa"><td class="memTemplParams" colspan="2">template&lt;class value_t , class precond &gt; </td></tr>
-<tr class="memitem:ga58d8f9bddfa886ea6702f00f95e7e8aa"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#ga58d8f9bddfa886ea6702f00f95e7e8aa">amgcl::solve</a> (const sparse::cuda_matrix&lt; value_t &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, cg_tag prm=cg_tag())</td></tr>
-<tr class="memdesc:ga58d8f9bddfa886ea6702f00f95e7e8aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method for Thrust/CUSPARSE combination.  <a href="#ga58d8f9bddfa886ea6702f00f95e7e8aa"></a><br/></td></tr>
-<tr class="separator:ga58d8f9bddfa886ea6702f00f95e7e8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec3820ab42255e2ed1afdab96f7bd1b1"><td class="memTemplParams" colspan="2">template&lt;class value_t , sparse::cuda_matrix_format format, class precond &gt; </td></tr>
+<tr class="memitem:gaec3820ab42255e2ed1afdab96f7bd1b1"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gaec3820ab42255e2ed1afdab96f7bd1b1">amgcl::solve</a> (const sparse::cuda_matrix&lt; value_t, format &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, cg_tag prm=cg_tag())</td></tr>
+<tr class="memdesc:gaec3820ab42255e2ed1afdab96f7bd1b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method for Thrust/CUSPARSE combination.  <a href="#gaec3820ab42255e2ed1afdab96f7bd1b1"></a><br/></td></tr>
+<tr class="separator:gaec3820ab42255e2ed1afdab96f7bd1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
@@ -186,16 +186,16 @@ template&lt;class matrix , class vector , class precond &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ga58d8f9bddfa886ea6702f00f95e7e8aa"></a>
+<a class="anchor" id="gaec3820ab42255e2ed1afdab96f7bd1b1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class value_t , class precond &gt; </div>
+template&lt;class value_t , sparse::cuda_matrix_format format, class precond &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::pair&lt; int, value_t &gt; amgcl::solve </td>
           <td>(</td>
-          <td class="paramtype">const sparse::cuda_matrix&lt; value_t &gt; &amp;&#160;</td>
+          <td class="paramtype">const sparse::cuda_matrix&lt; value_t, format &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
@@ -243,8 +243,6 @@ template&lt;class value_t , class precond &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pair containing number of iterations made and precision achieved. </dd></dl>
-
-<p>References <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix.html#a6e362a46686fb22cd6395ffda45fd145">amgcl::sparse::cuda_matrix&lt; value_type &gt;::mul()</a>.</p>
 
 </div>
 </div>
