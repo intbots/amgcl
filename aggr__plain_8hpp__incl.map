@@ -1,4 +1,4 @@
 <map id="aggr_plain.hpp" name="aggr_plain.hpp">
-<area shape="rect" id="node9" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="273,80,407,107"/>
-<area shape="rect" id="node22" href="$profiler_8hpp.html" title="Profiler class." alt="" coords="888,80,1023,107"/>
+<area shape="rect" id="node9" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="298,80,432,107"/>
+<area shape="rect" id="node22" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling." alt="" coords="457,80,585,107"/>
 </map>
