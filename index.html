@@ -111,8 +111,8 @@ Overview</h1>
 <div class="line">    vex::copy(u, x);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The following command line would compile the example: </p>
-<pre class="fragment">g++ -o example -std=c++0x -O3 example.cpp -I&lt;path/to/vexcl&gt; -I&lt;path/to/amgcl&gt; -lOpenCL -lboost_chrono
-</pre><p>The C++11 support is enabled here (by -std=c++0x flag) because it is required by VexCL library. amgcl relies on Boost instead.</p>
+<pre class="fragment">g++ -o example -std=c++0x -O3 -fopenmp example.cpp -I&lt;path/to/vexcl&gt; -I&lt;path/to/amgcl&gt; -lOpenCL -lboost_chrono
+</pre><p>The C++11 support is enabled here (by -std=c++0x flag) because it is required by VexCL library. amgcl relies on Boost instead. Also note the use of <code>-fopenmp</code> switch. It enables an OpenMP-based parallelization of the setup stage.</p>
 <h1><a class="anchor" id="install"></a>
 Installation</h1>
 <p>The library is header-only, so there is nothing to compile or link to. You just need to copy amgcl folder somewhere and tell your compiler to scan it for include files.</p>
