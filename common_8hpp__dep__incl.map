@@ -3,7 +3,7 @@
 <area shape="rect" id="node5" href="$cg_8hpp.html" title="Conjugate Gradient method." alt="" coords="134,80,199,107"/>
 <area shape="rect" id="node7" href="$level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="224,80,333,107"/>
 <area shape="rect" id="node9" href="$level__cuda_8hpp.html" title="Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution..." alt="" coords="357,80,473,107"/>
-<area shape="rect" id="node11" href="$operations__eigen_8hpp.html" title="Adaptors for Eigen types." alt="" coords="499,80,657,107"/>
-<area shape="rect" id="node13" href="$operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="683,80,840,107"/>
-<area shape="rect" id="node15" href="$level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="702,155,820,181"/>
+<area shape="rect" id="node11" href="$operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="499,80,656,107"/>
+<area shape="rect" id="node15" href="$operations__eigen_8hpp.html" title="Adaptors for Eigen types." alt="" coords="680,80,839,107"/>
+<area shape="rect" id="node13" href="$level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="518,155,636,181"/>
 </map>

@@ -64,7 +64,7 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="common_8hpp__dep__incl.png" border="0" usemap="#common_8hppdep" alt=""/></div>
 <map name="common_8hppdep" id="common_8hppdep">
-<area shape="rect" id="node3" href="bicgstab_8hpp.html" title="Stabilized BiConjugate Gradient method." alt="" coords="5,80,109,107"/><area shape="rect" id="node5" href="cg_8hpp.html" title="Conjugate Gradient method." alt="" coords="134,80,199,107"/><area shape="rect" id="node7" href="level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="224,80,333,107"/><area shape="rect" id="node9" href="level__cuda_8hpp.html" title="Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution..." alt="" coords="357,80,473,107"/><area shape="rect" id="node11" href="operations__eigen_8hpp.html" title="Adaptors for Eigen types." alt="" coords="499,80,657,107"/><area shape="rect" id="node13" href="operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="683,80,840,107"/><area shape="rect" id="node15" href="level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="702,155,820,181"/></map>
+<area shape="rect" id="node3" href="bicgstab_8hpp.html" title="Stabilized BiConjugate Gradient method." alt="" coords="5,80,109,107"/><area shape="rect" id="node5" href="cg_8hpp.html" title="Conjugate Gradient method." alt="" coords="134,80,199,107"/><area shape="rect" id="node7" href="level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="224,80,333,107"/><area shape="rect" id="node9" href="level__cuda_8hpp.html" title="Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution..." alt="" coords="357,80,473,107"/><area shape="rect" id="node11" href="operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="499,80,656,107"/><area shape="rect" id="node15" href="operations__eigen_8hpp.html" title="Adaptors for Eigen types." alt="" coords="680,80,839,107"/><area shape="rect" id="node13" href="level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="518,155,636,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -84,14 +84,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a306d1669ef2d19fea41ff244cbe88406"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>AMGCL_REGISTER_RELAX_SCHEME</b>(level, name)</td></tr>
-<tr class="separator:a306d1669ef2d19fea41ff244cbe88406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58515ace732a930c03b419fb320efb8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>AMGCL_REGISTER_RELAX_SCHEME</b>(level_name, relax_name)</td></tr>
+<tr class="separator:a58515ace732a930c03b419fb320efb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Common definitions for amgcl. </p>
 <dl class="section author"><dt>Author</dt><dd>Denis Demidov <a href="#" onclick="location.href='mai'+'lto:'+'dde'+'mi'+'dov'+'@k'+'su.'+'ru'; return false;">ddemi<span style="display: none;">.nosp@m.</span>dov@<span style="display: none;">.nosp@m.</span>ksu.r<span style="display: none;">.nosp@m.</span>u</a> </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a306d1669ef2d19fea41ff244cbe88406"></a>
+<a class="anchor" id="a58515ace732a930c03b419fb320efb8c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -99,13 +99,13 @@ Macros</h2></td></tr>
           <td class="memname">#define AMGCL_REGISTER_RELAX_SCHEME</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">level, </td>
+          <td class="paramname">level_name, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">name&#160;</td>
+          <td class="paramname">relax_name&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -114,8 +114,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span>level ## _relax_scheme&lt;relax::name&gt; { \</div>
-<div class="line">    typedef level ## _ ## name type; \</div>
+<b>Value:</b><div class="fragment"><div class="line"> \</div>
+<div class="line">template &lt;&gt; <span class="keyword">struct </span>level_name ## _relax_scheme&lt;relax::relax_name&gt; { \</div>
+<div class="line">    typedef level_name ## _ ## relax_name type; \</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>

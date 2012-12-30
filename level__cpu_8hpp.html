@@ -49,8 +49,7 @@
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">level_cpu.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -77,6 +76,18 @@
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1cpu__relax__scheme_3_01relax_1_1damped__jacobi_01_4.html">amgcl::level::cpu_relax_scheme&lt; relax::damped_jacobi &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7ea381a693d627a0c5fd752fef4d7c4b867" title="Damped Jacobi.">relax::damped_jacobi</a> scheme for <a class="el" href="structamgcl_1_1level_1_1cpu.html" title="CPU-based AMG hierarchy.">level::cpu</a>  <a href="structamgcl_1_1level_1_1cpu__relax__scheme_3_01relax_1_1damped__jacobi_01_4.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1cpu__relax__scheme_3_01relax_1_1gauss__seidel_01_4.html">amgcl::level::cpu_relax_scheme&lt; relax::gauss_seidel &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7ea2277d702891ad64c750a0a3d855c2ffd" title="Gauss-Seidel.">relax::gauss_seidel</a> scheme for <a class="el" href="structamgcl_1_1level_1_1cpu.html" title="CPU-based AMG hierarchy.">level::cpu</a>  <a href="structamgcl_1_1level_1_1cpu__relax__scheme_3_01relax_1_1gauss__seidel_01_4.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1cpu__relax__scheme_3_01relax_1_1ilu_01_4.html">amgcl::level::cpu_relax_scheme&lt; relax::ilu &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7ea1430e8254679a840724246e6c43c9a1e" title="Incomplete LU decomposition.">relax::ilu</a> scheme for <a class="el" href="structamgcl_1_1level_1_1cpu.html" title="CPU-based AMG hierarchy.">level::cpu</a>  <a href="structamgcl_1_1level_1_1cpu__relax__scheme_3_01relax_1_1ilu_01_4.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1cpu__relax__scheme_3_01relax_1_1spai0_01_4.html">amgcl::level::cpu_relax_scheme&lt; relax::spai0 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7ea95caa8c4581c15112f95c51d311e9051" title="SPAI-0 algorithm.">relax::spai0</a> scheme for <a class="el" href="structamgcl_1_1level_1_1cpu.html" title="CPU-based AMG hierarchy.">level::cpu</a>  <a href="structamgcl_1_1level_1_1cpu__relax__scheme_3_01relax_1_1spai0_01_4.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1cpu.html">amgcl::level::cpu&lt; Relaxation &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU-based AMG hierarchy.  <a href="structamgcl_1_1level_1_1cpu.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,21 +108,6 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:af4a0802c458ef10a9bcd5ac97e2f36d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>GS_INNER_LOOP</b></td></tr>
 <tr class="separator:af4a0802c458ef10a9bcd5ac97e2f36d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a2a5bb382a479df25c1b9206f74eb1d41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a5bb382a479df25c1b9206f74eb1d41"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>amgcl::level::AMGCL_REGISTER_RELAX_SCHEME</b> (cpu, damped_jacobi)</td></tr>
-<tr class="separator:a2a5bb382a479df25c1b9206f74eb1d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05f84c4ac3daf48d6873c99d0d281952"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05f84c4ac3daf48d6873c99d0d281952"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>amgcl::level::AMGCL_REGISTER_RELAX_SCHEME</b> (cpu, gauss_seidel)</td></tr>
-<tr class="separator:a05f84c4ac3daf48d6873c99d0d281952"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13ecf89319b43658aec684c6133235ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13ecf89319b43658aec684c6133235ee"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>amgcl::level::AMGCL_REGISTER_RELAX_SCHEME</b> (cpu, ilu)</td></tr>
-<tr class="separator:a13ecf89319b43658aec684c6133235ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f15e1cc8003a441aecf24959ac428dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f15e1cc8003a441aecf24959ac428dd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>amgcl::level::AMGCL_REGISTER_RELAX_SCHEME</b> (cpu, spai0)</td></tr>
-<tr class="separator:a6f15e1cc8003a441aecf24959ac428dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Level of an AMG hierarchy for use with arrays located in main (CPU) memory. </p>
