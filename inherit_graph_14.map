@@ -1,7 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structamgcl_1_1level_1_1params.html" title="Common parameters for level construction/solution." alt="" coords="5,111,160,137"/>
-<area shape="rect" id="node3" href="$structamgcl_1_1level_1_1cpu_1_1params.html" title="Parameters for CPU&#45;based level storage scheme." alt="" coords="219,5,357,46"/>
-<area shape="rect" id="node5" href="$classamgcl_1_1level_1_1cuda_1_1params.html" title="Parameters for CUSPARSE&#45;based level storage scheme." alt="" coords="212,70,364,111"/>
-<area shape="rect" id="node7" href="$structamgcl_1_1level_1_1vexcl_1_1params.html" title="Parameters for VexCL&#45;based level storage scheme." alt="" coords="219,135,357,177"/>
-<area shape="rect" id="node9" href="$structamgcl_1_1level_1_1viennacl_1_1params.html" title="Parameters for CPU&#45;based level storage scheme." alt="" coords="209,201,367,242"/>
+<area shape="rect" id="node1" href="$structamgcl_1_1level_1_1params.html" title="Common parameters for level construction/solution." alt="" coords="5,120,160,147"/>
+<area shape="rect" id="node3" href="$structamgcl_1_1level_1_1cpu_1_1params.html" title="Parameters for CPU&#45;based level storage scheme." alt="" coords="215,5,377,46"/>
+<area shape="rect" id="node5" href="$structamgcl_1_1level_1_1cuda_1_1params.html" title="Parameters for CUSPARSE&#45;based level storage scheme." alt="" coords="218,69,374,125"/>
+<area shape="rect" id="node7" href="$structamgcl_1_1level_1_1vexcl_1_1params.html" title="Parameters for VexCL&#45;based level storage scheme." alt="" coords="209,149,383,190"/>
+<area shape="rect" id="node9" href="$structamgcl_1_1level_1_1viennacl_1_1params.html" title="Parameters for CPU&#45;based level storage scheme." alt="" coords="211,213,381,269"/>
 </map>

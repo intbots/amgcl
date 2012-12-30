@@ -48,7 +48,8 @@
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">level_vexcl.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -58,6 +59,7 @@
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="level__params_8hpp.html">amgcl/level_params.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="spmat_8hpp.html">amgcl/spmat.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="spai_8hpp.html">amgcl/spai.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="operations__vexcl_8hpp.html">amgcl/operations_vexcl.hpp</a>&gt;</code><br/>
 <code>#include &lt;vexcl/vexcl.hpp&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -67,15 +69,15 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="level__vexcl_8hpp__incl.png" border="0" usemap="#level__vexcl_8hpp" alt=""/></div>
 <map name="level__vexcl_8hpp" id="level__vexcl_8hpp">
-<area shape="rect" id="node3" href="level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="168,80,347,107"/><area shape="rect" id="node5" href="spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="371,80,505,107"/><area shape="rect" id="node21" href="operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="803,80,1001,107"/><area shape="rect" id="node25" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="901,155,1051,181"/></map>
+<area shape="rect" id="node3" href="level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="124,80,303,107"/><area shape="rect" id="node5" href="spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="273,155,407,181"/><area shape="rect" id="node21" href="spai_8hpp.html" title="Compute Sparse Approximate Inverse for a given matrix." alt="" coords="378,80,496,107"/><area shape="rect" id="node24" href="operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="521,80,720,107"/><area shape="rect" id="node28" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="547,155,697,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1vexcl.html">amgcl::level::vexcl</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1vexcl.html">amgcl::level::vexcl&lt; Relaxation &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">VexCL-based AMG hierarchy.  <a href="structamgcl_1_1level_1_1vexcl.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1vexcl_1_1params.html">amgcl::level::vexcl::params</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1vexcl_1_1params.html">amgcl::level::vexcl&lt; Relaxation &gt;::params</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for VexCL-based level storage scheme.  <a href="structamgcl_1_1level_1_1vexcl_1_1params.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -87,6 +89,15 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamgcl_1_1level"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1level.html">amgcl::level</a></td></tr>
 <tr class="memdesc:namespaceamgcl_1_1level"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage schemes for levels of AMG hierarchy. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:adafa040c301aba7d757fe49239f8f741"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adafa040c301aba7d757fe49239f8f741"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>amgcl::level::AMGCL_REGISTER_RELAX_SCHEME</b> (vexcl, damped_jacobi)</td></tr>
+<tr class="separator:adafa040c301aba7d757fe49239f8f741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a52d7cf3585aed81f17dae2be7409d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1a52d7cf3585aed81f17dae2be7409d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>amgcl::level::AMGCL_REGISTER_RELAX_SCHEME</b> (vexcl, spai0)</td></tr>
+<tr class="separator:af1a52d7cf3585aed81f17dae2be7409d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Level of an AMG hierarchy for use with VexCL vectors. </p>

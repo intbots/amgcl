@@ -1,4 +1,6 @@
 <map id="level_cpu.hpp" name="level_cpu.hpp">
-<area shape="rect" id="node9" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="564,80,743,107"/>
-<area shape="rect" id="node11" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="259,80,393,107"/>
+<area shape="rect" id="node9" href="$common_8hpp.html" title="Common definitions for amgcl." alt="" coords="557,80,707,107"/>
+<area shape="rect" id="node11" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="732,80,911,107"/>
+<area shape="rect" id="node13" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="306,155,440,181"/>
+<area shape="rect" id="node27" href="$spai_8hpp.html" title="Compute Sparse Approximate Inverse for a given matrix." alt="" coords="217,80,335,107"/>
 </map>

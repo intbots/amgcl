@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>amgcl: amgcl::level::vexcl Struct Reference</title>
+<title>amgcl: amgcl::level::vexcl&lt; Relaxation &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -50,7 +50,7 @@
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">amgcl::level::vexcl Struct Reference<div class="ingroups"><a class="el" href="group__levels.html">Level storage backends</a></div></div>  </div>
+<div class="title">amgcl::level::vexcl&lt; Relaxation &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__levels.html">Level storage backends</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -66,8 +66,17 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>VexCL-based AMG hierarchy. </p>
-<p>Level of an AMG hierarchy for use with VexCL vectors. Uses OpenCL technology for acceleration and is able to run on OpenCL-compatible devices (GPUs or CPUs). </p>
+<div class="textblock"><h3>template&lt;relax::scheme Relaxation = relax::damped_jacobi&gt;<br/>
+struct amgcl::level::vexcl&lt; Relaxation &gt;</h3>
+
+<p>VexCL-based AMG hierarchy. </p>
+<p>Level of an AMG hierarchy for use with VexCL vectors. Uses OpenCL technology for acceleration and is able to run on OpenCL-compatible devices (GPUs or CPUs).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Relaxation</td><td>Relaxation <a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7e">scheme</a> (smoother) to use inside V-cycles. </td></tr>
+  </table>
+  </dd>
+</dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="level__vexcl_8hpp.html">level_vexcl.hpp</a></li>
 </ul>

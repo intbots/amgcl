@@ -78,11 +78,11 @@ Overview</h1>
 <div class="line">    <span class="comment">// No data is copied here:</span></div>
 <div class="line">    <span class="keyword">auto</span> A = <a class="code" href="namespaceamgcl_1_1sparse.html#a899b7e41ad18cfb005c48d9d8165b511" title="Maps Eigen sparse matrix to format supported by amgcl.">amgcl::sparse::map</a>(size, size, row.data(), col.data(), val.data());</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// The AMG builder type:</span></div>
+<div class="line">    <span class="comment">// The AMG builder type. Note the use of damped Jacobi relaxation (smoothing) on each level.</span></div>
 <div class="line">    <span class="keyword">typedef</span> <a class="code" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a>&lt;</div>
 <div class="line">        double, int,</div>
 <div class="line">        <a class="code" href="structamgcl_1_1interp_1_1smoothed__aggregation.html" title="Smoothed aggregation-based interpolation scheme.">amgcl::interp::smoothed_aggregation&lt;amgcl::aggr::plain&gt;</a>,</div>
-<div class="line">        <a class="code" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">amgcl::level::vexcl</a></div>
+<div class="line">        <a class="code" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">amgcl::level::vexcl&lt;amgcl::relax::damped_jacobi&gt;</a></div>
 <div class="line">    &gt; AMG;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// The parameters. Most of the parameters have some reasonable defaults.</span></div>
@@ -123,7 +123,8 @@ References</h1>
 <li><a class="anchor" id="Stuben_1999"></a><em>K. Stuben,</em> Algebraic multigrid (AMG): an introduction with applications, Journal of Computational and Applied Mathematics, 2001, Vol. 128, Pp. 281-309.</li>
 <li><a class="anchor" id="Vanek_1996"></a><em>P. Vanek, J. Mandel, M. Brezina,</em> Algebraic multigrid by smoothed aggregation for second and fourth order elliptic problems, Computing 56, 1996, Pp. 179-196.</li>
 <li><a class="anchor" id="Notay_2008"></a><em>Y. Notay, P. Vassilevski,</em> Recursive Krylov-based multigrid cycles, Numer. Linear Algebra Appl. 2008; 15:473-487.</li>
-<li><a class="anchor" id="Templates_1994"></a><em>R. Barrett, M. Berry, T. F. Chan et al.</em> Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods, 2nd Edition, SIAM, Philadelphia, PA, 1994. </li>
+<li><a class="anchor" id="Templates_1994"></a><em>R. Barrett, M. Berry, T. F. Chan et al.</em> Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods, 2nd Edition, SIAM, Philadelphia, PA, 1994.</li>
+<li><a class="anchor" id="spai_2002"></a><em>O. Broeker, M. Grote,</em> Sparse approximate inverse smoothers for geometric and algebraic multigrid, Applied Numerical Mathematics, Volume 41, Issue 1, April 2002, Pages 61–80. </li>
 </ol>
 </div></div><!-- contents -->
 <!-- start footer part -->

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>amgcl: amgcl::level::cuda&lt; format &gt; Struct Template Reference</title>
+<title>amgcl: amgcl::level::cuda&lt; Format, Relaxation &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -52,7 +52,7 @@
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structamgcl_1_1level_1_1cuda-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">amgcl::level::cuda&lt; format &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__levels.html">Level storage backends</a></div></div>  </div>
+<div class="title">amgcl::level::cuda&lt; Format, Relaxation &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__levels.html">Level storage backends</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -63,23 +63,30 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1level_1_1cuda_1_1params.html">params</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for CUSPARSE-based level storage scheme.  <a href="classamgcl_1_1level_1_1cuda_1_1params.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1level_1_1cuda_1_1params.html">params</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for CUSPARSE-based level storage scheme.  <a href="structamgcl_1_1level_1_1cuda_1_1params.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a543342ff6fcd99cbaebcd8cfe2e99444"><td class="memTemplParams" colspan="2"><a class="anchor" id="a543342ff6fcd99cbaebcd8cfe2e99444"></a>
+<tr class="memitem:aef3b01818c237cd0be2917b464503405"><td class="memTemplParams" colspan="2"><a class="anchor" id="aef3b01818c237cd0be2917b464503405"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a543342ff6fcd99cbaebcd8cfe2e99444"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>norm</b> (const thrust::device_vector&lt; T &gt; &amp;x)</td></tr>
-<tr class="separator:a543342ff6fcd99cbaebcd8cfe2e99444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef3b01818c237cd0be2917b464503405"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>norm</b> (const thrust::device_vector&lt; T &gt; &amp;x)</td></tr>
+<tr class="separator:aef3b01818c237cd0be2917b464503405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;sparse::cuda_matrix_format format = sparse::CUDA_MATRIX_HYB&gt;<br/>
-struct amgcl::level::cuda&lt; format &gt;</h3>
+<div class="textblock"><h3>template&lt;sparse::cuda_matrix_format Format = sparse::CUDA_MATRIX_HYB, relax::scheme Relaxation = relax::damped_jacobi&gt;<br/>
+struct amgcl::level::cuda&lt; Format, Relaxation &gt;</h3>
 
 <p>Thrust/CUSPARSE based AMG hierarchy. </p>
-<p>Level of an AMG hierarchy for use with Thrust/CUSPARSE data structures. Uses NVIDIA CUDA technology for acceleration. </p>
+<p>Level of an AMG hierarchy for use with Thrust/CUSPARSE data structures. Uses NVIDIA CUDA technology for acceleration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Format</td><td>Matrix storage <a class="el" href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8">format</a> to use on each level. </td></tr>
+    <tr><td class="paramname">Relaxation</td><td>Relaxation <a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7e">scheme</a> (smoother) to use inside V-cycles. </td></tr>
+  </table>
+  </dd>
+</dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="level__cuda_8hpp.html">level_cuda.hpp</a></li>
 </ul>
