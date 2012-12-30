@@ -66,14 +66,14 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;cl_matrix_format Format = CL_MATRIX_HYB, relax::scheme Relaxation = relax::damped_jacobi&gt;<br/>
+<div class="textblock"><h3>template&lt;gpu_matrix_format Format = GPU_MATRIX_HYB, relax::scheme Relaxation = relax::damped_jacobi&gt;<br/>
 struct amgcl::level::viennacl&lt; Format, Relaxation &gt;</h3>
 
 <p>ViennaCL-based AMG hierarchy. </p>
 <p>Level of an AMG hierarchy for use with ViennaCL vectors. ViennaCL provides several backends (OpenCL, CUDA, OpenMP) and is thus able to run on various hardware.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Format</td><td>Matrix storage <a class="el" href="namespaceamgcl_1_1level.html#a025c0ed46d5381edf1240347e6d3ca40">format</a> to use on each level. </td></tr>
+    <tr><td class="paramname">Format</td><td>Matrix storage <a class="el" href="namespaceamgcl.html#a476c4a8df7fc08337add90f93ddd9fe6">format</a> to use on each level. </td></tr>
     <tr><td class="paramname">Relaxation</td><td>Relaxation <a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7e">scheme</a> (smoother) to use inside V-cycles. </td></tr>
   </table>
   </dd>

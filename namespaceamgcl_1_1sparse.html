@@ -48,7 +48,6 @@
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">amgcl::sparse Namespace Reference</div>  </div>
@@ -60,11 +59,11 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01CUDA__MATRIX__HYB_01_4.html">cuda_matrix&lt; value_type, CUDA_MATRIX_HYB &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around CUSPARSE matrix in Hybrid format.  <a href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01CUDA__MATRIX__HYB_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__HYB_01_4.html">cuda_matrix&lt; value_type, GPU_MATRIX_HYB &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around CUSPARSE matrix in Hybrid format.  <a href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__HYB_01_4.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01CUDA__MATRIX__CRS_01_4.html">cuda_matrix&lt; value_type, CUDA_MATRIX_CRS &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around CUSPARSE matrix in CRS format.  <a href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01CUDA__MATRIX__CRS_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__CRS_01_4.html">cuda_matrix&lt; value_type, GPU_MATRIX_CRS &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around CUSPARSE matrix in CRS format.  <a href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__CRS_01_4.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1sparse_1_1viennacl__matrix__adapter.html">viennacl_matrix_adapter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides proxy matrix class that may be used with ViennaCL.  <a href="classamgcl_1_1sparse_1_1viennacl__matrix__adapter.html#details">More...</a><br/></td></tr>
@@ -81,14 +80,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html">matrix_map</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy for sparse matrix in CRS format that does not own its data.  <a href="structamgcl_1_1sparse_1_1matrix__map.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a83ea2c9bcd6450f9e5e1cdafbd06bbf8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8">cuda_matrix_format</a> { <a class="el" href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8aaa92546764bb9f5c9c00b2d8ef4bf111">CUDA_MATRIX_CRS</a>, 
-<a class="el" href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8aab8370f1b98d775a2592c56284e36f68">CUDA_MATRIX_HYB</a>
- }</td></tr>
-<tr class="memdesc:a83ea2c9bcd6450f9e5e1cdafbd06bbf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible matrix storage formats.  <a href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8">More...</a><br/></td></tr>
-<tr class="separator:a83ea2c9bcd6450f9e5e1cdafbd06bbf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -195,32 +186,7 @@ template&lt;class spmat &gt; </td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A set of routines to work with sparse matrices in CRS format. </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="a83ea2c9bcd6450f9e5e1cdafbd06bbf8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespaceamgcl_1_1sparse.html#a83ea2c9bcd6450f9e5e1cdafbd06bbf8">amgcl::sparse::cuda_matrix_format</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Possible matrix storage formats. </p>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="a83ea2c9bcd6450f9e5e1cdafbd06bbf8aaa92546764bb9f5c9c00b2d8ef4bf111"></a>CUDA_MATRIX_CRS</em>&nbsp;</td><td>
-<p>Compressed matrix. Fastest construction, slowest operation (on a GPU). Best suited for CPU compute devices. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a83ea2c9bcd6450f9e5e1cdafbd06bbf8aab8370f1b98d775a2592c56284e36f68"></a>CUDA_MATRIX_HYB</em>&nbsp;</td><td>
-<p>Hybrid ELL format. Best choice for general matrices on GPU compute devices. </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a83b6f56664a18dbad09bcac8e8d0bb1f"></a>
 <div class="memitem">
 <div class="memproto">
