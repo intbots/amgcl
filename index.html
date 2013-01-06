@@ -55,7 +55,7 @@ Overview</h1>
 <div class="line"><span class="comment">// It will use the following components:</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// Interpolation scheme based on smoothed aggregation.</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="interp__smoothed__aggr_8hpp.html" title="Smoothed aggregates-based interpolation scheme.">amgcl/interp_smoothed_aggr.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="interp__smoothed__aggr_8hpp.html" title="Interpolation scheme based on smoothed aggregation.">amgcl/interp_smoothed_aggr.hpp</a>&gt;</span></div>
 <div class="line"><span class="comment">// Aggregates will be constructed with plain aggregation:</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="aggr__plain_8hpp.html" title="Plain aggregation.">amgcl/aggr_plain.hpp</a>&gt;</span></div>
 <div class="line"><span class="comment">// VexCL will be used as a backend:</span></div>
@@ -81,7 +81,7 @@ Overview</h1>
 <div class="line">    <span class="comment">// The AMG builder type. Note the use of damped Jacobi relaxation (smoothing) on each level.</span></div>
 <div class="line">    <span class="keyword">typedef</span> <a class="code" href="classamgcl_1_1solver.html" title="Algebraic multigrid method.">amgcl::solver</a>&lt;</div>
 <div class="line">        double, int,</div>
-<div class="line">        <a class="code" href="structamgcl_1_1interp_1_1smoothed__aggregation.html" title="Smoothed aggregation-based interpolation scheme.">amgcl::interp::smoothed_aggregation&lt;amgcl::aggr::plain&gt;</a>,</div>
+<div class="line">        <a class="code" href="structamgcl_1_1interp_1_1smoothed__aggregation.html" title="Interpolation scheme based on smoothed aggregation.">amgcl::interp::smoothed_aggregation&lt;amgcl::aggr::plain&gt;</a>,</div>
 <div class="line">        <a class="code" href="structamgcl_1_1level_1_1vexcl.html" title="VexCL-based AMG hierarchy.">amgcl::level::vexcl&lt;amgcl::relax::damped_jacobi&gt;</a></div>
 <div class="line">    &gt; AMG;</div>
 <div class="line"></div>
@@ -124,7 +124,8 @@ References</h1>
 <li><a class="anchor" id="Vanek_1996"></a><em>P. Vanek, J. Mandel, M. Brezina,</em> Algebraic multigrid by smoothed aggregation for second and fourth order elliptic problems, Computing 56, 1996, Pp. 179-196.</li>
 <li><a class="anchor" id="Notay_2008"></a><em>Y. Notay, P. Vassilevski,</em> Recursive Krylov-based multigrid cycles, Numer. Linear Algebra Appl. 2008; 15:473-487.</li>
 <li><a class="anchor" id="Templates_1994"></a><em>R. Barrett, M. Berry, T. F. Chan et al.</em> Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods, 2nd Edition, SIAM, Philadelphia, PA, 1994.</li>
-<li><a class="anchor" id="spai_2002"></a><em>O. Broeker, M. Grote,</em> Sparse approximate inverse smoothers for geometric and algebraic multigrid, Applied Numerical Mathematics, Volume 41, Issue 1, April 2002, Pages 61–80. </li>
+<li><a class="anchor" id="spai_2002"></a><em>O. Broeker, M. Grote,</em> Sparse approximate inverse smoothers for geometric and algebraic multigrid, Applied Numerical Mathematics, Volume 41, Issue 1, April 2002, Pages 61–80.</li>
+<li><a class="anchor" id="Sala_2008"></a><em>M. Sala, R. Tuminaro,</em> A new Petrov-Galerkin smoothed aggregation preconditioner for nonsymmetric linear systems. SIAM J. Sci. Comput. 2008, Vol. 31, No.1, pp. 143-166. </li>
 </ol>
 </div></div><!-- contents -->
 <!-- start footer part -->

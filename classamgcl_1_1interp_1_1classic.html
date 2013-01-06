@@ -69,16 +69,18 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af8992a5d608d1513482766d1a72a8252"><td class="memTemplParams" colspan="2">template&lt;class value_t , class index_t &gt; </td></tr>
-<tr class="memitem:af8992a5d608d1513482766d1a72a8252"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, <br class="typebreak"/>
-index_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1interp_1_1classic.html#af8992a5d608d1513482766d1a72a8252">interp</a> (const <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, index_t &gt; &amp;A, const <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html">params</a> &amp;prm)</td></tr>
-<tr class="memdesc:af8992a5d608d1513482766d1a72a8252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes prolongation operator from a system matrix.  <a href="#af8992a5d608d1513482766d1a72a8252"></a><br/></td></tr>
-<tr class="separator:af8992a5d608d1513482766d1a72a8252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111ab2071c26b5998c283f50cf473a0f"><td class="memTemplParams" colspan="2">template&lt;class value_t , class index_t &gt; </td></tr>
+<tr class="memitem:a111ab2071c26b5998c283f50cf473a0f"><td class="memTemplItemLeft" align="right" valign="top">static std::pair<br class="typebreak"/>
+&lt; <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, <br class="typebreak"/>
+index_t &gt;, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a><br class="typebreak"/>
+&lt; value_t, index_t &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1interp_1_1classic.html#a111ab2071c26b5998c283f50cf473a0f">interp</a> (const <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, index_t &gt; &amp;A, const <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html">params</a> &amp;prm)</td></tr>
+<tr class="memdesc:a111ab2071c26b5998c283f50cf473a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes prolongation operator from a system matrix.  <a href="#a111ab2071c26b5998c283f50cf473a0f"></a><br/></td></tr>
+<tr class="separator:a111ab2071c26b5998c283f50cf473a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Direct interpolation scheme based on <a class="el" href="index.html#Stuben_1999">Stuben (1999)</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="af8992a5d608d1513482766d1a72a8252"></a>
+<a class="anchor" id="a111ab2071c26b5998c283f50cf473a0f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -88,7 +90,7 @@ template&lt;class value_t , class index_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt;value_t, index_t&gt; amgcl::interp::classic::interp </td>
+          <td class="memname">static std::pair&lt; <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt;value_t, index_t&gt;, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt;value_t, index_t&gt; &gt; amgcl::interp::classic::interp </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, index_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -122,7 +124,7 @@ template&lt;class value_t , class index_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>interpolation operator. </dd></dl>
 
-<p>References <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#aad880e3edf8394e5859b2921eb9a3b7f">amgcl::sparse::matrix&lt; value_t, index_t &gt;::col</a>, <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a6c1eaf6f36acfc387cb39e1536889971">amgcl::interp::classic::params::eps_tr</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#af2da80a495f3391da103c62e710c39a6">amgcl::sparse::matrix_inner_index()</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#ad3b1b82da7bb7a10db78004c22223900">amgcl::sparse::matrix_outer_index()</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#aa68796c2ee44e6f02d81efc5cbfa88b2">amgcl::sparse::matrix_rows()</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#a717d1e7044b8ecd2c991caeb9bf45d63">amgcl::sparse::matrix_values()</a>, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a810850ae9be13ae215fb4cc074ddb914">amgcl::sparse::matrix&lt; value_t, index_t &gt;::reserve()</a>, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a652b8065057718daf96ae5ab5a5dbd41">amgcl::sparse::matrix&lt; value_t, index_t &gt;::row</a>, <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a12bd0fbe4dc62825ff92e2d2303f69e9">amgcl::interp::classic::params::trunc_int</a>, and <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#ac80a139dcdaab82a36969a4041e13f82">amgcl::sparse::matrix&lt; value_t, index_t &gt;::val</a>.</p>
+<p>References <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#aad880e3edf8394e5859b2921eb9a3b7f">amgcl::sparse::matrix&lt; value_t, index_t &gt;::col</a>, <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a6c1eaf6f36acfc387cb39e1536889971">amgcl::interp::classic::params::eps_tr</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#af2da80a495f3391da103c62e710c39a6">amgcl::sparse::matrix_inner_index()</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#ad3b1b82da7bb7a10db78004c22223900">amgcl::sparse::matrix_outer_index()</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#aa68796c2ee44e6f02d81efc5cbfa88b2">amgcl::sparse::matrix_rows()</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#a717d1e7044b8ecd2c991caeb9bf45d63">amgcl::sparse::matrix_values()</a>, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a810850ae9be13ae215fb4cc074ddb914">amgcl::sparse::matrix&lt; value_t, index_t &gt;::reserve()</a>, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a3695a15502bedca9c38aab23da59a080">amgcl::sparse::matrix&lt; value_t, index_t &gt;::resize()</a>, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a652b8065057718daf96ae5ab5a5dbd41">amgcl::sparse::matrix&lt; value_t, index_t &gt;::row</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#a3b4c01feeebd2fb6777b6f82fc94a950">amgcl::sparse::transpose()</a>, <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a12bd0fbe4dc62825ff92e2d2303f69e9">amgcl::interp::classic::params::trunc_int</a>, and <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#ac80a139dcdaab82a36969a4041e13f82">amgcl::sparse::matrix&lt; value_t, index_t &gt;::val</a>.</p>
 
 </div>
 </div>

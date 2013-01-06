@@ -12,15 +12,15 @@
 \form#11:$\varepsilon_{str}=0.25$
 \form#12:$\varepsilon_{tr}$
 \form#13:$\varepsilon_{tr}=0.2$
-\form#14:$\omega$
-\form#15:$\tilde P$
-\form#16:$P$
-\form#17:\[P = \left( I - \omega D^{-1} A^F \right) \tilde P.\]
-\form#18:$A^F = (a_{ij}^F)$
-\form#19:\[ a_{ij}^F = \begin{cases} a_{ij} \quad \text{if} \; j \in N_i\\ 0 \quad \text{otherwise} \end{cases}, \quad \text{if}\; i \neq j, \quad a_{ii}^F = a_{ii} - \sum\limits_{j=1,j\neq i}^n \left(a_{ij} - a_{ij}^F \right), \]
-\form#20:$N_i$
-\form#21:$D$
-\form#22:$A^F$
-\form#23:\[|a_{ij}| \geq \varepsilon\sqrt{a_{ii} a_{jj}}\quad \text{with fixed} \quad \varepsilon = \varepsilon_{str} \left( \frac{1}{2} \right)^l,\]
-\form#24:$l$
+\form#14:\[|a_{ij}| \geq \varepsilon\sqrt{a_{ii} a_{jj}}\quad \text{with fixed} \quad \varepsilon = \varepsilon_{str} \left( \frac{1}{2} \right)^l,\]
+\form#15:$l$
+\form#16:$\omega$
+\form#17:$\tilde P$
+\form#18:$P$
+\form#19:\[P = \left( I - \omega D^{-1} A^F \right) \tilde P.\]
+\form#20:$A^F = (a_{ij}^F)$
+\form#21:\[ a_{ij}^F = \begin{cases} a_{ij} \quad \text{if} \; j \in N_i\\ 0 \quad \text{otherwise} \end{cases}, \quad \text{if}\; i \neq j, \quad a_{ii}^F = a_{ii} - \sum\limits_{j=1,j\neq i}^n \left(a_{ij} - a_{ij}^F \right), \]
+\form#22:$N_i$
+\form#23:$D$
+\form#24:$A^F$
 \form#25:\[y = \alpha A x + \beta y \]

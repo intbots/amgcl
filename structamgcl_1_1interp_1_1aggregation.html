@@ -69,11 +69,13 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad60e316fd0b71497bb89e5c473c9f720"><td class="memTemplParams" colspan="2">template&lt;class value_t , class index_t &gt; </td></tr>
-<tr class="memitem:ad60e316fd0b71497bb89e5c473c9f720"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, <br class="typebreak"/>
-index_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1aggregation.html#ad60e316fd0b71497bb89e5c473c9f720">interp</a> (const <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, index_t &gt; &amp;A, const <a class="el" href="structamgcl_1_1interp_1_1aggregation_1_1params.html">params</a> &amp;prm)</td></tr>
-<tr class="memdesc:ad60e316fd0b71497bb89e5c473c9f720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs coarse level by agregation.  <a href="#ad60e316fd0b71497bb89e5c473c9f720"></a><br/></td></tr>
-<tr class="separator:ad60e316fd0b71497bb89e5c473c9f720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3424d2cb7b69471aa7409ff9f0b1f9ac"><td class="memTemplParams" colspan="2">template&lt;class value_t , class index_t &gt; </td></tr>
+<tr class="memitem:a3424d2cb7b69471aa7409ff9f0b1f9ac"><td class="memTemplItemLeft" align="right" valign="top">static std::pair<br class="typebreak"/>
+&lt; <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, <br class="typebreak"/>
+index_t &gt;, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a><br class="typebreak"/>
+&lt; value_t, index_t &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1aggregation.html#a3424d2cb7b69471aa7409ff9f0b1f9ac">interp</a> (const <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, index_t &gt; &amp;A, const <a class="el" href="structamgcl_1_1interp_1_1aggregation_1_1params.html">params</a> &amp;prm)</td></tr>
+<tr class="memdesc:a3424d2cb7b69471aa7409ff9f0b1f9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs coarse level by aggregation.  <a href="#a3424d2cb7b69471aa7409ff9f0b1f9ac"></a><br/></td></tr>
+<tr class="separator:a3424d2cb7b69471aa7409ff9f0b1f9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class aggr_type&gt;<br/>
@@ -87,7 +89,7 @@ struct amgcl::interp::aggregation&lt; aggr_type &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ad60e316fd0b71497bb89e5c473c9f720"></a>
+<a class="anchor" id="a3424d2cb7b69471aa7409ff9f0b1f9ac"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -99,7 +101,7 @@ template&lt;class value_t , class index_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt;value_t, index_t&gt; <a class="el" href="structamgcl_1_1interp_1_1aggregation.html">amgcl::interp::aggregation</a>&lt; aggr_type &gt;::interp </td>
+          <td class="memname">static std::pair&lt; <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt;value_t, index_t&gt;, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt;value_t, index_t&gt; &gt; <a class="el" href="structamgcl_1_1interp_1_1aggregation.html">amgcl::interp::aggregation</a>&lt; aggr_type &gt;::interp </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structamgcl_1_1sparse_1_1matrix.html">sparse::matrix</a>&lt; value_t, index_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -123,7 +125,7 @@ template&lt;class value_t , class index_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs coarse level by agregation. </p>
+<p>Constructs coarse level by aggregation. </p>
 <p>Returns interpolation operator, which is enough to construct system matrix at coarser level.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -134,7 +136,7 @@ template&lt;class value_t , class index_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>interpolation operator. </dd></dl>
 
-<p>References <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#aad880e3edf8394e5859b2921eb9a3b7f">amgcl::sparse::matrix&lt; value_t, index_t &gt;::col</a>, <a class="el" href="namespaceamgcl_1_1aggr.html#a0aa6936c1150bb3a09ef0cd29889671e">amgcl::aggr::connect()</a>, <a class="el" href="structamgcl_1_1interp_1_1aggregation_1_1params.html#aaed8011c08c3dc5bf42c054720513e51">amgcl::interp::aggregation&lt; aggr_type &gt;::params::eps_strong</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#aa68796c2ee44e6f02d81efc5cbfa88b2">amgcl::sparse::matrix_rows()</a>, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a652b8065057718daf96ae5ab5a5dbd41">amgcl::sparse::matrix&lt; value_t, index_t &gt;::row</a>, and <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#ac80a139dcdaab82a36969a4041e13f82">amgcl::sparse::matrix&lt; value_t, index_t &gt;::val</a>.</p>
+<p>References <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#aad880e3edf8394e5859b2921eb9a3b7f">amgcl::sparse::matrix&lt; value_t, index_t &gt;::col</a>, <a class="el" href="namespaceamgcl_1_1aggr.html#a0aa6936c1150bb3a09ef0cd29889671e">amgcl::aggr::connect()</a>, <a class="el" href="structamgcl_1_1interp_1_1aggregation_1_1params.html#aaed8011c08c3dc5bf42c054720513e51">amgcl::interp::aggregation&lt; aggr_type &gt;::params::eps_strong</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#aa68796c2ee44e6f02d81efc5cbfa88b2">amgcl::sparse::matrix_rows()</a>, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a3695a15502bedca9c38aab23da59a080">amgcl::sparse::matrix&lt; value_t, index_t &gt;::resize()</a>, <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a652b8065057718daf96ae5ab5a5dbd41">amgcl::sparse::matrix&lt; value_t, index_t &gt;::row</a>, <a class="el" href="namespaceamgcl_1_1sparse.html#a3b4c01feeebd2fb6777b6f82fc94a950">amgcl::sparse::transpose()</a>, and <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#ac80a139dcdaab82a36969a4041e13f82">amgcl::sparse::matrix&lt; value_t, index_t &gt;::val</a>.</p>
 
 </div>
 </div>
