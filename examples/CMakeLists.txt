@@ -40,6 +40,9 @@ endif (VEXCL_INCLUDE OR VIENNACL_INCLUDE)
 if (EIGEN_INCLUDE)
     add_executable(eigen eigen.cpp)
     target_link_libraries(eigen ${Boost_CHRONO_LIBRARY})
+
+    add_executable(matrix_market matrix_market.cpp)
+    target_link_libraries(matrix_market ${Boost_CHRONO_LIBRARY})
 endif (EIGEN_INCLUDE)
 
 if (VIENNACL_INCLUDE AND EIGEN_INCLUDE)
