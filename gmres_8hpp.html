@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>amgcl: cg.hpp File Reference</title>
+<title>amgcl: gmres.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -50,22 +50,24 @@
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">cg.hpp File Reference</div>  </div>
+<div class="title">gmres.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Conjugate Gradient method.  
+<p>GMRES method.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;utility&gt;</code><br/>
+<code>#include &lt;algorithm&gt;</code><br/>
+<code>#include &lt;boost/array.hpp&gt;</code><br/>
 <code>#include &lt;<a class="el" href="common_8hpp.html">amgcl/common.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cg.hpp:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for gmres.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="cg_8hpp__incl.png" border="0" usemap="#cg_8hpp" alt=""/></div>
-<map name="cg_8hpp" id="cg_8hpp">
-<area shape="rect" id="node5" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="86,80,236,107"/></map>
+<div class="center"><img src="gmres_8hpp__incl.png" border="0" usemap="#gmres_8hpp" alt=""/></div>
+<map name="gmres_8hpp" id="gmres_8hpp">
+<area shape="rect" id="node9" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="338,80,488,107"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -76,14 +78,26 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="memTemplParams" colspan="2">template&lt;class matrix , class vector , class precond &gt; </td></tr>
-<tr class="memitem:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, typename <br class="typebreak"/>
-value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gac8e0c3c1ec4fdac25537aa7d20c008fd">amgcl::solve</a> (const matrix &amp;A, const vector &amp;rhs, const precond &amp;P, vector &amp;x, cg_tag prm=cg_tag())</td></tr>
-<tr class="memdesc:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method.  <a href="group__iterative.html#gac8e0c3c1ec4fdac25537aa7d20c008fd"></a><br/></td></tr>
-<tr class="separator:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e76dd3073249343cf6d710dbeb41737"><td class="memTemplParams" colspan="2"><a class="anchor" id="a8e76dd3073249343cf6d710dbeb41737"></a>
+template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:a8e76dd3073249343cf6d710dbeb41737"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::gmres::apply_plane_rotation</b> (value_t &amp;dx, value_t &amp;dy, value_t cs, value_t sn)</td></tr>
+<tr class="separator:a8e76dd3073249343cf6d710dbeb41737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f01f3c965331090757d14db060d7f8"><td class="memTemplParams" colspan="2"><a class="anchor" id="a19f01f3c965331090757d14db060d7f8"></a>
+template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:a19f01f3c965331090757d14db060d7f8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::gmres::generate_plane_rotation</b> (value_t dx, value_t dy, value_t &amp;cs, value_t &amp;sn)</td></tr>
+<tr class="separator:a19f01f3c965331090757d14db060d7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d496e8d0d1149fb1ed25f4b593c79f"><td class="memTemplParams" colspan="2"><a class="anchor" id="a57d496e8d0d1149fb1ed25f4b593c79f"></a>
+template&lt;size_t M, class vector &gt; </td></tr>
+<tr class="memitem:a57d496e8d0d1149fb1ed25f4b593c79f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::gmres::update</b> (vector &amp;x, int k, boost::array&lt; boost::array&lt; typename value_type&lt; vector &gt;::type, M &gt;, M+1 &gt; &amp;h, const boost::array&lt; typename value_type&lt; vector &gt;::type, M+1 &gt; &amp;s, const boost::array&lt; vector, M+1 &gt; &amp;v, boost::array&lt; typename value_type&lt; vector &gt;::type, M+1 &gt; &amp;y)</td></tr>
+<tr class="separator:a57d496e8d0d1149fb1ed25f4b593c79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9854844427f73aac87036586dc7c62d0"><td class="memTemplParams" colspan="2">template&lt;size_t M, class matrix , class vector , class precond &gt; </td></tr>
+<tr class="memitem:ga9854844427f73aac87036586dc7c62d0"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, typename <br class="typebreak"/>
+value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#ga9854844427f73aac87036586dc7c62d0">amgcl::solve</a> (const matrix &amp;A, const vector &amp;rhs, const precond &amp;P, vector &amp;x, gmres_tag&lt; M &gt; prm=gmres_tag&lt; M &gt;())</td></tr>
+<tr class="memdesc:ga9854844427f73aac87036586dc7c62d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">GMRES method.  <a href="group__iterative.html#ga9854844427f73aac87036586dc7c62d0"></a><br/></td></tr>
+<tr class="separator:ga9854844427f73aac87036586dc7c62d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Conjugate Gradient method. </p>
+<div class="textblock"><p>GMRES method. </p>
 <dl class="section author"><dt>Author</dt><dd>Denis Demidov <a href="#" onclick="location.href='mai'+'lto:'+'dde'+'mi'+'dov'+'@k'+'su.'+'ru'; return false;">ddemi<span style="display: none;">.nosp@m.</span>dov@<span style="display: none;">.nosp@m.</span>ksu.r<span style="display: none;">.nosp@m.</span>u</a> Implementation is based on <a class="el" href="index.html#Templates_1994">Barrett (1994)</a> </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
