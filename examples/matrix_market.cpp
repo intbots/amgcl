@@ -1,13 +1,14 @@
 #include <iostream>
 
-#include <Eigen/Dense>
 #include <Eigen/SparseCore>
 #include <unsupported/Eigen/SparseExtra>
+
+#include <vexcl/vexcl.hpp>
 
 #include <amgcl/amgcl.hpp>
 #include <amgcl/interp_aggr.hpp>
 #include <amgcl/aggr_plain.hpp>
-#include <amgcl/level_cpu.hpp>
+#include <amgcl/level_vexcl.hpp>
 #include <amgcl/operations_eigen.hpp>
 #include <amgcl/bicgstab.hpp>
 #include <amgcl/profiler.hpp>
@@ -29,16 +30,25 @@ int main(int argc, char *argv[]) {
     Eigen::loadMarket(A, argv[1]);
     prof.toc("read problem");
 
+    // Initialize VexCL context.
+    vex::Context ctx( vex::Filter::Env && vex::Filter::DoublePrecision );
+    if (!ctx.size()) {
+        std::cerr << "No GPUs" << std::endl;
+        return 1;
+    }
+    std::cout << ctx << std::endl;
+
     typedef amgcl::solver<
         real, int,
         amgcl::interp::aggregation<amgcl::aggr::plain>,
-        amgcl::level::cpu<amgcl::relax::spai0>
+        amgcl::level::vexcl<amgcl::relax::spai0>
         > AMG;
     AMG::params prm;
 
     prm.interp.eps_strong   = 0; // Consider all connections as strong.
     prm.interp.dof_per_node = 4;
 
+    prm.level.ctx   = &ctx;
     prm.level.npre  = 1;
     prm.level.npost = 2;
 
@@ -48,11 +58,19 @@ int main(int argc, char *argv[]) {
 
     std::cout << amg << std::endl;
 
-    EigenVector f = EigenVector::Ones(A.rows());
-    EigenVector x = EigenVector::Zero(A.rows());
+    // Copy matrix to GPU(s).
+    vex::SpMat<real, int, int> Agpu(ctx.queue(),
+            A.rows(), A.cols(),
+            A.outerIndexPtr(), A.innerIndexPtr(), A.valuePtr()
+            );
+    vex::vector<real> f(ctx.queue(), A.rows());
+    vex::vector<real> x(ctx.queue(), A.rows());
+
+    f = 1;
+    x = 0;
 
     prof.tic("solve");
-    std::pair<int,real> cnv = amgcl::solve(A, f, amg, x, amgcl::bicg_tag());
+    std::pair<int,real> cnv = amgcl::solve(Agpu, f, amg, x, amgcl::bicg_tag());
     prof.toc("solve");
 
     std::cout << "Iterations: " << cnv.first  << std::endl
