@@ -5,7 +5,7 @@
 #include <unsupported/Eigen/SparseExtra>
 
 #include <amgcl/amgcl.hpp>
-#include <amgcl/interp_smoothed_aggr.hpp>
+#include <amgcl/interp_aggr.hpp>
 #include <amgcl/aggr_plain.hpp>
 #include <amgcl/level_cpu.hpp>
 #include <amgcl/operations_eigen.hpp>
@@ -29,11 +29,9 @@ int main(int argc, char *argv[]) {
     Eigen::loadMarket(A, argv[1]);
     prof.toc("read problem");
 
-    std::cout << "Matrix: " << A.rows() << "x" << A.cols() << std::endl;
-
     typedef amgcl::solver<
         real, int,
-        amgcl::interp::smoothed_aggregation<amgcl::aggr::plain>,
+        amgcl::interp::aggregation<amgcl::aggr::plain>,
         amgcl::level::cpu<amgcl::relax::spai0>
         > AMG;
     AMG::params prm;
