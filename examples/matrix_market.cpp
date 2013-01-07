@@ -5,11 +5,11 @@
 #include <unsupported/Eigen/SparseExtra>
 
 #include <amgcl/amgcl.hpp>
-#include <amgcl/interp_aggr.hpp>
+#include <amgcl/interp_smoothed_aggr.hpp>
 #include <amgcl/aggr_plain.hpp>
 #include <amgcl/level_cpu.hpp>
 #include <amgcl/operations_eigen.hpp>
-#include <amgcl/gmres.hpp>
+#include <amgcl/bicgstab.hpp>
 #include <amgcl/profiler.hpp>
 
 typedef double real;
@@ -33,10 +33,16 @@ int main(int argc, char *argv[]) {
 
     typedef amgcl::solver<
         real, int,
-        amgcl::interp::aggregation<amgcl::aggr::plain>,
-        amgcl::level::cpu<amgcl::relax::ilu>
+        amgcl::interp::smoothed_aggregation<amgcl::aggr::plain>,
+        amgcl::level::cpu<amgcl::relax::spai0>
         > AMG;
     AMG::params prm;
+
+    prm.interp.eps_strong   = 0; // Consider all connections as strong.
+    prm.interp.dof_per_node = 4;
+
+    prm.level.npre  = 1;
+    prm.level.npost = 2;
 
     prof.tic("setup");
     AMG amg(amgcl::sparse::map(A), prm);
@@ -48,7 +54,7 @@ int main(int argc, char *argv[]) {
     EigenVector x = EigenVector::Zero(A.rows());
 
     prof.tic("solve");
-    std::pair<int,real> cnv = amgcl::solve(A, f, amg, x, amgcl::gmres_tag<30>());
+    std::pair<int,real> cnv = amgcl::solve(A, f, amg, x, amgcl::bicg_tag());
     prof.toc("solve");
 
     std::cout << "Iterations: " << cnv.first  << std::endl
