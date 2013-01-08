@@ -127,6 +127,16 @@ value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" va
 value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gac8e0c3c1ec4fdac25537aa7d20c008fd">solve</a> (const matrix &amp;A, const vector &amp;rhs, const precond &amp;P, vector &amp;x, <a class="el" href="structamgcl_1_1cg__tag.html">cg_tag</a> prm=<a class="el" href="structamgcl_1_1cg__tag.html">cg_tag</a>())</td></tr>
 <tr class="memdesc:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method.  <a href="group__iterative.html#gac8e0c3c1ec4fdac25537aa7d20c008fd"></a><br/></td></tr>
 <tr class="separator:gac8e0c3c1ec4fdac25537aa7d20c008fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b2468cf2223a4469732901bf0130739"><td class="memTemplParams" colspan="2"><a class="anchor" id="a5b2468cf2223a4469732901bf0130739"></a>
+template&lt;class spmat , class VectorX , class VectorF , class VectorY &gt; </td></tr>
+<tr class="memitem:a5b2468cf2223a4469732901bf0130739"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a5b2468cf2223a4469732901bf0130739">residual</a> (const spmat &amp;A, const VectorX &amp;x, const VectorF &amp;f, VectorY &amp;y)</td></tr>
+<tr class="memdesc:a5b2468cf2223a4469732901bf0130739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes residual f - A * x and stores the result in y. <br/></td></tr>
+<tr class="separator:a5b2468cf2223a4469732901bf0130739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca9f278eceab3872ba53ebafd649ff63"><td class="memTemplParams" colspan="2"><a class="anchor" id="aca9f278eceab3872ba53ebafd649ff63"></a>
+template&lt;class spmat , class VectorX , class VectorY &gt; </td></tr>
+<tr class="memitem:aca9f278eceab3872ba53ebafd649ff63"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#aca9f278eceab3872ba53ebafd649ff63">axpy</a> (const spmat &amp;A, const VectorX &amp;x, VectorY &amp;y)</td></tr>
+<tr class="memdesc:aca9f278eceab3872ba53ebafd649ff63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes y = A * x (not really an axpy, I know). <br/></td></tr>
+<tr class="separator:aca9f278eceab3872ba53ebafd649ff63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae242f63b1c6ffabdc7ac440742e4297d"><td class="memTemplParams" colspan="2">template&lt;class matrix , class vector , class precond &gt; </td></tr>
 <tr class="memitem:gae242f63b1c6ffabdc7ac440742e4297d"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, typename <br class="typebreak"/>
 value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gae242f63b1c6ffabdc7ac440742e4297d">solve</a> (const matrix &amp;A, const vector &amp;rhs, const precond &amp;P, vector &amp;x, <a class="el" href="structamgcl_1_1gmres__tag.html">gmres_tag</a> prm=<a class="el" href="structamgcl_1_1gmres__tag.html">gmres_tag</a>())</td></tr>
@@ -136,6 +146,14 @@ value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" va
 <tr class="memitem:ga8b1eaa586d5a32da9f9a7e9a5e668216"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#ga8b1eaa586d5a32da9f9a7e9a5e668216">solve</a> (const sparse::cuda_matrix&lt; value_t, Format &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, <a class="el" href="structamgcl_1_1cg__tag.html">cg_tag</a> prm=<a class="el" href="structamgcl_1_1cg__tag.html">cg_tag</a>())</td></tr>
 <tr class="memdesc:ga8b1eaa586d5a32da9f9a7e9a5e668216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method for Thrust/CUSPARSE combination.  <a href="group__iterative.html#ga8b1eaa586d5a32da9f9a7e9a5e668216"></a><br/></td></tr>
 <tr class="separator:ga8b1eaa586d5a32da9f9a7e9a5e668216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae0c94e066ded29ff798f71f10abbfb51"><td class="memTemplParams" colspan="2">template&lt;class value_t , gpu_matrix_format Format, class precond &gt; </td></tr>
+<tr class="memitem:gae0c94e066ded29ff798f71f10abbfb51"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gae0c94e066ded29ff798f71f10abbfb51">solve</a> (const sparse::cuda_matrix&lt; value_t, Format &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, <a class="el" href="structamgcl_1_1bicg__tag.html">bicg_tag</a> prm=<a class="el" href="structamgcl_1_1bicg__tag.html">bicg_tag</a>())</td></tr>
+<tr class="memdesc:gae0c94e066ded29ff798f71f10abbfb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stabilized BiConjugate Gradient method for Thrust/CUSPARSE combination.  <a href="group__iterative.html#gae0c94e066ded29ff798f71f10abbfb51"></a><br/></td></tr>
+<tr class="separator:gae0c94e066ded29ff798f71f10abbfb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82a821442e28368b27dc2dc6fce778bd"><td class="memTemplParams" colspan="2">template&lt;class value_t , gpu_matrix_format Format, class precond &gt; </td></tr>
+<tr class="memitem:ga82a821442e28368b27dc2dc6fce778bd"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#ga82a821442e28368b27dc2dc6fce778bd">solve</a> (const sparse::cuda_matrix&lt; value_t, Format &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, <a class="el" href="structamgcl_1_1gmres__tag.html">gmres_tag</a> prm=<a class="el" href="structamgcl_1_1gmres__tag.html">gmres_tag</a>())</td></tr>
+<tr class="memdesc:ga82a821442e28368b27dc2dc6fce778bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">GMRES method for Thrust/CUSPARSE combination.  <a href="group__iterative.html#ga82a821442e28368b27dc2dc6fce778bd"></a><br/></td></tr>
+<tr class="separator:ga82a821442e28368b27dc2dc6fce778bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6328a54c93cafc74be8193a6c6038b08"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
 <tr class="memitem:a6328a54c93cafc74be8193a6c6038b08"><td class="memTemplItemLeft" align="right" valign="top">T1::Scalar&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a6328a54c93cafc74be8193a6c6038b08">inner_prod</a> (const Eigen::MatrixBase&lt; T1 &gt; &amp;x, const Eigen::MatrixBase&lt; T2 &gt; &amp;y)</td></tr>
 <tr class="memdesc:a6328a54c93cafc74be8193a6c6038b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns inner product of two Eigen vectors.  <a href="#a6328a54c93cafc74be8193a6c6038b08"></a><br/></td></tr>
@@ -160,6 +178,14 @@ value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" va
 <tr class="memitem:a770bfc137a297daede00e15692f7dcbe"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a770bfc137a297daede00e15692f7dcbe">clear</a> (boost::numeric::ublas::vector&lt; T &gt; &amp;x)</td></tr>
 <tr class="memdesc:a770bfc137a297daede00e15692f7dcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears (sets elements to zero) an ublas vector.  <a href="#a770bfc137a297daede00e15692f7dcbe"></a><br/></td></tr>
 <tr class="separator:a770bfc137a297daede00e15692f7dcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f447c1d83f3e803647644e869f0fa5"><td class="memTemplParams" colspan="2">template&lt;typename real &gt; </td></tr>
+<tr class="memitem:ab4f447c1d83f3e803647644e869f0fa5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#ab4f447c1d83f3e803647644e869f0fa5">residual</a> (const boost::numeric::ublas::compressed_matrix&lt; real, boost::numeric::ublas::row_major &gt; &amp;A, const boost::numeric::ublas::vector&lt; real &gt; &amp;x, const boost::numeric::ublas::vector&lt; real &gt; &amp;f, boost::numeric::ublas::vector&lt; real &gt; &amp;y)</td></tr>
+<tr class="memdesc:ab4f447c1d83f3e803647644e869f0fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of residual operation for ublas types.  <a href="#ab4f447c1d83f3e803647644e869f0fa5"></a><br/></td></tr>
+<tr class="separator:ab4f447c1d83f3e803647644e869f0fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f6469a0134729e16ed2ffd3ef9ec23"><td class="memTemplParams" colspan="2">template&lt;typename real &gt; </td></tr>
+<tr class="memitem:ad7f6469a0134729e16ed2ffd3ef9ec23"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#ad7f6469a0134729e16ed2ffd3ef9ec23">axpy</a> (const boost::numeric::ublas::compressed_matrix&lt; real, boost::numeric::ublas::row_major &gt; &amp;A, const boost::numeric::ublas::vector&lt; real &gt; &amp;x, boost::numeric::ublas::vector&lt; real &gt; &amp;y)</td></tr>
+<tr class="memdesc:ad7f6469a0134729e16ed2ffd3ef9ec23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of matrix-vector product for ublas types.  <a href="#ad7f6469a0134729e16ed2ffd3ef9ec23"></a><br/></td></tr>
+<tr class="separator:ad7f6469a0134729e16ed2ffd3ef9ec23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62b2ff04c8ef4136cf19742484c47ef2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a62b2ff04c8ef4136cf19742484c47ef2"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a62b2ff04c8ef4136cf19742484c47ef2">inner_prod</a> (const vex::vector&lt; T &gt; &amp;x, const vex::vector&lt; T &gt; &amp;y)</td></tr>
 <tr class="memdesc:a62b2ff04c8ef4136cf19742484c47ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns inner product of two vex::vectors.  <a href="#a62b2ff04c8ef4136cf19742484c47ef2"></a><br/></td></tr>
@@ -210,6 +236,43 @@ template&lt;class vector , class AMG &gt; </td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ad7f6469a0134729e16ed2ffd3ef9ec23"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename real &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amgcl::axpy </td>
+          <td>(</td>
+          <td class="paramtype">const boost::numeric::ublas::compressed_matrix&lt; real, boost::numeric::ublas::row_major &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::numeric::ublas::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::numeric::ublas::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specialization of matrix-vector product for ublas types. </p>
+<p>Necessary for ublas types to work with <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve()</a> functions. </p>
+
+</div>
+</div>
 <a class="anchor" id="a21fc10a876fd553ccd979da18aeff727"></a>
 <div class="memitem">
 <div class="memproto">
@@ -435,6 +498,49 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns norm of an ublas vector. </p>
+<p>Necessary for ublas types to work with <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve()</a> functions. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab4f447c1d83f3e803647644e869f0fa5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename real &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amgcl::residual </td>
+          <td>(</td>
+          <td class="paramtype">const boost::numeric::ublas::compressed_matrix&lt; real, boost::numeric::ublas::row_major &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::numeric::ublas::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::numeric::ublas::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boost::numeric::ublas::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specialization of residual operation for ublas types. </p>
 <p>Necessary for ublas types to work with <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve()</a> functions. </p>
 
 </div>

@@ -50,7 +50,8 @@
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">common.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -99,6 +100,27 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a476c4a8df7fc08337add90f93ddd9fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible matrix storage formats for GPGPU backends.  <a href="namespaceamgcl.html#a476c4a8df7fc08337add90f93ddd9fe6">More...</a><br/></td></tr>
 <tr class="separator:a476c4a8df7fc08337add90f93ddd9fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5b2468cf2223a4469732901bf0130739"><td class="memTemplParams" colspan="2"><a class="anchor" id="a5b2468cf2223a4469732901bf0130739"></a>
+template&lt;class spmat , class VectorX , class VectorF , class VectorY &gt; </td></tr>
+<tr class="memitem:a5b2468cf2223a4469732901bf0130739"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a5b2468cf2223a4469732901bf0130739">amgcl::residual</a> (const spmat &amp;A, const VectorX &amp;x, const VectorF &amp;f, VectorY &amp;y)</td></tr>
+<tr class="memdesc:a5b2468cf2223a4469732901bf0130739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes residual f - A * x and stores the result in y. <br/></td></tr>
+<tr class="separator:a5b2468cf2223a4469732901bf0130739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca9f278eceab3872ba53ebafd649ff63"><td class="memTemplParams" colspan="2"><a class="anchor" id="aca9f278eceab3872ba53ebafd649ff63"></a>
+template&lt;class spmat , class VectorX , class VectorY &gt; </td></tr>
+<tr class="memitem:aca9f278eceab3872ba53ebafd649ff63"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#aca9f278eceab3872ba53ebafd649ff63">amgcl::axpy</a> (const spmat &amp;A, const VectorX &amp;x, VectorY &amp;y)</td></tr>
+<tr class="memdesc:aca9f278eceab3872ba53ebafd649ff63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes y = A * x (not really an axpy, I know). <br/></td></tr>
+<tr class="separator:aca9f278eceab3872ba53ebafd649ff63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e76dd3073249343cf6d710dbeb41737"><td class="memTemplParams" colspan="2"><a class="anchor" id="a8e76dd3073249343cf6d710dbeb41737"></a>
+template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:a8e76dd3073249343cf6d710dbeb41737"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::gmres::apply_plane_rotation</b> (value_t &amp;dx, value_t &amp;dy, value_t cs, value_t sn)</td></tr>
+<tr class="separator:a8e76dd3073249343cf6d710dbeb41737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f01f3c965331090757d14db060d7f8"><td class="memTemplParams" colspan="2"><a class="anchor" id="a19f01f3c965331090757d14db060d7f8"></a>
+template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:a19f01f3c965331090757d14db060d7f8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::gmres::generate_plane_rotation</b> (value_t dx, value_t dy, value_t &amp;cs, value_t &amp;sn)</td></tr>
+<tr class="separator:a19f01f3c965331090757d14db060d7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Common definitions for amgcl. </p>

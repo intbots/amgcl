@@ -1,6 +1,6 @@
 <map id="level_cuda.hpp" name="level_cuda.hpp">
-<area shape="rect" id="node13" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="945,88,1124,115"/>
-<area shape="rect" id="node15" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="286,171,420,197"/>
-<area shape="rect" id="node29" href="$spai_8hpp.html" title="Compute Sparse Approximate Inverse for a given matrix." alt="" coords="293,88,411,115"/>
-<area shape="rect" id="node32" href="$common_8hpp.html" title="Common definitions for amgcl." alt="" coords="1149,88,1299,115"/>
+<area shape="rect" id="node13" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="944,88,1123,115"/>
+<area shape="rect" id="node15" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="329,171,463,197"/>
+<area shape="rect" id="node29" href="$spai_8hpp.html" title="Compute Sparse Approximate Inverse for a given matrix." alt="" coords="239,88,357,115"/>
+<area shape="rect" id="node32" href="$common_8hpp.html" title="Common definitions for amgcl." alt="" coords="1147,88,1297,115"/>
 </map>

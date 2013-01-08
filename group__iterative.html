@@ -67,6 +67,14 @@ value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" va
 <tr class="memitem:ga8b1eaa586d5a32da9f9a7e9a5e668216"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#ga8b1eaa586d5a32da9f9a7e9a5e668216">amgcl::solve</a> (const sparse::cuda_matrix&lt; value_t, Format &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, cg_tag prm=cg_tag())</td></tr>
 <tr class="memdesc:ga8b1eaa586d5a32da9f9a7e9a5e668216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradient method for Thrust/CUSPARSE combination.  <a href="#ga8b1eaa586d5a32da9f9a7e9a5e668216"></a><br/></td></tr>
 <tr class="separator:ga8b1eaa586d5a32da9f9a7e9a5e668216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae0c94e066ded29ff798f71f10abbfb51"><td class="memTemplParams" colspan="2">template&lt;class value_t , gpu_matrix_format Format, class precond &gt; </td></tr>
+<tr class="memitem:gae0c94e066ded29ff798f71f10abbfb51"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gae0c94e066ded29ff798f71f10abbfb51">amgcl::solve</a> (const sparse::cuda_matrix&lt; value_t, Format &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, bicg_tag prm=bicg_tag())</td></tr>
+<tr class="memdesc:gae0c94e066ded29ff798f71f10abbfb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stabilized BiConjugate Gradient method for Thrust/CUSPARSE combination.  <a href="#gae0c94e066ded29ff798f71f10abbfb51"></a><br/></td></tr>
+<tr class="separator:gae0c94e066ded29ff798f71f10abbfb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82a821442e28368b27dc2dc6fce778bd"><td class="memTemplParams" colspan="2">template&lt;class value_t , gpu_matrix_format Format, class precond &gt; </td></tr>
+<tr class="memitem:ga82a821442e28368b27dc2dc6fce778bd"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, value_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#ga82a821442e28368b27dc2dc6fce778bd">amgcl::solve</a> (const sparse::cuda_matrix&lt; value_t, Format &gt; &amp;A, const thrust::device_vector&lt; value_t &gt; &amp;rhs, const precond &amp;P, thrust::device_vector&lt; value_t &gt; &amp;x, gmres_tag prm=gmres_tag())</td></tr>
+<tr class="memdesc:ga82a821442e28368b27dc2dc6fce778bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">GMRES method for Thrust/CUSPARSE combination.  <a href="#ga82a821442e28368b27dc2dc6fce778bd"></a><br/></td></tr>
+<tr class="separator:ga82a821442e28368b27dc2dc6fce778bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>List of provided iterative solvers. </p>
@@ -129,7 +137,7 @@ template&lt;class matrix , class vector , class precond &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pair containing number of iterations made and precision achieved. </dd></dl>
 
-<p>References <a class="el" href="namespaceamgcl.html#af1534c10efb86f89f978f7d914a55703">amgcl::clear()</a>, <a class="el" href="namespaceamgcl.html#a6328a54c93cafc74be8193a6c6038b08">amgcl::inner_prod()</a>, and <a class="el" href="namespaceamgcl.html#a5a2b5cc5f4714bcd1957440661dd32a2">amgcl::norm()</a>.</p>
+<p>References <a class="el" href="namespaceamgcl.html#aca9f278eceab3872ba53ebafd649ff63">amgcl::axpy()</a>, <a class="el" href="namespaceamgcl.html#af1534c10efb86f89f978f7d914a55703">amgcl::clear()</a>, <a class="el" href="namespaceamgcl.html#a6328a54c93cafc74be8193a6c6038b08">amgcl::inner_prod()</a>, <a class="el" href="namespaceamgcl.html#a5a2b5cc5f4714bcd1957440661dd32a2">amgcl::norm()</a>, and <a class="el" href="namespaceamgcl.html#a5b2468cf2223a4469732901bf0130739">amgcl::residual()</a>.</p>
 
 </div>
 </div>
@@ -191,7 +199,7 @@ template&lt;class matrix , class vector , class precond &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pair containing number of iterations made and precision achieved. </dd></dl>
 
-<p>References <a class="el" href="namespaceamgcl.html#af1534c10efb86f89f978f7d914a55703">amgcl::clear()</a>, <a class="el" href="namespaceamgcl.html#a6328a54c93cafc74be8193a6c6038b08">amgcl::inner_prod()</a>, and <a class="el" href="namespaceamgcl.html#a5a2b5cc5f4714bcd1957440661dd32a2">amgcl::norm()</a>.</p>
+<p>References <a class="el" href="namespaceamgcl.html#aca9f278eceab3872ba53ebafd649ff63">amgcl::axpy()</a>, <a class="el" href="namespaceamgcl.html#af1534c10efb86f89f978f7d914a55703">amgcl::clear()</a>, <a class="el" href="namespaceamgcl.html#a6328a54c93cafc74be8193a6c6038b08">amgcl::inner_prod()</a>, <a class="el" href="namespaceamgcl.html#a5a2b5cc5f4714bcd1957440661dd32a2">amgcl::norm()</a>, and <a class="el" href="namespaceamgcl.html#a5b2468cf2223a4469732901bf0130739">amgcl::residual()</a>.</p>
 
 </div>
 </div>
@@ -253,7 +261,7 @@ template&lt;class matrix , class vector , class precond &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pair containing number of iterations made and precision achieved. </dd></dl>
 
-<p>References <a class="el" href="namespaceamgcl.html#af1534c10efb86f89f978f7d914a55703">amgcl::clear()</a>, <a class="el" href="namespaceamgcl.html#a6328a54c93cafc74be8193a6c6038b08">amgcl::inner_prod()</a>, and <a class="el" href="namespaceamgcl.html#a5a2b5cc5f4714bcd1957440661dd32a2">amgcl::norm()</a>.</p>
+<p>References <a class="el" href="namespaceamgcl.html#aca9f278eceab3872ba53ebafd649ff63">amgcl::axpy()</a>, <a class="el" href="namespaceamgcl.html#af1534c10efb86f89f978f7d914a55703">amgcl::clear()</a>, <a class="el" href="namespaceamgcl.html#a6328a54c93cafc74be8193a6c6038b08">amgcl::inner_prod()</a>, <a class="el" href="namespaceamgcl.html#a5a2b5cc5f4714bcd1957440661dd32a2">amgcl::norm()</a>, and <a class="el" href="namespaceamgcl.html#a5b2468cf2223a4469732901bf0130739">amgcl::residual()</a>.</p>
 
 </div>
 </div>
@@ -302,6 +310,126 @@ template&lt;class value_t , gpu_matrix_format Format, class precond &gt; </div>
 </div><div class="memdoc">
 
 <p>Conjugate Gradient method for Thrust/CUSPARSE combination. </p>
+<p>Implementation is based on <a class="el" href="index.html#Templates_1994">Barrett (1994)</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>The system matrix. </td></tr>
+    <tr><td class="paramname">rhs</td><td>The right-hand side. </td></tr>
+    <tr><td class="paramname">P</td><td>The preconditioner. Should provide apply(rhs, x) method. </td></tr>
+    <tr><td class="paramname">x</td><td>The solution. Contains an initial approximation on input, and the approximated solution on output. </td></tr>
+    <tr><td class="paramname">prm</td><td>The control parameters.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a pair containing number of iterations made and precision achieved. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae0c94e066ded29ff798f71f10abbfb51"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class value_t , gpu_matrix_format Format, class precond &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; int, value_t &gt; amgcl::solve </td>
+          <td>(</td>
+          <td class="paramtype">const sparse::cuda_matrix&lt; value_t, Format &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const thrust::device_vector&lt; value_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const precond &amp;&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">thrust::device_vector&lt; value_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bicg_tag&#160;</td>
+          <td class="paramname"><em>prm</em> = <code>bicg_tag()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stabilized BiConjugate Gradient method for Thrust/CUSPARSE combination. </p>
+<p>Implementation is based on <a class="el" href="index.html#Templates_1994">Barrett (1994)</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>The system matrix. </td></tr>
+    <tr><td class="paramname">rhs</td><td>The right-hand side. </td></tr>
+    <tr><td class="paramname">P</td><td>The preconditioner. Should provide apply(rhs, x) method. </td></tr>
+    <tr><td class="paramname">x</td><td>The solution. Contains an initial approximation on input, and the approximated solution on output. </td></tr>
+    <tr><td class="paramname">prm</td><td>The control parameters.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a pair containing number of iterations made and precision achieved. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga82a821442e28368b27dc2dc6fce778bd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class value_t , gpu_matrix_format Format, class precond &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; int, value_t &gt; amgcl::solve </td>
+          <td>(</td>
+          <td class="paramtype">const sparse::cuda_matrix&lt; value_t, Format &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const thrust::device_vector&lt; value_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const precond &amp;&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">thrust::device_vector&lt; value_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gmres_tag&#160;</td>
+          <td class="paramname"><em>prm</em> = <code>gmres_tag()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GMRES method for Thrust/CUSPARSE combination. </p>
 <p>Implementation is based on <a class="el" href="index.html#Templates_1994">Barrett (1994)</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
