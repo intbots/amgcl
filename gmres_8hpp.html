@@ -56,9 +56,9 @@
 
 <p>GMRES method.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;utility&gt;</code><br/>
+<div class="textblock"><code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;utility&gt;</code><br/>
 <code>#include &lt;algorithm&gt;</code><br/>
-<code>#include &lt;boost/array.hpp&gt;</code><br/>
 <code>#include &lt;<a class="el" href="common_8hpp.html">amgcl/common.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for gmres.hpp:</div>
@@ -67,7 +67,7 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="gmres_8hpp__incl.png" border="0" usemap="#gmres_8hpp" alt=""/></div>
 <map name="gmres_8hpp" id="gmres_8hpp">
-<area shape="rect" id="node9" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="338,80,488,107"/></map>
+<area shape="rect" id="node9" href="common_8hpp.html" title="Common definitions for amgcl." alt="" coords="279,80,429,107"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -86,15 +86,15 @@ template&lt;typename value_t &gt; </td></tr>
 template&lt;typename value_t &gt; </td></tr>
 <tr class="memitem:a19f01f3c965331090757d14db060d7f8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::gmres::generate_plane_rotation</b> (value_t dx, value_t dy, value_t &amp;cs, value_t &amp;sn)</td></tr>
 <tr class="separator:a19f01f3c965331090757d14db060d7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57d496e8d0d1149fb1ed25f4b593c79f"><td class="memTemplParams" colspan="2"><a class="anchor" id="a57d496e8d0d1149fb1ed25f4b593c79f"></a>
-template&lt;size_t M, class vector &gt; </td></tr>
-<tr class="memitem:a57d496e8d0d1149fb1ed25f4b593c79f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::gmres::update</b> (vector &amp;x, int k, boost::array&lt; boost::array&lt; typename value_type&lt; vector &gt;::type, M &gt;, M+1 &gt; &amp;h, const boost::array&lt; typename value_type&lt; vector &gt;::type, M+1 &gt; &amp;s, const boost::array&lt; vector, M+1 &gt; &amp;v, boost::array&lt; typename value_type&lt; vector &gt;::type, M+1 &gt; &amp;y)</td></tr>
-<tr class="separator:a57d496e8d0d1149fb1ed25f4b593c79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9854844427f73aac87036586dc7c62d0"><td class="memTemplParams" colspan="2">template&lt;size_t M, class matrix , class vector , class precond &gt; </td></tr>
-<tr class="memitem:ga9854844427f73aac87036586dc7c62d0"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, typename <br class="typebreak"/>
-value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#ga9854844427f73aac87036586dc7c62d0">amgcl::solve</a> (const matrix &amp;A, const vector &amp;rhs, const precond &amp;P, vector &amp;x, gmres_tag&lt; M &gt; prm=gmres_tag&lt; M &gt;())</td></tr>
-<tr class="memdesc:ga9854844427f73aac87036586dc7c62d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">GMRES method.  <a href="group__iterative.html#ga9854844427f73aac87036586dc7c62d0"></a><br/></td></tr>
-<tr class="separator:ga9854844427f73aac87036586dc7c62d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9e14bca1d873e101f0813bd01b8ef2d"><td class="memTemplParams" colspan="2"><a class="anchor" id="ab9e14bca1d873e101f0813bd01b8ef2d"></a>
+template&lt;class vector &gt; </td></tr>
+<tr class="memitem:ab9e14bca1d873e101f0813bd01b8ef2d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::gmres::update</b> (vector &amp;x, int M, int k, std::vector&lt; typename value_type&lt; vector &gt;::type &gt; &amp;h, const std::vector&lt; typename value_type&lt; vector &gt;::type &gt; &amp;s, const std::vector&lt; vector &gt; &amp;v, std::vector&lt; typename value_type&lt; vector &gt;::type &gt; &amp;y)</td></tr>
+<tr class="separator:ab9e14bca1d873e101f0813bd01b8ef2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae242f63b1c6ffabdc7ac440742e4297d"><td class="memTemplParams" colspan="2">template&lt;class matrix , class vector , class precond &gt; </td></tr>
+<tr class="memitem:gae242f63b1c6ffabdc7ac440742e4297d"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; int, typename <br class="typebreak"/>
+value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__iterative.html#gae242f63b1c6ffabdc7ac440742e4297d">amgcl::solve</a> (const matrix &amp;A, const vector &amp;rhs, const precond &amp;P, vector &amp;x, gmres_tag prm=gmres_tag())</td></tr>
+<tr class="memdesc:gae242f63b1c6ffabdc7ac440742e4297d"><td class="mdescLeft">&#160;</td><td class="mdescRight">GMRES method.  <a href="group__iterative.html#gae242f63b1c6ffabdc7ac440742e4297d"></a><br/></td></tr>
+<tr class="separator:gae242f63b1c6ffabdc7ac440742e4297d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>GMRES method. </p>
