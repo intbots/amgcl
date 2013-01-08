@@ -57,6 +57,9 @@
 <p>Strong couplings for aggregation-based AMG.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;cassert&gt;</code><br/>
+<code>#include &lt;<a class="el" href="spmat_8hpp.html">amgcl/spmat.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="tictoc_8hpp.html">amgcl/tictoc.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for aggr_connect.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -64,7 +67,7 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="aggr__connect_8hpp__incl.png" border="0" usemap="#aggr__connect_8hpp" alt=""/></div>
 <map name="aggr__connect_8hpp" id="aggr__connect_8hpp">
-</map>
+<area shape="rect" id="node7" href="spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="165,80,299,107"/><area shape="rect" id="node21" href="tictoc_8hpp.html" title="TIC and TOC macros for internal profiling." alt="" coords="324,80,452,107"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -91,6 +94,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a0aa6936c1150bb3a09ef0cd29889671e"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1aggr.html#a0aa6936c1150bb3a09ef0cd29889671e">amgcl::aggr::connect</a> (const spmat &amp;A, float eps_strong)</td></tr>
 <tr class="memdesc:a0aa6936c1150bb3a09ef0cd29889671e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strong couplings for aggregation-based AMG.  <a href="#a0aa6936c1150bb3a09ef0cd29889671e"></a><br/></td></tr>
 <tr class="separator:a0aa6936c1150bb3a09ef0cd29889671e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0917291006a88c60a2b1a0e461f03fb4"><td class="memTemplParams" colspan="2"><a class="anchor" id="a0917291006a88c60a2b1a0e461f03fb4"></a>
+template&lt;class spmat &gt; </td></tr>
+<tr class="memitem:a0917291006a88c60a2b1a0e461f03fb4"><td class="memTemplItemLeft" align="right" valign="top">sparse::matrix&lt; typename <br class="typebreak"/>
+sparse::matrix_value&lt; spmat &gt;<br class="typebreak"/>
+::type, typename <br class="typebreak"/>
+sparse::matrix_index&lt; spmat &gt;<br class="typebreak"/>
+::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1aggr.html#a0917291006a88c60a2b1a0e461f03fb4">amgcl::aggr::pointwise_matrix</a> (const spmat &amp;A, unsigned dof_per_node)</td></tr>
+<tr class="memdesc:a0917291006a88c60a2b1a0e461f03fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds reduced matrix for non-scalar system of equations. <br/></td></tr>
+<tr class="separator:a0917291006a88c60a2b1a0e461f03fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c5e254f14c5661f46280ba5459fe92"><td class="memTemplParams" colspan="2"><a class="anchor" id="aa1c5e254f14c5661f46280ba5459fe92"></a>
+template&lt;class aggr_type , class spmat &gt; </td></tr>
+<tr class="memitem:aa1c5e254f14c5661f46280ba5459fe92"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; char &gt;<br class="typebreak"/>
+, std::vector&lt; typename <br class="typebreak"/>
+sparse::matrix_index&lt; spmat &gt;<br class="typebreak"/>
+::type &gt;&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>amgcl::aggr::pointwise_coarsening</b> (const spmat &amp;A, float eps_strong, unsigned dof_per_node)</td></tr>
+<tr class="separator:aa1c5e254f14c5661f46280ba5459fe92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Strong couplings for aggregation-based AMG. </p>

@@ -93,6 +93,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1value__type_3_01T_00_01typename_01boost_1_1enable__if_3_01boost_1_1is__arithmeticca22307570257e7a386e720fe66d91aa.html">value_type&lt; T, typename boost::enable_if&lt; boost::is_arithmetic&lt; typename T::Scalar &gt; &gt;::type &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value type for an Eigen vector.  <a href="structamgcl_1_1value__type_3_01T_00_01typename_01boost_1_1enable__if_3_01boost_1_1is__arithmeticca22307570257e7a386e720fe66d91aa.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1value__type_3_01boost_1_1numeric_1_1ublas_1_1vector_3_01T_01_4_01_4.html">value_type&lt; boost::numeric::ublas::vector&lt; T &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value type for an ublas vector.  <a href="structamgcl_1_1value__type_3_01boost_1_1numeric_1_1ublas_1_1vector_3_01T_01_4_01_4.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1value__type_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__arithmetic_3_09464edfcb4891485b53ea63418bd0c41.html">value_type&lt; T, typename std::enable_if&lt; std::is_arithmetic&lt; typename T::value_type &gt;::value &gt;::type &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value type of vex::vector.  <a href="structamgcl_1_1value__type_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__arithmetic_3_09464edfcb4891485b53ea63418bd0c41.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,6 +148,18 @@ value_type&lt; vector &gt;::type &gt;&#160;</td><td class="memTemplItemRight" va
 <tr class="memitem:af1534c10efb86f89f978f7d914a55703"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#af1534c10efb86f89f978f7d914a55703">clear</a> (Eigen::MatrixBase&lt; T &gt; &amp;x)</td></tr>
 <tr class="memdesc:af1534c10efb86f89f978f7d914a55703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears (sets elements to zero) an Eigen vector.  <a href="#af1534c10efb86f89f978f7d914a55703"></a><br/></td></tr>
 <tr class="separator:af1534c10efb86f89f978f7d914a55703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af99d8e498ad39ff460a98ad4a5769a33"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
+<tr class="memitem:af99d8e498ad39ff460a98ad4a5769a33"><td class="memTemplItemLeft" align="right" valign="top">T1&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#af99d8e498ad39ff460a98ad4a5769a33">inner_prod</a> (const boost::numeric::ublas::vector&lt; T1 &gt; &amp;x, const boost::numeric::ublas::vector&lt; T2 &gt; &amp;y)</td></tr>
+<tr class="memdesc:af99d8e498ad39ff460a98ad4a5769a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns inner product of two ublas vectors.  <a href="#af99d8e498ad39ff460a98ad4a5769a33"></a><br/></td></tr>
+<tr class="separator:af99d8e498ad39ff460a98ad4a5769a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2c00430f689fd55f5f2d8f5856652b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aac2c00430f689fd55f5f2d8f5856652b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#aac2c00430f689fd55f5f2d8f5856652b">norm</a> (const boost::numeric::ublas::vector&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:aac2c00430f689fd55f5f2d8f5856652b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns norm of an ublas vector.  <a href="#aac2c00430f689fd55f5f2d8f5856652b"></a><br/></td></tr>
+<tr class="separator:aac2c00430f689fd55f5f2d8f5856652b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770bfc137a297daede00e15692f7dcbe"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a770bfc137a297daede00e15692f7dcbe"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a770bfc137a297daede00e15692f7dcbe">clear</a> (boost::numeric::ublas::vector&lt; T &gt; &amp;x)</td></tr>
+<tr class="memdesc:a770bfc137a297daede00e15692f7dcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears (sets elements to zero) an ublas vector.  <a href="#a770bfc137a297daede00e15692f7dcbe"></a><br/></td></tr>
+<tr class="separator:a770bfc137a297daede00e15692f7dcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62b2ff04c8ef4136cf19742484c47ef2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a62b2ff04c8ef4136cf19742484c47ef2"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html#a62b2ff04c8ef4136cf19742484c47ef2">inner_prod</a> (const vex::vector&lt; T &gt; &amp;x, const vex::vector&lt; T &gt; &amp;y)</td></tr>
 <tr class="memdesc:a62b2ff04c8ef4136cf19742484c47ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns inner product of two vex::vectors.  <a href="#a62b2ff04c8ef4136cf19742484c47ef2"></a><br/></td></tr>
@@ -239,6 +254,27 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a770bfc137a297daede00e15692f7dcbe"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void amgcl::clear </td>
+          <td>(</td>
+          <td class="paramtype">boost::numeric::ublas::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clears (sets elements to zero) an ublas vector. </p>
+<p>Necessary for ublas types to work with <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve()</a> functions. </p>
+
+</div>
+</div>
 <a class="anchor" id="a62b2ff04c8ef4136cf19742484c47ef2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -299,7 +335,40 @@ template&lt;typename T1 , typename T2 &gt; </div>
 <p>Returns inner product of two Eigen vectors. </p>
 <p>Necessary for eigen types to work with <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve()</a> functions. </p>
 
-<p>Referenced by <a class="el" href="namespaceamgcl.html#a4db9eb9c4c406e6d72dc5d17330c037a">norm()</a>, and <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15">solve()</a>.</p>
+<p>Referenced by <a class="el" href="namespaceamgcl.html#af99d8e498ad39ff460a98ad4a5769a33">inner_prod()</a>, <a class="el" href="namespaceamgcl.html#a4db9eb9c4c406e6d72dc5d17330c037a">norm()</a>, and <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15">solve()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af99d8e498ad39ff460a98ad4a5769a33"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T1 , typename T2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T1 amgcl::inner_prod </td>
+          <td>(</td>
+          <td class="paramtype">const boost::numeric::ublas::vector&lt; T1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const boost::numeric::ublas::vector&lt; T2 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns inner product of two ublas vectors. </p>
+<p>Necessary for ublas types to work with <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve()</a> functions. </p>
+
+<p>References <a class="el" href="namespaceamgcl.html#a6328a54c93cafc74be8193a6c6038b08">inner_prod()</a>.</p>
 
 </div>
 </div>
@@ -346,6 +415,27 @@ template&lt;typename T &gt; </div>
 <p>Necessary for eigen types to work with <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve()</a> functions. </p>
 
 <p>Referenced by <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15">solve()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac2c00430f689fd55f5f2d8f5856652b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T amgcl::norm </td>
+          <td>(</td>
+          <td class="paramtype">const boost::numeric::ublas::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns norm of an ublas vector. </p>
+<p>Necessary for ublas types to work with <a class="el" href="group__iterative.html#ga09895d1c0824481a5c96533827bdae15" title="Stabilized BiConjugate Gradient method.">amgcl::solve()</a> functions. </p>
 
 </div>
 </div>

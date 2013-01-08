@@ -89,6 +89,10 @@ Derived::Scalar, typename <br class="typebreak"/>
 Derived::Index &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1sparse.html#a899b7e41ad18cfb005c48d9d8165b511">map</a> (const Eigen::SparseMatrixBase&lt; Derived &gt; &amp;A)</td></tr>
 <tr class="memdesc:a899b7e41ad18cfb005c48d9d8165b511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps Eigen sparse matrix to format supported by amgcl.  <a href="#a899b7e41ad18cfb005c48d9d8165b511"></a><br/></td></tr>
 <tr class="separator:a899b7e41ad18cfb005c48d9d8165b511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5029d16e4709b363434e7fcb3b635517"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a5029d16e4709b363434e7fcb3b635517"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html">matrix_map</a>&lt; T, ptrdiff_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1sparse.html#a5029d16e4709b363434e7fcb3b635517">map</a> (const boost::numeric::ublas::compressed_matrix&lt; T, boost::numeric::ublas::row_major &gt; &amp;A)</td></tr>
+<tr class="memdesc:a5029d16e4709b363434e7fcb3b635517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps ublas compressed matrix to format supported by amgcl.  <a href="#a5029d16e4709b363434e7fcb3b635517"></a><br/></td></tr>
+<tr class="separator:a5029d16e4709b363434e7fcb3b635517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe96de147fe00cb6c9399937a3f1ca06"><td class="memTemplParams" colspan="2"><a class="anchor" id="afe96de147fe00cb6c9399937a3f1ca06"></a>
 template&lt;class spmat &gt; </td></tr>
 <tr class="memitem:afe96de147fe00cb6c9399937a3f1ca06"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamgcl_1_1sparse_1_1viennacl__matrix__adapter.html">viennacl_matrix_adapter</a>&lt; spmat &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>viennacl_map</b> (const spmat &amp;A)</td></tr>
@@ -227,6 +231,27 @@ template&lt;class Derived &gt; </div>
 </div><div class="memdoc">
 
 <p>Maps Eigen sparse matrix to format supported by amgcl. </p>
+<p>No data is copied here. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5029d16e4709b363434e7fcb3b635517"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html">matrix_map</a>&lt;T, ptrdiff_t&gt; amgcl::sparse::map </td>
+          <td>(</td>
+          <td class="paramtype">const boost::numeric::ublas::compressed_matrix&lt; T, boost::numeric::ublas::row_major &gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maps ublas compressed matrix to format supported by amgcl. </p>
 <p>No data is copied here. </p>
 
 </div>

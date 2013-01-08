@@ -65,6 +65,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:acc9c4e04767331244caaff938f386356"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1sa__emin_1_1params.html#acc9c4e04767331244caaff938f386356">eps_strong</a></td></tr>
 <tr class="memdesc:acc9c4e04767331244caaff938f386356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameter <img class="formulaInl" alt="$\varepsilon_{str}$" src="form_6.png"/> defining strong couplings.  <a href="#acc9c4e04767331244caaff938f386356"></a><br/></td></tr>
 <tr class="separator:acc9c4e04767331244caaff938f386356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0115cb8d60d3f5cbde439b2ff4b3ba"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1sa__emin_1_1params.html#a6a0115cb8d60d3f5cbde439b2ff4b3ba">dof_per_node</a></td></tr>
+<tr class="memdesc:a6a0115cb8d60d3f5cbde439b2ff4b3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of degrees of freedom (number of unknowns) per grid node.  <a href="#a6a0115cb8d60d3f5cbde439b2ff4b3ba"></a><br/></td></tr>
+<tr class="separator:a6a0115cb8d60d3f5cbde439b2ff4b3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class aggr_type&gt;<br/>
@@ -72,6 +75,26 @@ struct amgcl::interp::sa_emin&lt; aggr_type &gt;::params</h3>
 
 <p>Parameters controlling aggregation. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a6a0115cb8d60d3f5cbde439b2ff4b3ba"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class aggr_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned <a class="el" href="structamgcl_1_1interp_1_1sa__emin.html">amgcl::interp::sa_emin</a>&lt; aggr_type &gt;::params::dof_per_node</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of degrees of freedom (number of unknowns) per grid node. </p>
+<p>Should be used with non-scalar systems of equations. Equations are assumed to be ordered by nodes (not by unknowns). </p>
+<dl class="section note"><dt>Note</dt><dd>This is assumed to be constant for all nodes. </dd></dl>
+
+<p>Referenced by <a class="el" href="structamgcl_1_1interp_1_1sa__emin.html#ae51e3354555d4d6c94045d63d2fb016c">amgcl::interp::sa_emin&lt; aggr_type &gt;::interp()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="acc9c4e04767331244caaff938f386356"></a>
 <div class="memitem">
 <div class="memproto">
