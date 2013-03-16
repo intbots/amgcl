@@ -63,7 +63,12 @@ int main(int argc, char *argv[]) {
     std::cout << amg << std::endl;
 
     // Solve the problem with CG method. Use AMG as a preconditioner:
-    ublas_vector x(n, 0);
+    ublas_vector x(n);
+
+#pragma omp parallel for
+    for(size_t i = 0; i < n; ++i)
+        x[i] = 0;
+
     prof.tic("solve (cg)");
     std::pair<int,real> cnv = amgcl::solve(A, rhs, amg, x, amgcl::cg_tag());
     prof.toc("solve (cg)");

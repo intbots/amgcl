@@ -160,6 +160,7 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
     const value_t *Aval = sparse::matrix_values(A);
 
 
+    // Count number of entries in P.
 #pragma omp parallel
     {
         std::vector<index_t> marker(nc, static_cast<index_t>(-1));
@@ -176,7 +177,6 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
 	index_t chunk_end   = n;
 #endif
 
-        // Count number of entries in P.
         for(index_t i = chunk_start; i < chunk_end; ++i) {
             for(index_t j = Arow[i], e = Arow[i+1]; j < e; ++j) {
                 index_t c = Acol[j];
@@ -191,19 +191,42 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
                 }
             }
         }
+    }
 
-        std::fill(marker.begin(), marker.end(), static_cast<index_t>(-1));
+    std::partial_sum(P.row.begin(), P.row.end(), P.row.begin());
+    P.reserve(P.row.back());
 
-#pragma omp barrier
-#pragma omp single
-        {
-            std::partial_sum(P.row.begin(), P.row.end(), P.row.begin());
-            P.reserve(P.row.back());
+#ifdef _OPENMP
+    if (omp_get_max_threads() > 1) {
+        // Let openmp threads touch their chunks of memory first.
+#pragma omp parallel for
+        for(size_t i = 0; i < n; ++i) {
+            for(index_t j = P.row[i], e = P.row[i + 1]; j < e; ++j) {
+                P.col[j] = 0;
+                P.val[j] = 0;
+            }
         }
+    }
+#endif
 
-        // Fill the interpolation matrix.
+    // Fill the interpolation matrix.
+#pragma omp parallel
+    {
+        std::vector<index_t> marker(nc, static_cast<index_t>(-1));
+
+#ifdef _OPENMP
+	int nt  = omp_get_num_threads();
+	int tid = omp_get_thread_num();
+
+	index_t chunk_size  = (n + nt - 1) / nt;
+	index_t chunk_start = tid * chunk_size;
+	index_t chunk_end   = std::min(n, chunk_start + chunk_size);
+#else
+	index_t chunk_start = 0;
+	index_t chunk_end   = n;
+#endif
+
         for(index_t i = chunk_start; i < chunk_end; ++i) {
-
             // Diagonal of the filtered matrix is original matrix diagonal minus
             // its weak connections.
             value_t dia = 0;

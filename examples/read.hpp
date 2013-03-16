@@ -23,11 +23,25 @@ inline int read_problem(const std::string &fname,
     f.read((char*)&n, sizeof(int));
 
     row.resize(n + 1);
+
+#pragma parallel for
+    for(int i = 0; i < n; ++i)
+        row[i] = 0;
+
     f.read((char*)row.data(), row.size() * sizeof(int));
 
     col.resize(row.back());
     val.resize(row.back());
     rhs.resize(n);
+
+#pragma parallel for
+    for(int i = 0; i < n; ++i) {
+        for(int j = row[i], e = row[i+1]; j < e; ++j) {
+            col[j] = 0;
+            val[j] = 0;
+        }
+        rhs[i] = 0;
+    }
 
     f.read((char*)&col[0], col.size() * sizeof(int));
     f.read((char*)&val[0], val.size() * sizeof(double));
@@ -55,11 +69,25 @@ inline int read_problem(const std::string &fname,
     f.read((char*)&n, sizeof(int));
 
     row.resize(n + 1);
+
+#pragma parallel for
+    for(int i = 0; i < n; ++i)
+        row[i] = 0;
+
     f.read((char*)row.data(), row.size() * sizeof(int));
 
     col.resize(row.back());
     val.resize(row.back());
     rhs.resize(n);
+
+#pragma parallel for
+    for(int i = 0; i < n; ++i) {
+        for(int j = row[i], e = row[i+1]; j < e; ++j) {
+            col[j] = 0;
+            val[j] = 0;
+        }
+        rhs[i] = 0;
+    }
 
     f.read((char*)col.data(), col.size() * sizeof(int));
 

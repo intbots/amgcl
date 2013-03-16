@@ -136,14 +136,34 @@ struct matrix {
         matrix(rows, cols, nnz).swap(*this);
     }
 
-    /// Copy constructor.
-    matrix(const matrix &A) :
-        rows(A.rows),
-        cols(A.cols),
-        row( A.row ),
-        col( A.col ),
-        val( A.val )
-    { }
+    /// Copy constructor from a compatible type.
+    template <class spmat>
+    matrix(const spmat &A) :
+        rows(matrix_rows(A)),
+        cols(matrix_cols(A)),
+        row(rows + 1),
+        col(A.row[A.rows]),
+        val(A.row[A.rows])
+    {
+        const index_t *Arow = matrix_outer_index(A);
+        const index_t *Acol = matrix_inner_index(A);
+        const value_t *Aval = matrix_values(A);
+
+#pragma omp for
+        for(size_t i = 0; i < rows; ++i) {
+            index_t b = Arow[i];
+            index_t e = Arow[i + 1];
+
+            row[i] = b;
+
+            for(index_t j = b; j < e; ++j) {
+                col[j] = Acol[j];
+                val[j] = Aval[j];
+            }
+        }
+
+        row[rows] = Arow[rows];
+    }
 
     /// Swap contents with other matrix.
     void swap(matrix &A) {
@@ -156,16 +176,6 @@ struct matrix {
             std::swap(val, A.val);
         }
     }
-
-    /// Copy constructor from a compatible type.
-    template <class spmat>
-    matrix(const spmat &A) :
-        rows(matrix_rows(A)),
-        cols(matrix_cols(A)),
-        row(matrix_outer_index(A), matrix_outer_index(A) + rows + 1),
-        col(matrix_inner_index(A), matrix_inner_index(A) + row[rows]),
-        val(matrix_values(A), matrix_values(A) + row[rows])
-    { }
 
     /// Allocates memory for a given number of nonzero entries.
     void reserve(index_t nnz) {
@@ -242,12 +252,29 @@ transpose(const spmat &A) {
 
     matrix<value_t, index_t> T(m, n, nnz);
 
-    std::fill(T.row.begin(), T.row.end(), static_cast<index_t>(0));
+#pragma omp parallel for
+    for(size_t i = 0; i < m; ++i)
+        T.row[i] = 0;
+
+    T.row.back() = 0;
 
     for(index_t j = 0; j < nnz; ++j)
         ++( T.row[Acol[j] + 1] );
 
     std::partial_sum(T.row.begin(), T.row.end(), T.row.begin());
+
+#ifdef _OPENMP
+    if (omp_get_max_threads() > 1) {
+        // Let openmp threads touch their chunks of memory first.
+#pragma omp parallel for
+        for(size_t i = 0; i < m; ++i) {
+            for(index_t j = T.row[i], e = T.row[i + 1]; j < e; ++j) {
+                T.col[j] = 0;
+                T.val[j] = 0;
+            }
+        }
+    }
+#endif
 
     for(index_t i = 0; i < n; i++) {
         for(index_t j = Arow[i], e = Arow[i + 1]; j < e; ++j) {
@@ -287,7 +314,11 @@ prod(const spmat1 &A, const spmat2 &B) {
 
     matrix<value_t, index_t> C(n, m);
 
-    std::fill(C.row.begin(), C.row.end(), static_cast<index_t>(0));
+#pragma parallel for
+    for(size_t i = 0; i < n; ++i)
+        C.row[i] = 0;
+
+    C.row.back() = 0;
 
 #pragma omp parallel
     {
@@ -318,15 +349,39 @@ prod(const spmat1 &A, const spmat2 &B) {
                 }
             }
         }
+    }
 
-        std::fill(marker.begin(), marker.end(), static_cast<index_t>(-1));
+    std::partial_sum(C.row.begin(), C.row.end(), C.row.begin());
+    C.reserve(C.row.back());
 
-#pragma omp barrier
-#pragma omp single
-        {
-            std::partial_sum(C.row.begin(), C.row.end(), C.row.begin());
-            C.reserve(C.row.back());
+#ifdef _OPENMP
+    if (omp_get_max_threads() > 1) {
+        // Let openmp threads touch their chunks of memory first.
+#pragma omp parallel for
+        for(size_t i = 0; i < n; ++i) {
+            for(index_t j = C.row[i], e = C.row[i + 1]; j < e; ++j) {
+                C.col[j] = 0;
+                C.val[j] = 0;
+            }
         }
+    }
+#endif
+
+#pragma omp parallel
+    {
+        std::vector<index_t> marker(m, static_cast<index_t>(-1));
+
+#ifdef _OPENMP
+	int nt  = omp_get_num_threads();
+	int tid = omp_get_thread_num();
+
+	index_t chunk_size  = (n + nt - 1) / nt;
+	index_t chunk_start = tid * chunk_size;
+	index_t chunk_end   = std::min(n, chunk_start + chunk_size);
+#else
+	index_t chunk_start = 0;
+	index_t chunk_end   = n;
+#endif
 
         for(index_t ia = chunk_start; ia < chunk_end; ++ia) {
             index_t row_beg = C.row[ia];
