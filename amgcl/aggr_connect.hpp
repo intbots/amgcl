@@ -105,7 +105,6 @@ pointwise_matrix(const spmat &A, unsigned dof_per_node) {
     const value_t *Aval = sparse::matrix_values(A);
 
     sparse::matrix<value_t, index_t> B(nc, mc);
-    std::fill(B.row.begin(), B.row.end(), static_cast<index_t>(0));
 
 #pragma omp parallel
     {
@@ -135,15 +134,27 @@ pointwise_matrix(const spmat &A, unsigned dof_per_node) {
                 }
             }
         }
+    }
 
-        std::fill(marker.begin(), marker.end(), static_cast<index_t>(-1));
+    std::partial_sum(B.row.begin(), B.row.end(), B.row.begin());
+    B.reserve(B.row.back());
+    B.omp_touch();
 
-#pragma omp barrier
-#pragma omp single
-        {
-            std::partial_sum(B.row.begin(), B.row.end(), B.row.begin());
-            B.reserve(B.row.back());
-        }
+#pragma omp parallel
+    {
+        std::vector<index_t> marker(mc, static_cast<index_t>(-1));
+
+#ifdef _OPENMP
+        int nt  = omp_get_num_threads();
+        int tid = omp_get_thread_num();
+
+        index_t chunk_size  = (nc + nt - 1) / nt;
+        index_t chunk_start = tid * chunk_size;
+        index_t chunk_end   = std::min(nc, chunk_start + chunk_size);
+#else
+        index_t chunk_start = 0;
+        index_t chunk_end   = n;
+#endif
 
         // Fill the reduced matrix. Use max norm for blocks.
         for(index_t ib = chunk_start, ia = ib * dof_per_node; ib < chunk_end; ++ib) {

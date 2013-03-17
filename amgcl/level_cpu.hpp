@@ -105,7 +105,9 @@ struct cpu_damped_jacobi {
 
         template <class U, class V>
         inline static void vector_copy(U &u, V &v) {
-            std::copy(u.begin(), u.end(), &v[0]);
+#pragma omp parallel for
+            for(index_t i = 0; i < u.size(); ++i)
+                v[i] = u[i];
         }
     };
 };
@@ -445,7 +447,9 @@ class instance {
                     }
                     TOC("restrict");
 
-                    std::fill(nxt->u.begin(), nxt->u.end(), static_cast<value_t>(0));
+#pragma omp parallel for
+                    for(index_t i =0; i < nc; ++i)
+                        nxt->u[i] = 0;
 
                     if (nxt->cg[0].empty())
                         cycle(pnxt, end, prm, nxt->f, nxt->u);
@@ -499,12 +503,15 @@ class instance {
                 std::vector<value_t> &p = lvl->cg[2];
                 std::vector<value_t> &q = lvl->cg[3];
 
-                std::copy(&rhs[0], &rhs[0] + n, &r[0]);
+#pragma omp parallel for
+                for(index_t i = 0; i < n; ++i)
+                    r[i] = rhs[i];
 
                 value_t rho1 = 0, rho2 = 0;
 
                 for(int iter = 0; iter < 2; ++iter) {
-                    std::fill(&s[0], &s[0] + n, static_cast<value_t>(0));
+#pragma omp parallel for
+                    for(index_t i = 0; i < n; ++i) s[i] = 0;
                     cycle(plvl, end, prm, r, s);
 
                     TIC("kcycle");
@@ -518,7 +525,8 @@ class instance {
                             p[i] = s[i] + beta * p[i];
                         }
                     } else {
-                        std::copy(&s[0], &s[0] + n, &p[0]);
+#pragma omp parallel for
+                        for(index_t i = 0; i < n; ++i) p[i] = s[i];
                     }
 
 #pragma omp parallel for

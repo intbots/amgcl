@@ -161,7 +161,6 @@ smoothed_interpolation(
     const index_t n = sparse::matrix_rows(A);
 
     sparse::matrix<value_t, index_t> AP(n, nc);
-    std::fill(AP.row.begin(), AP.row.end(), static_cast<index_t>(0));
 
     std::vector<value_t> omega_p(nc, static_cast<value_t>(0));
     std::vector<value_t> denum(nc, static_cast<value_t>(0));
@@ -217,15 +216,27 @@ smoothed_interpolation(
                 }
             }
         }
+    }
 
-        std::fill(marker.begin(), marker.end(), static_cast<index_t>(-1));
+    std::partial_sum(AP.row.begin(), AP.row.end(), AP.row.begin());
+    AP.reserve(AP.row.back());
+    AP.omp_touch();
 
-#pragma omp barrier
-#pragma omp single
-        {
-            std::partial_sum(AP.row.begin(), AP.row.end(), AP.row.begin());
-            AP.reserve(AP.row.back());
-        }
+#pragma omp parallel
+    {
+#ifdef _OPENMP
+        int nt  = omp_get_num_threads();
+        int tid = omp_get_thread_num();
+
+        index_t chunk_size  = (n + nt - 1) / nt;
+        index_t chunk_start = tid * chunk_size;
+        index_t chunk_end   = std::min(n, chunk_start + chunk_size);
+#else
+        index_t chunk_start = 0;
+        index_t chunk_end   = n;
+#endif
+
+        std::vector<index_t> marker(nc, static_cast<index_t>(-1));
 
         // 2. Compute the product result.
         for(index_t i = chunk_start; i < chunk_end; ++i) {
@@ -378,7 +389,6 @@ smoothed_restriction(
     R_tent_row[0] = 0;
 
     sparse::matrix<value_t, index_t> R(nc, n);
-    std::fill(R.row.begin(), R.row.end(), static_cast<index_t>(0));
 
     // Diagonal of filtered matrix.
     std::vector<value_t> Dinv(n);
@@ -428,16 +438,27 @@ smoothed_restriction(
                 }
             }
         }
+    }
 
-        std::fill(marker.begin(), marker.end(), static_cast<index_t>(-1));
+    std::partial_sum(R.row.begin(), R.row.end(), R.row.begin());
+    R.reserve(R.row.back());
+    R.omp_touch();
 
-#pragma omp barrier
-#pragma omp single
-        {
-            std::partial_sum(R.row.begin(), R.row.end(), R.row.begin());
-            R.reserve(R.row.back());
-        }
+#pragma omp parallel
+    {
+#ifdef _OPENMP
+        int nt  = omp_get_num_threads();
+        int tid = omp_get_thread_num();
 
+        index_t chunk_size  = (nc + nt - 1) / nt;
+        index_t chunk_start = tid * chunk_size;
+        index_t chunk_end   = std::min(nc, chunk_start + chunk_size);
+#else
+        index_t chunk_start = 0;
+        index_t chunk_end   = nc;
+#endif
+
+        std::vector<index_t> marker(n, static_cast<index_t>(-1));
         for(index_t ir = chunk_start; ir < chunk_end; ++ir) {
             index_t row_beg = R.row[ir];
             index_t row_end = row_beg;

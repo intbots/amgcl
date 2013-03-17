@@ -129,7 +129,13 @@ struct matrix {
     /// Constructs matrix with a given number of rows, columns, and nonzero entries.
     matrix(index_t rows, index_t cols, index_t nnz = 0) :
         rows(rows), cols(cols), row(rows + 1), col(nnz), val(nnz)
-    {}
+    {
+#pragma omp parallel for
+        for(index_t i = 0; i < rows; ++i)
+            row[i] = 0;
+
+        row.back() = 0;
+    }
 
     /// Resizes matrix.
     void resize(index_t rows, index_t cols, index_t nnz = 0) {
@@ -181,6 +187,21 @@ struct matrix {
     void reserve(index_t nnz) {
         col.resize(nnz);
         val.resize(nnz);
+    }
+
+    /// Make openmp threads touch their memory chunks
+    void omp_touch() {
+#ifdef _OPENMP
+        if (omp_get_max_threads() > 1) {
+#pragma omp parallel for
+            for(index_t i = 0; i < rows; ++i) {
+                for(index_t j = row[i], e = row[i + 1]; j < e; ++j) {
+                    col[j] = 0;
+                    val[j] = 0;
+                }
+            }
+        }
+#endif
     }
 
     /// Deallocates any heap memory held by the matrix.
@@ -262,19 +283,7 @@ transpose(const spmat &A) {
         ++( T.row[Acol[j] + 1] );
 
     std::partial_sum(T.row.begin(), T.row.end(), T.row.begin());
-
-#ifdef _OPENMP
-    if (omp_get_max_threads() > 1) {
-        // Let openmp threads touch their chunks of memory first.
-#pragma omp parallel for
-        for(size_t i = 0; i < m; ++i) {
-            for(index_t j = T.row[i], e = T.row[i + 1]; j < e; ++j) {
-                T.col[j] = 0;
-                T.val[j] = 0;
-            }
-        }
-    }
-#endif
+    T.omp_touch();
 
     for(index_t i = 0; i < n; i++) {
         for(index_t j = Arow[i], e = Arow[i + 1]; j < e; ++j) {
@@ -353,19 +362,7 @@ prod(const spmat1 &A, const spmat2 &B) {
 
     std::partial_sum(C.row.begin(), C.row.end(), C.row.begin());
     C.reserve(C.row.back());
-
-#ifdef _OPENMP
-    if (omp_get_max_threads() > 1) {
-        // Let openmp threads touch their chunks of memory first.
-#pragma omp parallel for
-        for(size_t i = 0; i < n; ++i) {
-            for(index_t j = C.row[i], e = C.row[i + 1]; j < e; ++j) {
-                C.col[j] = 0;
-                C.val[j] = 0;
-            }
-        }
-    }
-#endif
+    C.omp_touch();
 
 #pragma omp parallel
     {

@@ -133,7 +133,12 @@ class classic {
             sparse::matrix<value_t, index_t> &R = PR.second;
 
             P.resize(n, nc);
-            std::fill(P.row.begin(), P.row.end(), static_cast<index_t>(0));
+
+#pragma omp parallel for
+            for(index_t i = 0; i < n; ++i)
+                P.row[i] = 0;
+
+            P.row.back() = 0;
 
             std::vector<value_t> Amin, Amax;
 
@@ -176,8 +181,8 @@ class classic {
             }
 
             std::partial_sum(P.row.begin(), P.row.end(), P.row.begin());
-
             P.reserve(P.row.back());
+            P.omp_touch();
 
 #pragma omp parallel for
             for(index_t i = 0; i < n; ++i) {

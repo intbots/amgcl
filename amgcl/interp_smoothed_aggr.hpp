@@ -153,7 +153,6 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
     sparse::matrix<value_t, index_t> &R = PR.second;
 
     P.resize(n, nc);
-    std::fill(P.row.begin(), P.row.end(), static_cast<index_t>(0));
 
     const index_t *Arow = sparse::matrix_outer_index(A);
     const index_t *Acol = sparse::matrix_inner_index(A);
@@ -195,19 +194,7 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
 
     std::partial_sum(P.row.begin(), P.row.end(), P.row.begin());
     P.reserve(P.row.back());
-
-#ifdef _OPENMP
-    if (omp_get_max_threads() > 1) {
-        // Let openmp threads touch their chunks of memory first.
-#pragma omp parallel for
-        for(size_t i = 0; i < n; ++i) {
-            for(index_t j = P.row[i], e = P.row[i + 1]; j < e; ++j) {
-                P.col[j] = 0;
-                P.val[j] = 0;
-            }
-        }
-    }
-#endif
+    P.omp_touch();
 
     // Fill the interpolation matrix.
 #pragma omp parallel
