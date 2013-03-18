@@ -273,12 +273,6 @@ transpose(const spmat &A) {
 
     matrix<value_t, index_t> T(m, n, nnz);
 
-#pragma omp parallel for
-    for(size_t i = 0; i < m; ++i)
-        T.row[i] = 0;
-
-    T.row.back() = 0;
-
     for(index_t j = 0; j < nnz; ++j)
         ++( T.row[Acol[j] + 1] );
 
@@ -322,12 +316,6 @@ prod(const spmat1 &A, const spmat2 &B) {
     const value_t *Bval = matrix_values(B);
 
     matrix<value_t, index_t> C(n, m);
-
-#pragma omp parallel for
-    for(size_t i = 0; i < n; ++i)
-        C.row[i] = 0;
-
-    C.row.back() = 0;
 
 #pragma omp parallel
     {
