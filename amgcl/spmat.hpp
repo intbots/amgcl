@@ -323,7 +323,7 @@ prod(const spmat1 &A, const spmat2 &B) {
 
     matrix<value_t, index_t> C(n, m);
 
-#pragma parallel for
+#pragma omp parallel for
     for(size_t i = 0; i < n; ++i)
         C.row[i] = 0;
 

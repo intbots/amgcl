@@ -24,7 +24,7 @@ inline int read_problem(const std::string &fname,
 
     row.resize(n + 1);
 
-#pragma parallel for
+#pragma omp parallel for
     for(int i = 0; i < n; ++i)
         row[i] = 0;
 
@@ -34,7 +34,7 @@ inline int read_problem(const std::string &fname,
     val.resize(row.back());
     rhs.resize(n);
 
-#pragma parallel for
+#pragma omp parallel for
     for(int i = 0; i < n; ++i) {
         for(int j = row[i], e = row[i+1]; j < e; ++j) {
             col[j] = 0;
@@ -70,7 +70,7 @@ inline int read_problem(const std::string &fname,
 
     row.resize(n + 1);
 
-#pragma parallel for
+#pragma omp parallel for
     for(int i = 0; i < n; ++i)
         row[i] = 0;
 
@@ -80,7 +80,7 @@ inline int read_problem(const std::string &fname,
     val.resize(row.back());
     rhs.resize(n);
 
-#pragma parallel for
+#pragma omp parallel for
     for(int i = 0; i < n; ++i) {
         for(int j = row[i], e = row[i+1]; j < e; ++j) {
             col[j] = 0;
