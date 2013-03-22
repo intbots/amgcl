@@ -62,19 +62,17 @@ namespace amgcl {
  * \ingroup iterative
  */
 template <class matrix, class vector, class precond>
-std::pair< int, typename value_type<vector>::type >
+std::pair< int, double >
 solve(const matrix &A, const vector &rhs, const precond &P, vector &x, cg_tag prm = cg_tag())
 {
     TIC("solver");
-    typedef typename value_type<vector>::type value_t;
-
     const size_t n = x.size();
 
     vector r(n), s(n), p(n), q(n);
     residual(A, x, rhs, r);
 
-    value_t rho1 = 0, rho2 = 0;
-    value_t norm_of_rhs = norm(rhs);
+    double rho1 = 0, rho2 = 0;
+    double norm_of_rhs = norm(rhs);
 
     if (norm_of_rhs == 0) {
         clear(x);
@@ -82,7 +80,7 @@ solve(const matrix &A, const vector &rhs, const precond &P, vector &x, cg_tag pr
     }
 
     int     iter = 0;
-    value_t res;
+    double  res;
 
     for(; (res = norm(r) / norm_of_rhs) > prm.tol && iter < prm.maxiter; ++iter)
     {
@@ -101,7 +99,7 @@ solve(const matrix &A, const vector &rhs, const precond &P, vector &x, cg_tag pr
 
         axpy(A, p, q);
 
-        value_t alpha = rho1 / inner_prod(q, p);
+        double alpha = rho1 / inner_prod(q, p);
 
         x += alpha * p;
         r -= alpha * q;

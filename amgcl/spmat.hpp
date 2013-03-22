@@ -42,7 +42,40 @@ THE SOFTWARE.
 #  include <omp.h>
 #endif
 
+#include <boost/utility/enable_if.hpp>
+#include <boost/type_traits/is_arithmetic.hpp>
+
 namespace amgcl {
+
+template <typename T>
+typename boost::enable_if< boost::is_arithmetic<T>, T >::type
+transpose(T v) {
+    return v;
+}
+
+template <typename T>
+typename boost::enable_if< boost::is_arithmetic<T>, T >::type
+inverse(T v) {
+    return 1 / v;
+}
+
+template <typename T>
+typename boost::enable_if< boost::is_arithmetic<T>, T >::type
+zero() {
+    return T();
+}
+
+template <typename T>
+typename boost::enable_if< boost::is_arithmetic<T>, T >::type
+identity() {
+    return static_cast<T>(1);
+}
+
+template <typename T>
+typename boost::enable_if< boost::is_arithmetic<T>, T >::type
+norm(T v) {
+    return fabs(v);
+}
 
 /// A set of routines to work with sparse matrices in CRS format.
 namespace sparse {
@@ -254,7 +287,7 @@ transpose(const spmat &A) {
             index_t head = T.row[Acol[j]]++;
 
             T.col[head] = i;
-            T.val[head] = Aval[j];
+            T.val[head] = amgcl::transpose(Aval[j]);
         }
     }
 
@@ -359,8 +392,8 @@ prod(const spmat1 &A, const spmat2 &B) {
 /// Gauss-Jordan elimination.
 template <typename index_t, class value_t>
 void gaussj(index_t n, value_t *a) {
-    const static value_t one = static_cast<value_t>(1);
-    const static value_t zero = static_cast<value_t>(0);
+    const static value_t one  = amgcl::identity<value_t>();
+    const static value_t zero = amgcl::zero<value_t>();
 
     std::vector<index_t> idxc(n);
     std::vector<index_t> idxr(n);
@@ -369,13 +402,13 @@ void gaussj(index_t n, value_t *a) {
     for(index_t i = 0; i < n; ++i) {
         index_t irow = 0, icol = 0;
 
-        value_t big = zero;
+        double big = 0;
         for(index_t j = 0; j < n; ++j) {
             if (ipiv[j]) continue;
 
             for(index_t k = 0; k < n; ++k) {
-                if (!ipiv[k] && fabs(a[j * n + k]) > big) {
-                    big  = fabs(a[j * n + k]);
+                if (!ipiv[k] && norm(a[j * n + k]) > big) {
+                    big  = norm(a[j * n + k]);
                     irow = j;
                     icol = k;
                 }
@@ -396,7 +429,7 @@ void gaussj(index_t n, value_t *a) {
         if (a[icol * n + icol] == zero)
             throw std::logic_error("Singular matrix in gaussj");
 
-        value_t pivinv = one / a[icol * n + icol];
+        value_t pivinv = one * amgcl::inverse(a[icol * n + icol]);
         a[icol * n + icol] = one;
 
         for(value_t *v = a + icol * n, *e = a + (icol + 1) * n; v != e; ++v)
@@ -447,7 +480,7 @@ inverse(const spmat &A) {
         typename matrix_index<spmat>::type
     > Ainv(n, n, n * n);
 
-    std::fill(Ainv.val.begin(), Ainv.val.end(), static_cast<value_t>(0));
+    std::fill(Ainv.val.begin(), Ainv.val.end(), amgcl::zero<value_t>());
 
     for(index_t i = 0; i < n; ++i)
         for(index_t j = Arow[i], e = Arow[i + 1]; j < e; ++j)
@@ -485,7 +518,7 @@ diagonal(const spmat &A) {
 
 #pragma omp parallel for schedule(dynamic, 1024)
     for(index_t i = 0; i < n; ++i) {
-        value_t d = 0;
+        value_t d = amgcl::zero<value_t>();
         for(index_t j = Arow[i], e = Arow[i + 1]; j < e; ++j) {
             if (Acol[j] == i) {
                 d = Aval[j];

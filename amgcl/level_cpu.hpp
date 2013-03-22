@@ -270,7 +270,7 @@ struct cpu_ilu0 {
 struct cpu_spai0 {
     struct params { };
 
-    template <typename value_t, typename index_t>
+    template <typename matrix_value_t, typename vector_value_t, typename index_t>
     struct instance {
         instance() {}
 
@@ -283,11 +283,11 @@ struct cpu_spai0 {
 
             const index_t *Arow = sparse::matrix_outer_index(A);
             const index_t *Acol = sparse::matrix_inner_index(A);
-            const value_t *Aval = sparse::matrix_values(A);
+            const matrix_value_t *Aval = sparse::matrix_values(A);
 
 #pragma omp parallel for schedule(dynamic, 1024)
             for(index_t i = 0; i < n; i++) {
-                value_t buf = rhs[i];
+                vector_value_t buf = rhs[i];
                 for(index_t j = Arow[i], e = Arow[i + 1]; j < e; ++j)
                     buf -= Aval[j] * x[Acol[j]];
                 tmp[i] = buf;
@@ -305,7 +305,7 @@ struct cpu_spai0 {
         }
 
 
-        std::vector<value_t> m;
+        std::vector<matrix_value_t> m;
     };
 };
 
@@ -336,10 +336,10 @@ struct params
     typename cpu_relax_scheme<Relaxation>::type::params relax;
 };
 
-template <typename value_t, typename index_t>
+template <typename matrix_value_t, typename vector_value_t, typename index_t>
 class instance {
     public:
-        typedef sparse::matrix<value_t, index_t> matrix;
+        typedef sparse::matrix<matrix_value_t, index_t> matrix;
 
         // Construct complete multigrid level from system matrix (a),
         // prolongation (p) and restriction (r) operators.
@@ -378,23 +378,23 @@ class instance {
 
         // Compute residual value.
         template <class vector1, class vector2>
-        value_t resid(const vector1 &rhs, vector2 &x) const {
+        double resid(const vector1 &rhs, vector2 &x) const {
             TIC("residual");
             const index_t n = A.rows;
-            value_t norm = 0;
+            double res = 0;
 
 #pragma omp parallel for reduction(+:norm) schedule(dynamic, 1024)
             for(index_t i = 0; i < n; ++i) {
-                value_t temp = rhs[i];
+                vector_value_t temp = rhs[i];
 
                 for(index_t j = A.row[i], e = A.row[i + 1]; j < e; ++j)
                     temp -= A.val[j] * x[A.col[j]];
 
-                norm += temp * temp;
+                res += amgcl::transpose(temp) * temp;
             }
 
             TOC("residual");
-            return sqrt(norm);
+            return sqrt(res);
         }
 
         // Perform one V-cycle. Coarser levels are cycled recursively. The
@@ -423,7 +423,7 @@ class instance {
                     TIC("residual");
 #pragma omp parallel for schedule(dynamic, 1024)
                     for(index_t i = 0; i < n; ++i) {
-                        value_t temp = rhs[i];
+                        vector_value_t temp = rhs[i];
 
                         for(index_t j = lvl->A.row[i], e = lvl->A.row[i + 1]; j < e; ++j)
                             temp -= lvl->A.val[j] * x[lvl->A.col[j]];
@@ -436,7 +436,7 @@ class instance {
                     TIC("restrict");
 #pragma omp parallel for schedule(dynamic, 1024)
                     for(index_t i = 0; i < nc; ++i) {
-                        value_t temp = 0;
+                        vector_value_t temp = zero<vector_value_t>();
 
                         for(index_t j = lvl->R.row[i], e = lvl->R.row[i + 1]; j < e; ++j)
                             temp += lvl->R.val[j] * lvl->t[lvl->R.col[j]];
@@ -445,7 +445,7 @@ class instance {
                     }
                     TOC("restrict");
 
-                    std::fill(nxt->u.begin(), nxt->u.end(), static_cast<value_t>(0));
+                    std::fill(nxt->u.begin(), nxt->u.end(), zero<vector_value_t>());
 
                     if (nxt->cg[0].empty())
                         cycle(pnxt, end, prm, nxt->f, nxt->u);
@@ -456,7 +456,7 @@ class instance {
                     TIC("prolongate");
 #pragma omp parallel for schedule(dynamic, 1024)
                     for(index_t i = 0; i < n; ++i) {
-                        value_t temp = 0;
+                        vector_value_t temp = zero<vector_value_t>();
 
                         for(index_t j = lvl->P.row[i], e = lvl->P.row[i + 1]; j < e; ++j)
                             temp += lvl->P.val[j] * nxt->u[lvl->P.col[j]];
@@ -474,7 +474,7 @@ class instance {
                 TIC("coarse");
 #pragma omp parallel for
                 for(index_t i = 0; i < n; ++i) {
-                    value_t temp = 0;
+                    vector_value_t temp = zero<vector_value_t>();
                     for(index_t j = lvl->Ai.row[i], e = lvl->Ai.row[i + 1]; j < e; ++j)
                         temp += lvl->Ai.val[j] * rhs[lvl->Ai.col[j]];
                     x[i] = temp;
@@ -494,17 +494,17 @@ class instance {
             const index_t n = lvl->A.rows;
 
             if (pnxt != end) {
-                std::vector<value_t> &r = lvl->cg[0];
-                std::vector<value_t> &s = lvl->cg[1];
-                std::vector<value_t> &p = lvl->cg[2];
-                std::vector<value_t> &q = lvl->cg[3];
+                std::vector<vector_value_t> &r = lvl->cg[0];
+                std::vector<vector_value_t> &s = lvl->cg[1];
+                std::vector<vector_value_t> &p = lvl->cg[2];
+                std::vector<vector_value_t> &q = lvl->cg[3];
 
                 std::copy(&rhs[0], &rhs[0] + n, &r[0]);
 
-                value_t rho1 = 0, rho2 = 0;
+                double rho1 = 0, rho2 = 0;
 
                 for(int iter = 0; iter < 2; ++iter) {
-                    std::fill(&s[0], &s[0] + n, static_cast<value_t>(0));
+                    std::fill(&s[0], &s[0] + n, zero<vector_value_t>());
                     cycle(plvl, end, prm, r, s);
 
                     TIC("kcycle");
@@ -512,7 +512,7 @@ class instance {
                     rho1 = lvl->inner_prod(r, s);
 
                     if (iter) {
-                        value_t beta = rho1 / rho2;
+                        double beta = rho1 / rho2;
 #pragma omp parallel for schedule(dynamic, 1024)
                         for(index_t i = 0; i < n; ++i) {
                             p[i] = s[i] + beta * p[i];
@@ -523,7 +523,7 @@ class instance {
 
 #pragma omp parallel for schedule(dynamic, 1024)
                     for(index_t i = 0; i < n; ++i) {
-                        value_t temp = 0;
+                        vector_value_t temp = zero<vector_value_t>();
 
                         for(index_t j = lvl->A.row[i], e = lvl->A.row[i + 1]; j < e; ++j)
                             temp += lvl->A.val[j] * p[lvl->A.col[j]];
@@ -531,7 +531,7 @@ class instance {
                         q[i] = temp;
                     }
 
-                    value_t alpha = rho1 / lvl->inner_prod(q, p);
+                    double alpha = rho1 / lvl->inner_prod(q, p);
 
 #pragma omp parallel for schedule(dynamic, 1024)
                     for(index_t i = 0; i < n; ++i) {
@@ -544,7 +544,7 @@ class instance {
                 TIC("coarse");
 #pragma omp parallel for
                 for(index_t i = 0; i < n; ++i) {
-                    value_t temp = 0;
+                    vector_value_t temp = zero<vector_value_t>();
                     for(index_t j = lvl->Ai.row[i], e = lvl->Ai.row[i + 1]; j < e; ++j)
                         temp += lvl->Ai.val[j] * rhs[lvl->Ai.col[j]];
                     x[i] = temp;
@@ -567,23 +567,23 @@ class instance {
 
         matrix Ai;
 
-        mutable std::vector<value_t> u;
-        mutable std::vector<value_t> f;
-        mutable std::vector<value_t> t;
+        mutable std::vector<vector_value_t> u;
+        mutable std::vector<vector_value_t> f;
+        mutable std::vector<vector_value_t> t;
 
-        typename cpu_relax_scheme<Relaxation>::type::template instance<value_t, index_t> relax;
+        typename cpu_relax_scheme<Relaxation>::type::template instance<matrix_value_t, vector_value_t, index_t> relax;
 
-        mutable boost::array<std::vector<value_t>, 4> cg;
+        mutable boost::array<std::vector<vector_value_t>, 4> cg;
 
         template <class vector1, class vector2>
-        value_t inner_prod(const vector1 &x, const vector2 &y) const {
+        double inner_prod(const vector1 &x, const vector2 &y) const {
             const index_t n = A.rows;
 
-            value_t sum = 0;
+            double sum = 0;
 
 #pragma omp parallel for reduction(+:sum) schedule(dynamic, 1024)
             for(index_t i = 0; i < n; ++i)
-                sum += x[i] * y[i];
+                sum += amgcl::transpose(x[i]) * y[i];
 
             return sum;
         }

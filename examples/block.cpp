@@ -5,45 +5,42 @@
 #include <Eigen/Dense>
 #include <Eigen/SparseCore>
 
+#include <amgcl/operations_eigen.hpp>
 #include <amgcl/amgcl.hpp>
 #include <amgcl/interp_smoothed_aggr.hpp>
 #include <amgcl/aggr_plain.hpp>
 #include <amgcl/level_cpu.hpp>
-#include <amgcl/operations_eigen.hpp>
 #include <amgcl/cg.hpp>
 #include <amgcl/profiler.hpp>
 
 #include "read.hpp"
 
 typedef double real;
-typedef Eigen::Matrix<real, Eigen::Dynamic, 1> EigenVector;
+typedef Eigen::Matrix<real, 4, 4> mblock;
+typedef Eigen::Matrix<real, 4, 1> vblock;
 
-namespace amgcl {
-    profiler<> prof("eigen");
-}
-using amgcl::prof;
+typedef Eigen::Matrix<vblock, Eigen::Dynamic, 1> EigenVector;
 
 int main(int argc, char *argv[]) {
-    if (argc < 2) {
-        std::cerr << "Usage: " << argv[0] << " <problem.dat>" << std::endl;
-        return 1;
-    }
+    amgcl::profiler<> prof(argv[0]);
 
     // Read matrix and rhs from a binary file.
-    std::vector<int>  row;
-    std::vector<int>  col;
-    std::vector<real> val;
-    EigenVector       rhs;
-    int n = read_problem(argv[1], row, col, val, rhs);
+    std::vector<int>    row;
+    std::vector<int>    col;
+    std::vector<mblock> val;
+    EigenVector         rhs;
+
+    // TODO: Init matrix
+    int n = 100;
 
     // Wrap the matrix into Eigen Map.
-    Eigen::MappedSparseMatrix<real, Eigen::RowMajor, int> A(
+    Eigen::MappedSparseMatrix<mblock, Eigen::RowMajor, int> A(
             n, n, row.back(), row.data(), col.data(), val.data()
             );
 
     // Build the preconditioner:
     typedef amgcl::solver<
-        real, real, int,
+        mblock, vblock, int,
         amgcl::interp::smoothed_aggregation<amgcl::aggr::plain>,
         amgcl::level::cpu<amgcl::relax::spai0>
         > AMG;
@@ -59,9 +56,10 @@ int main(int argc, char *argv[]) {
     std::cout << amg << std::endl;
 
     // Solve the problem with CG method. Use AMG as a preconditioner:
-    EigenVector x = EigenVector::Zero(n);
+    EigenVector x(n);// = EigenVector::Zero(n);
     prof.tic("solve (cg)");
-    std::pair<int,real> cnv = amgcl::solve(A, rhs, amg, x, amgcl::cg_tag());
+    //std::pair<int,double> cnv = amgcl::solve(A, rhs, amg, x, amgcl::cg_tag());
+    std::pair<int,double> cnv = amg.solve(rhs, x);
     prof.toc("solve (cg)");
 
     std::cout << "Iterations: " << cnv.first  << std::endl

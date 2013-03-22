@@ -56,6 +56,9 @@ endif (OPENCL_FOUND)
 if (EIGEN_INCLUDE)
     add_executable(eigen eigen.cpp)
     target_link_libraries(eigen ${Boost_LIBRARIES})
+
+    add_executable(block block.cpp)
+    target_link_libraries(block ${Boost_LIBRARIES})
 endif (EIGEN_INCLUDE)
 
 add_executable(ublas ublas.cpp)

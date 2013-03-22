@@ -88,9 +88,7 @@ struct params {
      */
     mutable float eps_strong;
 
-    unsigned dof_per_node;
-
-    params() : relax(2.0f / 3.0f), eps_strong(0.08f), dof_per_node(1) {}
+    params() : relax(2.0f / 3.0f), eps_strong(0.08f) {}
 };
 
 /// Constructs coarse level by aggregation.
@@ -114,27 +112,13 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
     std::vector<char>    S;
     std::vector<index_t> aggr;
 
-    assert(prm.dof_per_node > 0);
+    TIC("connections");
+    aggr::connect(A, prm.eps_strong).swap(S);
+    TOC("connections");
 
-    if (prm.dof_per_node == 1) {
-        // Scalar system. Nothing fancy.
-        TIC("connections");
-        aggr::connect(A, prm.eps_strong).swap(S);
-        TOC("connections");
-
-        TIC("aggregates");
-        aggr_type::aggregates(A, S).swap(aggr);
-        TOC("aggregates");
-    } else {
-        // Non-scalar system.
-        // Build reduced matrix, find connections and aggregates with it,
-        // restore the vectors to full size.
-
-        std::pair<std::vector<char>, std::vector<index_t> > S_aggr = aggr::pointwise_coarsening<aggr_type>(
-                    A, prm.eps_strong, prm.dof_per_node);
-        S.swap(S_aggr.first);
-        aggr.swap(S_aggr.second);
-    }
+    TIC("aggregates");
+    aggr_type::aggregates(A, S).swap(aggr);
+    TOC("aggregates");
 
     prm.eps_strong *= 0.5;
 
@@ -206,14 +190,14 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
 
             // Diagonal of the filtered matrix is original matrix diagonal minus
             // its weak connections.
-            value_t dia = 0;
+            value_t dia = amgcl::zero<value_t>();
             for(index_t j = Arow[i], e = Arow[i + 1]; j < e; ++j) {
                 if (Acol[j] == i)
                     dia += Aval[j];
                 else if (!S[j])
                     dia -= Aval[j];
             }
-            dia = 1 / dia;
+            dia = amgcl::inverse(dia);
 
             index_t row_beg = P.row[i];
             index_t row_end = row_beg;
@@ -227,7 +211,7 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
                 index_t g = aggr[c];
                 if (g < 0) continue;
 
-                value_t v = (c == i) ? 1 - prm.relax : -prm.relax * dia * Aval[j];
+                value_t v = ((c == i) ? (1 - prm.relax) : -prm.relax) * dia * Aval[j];
 
                 if (marker[g] < row_beg) {
                     marker[g] = row_end;
