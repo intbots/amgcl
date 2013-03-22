@@ -67,15 +67,7 @@ struct params {
      */
     mutable float eps_strong;
 
-    /// Number of degrees of freedom (number of unknowns) per grid node.
-    /**
-     * Should be used with non-scalar systems of equations. Equations are
-     * assumed to be ordered by nodes (not by unknowns).
-     * \note This is assumed to be constant for all nodes.
-     */
-    unsigned dof_per_node;
-
-    params() : eps_strong(0.08f), dof_per_node(1) {}
+    params() : eps_strong(0.08f) {}
 };
 
 /// Constructs coarse level by aggregation.
@@ -100,27 +92,13 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
     std::vector<char>    S;
     std::vector<index_t> aggr;
 
-    assert(prm.dof_per_node > 0);
+    TIC("connections");
+    aggr::connect(A, prm.eps_strong).swap(S);
+    TOC("connections");
 
-    if (prm.dof_per_node == 1) {
-        // Scalar system. Nothing fancy.
-        TIC("connections");
-        aggr::connect(A, prm.eps_strong).swap(S);
-        TOC("connections");
-
-        TIC("aggregates");
-        aggr_type::aggregates(A, S).swap(aggr);
-        TOC("aggregates");
-    } else {
-        // Non-scalar system.
-        // Build reduced matrix, find connections and aggregates with it,
-        // restore the vectors to full size.
-
-        std::pair<std::vector<char>, std::vector<index_t> > S_aggr = aggr::pointwise_coarsening<aggr_type>(
-                    A, prm.eps_strong, prm.dof_per_node);
-        S.swap(S_aggr.first);
-        aggr.swap(S_aggr.second);
-    }
+    TIC("aggregates");
+    aggr_type::aggregates(A, S).swap(aggr);
+    TOC("aggregates");
 
     prm.eps_strong *= 0.5;
 

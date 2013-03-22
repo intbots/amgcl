@@ -78,7 +78,7 @@ class classic {
              * unchanged. In practice, a value of \f$\varepsilon_{tr}=0.2\f$ is
              * usually taken.
              */
-            // TODO: is it possible to say which coefficiants of the P matrix
+            // TODO: is it possible to say which coefficients of the P matrix
             // are to be dropped only looking at A matrix?
             bool  trunc_int;
 

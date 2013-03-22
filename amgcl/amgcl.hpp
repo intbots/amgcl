@@ -240,22 +240,28 @@ enum scheme {
 
 /// Algebraic multigrid method.
 /**
- * \param value_t  Type for matrix entries (double/float).
- * \param index_t  Type for matrix indices. Should be signed integral type.
- * \param interp_t \ref interpolation "Interpolation scheme".
- * \param level_t  Hierarchy level \ref levels "storage backend".
+ * \param matrix_value_t Type for matrix entries.
+ * \param vector_value_t Type for vector entries (right-hand side and solution).
+ * \param index_t        Type for matrix indices. Should be signed integral type.
+ * \param interp_t       \ref interpolation "Interpolation scheme".
+ * \param level_t        Hierarchy level \ref levels "storage backend".
  */
 template <
-    typename value_t, typename index_t, typename interp_t, typename level_t
+    typename matrix_value_t,
+    typename vector_value_t,
+    typename index_t,
+    typename interp_t,
+    typename level_t
     >
 class solver {
     private:
-        typedef sparse::matrix<value_t, index_t> matrix;
-        typedef typename level_t::template instance<value_t, index_t> level_type;
+        typedef sparse::matrix<matrix_value_t, index_t> matrix;
+        typedef typename level_t::template instance<matrix_value_t, vector_value_t, index_t> level_type;
 
     public:
-        typedef value_t value_type;
-        typedef index_t index_type;
+        typedef matrix_value_t matrix_value_type;
+        typedef vector_value_t vector_value_type;
+        typedef index_t        index_type;
 
         /// Parameters for AMG components.
         struct params {
@@ -307,9 +313,9 @@ class solver {
          *            the approximated solution on output.
          */
         template <class vector1, class vector2>
-        std::pair< int, value_t > solve(const vector1 &rhs, vector2 &x) const {
+        std::pair< int, double > solve(const vector1 &rhs, vector2 &x) const {
             unsigned iter = 0;
-            value_t  res  = 2 * prm.level.tol;
+            double   res  = 2 * prm.level.tol;
 
             for(; res > prm.level.tol && iter < prm.level.maxiter; ++iter) {
                 apply(rhs, x);
@@ -393,7 +399,10 @@ class solver {
                 TIC("construct level");
 
                 TIC("interp");
-                std::pair<sparse::matrix<value_t, index_t>, sparse::matrix<value_t, index_t> > PR = interp_t::interp(A, prm.interp);
+                std::pair<
+                    sparse::matrix<matrix_value_t, index_t>,
+                    sparse::matrix<matrix_value_t, index_t>
+                    > PR = interp_t::interp(A, prm.interp);
                 matrix &P = PR.first;
                 matrix &R = PR.second;
                 TOC("interp");
@@ -421,12 +430,13 @@ class solver {
 
 /// Output some general information about the AMG hierarchy.
 template <
-    typename value_t,
+    typename matrix_value_t,
+    typename vector_value_t,
     typename index_t,
     typename interp_t,
     typename level_t
     >
-std::ostream& operator<<(std::ostream &os, const amgcl::solver<value_t, index_t, interp_t, level_t> &amg) {
+std::ostream& operator<<(std::ostream &os, const amgcl::solver<matrix_value_t, vector_value_t, index_t, interp_t, level_t> &amg) {
     return amg.print(os);
 }
 

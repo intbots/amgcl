@@ -55,8 +55,8 @@ level0(const spmat &A) {
 
 #pragma omp parallel for
     for(index_t i = 0; i < n; ++i) {
-        value_t num = 0;
-        value_t den = 0;
+        value_t num = amgcl::zero<value_t>();
+        value_t den = amgcl::zero<value_t>();
 
         for(index_t j = Arow[i], e = Arow[i + 1]; j < e; ++j) {
             value_t v = Aval[j];
@@ -64,7 +64,7 @@ level0(const spmat &A) {
             if (Acol[j] == i) num += v;
         }
 
-        m[i] = num / den;
+        m[i] = num * amgcl::inverse(den);
     }
 
     return m;

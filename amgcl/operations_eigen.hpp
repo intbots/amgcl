@@ -38,6 +38,7 @@ THE SOFTWARE.
 
 #include <boost/utility/enable_if.hpp>
 #include <boost/type_traits/is_arithmetic.hpp>
+#include <boost/type_traits/is_base_of.hpp>
 
 namespace amgcl {
 
@@ -71,6 +72,40 @@ template <typename T>
 void clear(Eigen::MatrixBase<T> &x) {
     x.setZero();
 }
+
+template <class Derived>
+const Eigen::Transpose<const Derived> transpose(const Eigen::DenseBase<Derived> &m) {
+    return m.derived().transpose();
+}
+
+template <class Derived>
+const Eigen::internal::inverse_impl<Derived> inverse(const Eigen::DenseBase<Derived> &m) {
+    return m.derived().inverse();
+}
+
+template <class Derived>
+typename boost::enable_if<
+    boost::is_base_of< Eigen::DenseBase<Derived>, Derived >,
+    const typename Eigen::DenseBase<Derived>::ConstantReturnType
+    >::type
+zero() {
+    return Derived::Zero();
+}
+
+template <class Derived>
+typename boost::enable_if<
+    boost::is_base_of< Eigen::DenseBase<Derived>, Derived >,
+    const typename Eigen::MatrixBase<Derived>::IdentityReturnType
+    >::type
+identity() {
+    return Derived::Identity();
+}
+
+} // namespace amgcl
+
+#include <amgcl/spmat.hpp>
+
+namespace amgcl {
 
 namespace sparse {
 

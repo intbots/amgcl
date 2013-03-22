@@ -90,7 +90,7 @@ void residual(const spmat &A, const VectorX &x, const VectorF &f, VectorY &y) {
     y = f - A * x;
 }
 
-/// Computes y = A * x (not really an axpy, I know).
+/// Computes y = A * x (so not really an axpy).
 template <class spmat, class VectorX, class VectorY>
 void axpy(const spmat &A, const VectorX &x, VectorY &y) {
     y = A * x;
