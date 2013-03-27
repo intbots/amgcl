@@ -99,6 +99,7 @@ int main(int argc, char *argv[]) {
 
     // Use K-Cycle on each level to improve convergence:
     AMG::params prm;
+    prm.level.maxiter = 1000;
     prm.level.kcycle = 1;
 
     prof.tic("setup");
