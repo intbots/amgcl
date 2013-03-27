@@ -383,7 +383,7 @@ class instance {
             const index_t n = A.rows;
             double res = 0;
 
-#pragma omp parallel for reduction(+:norm) schedule(dynamic, 1024)
+#pragma omp parallel for reduction(+:res) schedule(dynamic, 1024)
             for(index_t i = 0; i < n; ++i) {
                 vector_value_t temp = rhs[i];
 
@@ -419,6 +419,7 @@ class instance {
                         lvl->relax.apply_pre(lvl->A, rhs, x, lvl->t, prm.relax);
                     TOC("relax");
 
+#if 0
                     //lvl->t = rhs - lvl->A * x;
                     TIC("residual");
 #pragma omp parallel for schedule(dynamic, 1024)
@@ -464,6 +465,7 @@ class instance {
                         x[i] += temp;
                     }
                     TOC("prolongate");
+#endif
 
                     TIC("relax");
                     for(unsigned i = 0; i < prm.npost; ++i)

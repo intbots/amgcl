@@ -197,7 +197,7 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
                 else if (!S[j])
                     dia -= Aval[j];
             }
-            dia = amgcl::inverse(dia);
+            value_t inv_dia = amgcl::inverse(dia);
 
             index_t row_beg = P.row[i];
             index_t row_end = row_beg;
@@ -211,7 +211,7 @@ interp(const sparse::matrix<value_t, index_t> &A, const params &prm) {
                 index_t g = aggr[c];
                 if (g < 0) continue;
 
-                value_t v = ((c == i) ? (1 - prm.relax) : -prm.relax) * dia * Aval[j];
+                value_t v = ((c == i) ? (1 - prm.relax) : -prm.relax) * inv_dia * Aval[j];
 
                 if (marker[g] < row_beg) {
                     marker[g] = row_end;
