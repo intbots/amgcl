@@ -68,5 +68,8 @@ int main(int argc, char *argv[]) {
               << "Error:      " << cnv.second << std::endl
               << std::endl;
 
+    int center = 0.5 * (sqrt(n) +  n);
+    std::cout << x[center] << std::endl;
+
     std::cout << prof;
 }
