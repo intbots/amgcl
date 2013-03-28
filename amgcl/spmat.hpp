@@ -230,7 +230,7 @@ struct matrix {
             for(index_t i = 0; i < rows; ++i) {
                 for(index_t j = row[i], e = row[i + 1]; j < e; ++j) {
                     col[j] = 0;
-                    val[j] = 0;
+                    val[j] = zero<value_t>();
                 }
             }
         }
