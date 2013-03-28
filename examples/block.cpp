@@ -62,6 +62,8 @@ int main(int argc, char *argv[]) {
         > AMG;
 
     AMG::params prm;
+    prm.level.npre    = 2;
+    prm.level.npost   = 2;
     prm.level.maxiter = 50;
 
     prof.tic("setup");
