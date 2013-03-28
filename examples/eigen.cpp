@@ -10,7 +10,6 @@
 #include <amgcl/aggr_plain.hpp>
 #include <amgcl/level_cpu.hpp>
 #include <amgcl/operations_eigen.hpp>
-#include <amgcl/cg.hpp>
 #include <amgcl/profiler.hpp>
 
 #include "read.hpp"
@@ -48,9 +47,8 @@ int main(int argc, char *argv[]) {
         amgcl::level::cpu<amgcl::relax::spai0>
         > AMG;
 
-    // Use K-Cycle on each level to improve convergence:
     AMG::params prm;
-    prm.level.kcycle = 1;
+    prm.level.maxiter = 50;
 
     prof.tic("setup");
     AMG amg( amgcl::sparse::map(A), prm );
@@ -61,7 +59,7 @@ int main(int argc, char *argv[]) {
     // Solve the problem with CG method. Use AMG as a preconditioner:
     EigenVector x = EigenVector::Zero(n);
     prof.tic("solve (cg)");
-    std::pair<int,real> cnv = amgcl::solve(A, rhs, amg, x, amgcl::cg_tag());
+    std::pair<int,double> cnv = amg.solve(rhs, x);
     prof.toc("solve (cg)");
 
     std::cout << "Iterations: " << cnv.first  << std::endl
