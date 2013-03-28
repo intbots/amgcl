@@ -419,7 +419,6 @@ class instance {
                         lvl->relax.apply_pre(lvl->A, rhs, x, lvl->t, prm.relax);
                     TOC("relax");
 
-#if 0
                     //lvl->t = rhs - lvl->A * x;
                     TIC("residual");
 #pragma omp parallel for schedule(dynamic, 1024)
@@ -465,7 +464,6 @@ class instance {
                         x[i] += temp;
                     }
                     TOC("prolongate");
-#endif
 
                     TIC("relax");
                     for(unsigned i = 0; i < prm.npost; ++i)

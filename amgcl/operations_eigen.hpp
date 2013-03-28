@@ -63,7 +63,7 @@ typename T1::Scalar inner_prod(const Eigen::MatrixBase<T1> &x, const Eigen::Matr
 /** Necessary for eigen types to work with amgcl::solve() functions. */
 template <typename T>
 typename T::Scalar norm(const Eigen::MatrixBase<T> &x) {
-    return x.norm();
+    return x.array().abs().maxCoeff();
 }
 
 /// Clears (sets elements to zero) an Eigen vector.
