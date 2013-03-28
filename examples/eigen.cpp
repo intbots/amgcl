@@ -10,6 +10,7 @@
 #include <amgcl/aggr_plain.hpp>
 #include <amgcl/level_cpu.hpp>
 #include <amgcl/operations_eigen.hpp>
+#include <amgcl/cg.hpp>
 #include <amgcl/profiler.hpp>
 
 #include "read.hpp"
@@ -61,7 +62,7 @@ int main(int argc, char *argv[]) {
     // Solve the problem with CG method. Use AMG as a preconditioner:
     EigenVector x = EigenVector::Zero(n);
     prof.tic("solve (cg)");
-    std::pair<int,double> cnv = amg.solve(rhs, x);
+    std::pair<int,double> cnv = amgcl::solve(A, rhs, amg, x, amgcl::cg_tag());
     prof.toc("solve (cg)");
 
     std::cout << "Iterations: " << cnv.first  << std::endl
