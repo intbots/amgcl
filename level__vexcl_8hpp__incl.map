@@ -1,7 +1,8 @@
 <map id="level_vexcl.hpp" name="level_vexcl.hpp">
-<area shape="rect" id="node3" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="124,80,303,107"/>
-<area shape="rect" id="node5" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="273,155,407,181"/>
-<area shape="rect" id="node21" href="$spai_8hpp.html" title="Compute Sparse Approximate Inverse for a given matrix." alt="" coords="378,80,496,107"/>
-<area shape="rect" id="node24" href="$operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="521,80,720,107"/>
-<area shape="rect" id="node28" href="$common_8hpp.html" title="Common definitions for amgcl." alt="" coords="547,155,697,181"/>
+<area shape="rect" id="node7" href="$level__params_8hpp.html" title="Common parameters for level construction/solution." alt="" coords="184,80,363,107"/>
+<area shape="rect" id="node9" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="335,155,469,181"/>
+<area shape="rect" id="node23" href="$spai_8hpp.html" title="Compute Sparse Approximate Inverse for a given matrix." alt="" coords="438,80,556,107"/>
+<area shape="rect" id="node26" href="$operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="768,80,967,107"/>
+<area shape="rect" id="node34" href="$gmres_8hpp.html" title="GMRES method." alt="" coords="581,80,715,107"/>
+<area shape="rect" id="node30" href="$common_8hpp.html" title="Common definitions for amgcl." alt="" coords="687,155,837,181"/>
 </map>

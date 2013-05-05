@@ -1,14 +1,14 @@
 <map id="spmat.hpp" name="spmat.hpp">
-<area shape="rect" id="node3" href="$aggr__connect_8hpp.html" title="Strong couplings for aggregation&#45;based AMG." alt="" coords="145,80,281,107"/>
-<area shape="rect" id="node5" href="$interp__aggr_8hpp.html" title="Aggregates&#45;based interpolation scheme." alt="" coords="5,155,128,181"/>
-<area shape="rect" id="node7" href="$interp__sa__emin_8hpp.html" title="Interpolation scheme based on smoothed aggregation with energy minimization." alt="" coords="153,155,300,181"/>
-<area shape="rect" id="node9" href="$interp__smoothed__aggr_8hpp.html" title="Interpolation scheme based on smoothed aggregation." alt="" coords="325,155,520,181"/>
-<area shape="rect" id="node11" href="$aggr__plain_8hpp.html" title="Plain aggregation." alt="" coords="409,80,524,107"/>
-<area shape="rect" id="node13" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework." alt="" coords="549,80,637,107"/>
-<area shape="rect" id="node16" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999)." alt="" coords="663,80,797,107"/>
-<area shape="rect" id="node20" href="$level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="751,155,860,181"/>
-<area shape="rect" id="node22" href="$spai_8hpp.html" title="Compute Sparse Approximate Inverse for a given matrix." alt="" coords="874,80,949,107"/>
-<area shape="rect" id="node25" href="$level__cuda_8hpp.html" title="Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution..." alt="" coords="884,155,1000,181"/>
-<area shape="rect" id="node27" href="$level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="1025,155,1143,181"/>
-<area shape="rect" id="node31" href="$operations__viennacl_8hpp.html" title="Adaptors for ViennaCL types." alt="" coords="1077,80,1253,107"/>
+<area shape="rect" id="node3" href="$aggr__connect_8hpp.html" title="Strong couplings for aggregation&#45;based AMG." alt="" coords="142,80,279,107"/>
+<area shape="rect" id="node5" href="$interp__aggr_8hpp.html" title="Aggregates&#45;based interpolation scheme." alt="" coords="5,155,125,181"/>
+<area shape="rect" id="node7" href="$interp__sa__emin_8hpp.html" title="Interpolation scheme based on smoothed aggregation with energy minimization." alt="" coords="150,155,297,181"/>
+<area shape="rect" id="node9" href="$interp__smoothed__aggr_8hpp.html" title="Interpolation scheme based on smoothed aggregation." alt="" coords="322,155,515,181"/>
+<area shape="rect" id="node11" href="$aggr__plain_8hpp.html" title="Plain aggregation." alt="" coords="406,80,521,107"/>
+<area shape="rect" id="node13" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework." alt="" coords="546,80,635,107"/>
+<area shape="rect" id="node16" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999)." alt="" coords="660,80,795,107"/>
+<area shape="rect" id="node20" href="$level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="748,155,857,181"/>
+<area shape="rect" id="node22" href="$spai_8hpp.html" title="Compute Sparse Approximate Inverse for a given matrix." alt="" coords="871,80,947,107"/>
+<area shape="rect" id="node25" href="$level__cuda_8hpp.html" title="Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution..." alt="" coords="881,155,997,181"/>
+<area shape="rect" id="node27" href="$level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="1023,155,1139,181"/>
+<area shape="rect" id="node31" href="$operations__viennacl_8hpp.html" title="Adaptors for ViennaCL types." alt="" coords="1074,80,1251,107"/>
 </map>

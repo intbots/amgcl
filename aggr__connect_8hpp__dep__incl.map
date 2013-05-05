@@ -1,5 +1,5 @@
 <map id="aggr_connect.hpp" name="aggr_connect.hpp">
-<area shape="rect" id="node3" href="$interp__aggr_8hpp.html" title="Aggregates&#45;based interpolation scheme." alt="" coords="5,80,128,107"/>
-<area shape="rect" id="node5" href="$interp__sa__emin_8hpp.html" title="Interpolation scheme based on smoothed aggregation with energy minimization." alt="" coords="153,80,300,107"/>
-<area shape="rect" id="node7" href="$interp__smoothed__aggr_8hpp.html" title="Interpolation scheme based on smoothed aggregation." alt="" coords="325,80,520,107"/>
+<area shape="rect" id="node3" href="$interp__aggr_8hpp.html" title="Aggregates&#45;based interpolation scheme." alt="" coords="5,80,125,107"/>
+<area shape="rect" id="node5" href="$interp__sa__emin_8hpp.html" title="Interpolation scheme based on smoothed aggregation with energy minimization." alt="" coords="150,80,297,107"/>
+<area shape="rect" id="node7" href="$interp__smoothed__aggr_8hpp.html" title="Interpolation scheme based on smoothed aggregation." alt="" coords="322,80,515,107"/>
 </map>

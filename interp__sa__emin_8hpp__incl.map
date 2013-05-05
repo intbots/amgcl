@@ -1,5 +1,5 @@
 <map id="interp_sa_emin.hpp" name="interp_sa_emin.hpp">
-<area shape="rect" id="node13" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="423,155,557,181"/>
-<area shape="rect" id="node25" href="$aggr__connect_8hpp.html" title="Strong couplings for aggregation&#45;based AMG." alt="" coords="170,80,349,107"/>
-<area shape="rect" id="node30" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling." alt="" coords="271,155,399,181"/>
+<area shape="rect" id="node11" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="201,155,335,181"/>
+<area shape="rect" id="node22" href="$aggr__connect_8hpp.html" title="Strong couplings for aggregation&#45;based AMG." alt="" coords="411,80,591,107"/>
+<area shape="rect" id="node27" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling." alt="" coords="527,155,655,181"/>
 </map>

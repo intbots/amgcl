@@ -1,11 +1,12 @@
 <map id="common.hpp" name="common.hpp">
 <area shape="rect" id="node3" href="$bicgstab_8hpp.html" title="Stabilized BiConjugate Gradient method." alt="" coords="5,80,109,107"/>
 <area shape="rect" id="node5" href="$cg_8hpp.html" title="Conjugate Gradient method." alt="" coords="134,80,199,107"/>
-<area shape="rect" id="node7" href="$gmres_8hpp.html" title="GMRES method." alt="" coords="224,80,315,107"/>
-<area shape="rect" id="node9" href="$level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="339,80,448,107"/>
-<area shape="rect" id="node11" href="$level__cuda_8hpp.html" title="Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution..." alt="" coords="472,80,588,107"/>
-<area shape="rect" id="node13" href="$operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="613,80,771,107"/>
-<area shape="rect" id="node17" href="$operations__eigen_8hpp.html" title="Adaptors for Eigen types." alt="" coords="795,80,953,107"/>
-<area shape="rect" id="node19" href="$operations__ublas_8hpp.html" title="Adaptors for Boost.uBlas types." alt="" coords="979,80,1137,107"/>
-<area shape="rect" id="node15" href="$level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="633,155,751,181"/>
+<area shape="rect" id="node7" href="$gmres_8hpp.html" title="GMRES method." alt="" coords="537,80,628,107"/>
+<area shape="rect" id="node13" href="$level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="404,80,513,107"/>
+<area shape="rect" id="node15" href="$operations__cuda_8hpp.html" title="Adaptors for thrust types." alt="" coords="223,80,379,107"/>
+<area shape="rect" id="node18" href="$operations__vexcl_8hpp.html" title="Adaptors for VexCL types." alt="" coords="653,80,808,107"/>
+<area shape="rect" id="node21" href="$operations__eigen_8hpp.html" title="Adaptors for Eigen types." alt="" coords="833,80,992,107"/>
+<area shape="rect" id="node23" href="$operations__ublas_8hpp.html" title="Adaptors for Boost.uBlas types." alt="" coords="1018,80,1176,107"/>
+<area shape="rect" id="node9" href="$level__cuda_8hpp.html" title="Level of an AMG hierarchy for use with Thrust/CUSPARSE combination. Only supports standalone solution..." alt="" coords="312,155,428,181"/>
+<area shape="rect" id="node11" href="$level__vexcl_8hpp.html" title="Level of an AMG hierarchy for use with VexCL vectors." alt="" coords="597,155,713,181"/>
 </map>
