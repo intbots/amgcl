@@ -1,12 +1,12 @@
-<map id="tictoc.hpp" name="tictoc.hpp">
-<area shape="rect" id="node3" href="$aggr__connect_8hpp.html" title="Strong couplings for aggregation&#45;based AMG." alt="" coords="142,80,279,107"/>
-<area shape="rect" id="node5" href="$interp__aggr_8hpp.html" title="Aggregates&#45;based interpolation scheme." alt="" coords="5,155,125,181"/>
-<area shape="rect" id="node7" href="$interp__sa__emin_8hpp.html" title="Interpolation scheme based on smoothed aggregation with energy minimization." alt="" coords="150,155,297,181"/>
-<area shape="rect" id="node9" href="$interp__smoothed__aggr_8hpp.html" title="Interpolation scheme based on smoothed aggregation." alt="" coords="322,155,515,181"/>
-<area shape="rect" id="node11" href="$aggr__plain_8hpp.html" title="Plain aggregation." alt="" coords="406,80,521,107"/>
-<area shape="rect" id="node13" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework." alt="" coords="546,80,635,107"/>
-<area shape="rect" id="node15" href="$bicgstab_8hpp.html" title="Stabilized BiConjugate Gradient method." alt="" coords="660,80,764,107"/>
-<area shape="rect" id="node17" href="$cg_8hpp.html" title="Conjugate Gradient method." alt="" coords="789,80,853,107"/>
-<area shape="rect" id="node20" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999)." alt="" coords="877,80,1012,107"/>
-<area shape="rect" id="node24" href="$level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory." alt="" coords="1037,80,1147,107"/>
+<map id="amgcl/tictoc.hpp" name="amgcl/tictoc.hpp">
+<area shape="rect" id="node2" href="$aggr__connect_8hpp.html" title="Strong couplings for aggregation&#45;based AMG. " alt="" coords="182,80,361,107"/>
+<area shape="rect" id="node3" href="$interp__aggr_8hpp.html" title="Aggregates&#45;based interpolation scheme. " alt="" coords="5,163,169,189"/>
+<area shape="rect" id="node4" href="$interp__sa__emin_8hpp.html" title="Interpolation scheme based on smoothed aggregation with energy minimization. " alt="" coords="195,163,385,189"/>
+<area shape="rect" id="node5" href="$interp__smoothed__aggr_8hpp.html" title="Interpolation scheme based on smoothed aggregation. " alt="" coords="410,155,584,197"/>
+<area shape="rect" id="node6" href="$aggr__plain_8hpp.html" title="Plain aggregation. " alt="" coords="489,80,647,107"/>
+<area shape="rect" id="node7" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework. " alt="" coords="671,80,803,107"/>
+<area shape="rect" id="node8" href="$bicgstab_8hpp.html" title="Stabilized BiConjugate Gradient method. " alt="" coords="828,80,975,107"/>
+<area shape="rect" id="node9" href="$cg_8hpp.html" title="Conjugate Gradient method. " alt="" coords="999,80,1107,107"/>
+<area shape="rect" id="node10" href="$interp__classic_8hpp.html" title="Direct interpolation scheme based on Stuben (1999). " alt="" coords="1132,80,1311,107"/>
+<area shape="rect" id="node11" href="$level__cpu_8hpp.html" title="Level of an AMG hierarchy for use with arrays located in main (CPU) memory. " alt="" coords="1335,80,1487,107"/>
 </map>

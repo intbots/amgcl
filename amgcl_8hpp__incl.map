@@ -1,4 +1,4 @@
-<map id="amgcl.hpp" name="amgcl.hpp">
-<area shape="rect" id="node19" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="1102,88,1236,115"/>
-<area shape="rect" id="node33" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling." alt="" coords="1261,88,1389,115"/>
+<map id="amgcl/amgcl.hpp" name="amgcl/amgcl.hpp">
+<area shape="rect" id="node11" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format. " alt="" coords="1289,88,1423,115"/>
+<area shape="rect" id="node18" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling. " alt="" coords="1448,88,1576,115"/>
 </map>

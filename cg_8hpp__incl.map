@@ -1,4 +1,4 @@
-<map id="cg.hpp" name="cg.hpp">
-<area shape="rect" id="node5" href="$common_8hpp.html" title="Common definitions for amgcl." alt="" coords="86,80,236,107"/>
-<area shape="rect" id="node7" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling." alt="" coords="261,80,389,107"/>
+<map id="amgcl/cg.hpp" name="amgcl/cg.hpp">
+<area shape="rect" id="node3" href="$common_8hpp.html" title="Common definitions for amgcl. " alt="" coords="86,80,236,107"/>
+<area shape="rect" id="node4" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling. " alt="" coords="261,80,389,107"/>
 </map>

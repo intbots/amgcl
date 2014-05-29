@@ -1,4 +1,4 @@
-<map id="aggr_connect.hpp" name="aggr_connect.hpp">
-<area shape="rect" id="node7" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="162,80,296,107"/>
-<area shape="rect" id="node19" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling." alt="" coords="321,80,449,107"/>
+<map id="amgcl/aggr_connect.hpp" name="amgcl/aggr_connect.hpp">
+<area shape="rect" id="node4" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format. " alt="" coords="162,80,296,107"/>
+<area shape="rect" id="node9" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling. " alt="" coords="321,80,449,107"/>
 </map>

@@ -1,5 +1,5 @@
-<map id="interp_smoothed_aggr.hpp" name="interp_smoothed_aggr.hpp">
-<area shape="rect" id="node7" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format." alt="" coords="193,155,327,181"/>
-<area shape="rect" id="node19" href="$aggr__connect_8hpp.html" title="Strong couplings for aggregation&#45;based AMG." alt="" coords="403,80,583,107"/>
-<area shape="rect" id="node24" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling." alt="" coords="545,155,673,181"/>
+<map id="amgcl/interp_smoothed_aggr.hpp" name="amgcl/interp_smoothed_aggr.hpp">
+<area shape="rect" id="node4" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format. " alt="" coords="194,171,328,197"/>
+<area shape="rect" id="node9" href="$aggr__connect_8hpp.html" title="Strong couplings for aggregation&#45;based AMG. " alt="" coords="405,96,584,123"/>
+<area shape="rect" id="node10" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling. " alt="" coords="547,171,675,197"/>
 </map>

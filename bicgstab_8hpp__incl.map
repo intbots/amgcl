@@ -1,4 +1,4 @@
-<map id="bicgstab.hpp" name="bicgstab.hpp">
-<area shape="rect" id="node7" href="$common_8hpp.html" title="Common definitions for amgcl." alt="" coords="194,80,344,107"/>
-<area shape="rect" id="node9" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling." alt="" coords="369,80,497,107"/>
+<map id="amgcl/bicgstab.hpp" name="amgcl/bicgstab.hpp">
+<area shape="rect" id="node4" href="$common_8hpp.html" title="Common definitions for amgcl. " alt="" coords="195,80,345,107"/>
+<area shape="rect" id="node5" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling. " alt="" coords="371,80,499,107"/>
 </map>
