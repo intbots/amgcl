@@ -243,12 +243,6 @@ struct residual_impl< bcrs<V, C, P>, std::vector<V> >
     static void apply(const vector &rhs, const matrix &A, const vector &x,
             vector &r)
     {
-        const size_t nb  = A.brows;
-        const size_t na  = A.nrows;
-        const size_t ma  = A.ncols;
-        const size_t b1 = A.block_size;
-        const size_t b2 = b1 * b1;
-
         copy(rhs, r);
         spmv(-1, A, x, 1, r);
     }
