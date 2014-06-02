@@ -157,9 +157,9 @@ class amg {
                 A( Backend::copy_matrix(a, prm.backend) ),
                 P( Backend::copy_matrix(p, prm.backend) ),
                 R( Backend::copy_matrix(r, prm.backend) ),
-                f( Backend::create_vector(backend::rows(a), prm.backend) ),
-                u( Backend::create_vector(backend::rows(a), prm.backend) ),
-                t( Backend::create_vector(backend::rows(a), prm.backend) ),
+                f( Backend::create_vector(backend::rows(*a), prm.backend) ),
+                u( Backend::create_vector(backend::rows(*a), prm.backend) ),
+                t( Backend::create_vector(backend::rows(*a), prm.backend) ),
                 relax( new relax_type(*a, prm.relax, prm.backend) )
             { }
 
@@ -168,8 +168,8 @@ class amg {
                     const params &prm
                  ) :
                 A( Backend::copy_matrix(a, prm.backend) ),
-                f( Backend::create_vector(backend::rows(a), prm.backend) ),
-                u( Backend::create_vector(backend::rows(a), prm.backend) )
+                f( Backend::create_vector(backend::rows(*a), prm.backend) ),
+                u( Backend::create_vector(backend::rows(*a), prm.backend) )
             { }
 
             size_t rows() const {

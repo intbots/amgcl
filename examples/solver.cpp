@@ -47,7 +47,7 @@ int main() {
     boost::shared_ptr<AMG::vector> f = AMG::backend_type::copy_vector(rhs, amg.prm.backend);
     boost::shared_ptr<AMG::vector> x = AMG::backend_type::create_vector(n, amg.prm.backend);
 
-    amgcl::backend::clear(x);
+    amgcl::backend::clear(*x);
 
     amgcl::solver::cg<AMG::backend_type> solve(n);
 
