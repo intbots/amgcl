@@ -55,7 +55,7 @@ struct impl<gauss_seidel, Backend> {
         val_type temp = rhs[i];
         val_type diag = 1;
         for (row_iterator a = backend::row_begin(A, i); a; ++a) {
-            if (a.col() == i)
+            if (static_cast<size_t>(a.col()) == i)
                 diag = a.value();
             else
                 temp -= a.value() * x[a.col()];
