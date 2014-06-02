@@ -228,7 +228,7 @@ struct spmv_impl< bcrs<V, C, P>, std::vector<V> >
             for(P jb = A.ptr[ib], eb = A.ptr[ib + 1]; jb < eb; ++jb) {
                 size_t x0 = A.col[jb] * b1;
                 size_t y0 = ib * b1;
-                block_prod(b1, std::min(b1, na - x0), std::min(b1, ma - y0),
+                block_prod(b1, std::min(b1, ma - x0), std::min(b1, na - y0),
                         alpha, &A.val[jb * b2], &x[x0], &y[y0]
                         );
             }
