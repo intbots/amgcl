@@ -5,3 +5,6 @@ target_link_libraries(solver ${Boost_LIBRARIES})
 
 add_executable(block_values block_values.cpp)
 target_link_libraries(block_values ${Boost_LIBRARIES})
+
+add_executable(block_crs block_crs.cpp)
+target_link_libraries(block_crs ${Boost_LIBRARIES})

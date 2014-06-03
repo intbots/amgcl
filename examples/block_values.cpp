@@ -123,7 +123,6 @@ int main() {
     prof.tic("build");
     AMG::params prm;
     prm.coarsening.eps_strong = 0;
-    prm.npre = prm.npost = 2;
     AMG amg(A, prm);
     prof.toc("build");
 
