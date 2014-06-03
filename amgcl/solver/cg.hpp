@@ -42,12 +42,13 @@ namespace solver {
 template <class Backend>
 class cg {
     public:
-        typedef typename Backend::vector     vector;
-        typedef typename Backend::value_type value_type;
-        typedef typename Backend::params     backend_params;
+        typedef typename Backend::vector                vector;
+        typedef typename Backend::value_type            value_type;
+        typedef typename Backend::params                backend_params;
+        typedef typename math::scalar<value_type>::type scalar;
 
         cg(size_t n, const backend_params &prm = backend_params(),
-                size_t maxiter = 100, value_type tol = 1e-8)
+                size_t maxiter = 100, scalar tol = 1e-8)
             : n(n), maxiter(maxiter), tol(tol),
               r(Backend::create_vector(n, prm)),
               s(Backend::create_vector(n, prm)),
@@ -56,7 +57,7 @@ class cg {
         { }
 
         template <class Matrix, class Precond>
-        boost::tuple<size_t, value_type> operator()(
+        boost::tuple<size_t, scalar> operator()(
                 Matrix  const &A,
                 vector  const &rhs,
                 Precond const &P,
@@ -65,16 +66,16 @@ class cg {
         {
             backend::residual(rhs, A, x, *r);
 
-            value_type rho1 = 0, rho2 = 0;
-            value_type norm_of_rhs = backend::norm(rhs);
+            scalar rho1 = 0, rho2 = 0;
+            scalar norm_of_rhs = backend::norm(rhs);
 
             if (norm_of_rhs == 0) {
                 backend::clear(x);
                 return boost::make_tuple(0UL, norm_of_rhs);
             }
 
-            size_t     iter = 0;
-            value_type res;
+            size_t iter = 0;
+            scalar res;
 
             for(; (res = backend::norm(*r) / norm_of_rhs) > tol && iter < maxiter; ++iter)
             {
@@ -91,7 +92,7 @@ class cg {
 
                 backend::spmv(1, A, *p, 0, *q);
 
-                value_type alpha = rho1 / backend::inner_product(*q, *p);
+                scalar alpha = rho1 / backend::inner_product(*q, *p);
 
                 backend::axpby( alpha, *p, 1,  x);
                 backend::axpby(-alpha, *q, 1, *r);
@@ -101,9 +102,9 @@ class cg {
         }
 
     private:
-        size_t     n;
-        size_t     maxiter;
-        value_type tol;
+        size_t n;
+        size_t maxiter;
+        scalar tol;
 
         boost::shared_ptr<vector> r;
         boost::shared_ptr<vector> s;

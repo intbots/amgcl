@@ -44,6 +44,7 @@ THE SOFTWARE.
 
 #include <amgcl/util.hpp>
 #include <amgcl/backend/interface.hpp>
+#include <amgcl/math/interface.hpp>
 
 namespace amgcl {
 namespace backend {
@@ -449,13 +450,13 @@ struct row_begin_impl< crs<V, C, P> > {
 //---------------------------------------------------------------------------
 // Builtin backend definition
 //---------------------------------------------------------------------------
-template <typename real>
+template <class matrix_scalar, class vector_scalar = matrix_scalar>
 struct builtin {
-    typedef real value_type;
-    typedef long index_type;
+    typedef vector_scalar value_type;
+    typedef long          index_type;
 
-    typedef crs<value_type, index_type> matrix;
-    typedef std::vector<value_type>     vector;
+    typedef crs<matrix_scalar, index_type> matrix;
+    typedef std::vector<vector_scalar>     vector;
 
     struct params {};
 
@@ -484,20 +485,21 @@ struct builtin {
     }
 };
 
-template < typename V, typename C, typename P >
-struct spmv_impl< crs<V, C, P>, std::vector<V> >
+template < typename MV, typename C, typename P, typename VV >
+struct spmv_impl< crs<MV, C, P>, std::vector<VV> >
 {
-    typedef crs<V, C, P>   matrix;
-    typedef std::vector<V> vector;
+    typedef crs<MV, C, P>   matrix;
+    typedef std::vector<VV> vector;
+    typedef typename math::scalar<VV>::type scalar;
 
-    static void apply(V alpha, const matrix &A, const vector &x,
-            V beta, vector &y)
+    static void apply(scalar alpha, const matrix &A, const vector &x,
+            scalar beta, vector &y)
     {
         const size_t n = rows(A);
         if (beta) {
 #pragma omp parallel for
             for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i) {
-                V sum = 0;
+                VV sum = math::zero<VV>();
                 for(typename matrix::row_iterator a = A.row_begin(i); a; ++a)
                     sum += a.value() * x[ a.col() ];
                 y[i] = alpha * sum + beta * y[i];
@@ -505,7 +507,7 @@ struct spmv_impl< crs<V, C, P>, std::vector<V> >
         } else {
 #pragma omp parallel for
             for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i) {
-                V sum = 0;
+                VV sum = math::zero<VV>();
                 for(typename matrix::row_iterator a = A.row_begin(i); a; ++a)
                     sum += a.value() * x[ a.col() ];
                 y[i] = alpha * sum;
@@ -514,11 +516,11 @@ struct spmv_impl< crs<V, C, P>, std::vector<V> >
     }
 };
 
-template < typename V, typename C, typename P >
-struct residual_impl< crs<V, C, P>, std::vector<V> >
+template < typename MV, typename C, typename P, typename VV >
+struct residual_impl< crs<MV, C, P>, std::vector<VV> >
 {
-    typedef crs<V, C, P>   matrix;
-    typedef std::vector<V> vector;
+    typedef crs<MV, C, P>   matrix;
+    typedef std::vector<VV> vector;
 
     static void apply(const vector &rhs, const matrix &A, const vector &x,
             vector &r)
@@ -526,7 +528,7 @@ struct residual_impl< crs<V, C, P>, std::vector<V> >
         const size_t n = rows(A);
 #pragma omp parallel for
         for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i) {
-            V sum = 0;
+            VV sum = math::zero<VV>();
             for(typename matrix::row_iterator a = A.row_begin(i); a; ++a)
                 sum += a.value() * x[ a.col() ];
             r[i] = rhs[i] - sum;
@@ -542,7 +544,7 @@ struct clear_impl< std::vector<V> >
         const size_t n = x.size();
 #pragma omp parallel for
         for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i) {
-            x[i] = 0;
+            x[i] = math::zero<V>();
         }
     }
 };
@@ -550,14 +552,15 @@ struct clear_impl< std::vector<V> >
 template < typename V >
 struct inner_product_impl< std::vector<V> >
 {
-    static V get(const std::vector<V> &x, const std::vector<V> &y)
+    static typename math::scalar<V>::type
+    get(const std::vector<V> &x, const std::vector<V> &y)
     {
         const size_t n = x.size();
-        V sum = 0;
+        typename math::scalar<V>::type sum = 0;
 
 #pragma omp parallel for reduction(+:sum)
         for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i) {
-            sum += x[i] * y[i];
+            sum += math::adjoint(x[i]) * y[i];
         }
 
         return sum;
@@ -566,7 +569,9 @@ struct inner_product_impl< std::vector<V> >
 
 template < typename V >
 struct axpby_impl< std::vector<V> > {
-    static void apply(V a, const std::vector<V> &x, V b, std::vector<V> &y)
+    typedef typename math::scalar<V>::type scalar;
+
+    static void apply(scalar a, const std::vector<V> &x, scalar b, std::vector<V> &y)
     {
         const size_t n = x.size();
         if (b) {
@@ -583,10 +588,12 @@ struct axpby_impl< std::vector<V> > {
     }
 };
 
-template < typename V >
-struct vmul_impl< std::vector<V> > {
-    static void apply(V a, const std::vector<V> &x, const std::vector<V> &y,
-            V b, std::vector<V> &z)
+template < typename M, typename V >
+struct vmul_impl< std::vector<M>, std::vector<V> > {
+    typedef typename math::scalar<V>::type scalar;
+
+    static void apply(scalar a, const std::vector<M> &x, const std::vector<V> &y,
+            scalar b, std::vector<V> &z)
     {
         const size_t n = x.size();
         if (b) {

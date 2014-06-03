@@ -37,6 +37,7 @@ THE SOFTWARE.
 #include <boost/type_traits.hpp>
 
 #include <amgcl/util.hpp>
+#include <amgcl/math/interface.hpp>
 
 namespace amgcl {
 namespace backend {
@@ -113,8 +114,16 @@ struct spmv_impl {
 };
 
 template <class Matrix, class Vector>
-void spmv(typename value_type<Matrix>::type alpha, const Matrix &A,
-        const Vector &x, typename value_type<Matrix>::type beta, Vector &y)
+void spmv(
+        typename math::scalar<
+            typename value_type<Vector>::type
+        >::type alpha,
+        const Matrix &A,
+        const Vector &x,
+        typename math::scalar<
+            typename value_type<Vector>::type
+        >::type beta,
+        Vector &y)
 {
     spmv_impl<Matrix, Vector>::apply(alpha, A, x, beta, y);
 }
@@ -147,7 +156,9 @@ struct inner_product_impl {
 };
 
 template <class Vector>
-typename value_type<Vector>::type
+typename math::scalar<
+    typename value_type<Vector>::type
+    >::type
 inner_product(const Vector &x, const Vector &y)
 {
     return inner_product_impl<Vector>::get(x, y);
@@ -155,14 +166,20 @@ inner_product(const Vector &x, const Vector &y)
 
 template <class Vector, class Enable = void>
 struct norm_impl {
-    static typename value_type<Vector>::type get(const Vector &x)
+    static typename math::scalar<
+        typename value_type<Vector>::type
+        >::type
+    get(const Vector &x)
     {
         return sqrt( inner_product(x, x) );
     }
 };
 
 template <class Vector>
-typename value_type<Vector>::type norm(const Vector &x)
+typename math::scalar<
+    typename value_type<Vector>::type
+    >::type
+norm(const Vector &x)
 {
     return norm_impl<Vector>::get(x);
 }
@@ -173,27 +190,30 @@ struct axpby_impl {
 };
 
 template <class Vector>
-void axpby(typename value_type<Vector>::type a, Vector const &x,
-           typename value_type<Vector>::type b, Vector       &y
-           )
+void axpby(
+        typename math::scalar<typename value_type<Vector>::type>::type a,
+        Vector const &x,
+        typename math::scalar<typename value_type<Vector>::type>::type b,
+        Vector       &y
+        )
 {
     axpby_impl<Vector>::apply(a, x, b, y);
 }
 
-template <class Vector, class Enable = void>
+template <class VectorM, class VectorV = VectorM, class Enable = void>
 struct vmul_impl {
-    typedef typename Vector::NOT_IMPLEMENTED type;
+    typedef typename VectorM::NOT_IMPLEMENTED type;
 };
 
-template <class Vector>
+template <class VectorM, class VectorV>
 void vmul(
-        typename value_type<Vector>::type alpha,
-        const Vector &x, const Vector &y,
-        typename value_type<Vector>::type beta,
-        Vector &z
+        typename math::scalar<typename value_type<VectorV>::type>::type a,
+        const VectorM &x, const VectorV &y,
+        typename math::scalar<typename value_type<VectorV>::type>::type b,
+        VectorV &z
         )
 {
-    vmul_impl<Vector>::apply(alpha, x, y, beta, z);
+    vmul_impl<VectorM, VectorV>::apply(a, x, y, b, z);
 }
 
 template <class Vector, class Enable = void>

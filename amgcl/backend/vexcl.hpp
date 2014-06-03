@@ -163,9 +163,9 @@ struct axpby_impl< vex::vector<V> > {
     }
 };
 
-template < typename V >
-struct vmul_impl< vex::vector<V> > {
-    static void apply(V a, const vex::vector<V> &x, const vex::vector<V> &y,
+template < typename M, typename V >
+struct vmul_impl< vex::vector<M>, vex::vector<V> > {
+    static void apply(V a, const vex::vector<M> &x, const vex::vector<V> &y,
             V b, vex::vector<V> &z)
     {
         if (b)

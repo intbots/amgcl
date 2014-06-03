@@ -42,3 +42,7 @@ endfunction()
 
 add_amgcl_test(test_backend test_backend.cpp)
 add_amgcl_test(test_solver  test_solver.cpp)
+
+if (EIGEN_INCLUDE)
+    add_amgcl_test(test_non_scalar test_non_scalar.cpp)
+endif()

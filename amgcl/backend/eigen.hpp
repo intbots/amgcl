@@ -54,7 +54,7 @@ struct is_eigen_sparse_matrix<
     T,
     typename boost::enable_if<
             typename boost::mpl::and_<
-                typename boost::is_arithmetic<typename T::Scalar>::type,
+                typename boost::mpl::bool_<(sizeof(typename T::Scalar) > 0)>::type,
                 typename boost::is_base_of<Eigen::SparseMatrixBase<T>, T>::type
             >::type
         >::type
@@ -282,15 +282,20 @@ struct axpby_impl<
     }
 };
 
-template < typename V >
+template < typename M, typename V >
 struct vmul_impl<
-    V,
-    typename boost::enable_if< typename is_eigen_type<V>::type >::type
+    M, V,
+    typename boost::enable_if<
+            typename boost::mpl::and_<
+                typename is_eigen_type<M>::type,
+                typename is_eigen_type<V>::type
+            >::type
+        >::type
     >
 {
     typedef typename value_type<V>::type real;
 
-    static void apply(real a, const V &x, const V &y, real b, V &z)
+    static void apply(real a, const M &x, const V &y, real b, V &z)
     {
         if (b)
             z.array() = a * x.array() * y.array() + b * z.array();
