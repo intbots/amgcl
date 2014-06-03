@@ -157,13 +157,14 @@ struct nonzeros_impl< bcrs<V, C, P> > {
 //---------------------------------------------------------------------------
 // block_crs backend definition
 //---------------------------------------------------------------------------
-template <typename real>
+template <typename MatrixScalar, typename VectorScalar = MatrixScalar>
 struct block_crs {
-    typedef real value_type;
-    typedef long index_type;
+    typedef MatrixScalar value_type;
+    typedef long         index_type;
 
-    typedef bcrs<real, index_type, index_type> matrix;
-    typedef typename builtin<real>::vector     vector;
+    typedef bcrs<value_type, index_type, index_type> matrix;
+    typedef typename builtin<value_type>::vector     vector;
+    typedef vector                                   diagonal_vector;
 
     struct params {
         size_t block_size;
@@ -172,7 +173,7 @@ struct block_crs {
     };
 
     static boost::shared_ptr<matrix>
-    copy_matrix(boost::shared_ptr< typename backend::builtin<real>::matrix > A,
+    copy_matrix(boost::shared_ptr< typename backend::builtin<value_type>::matrix > A,
             const params &prm)
     {
         return boost::make_shared<matrix>(*A, prm.block_size);

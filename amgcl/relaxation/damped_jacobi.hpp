@@ -39,14 +39,16 @@ namespace relaxation {
 
 template <class Backend>
 struct impl<damped_jacobi, Backend> {
+    typedef typename Backend::value_type            value_type;
+    typedef typename math::scalar<value_type>::type scalar;
     struct params {
-        typename Backend::value_type damping;
+        scalar damping;
 
-        params(typename Backend::value_type damping = 0.72)
+        params(scalar damping = 0.72)
             : damping(damping) {}
     };
 
-    boost::shared_ptr<typename Backend::vector> dia;
+    boost::shared_ptr< typename Backend::diagonal_vector > dia;
 
     template <class Matrix>
     impl( const Matrix &A, const params &, const typename Backend::params &backend_prm)

@@ -278,7 +278,7 @@ struct crs {
         for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i) {
             for(row_iterator a = A.row_begin(i); a; ++a) {
                 if (a.col() == i) {
-                    dia[i] = invert ? 1 / a.value() : a.value();
+                    dia[i] = invert ? math::inverse(a.value()) : a.value();
                     break;
                 }
             }
@@ -315,6 +315,8 @@ struct crs {
     }
 
     static void gaussj(int n, val_type *a) {
+        typedef typename math::scalar<val_type>::type scalar;
+
         std::vector<int>  idxc(n);
         std::vector<int>  idxr(n);
         std::vector<char> ipiv(n, false);
@@ -322,13 +324,13 @@ struct crs {
         for(int i = 0; i < n; ++i) {
             int irow = 0, icol = 0;
 
-            val_type big = 0;
+            scalar big = 0;
             for(int j = 0; j < n; ++j) {
                 if (ipiv[j]) continue;
 
                 for(int k = 0; k < n; ++k) {
-                    if (!ipiv[k] && fabs(a[j * n + k]) > big) {
-                        big  = fabs(a[j * n + k]);
+                    if (!ipiv[k] && math::abs(a[j * n + k]) > big) {
+                        big  = math::abs(a[j * n + k]);
                         irow = j;
                         icol = k;
                     }
@@ -346,11 +348,11 @@ struct crs {
             idxr[i] = irow;
             idxc[i] = icol;
 
-            if (a[icol * n + icol] == 0)
+            if (a[icol * n + icol] == math::zero<val_type>())
                 throw std::logic_error("Singular matrix in gaussj");
 
-            val_type pivinv = 1 / a[icol * n + icol];
-            a[icol * n + icol] = 1;
+            val_type pivinv = math::inverse(a[icol * n + icol]);
+            a[icol * n + icol] = math::identity<val_type>();
 
             for(val_type *v = a + icol * n, *e = a + (icol + 1) * n; v != e; ++v)
                 *v *= pivinv;
@@ -358,7 +360,7 @@ struct crs {
             for(int k = 0; k < n; ++k) {
                 if (k != icol) {
                     val_type dum = a[k * n + icol];
-                    a[k * n + icol] = 0;
+                    a[k * n + icol] = math::zero<val_type>();
                     for(val_type *v1 = a + n * k, *v2 = a + n * icol, *e = a + n * (k + 1); v1 != e; ++v1, ++v2)
                         *v1 -= *v2 * dum;
                 }
@@ -383,7 +385,7 @@ struct crs {
         Ainv.col.resize(n * n);
         Ainv.val.resize(n * n);
 
-        std::fill(Ainv.val.begin(), Ainv.val.end(), static_cast<val_type>(0));
+        std::fill(Ainv.val.begin(), Ainv.val.end(), math::zero<val_type>());
 
         for(size_t i = 0; i < n; ++i)
             for(row_iterator a = A.row_begin(i); a; ++a)
@@ -457,6 +459,7 @@ struct builtin {
 
     typedef crs<matrix_scalar, index_type> matrix;
     typedef std::vector<vector_scalar>     vector;
+    typedef std::vector<matrix_scalar>     diagonal_vector;
 
     struct params {};
 
@@ -466,16 +469,18 @@ struct builtin {
         return A;
     }
 
-    static boost::shared_ptr<vector>
-    copy_vector(boost::shared_ptr< vector > x, const params&)
+    template <class Vector>
+    static boost::shared_ptr<Vector>
+    copy_vector(boost::shared_ptr< Vector > x, const params&)
     {
         return x;
     }
 
-    static boost::shared_ptr<vector>
-    copy_vector(const vector x, const params&)
+    template <class Vector>
+    static boost::shared_ptr<Vector>
+    copy_vector(const Vector x, const params&)
     {
-        return boost::make_shared<vector>(x);
+        return boost::make_shared<Vector>(x);
     }
 
     static boost::shared_ptr<vector>

@@ -102,7 +102,7 @@ struct aggregation {
             if (G[i] >= 0) P->col.push_back(G[i]);
             P->ptr.push_back(P->col.size());
         }
-        P->val.resize(n, static_cast<Val>(1));
+        P->val.resize(n, math::identity<Val>());
         TOC("interpolation");
 
         boost::shared_ptr<matrix> R = boost::make_shared<matrix>();

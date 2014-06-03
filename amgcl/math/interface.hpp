@@ -52,15 +52,27 @@ T zero() {
 }
 
 template <class T, class Enable = void>
-struct one_impl {
+struct identity_impl {
     static T get() {
         return 1;
     }
 };
 
 template <class T>
-T one() {
-    return one_impl<T>::get();
+T identity() {
+    return identity_impl<T>::get();
+}
+
+template <class T, class Enable = void>
+struct constant_impl {
+    static T get(typename scalar<T>::type c) {
+        return c;
+    }
+};
+
+template <class T>
+T constant(typename scalar<T>::type c) {
+    return constant_impl<T>::get(c);
 }
 
 template <class T, class Enable = void>
@@ -76,6 +88,31 @@ template <class T>
 typename adjoint_impl<T>::result_type
 adjoint(const T &v) {
     return adjoint_impl<T>::get(v);
+}
+
+template <class T, class Enable = void>
+struct inverse_impl {
+    static T get(const T &v) {
+        return 1 / v;
+    }
+};
+
+template <class T>
+T inverse(const T &v) {
+    return inverse_impl<T>::get(v);
+}
+
+template <class T, class Enable = void>
+struct abs_impl {
+    static typename scalar<T>::type
+    get(const T &v) {
+        return std::fabs(v);
+    }
+};
+
+template <class T>
+typename scalar<T>::type abs(const T &v) {
+    return abs_impl<T>::get(v);
 }
 
 } // namespace math

@@ -140,10 +140,10 @@ struct row_begin_impl <
 //---------------------------------------------------------------------------
 // Eigen backend definition
 //---------------------------------------------------------------------------
-template <typename real>
+template <typename MatrixScalar, typename VectorScalar = MatrixScalar>
 struct eigen {
-    typedef real value_type;
-    typedef long index_type;
+    typedef MatrixScalar value_type;
+    typedef long         index_type;
 
     typedef
         Eigen::MappedSparseMatrix<value_type, Eigen::RowMajor, index_type>
@@ -153,10 +153,12 @@ struct eigen {
         Eigen::Matrix<value_type, Eigen::Dynamic, 1>
         vector;
 
+    typedef vector diagonal_vector;
+
     struct params {};
 
     struct hold_host {
-        typedef boost::shared_ptr< crs<real, long, long> > host_matrix;
+        typedef boost::shared_ptr< crs<value_type, long, long> > host_matrix;
         host_matrix host;
 
         hold_host( host_matrix host ) : host(host) {}
@@ -167,7 +169,7 @@ struct eigen {
     };
 
     static boost::shared_ptr<matrix>
-    copy_matrix(boost::shared_ptr< typename builtin<real>::matrix > A, const params&)
+    copy_matrix(boost::shared_ptr< typename builtin<value_type>::matrix > A, const params&)
     {
         return boost::shared_ptr<matrix>(
                 new matrix(rows(*A), cols(*A), nonzeros(*A),
@@ -177,7 +179,7 @@ struct eigen {
     }
 
     static boost::shared_ptr<vector>
-    copy_vector(boost::shared_ptr< typename builtin<real>::vector > x, const params&)
+    copy_vector(boost::shared_ptr< typename builtin<value_type>::vector > x, const params&)
     {
         return boost::make_shared<vector>(
                 Eigen::Map<vector>(x->data(), x->size())
@@ -185,7 +187,7 @@ struct eigen {
     }
 
     static boost::shared_ptr<vector>
-    copy_vector(typename builtin<real>::vector const &x, const params&)
+    copy_vector(typename builtin<value_type>::vector const &x, const params&)
     {
         return boost::make_shared<vector>(
                 Eigen::Map<const vector>(x.data(), x.size())

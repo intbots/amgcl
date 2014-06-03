@@ -65,20 +65,21 @@ struct nonzeros_impl< vex::SpMat<V, C, P> > {
 //---------------------------------------------------------------------------
 // VexCL backend definition
 //---------------------------------------------------------------------------
-template <typename real>
+template <typename MatrixScalar, typename VectorScalar = MatrixScalar>
 struct vexcl {
-    typedef real value_type;
-    typedef long index_type;
+    typedef MatrixScalar value_type;
+    typedef long         index_type;
 
     typedef vex::SpMat<value_type, index_type, index_type> matrix;
     typedef vex::vector<value_type>                        vector;
+    typedef vector                                         diagonal_vector;
 
     struct params {
         std::vector< vex::backend::command_queue > q;
     };
 
     static boost::shared_ptr<matrix>
-    copy_matrix(boost::shared_ptr< typename builtin<real>::matrix > A, const params &prm)
+    copy_matrix(boost::shared_ptr< typename builtin<value_type>::matrix > A, const params &prm)
     {
         return boost::make_shared<matrix>(prm.q, rows(*A), cols(*A),
                 A->ptr.data(), A->col.data(), A->val.data()
@@ -86,13 +87,13 @@ struct vexcl {
     }
 
     static boost::shared_ptr<vector>
-    copy_vector(boost::shared_ptr< typename builtin<real>::vector > x, const params &prm)
+    copy_vector(boost::shared_ptr< typename builtin<value_type>::vector > x, const params &prm)
     {
         return boost::make_shared<vector>(prm.q, *x);
     }
 
     static boost::shared_ptr<vector>
-    copy_vector(typename builtin<real>::vector const &x, const params &prm)
+    copy_vector(typename builtin<value_type>::vector const &x, const params &prm)
     {
         return boost::make_shared<vector>(prm.q, x);
     }

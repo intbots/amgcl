@@ -135,7 +135,10 @@ class amg {
             return *levels.front().A;
         }
     private:
-        typedef typename backend::builtin<value_type>::matrix build_matrix;
+        typedef typename backend::builtin<
+            typename backend::value_type<matrix>::type,
+            typename backend::value_type<vector>::type
+            >::matrix build_matrix;
 
         struct level {
             boost::shared_ptr<matrix> A;

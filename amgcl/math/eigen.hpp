@@ -69,7 +69,7 @@ struct zero_impl<
 };
 
 template <class T>
-struct one_impl<
+struct identity_impl<
     T,
     typename boost::enable_if<
         typename boost::mpl::and_<
@@ -81,6 +81,22 @@ struct one_impl<
 {
     static T get() {
         return T::Identity();
+    }
+};
+
+template <class T>
+struct constant_impl<
+    T,
+    typename boost::enable_if<
+        typename boost::mpl::and_<
+            typename boost::mpl::bool_<(sizeof(typename T::Scalar) > 0)>::type,
+            typename boost::is_base_of<Eigen::MatrixBase<T>, T>::type
+        >::type
+    >::type
+    >
+{
+    static T get(typename scalar<T>::type c) {
+        return T::Constant(c);
     }
 };
 
@@ -98,6 +114,38 @@ struct adjoint_impl<
     typedef typename T::AdjointReturnType result_type;
     static result_type get(const T &v) {
         return v.adjoint();
+    }
+};
+
+template <class T>
+struct inverse_impl<
+    T,
+    typename boost::enable_if<
+        typename boost::mpl::and_<
+            typename boost::mpl::bool_<(sizeof(typename T::Scalar) > 0)>::type,
+            typename boost::is_base_of<Eigen::MatrixBase<T>, T>::type
+        >::type
+    >::type
+    >
+{
+    static T get(const T &v) {
+        return v.inverse();
+    }
+};
+
+template <class T>
+struct abs_impl<
+    T,
+    typename boost::enable_if<
+        typename boost::mpl::and_<
+            typename boost::mpl::bool_<(sizeof(typename T::Scalar) > 0)>::type,
+            typename boost::is_base_of<Eigen::MatrixBase<T>, T>::type
+        >::type
+    >::type
+    >
+{
+    static typename scalar<T>::type get(const T &v) {
+        return v.norm();
     }
 };
 

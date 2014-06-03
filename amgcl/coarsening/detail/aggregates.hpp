@@ -34,6 +34,7 @@ THE SOFTWARE.
 #include <vector>
 #include <boost/foreach.hpp>
 #include <amgcl/backend/builtin.hpp>
+#include <amgcl/math/interface.hpp>
 
 namespace amgcl {
 namespace coarsening {
@@ -65,23 +66,29 @@ size_t aggregates(
         std::vector<Col> &G
         )
 {
+    typedef typename math::scalar<Val>::type scalar;
     const size_t n = rows(A);
 
     // Determine strong couplings for the matrix.
     std::vector<char> S( nonzeros(A) );
-    Val eps2 = eps_strong * eps_strong;
+    float eps2 = eps_strong * eps_strong;
     std::vector<Val> dia = diagonal(A);
+    std::vector<scalar> abs_dia(n);
+
+#pragma omp parallel for
+    for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i)
+        abs_dia[i] = math::abs(dia[i]);
 
 #pragma omp parallel for
     for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i) {
-        Val eps_dia_i = eps2 * dia[i];
+        scalar eps_dia_i = eps2 * abs_dia[i];
 
         // Determine connections strength:
-        for(Ptr j = A.ptr[i], e = A.ptr[i+1]; j < e; ++j) {
-            Col c = A.col[j];
-            Val v = A.val[j];
+        for(Ptr    j = A.ptr[i], e = A.ptr[i+1]; j < e; ++j) {
+            Col    c = A.col[j];
+            scalar v = math::abs(A.val[j]);
 
-            S[j] = (c != i) && (v * v > eps_dia_i * dia[c]);
+            S[j] = (c != i) && (v * v > eps_dia_i * abs_dia[c]);
         }
     }
 

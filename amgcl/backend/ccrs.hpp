@@ -591,22 +591,23 @@ struct row_begin_impl< ccrs<V, C, P> > {
 //---------------------------------------------------------------------------
 // compressed_csr backend definition
 //---------------------------------------------------------------------------
-template <typename real>
+template <typename MatrixScalar, typename VectorScalar = MatrixScalar>
 struct compressed_crs {
-    typedef real value_type;
-    typedef long index_type;
+    typedef MatrixScalar value_type;
+    typedef long         index_type;
 
-    typedef ccrs<real, index_type, index_type> matrix;
-    typedef typename builtin<real>::vector     vector;
+    typedef ccrs<value_type, index_type, index_type> matrix;
+    typedef typename builtin<value_type>::vector     vector;
+    typedef vector                                   diagonal_vector;
 
     struct params {
-        real eps;
+        value_type eps;
 
-        params(real eps = 1e-6) : eps(eps) {}
+        params(value_type eps = 1e-6) : eps(eps) {}
     };
 
     static boost::shared_ptr<matrix>
-    copy_matrix(boost::shared_ptr< typename backend::builtin<real>::matrix > A,
+    copy_matrix(boost::shared_ptr< typename backend::builtin<value_type>::matrix > A,
             const params &prm)
     {
         const size_t n = rows(*A);
