@@ -8,7 +8,7 @@
 #include <amgcl/backend/block_crs.hpp>
 #include <amgcl/coarsening/aggregation.hpp>
 #include <amgcl/relaxation/damped_jacobi.hpp>
-#include <amgcl/solver/cg.hpp>
+#include <amgcl/solver/bicgstab.hpp>
 #include <amgcl/profiler.hpp>
 
 namespace amgcl {
@@ -63,7 +63,7 @@ int main() {
 
     std::vector<double> x(n, 0);
 
-    amgcl::solver::cg<AMG::backend_type> solve(n);
+    amgcl::solver::bicgstab<AMG::backend_type> solve(n);
 
     prof.tic("solve");
     size_t iters;

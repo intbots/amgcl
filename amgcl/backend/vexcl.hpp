@@ -164,6 +164,21 @@ struct axpby_impl< vex::vector<V> > {
     }
 };
 
+template < typename V >
+struct axpbypcz_impl< vex::vector<V> > {
+    static void apply(
+            V a, const vex::vector<V> &x,
+            V b, const vex::vector<V> &y,
+            V c,       vex::vector<V> &z
+            )
+    {
+        if (b)
+            z = a * x + b * y + c * z;
+        else
+            z = a * x + b * y;
+    }
+};
+
 template < typename M, typename V >
 struct vmul_impl< vex::vector<M>, vex::vector<V> > {
     static void apply(V a, const vex::vector<M> &x, const vex::vector<V> &y,

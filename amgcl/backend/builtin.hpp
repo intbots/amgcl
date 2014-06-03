@@ -593,6 +593,32 @@ struct axpby_impl< std::vector<V> > {
     }
 };
 
+template < typename V >
+struct axpbypcz_impl< std::vector<V> > {
+    typedef typename math::scalar<V>::type scalar;
+
+    static void apply(
+            scalar a, const std::vector<V> &x,
+            scalar b, const std::vector<V> &y,
+            scalar c,       std::vector<V> &z
+            )
+    {
+        const size_t n = x.size();
+        if (c) {
+#pragma omp parallel for
+            for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i) {
+                z[i] = a * x[i] + b * y[i] + c * z[i];
+            }
+        } else {
+#pragma omp parallel for
+            for(ptrdiff_t i = 0; i < static_cast<ptrdiff_t>(n); ++i) {
+                z[i] = a * x[i] + b * y[i];
+            }
+        }
+    }
+};
+
+
 template < typename M, typename V >
 struct vmul_impl< std::vector<M>, std::vector<V> > {
     typedef typename math::scalar<V>::type scalar;

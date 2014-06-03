@@ -8,10 +8,9 @@
 #include <amgcl/math/eigen.hpp>
 #include <amgcl/backend/builtin.hpp>
 #include <amgcl/coarsening/aggregation.hpp>
-#include <amgcl/relaxation/gauss_seidel.hpp>
-#include <amgcl/solver/cg.hpp>
+#include <amgcl/relaxation/damped_jacobi.hpp>
+#include <amgcl/solver/bicgstab.hpp>
 #include <amgcl/profiler.hpp>
-#include "sample_problem.hpp"
 
 namespace amgcl {
     profiler<> prof("v2");
@@ -27,7 +26,7 @@ int main() {
     typedef amgcl::amg<
         amgcl::backend::builtin<M, V>,
         amgcl::coarsening::aggregation,
-        amgcl::relaxation::gauss_seidel
+        amgcl::relaxation::damped_jacobi
         > AMG;
 
     size_t nb;
@@ -130,7 +129,7 @@ int main() {
 
     std::vector<V> x(nb, V::Zero());
 
-    amgcl::solver::cg<AMG::backend_type> solve(nb);
+    amgcl::solver::bicgstab<AMG::backend_type> solve(nb);
 
     prof.tic("solve");
     size_t iters;
