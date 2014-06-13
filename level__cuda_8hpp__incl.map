@@ -1,8 +1,0 @@
-<map id="amgcl/level_cuda.hpp" name="amgcl/level_cuda.hpp">
-<area shape="rect" id="node10" href="$level__params_8hpp.html" title="Common parameters for level construction/solution. " alt="" coords="2217,88,2396,115"/>
-<area shape="rect" id="node11" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format. " alt="" coords="163,179,297,205"/>
-<area shape="rect" id="node17" href="$spai_8hpp.html" title="Compute Sparse Approximate Inverse for a given matrix. " alt="" coords="329,88,447,115"/>
-<area shape="rect" id="node18" href="$chebyshev_8hpp.html" title="Find coefficients of a chebyshev polynomial. " alt="" coords="491,88,649,115"/>
-<area shape="rect" id="node21" href="$operations__cuda_8hpp.html" title="Adaptors for thrust types. " alt="" coords="1510,88,1708,115"/>
-<area shape="rect" id="node22" href="$common_8hpp.html" title="Common definitions for amgcl. " alt="" coords="1579,179,1729,205"/>
-</map>

@@ -1,3 +1,4 @@
-<map id="amgcl/chebyshev.hpp" name="amgcl/chebyshev.hpp">
-<area shape="rect" id="node7" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format. " alt="" coords="223,88,357,115"/>
+<map id="amgcl/relaxation/chebyshev.hpp" name="amgcl/relaxation/chebyshev.hpp">
+<area shape="rect" id="node8" href="$gaussj_8hpp.html" title="Inverse of a dense matrix with Gauss&#45;Jordan algorithm. " alt="" coords="419,88,577,115"/>
+<area shape="rect" id="node9" href="$util_8hpp.html" title="Various utilities. " alt="" coords="447,171,549,197"/>
 </map>

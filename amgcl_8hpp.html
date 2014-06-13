@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>amgcl: amgcl/amgcl.hpp File Reference</title>
+<title>AMGCL: amgcl/amgcl.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,9 +18,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">amgcl
+   <div id="projectname">AMGCL
    </div>
-   <div id="projectbrief">Simple and generic AMG hierarchy builder</div>
+   <div id="projectbrief">C++ header only library for constructing an AMG hierarchy</div>
   </td>
  </tr>
  </tbody>
@@ -31,6 +31,7 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -40,7 +41,6 @@
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div id="nav-path" class="navpath">
@@ -51,9 +51,7 @@
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">amgcl.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -63,15 +61,15 @@
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;iomanip&gt;</code><br/>
-<code>#include &lt;utility&gt;</code><br/>
-<code>#include &lt;list&gt;</code><br/>
-<code>#include &lt;boost/static_assert.hpp&gt;</code><br/>
-<code>#include &lt;boost/smart_ptr/shared_ptr.hpp&gt;</code><br/>
-<code>#include &lt;boost/smart_ptr/make_shared.hpp&gt;</code><br/>
-<code>#include &lt;boost/type_traits/is_signed.hpp&gt;</code><br/>
 <code>#include &lt;boost/io/ios_state.hpp&gt;</code><br/>
-<code>#include &lt;<a class="el" href="spmat_8hpp.html">amgcl/spmat.hpp</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="tictoc_8hpp.html">amgcl/tictoc.hpp</a>&gt;</code><br/>
+<code>#include &lt;boost/static_assert.hpp&gt;</code><br/>
+<code>#include &lt;boost/shared_ptr.hpp&gt;</code><br/>
+<code>#include &lt;boost/make_shared.hpp&gt;</code><br/>
+<code>#include &lt;boost/ptr_container/ptr_list.hpp&gt;</code><br/>
+<code>#include &lt;boost/foreach.hpp&gt;</code><br/>
+<code>#include &lt;boost/tuple/tuple.hpp&gt;</code><br/>
+<code>#include &lt;<a class="el" href="builtin_8hpp.html">amgcl/backend/builtin.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="util_8hpp.html">amgcl/util.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for amgcl.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -79,57 +77,26 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="amgcl_8hpp__incl.png" border="0" usemap="#amgcl_2amgcl_8hpp" alt=""/></div>
 <map name="amgcl_2amgcl_8hpp" id="amgcl_2amgcl_8hpp">
-<area shape="rect" id="node11" href="spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format. " alt="" coords="1289,88,1423,115"/><area shape="rect" id="node18" href="tictoc_8hpp.html" title="TIC and TOC macros for internal profiling. " alt="" coords="1448,88,1576,115"/></map>
+<area shape="rect" id="node11" href="builtin_8hpp.html" title="Builtin backend. " alt="" coords="1037,88,1211,115"/><area shape="rect" id="node18" href="util_8hpp.html" title="Various utilities. " alt="" coords="1270,261,1372,288"/><area shape="rect" id="node20" href="interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="1527,179,1716,205"/><area shape="rect" id="node22" href="gaussj_8hpp.html" title="Inverse of a dense matrix with Gauss&#45;Jordan algorithm. " alt="" coords="411,179,569,205"/><area shape="rect" id="node24" href="sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="1281,179,1452,205"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1galerkin__operator.html">amgcl::interp::galerkin_operator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Galerkin operator.  <a href="structamgcl_1_1interp_1_1galerkin__operator.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1amg.html">amgcl::amg&lt; Backend, Coarsening, Relax &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algebraic multigrid method.  <a href="classamgcl_1_1amg.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1interp_1_1coarse__operator.html">amgcl::interp::coarse_operator&lt; Interpolation &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns coarse level construction scheme for a given interpolation scheme.  <a href="structamgcl_1_1interp_1_1coarse__operator.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1amg_1_1params.html">amgcl::amg&lt; Backend, Coarsening, Relax &gt;::params</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters of the method.  <a href="structamgcl_1_1amg_1_1params.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver.html">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algebraic multigrid method.  <a href="classamgcl_1_1solver.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1params.html">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for AMG components.  <a href="structamgcl_1_1solver_1_1params.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1make__solver.html">amgcl::make_solver&lt; Backend, Coarsening, Relax, IterativeSolver &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience class that creates a pair of AMG preconditioner and iterative solver.  <a href="classamgcl_1_1make__solver.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamgcl"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl.html">amgcl</a></td></tr>
-<tr class="memdesc:namespaceamgcl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the library. <br/></td></tr>
+<tr class="memdesc:namespaceamgcl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceamgcl_1_1interp"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1interp.html">amgcl::interp</a></td></tr>
-<tr class="memdesc:namespaceamgcl_1_1interp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation-related types and functions. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceamgcl_1_1relax"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1relax.html">amgcl::relax</a></td></tr>
-<tr class="memdesc:namespaceamgcl_1_1relax"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible relaxation (smoothing) schemes. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a13828bc649abcf7c2654c4376fb98b7e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7e">amgcl::relax::scheme</a> { <br/>
-&#160;&#160;<a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7ea381a693d627a0c5fd752fef4d7c4b867">amgcl::relax::damped_jacobi</a>, 
-<a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7ea95caa8c4581c15112f95c51d311e9051">amgcl::relax::spai0</a>, 
-<a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7ea2277d702891ad64c750a0a3d855c2ffd">amgcl::relax::gauss_seidel</a>, 
-<a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7ea0058875b47edda0b88e9492b10e8a8f1">amgcl::relax::ilu0</a>, 
-<br/>
-&#160;&#160;<a class="el" href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7ea5dc1d819f282ff6ae5a4aeb71d9d4f7b">amgcl::relax::chebyshev</a>
-<br/>
- }</td></tr>
-<tr class="memdesc:a13828bc649abcf7c2654c4376fb98b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible relaxation (smoothing) schemes.  <a href="namespaceamgcl_1_1relax.html#a13828bc649abcf7c2654c4376fb98b7e">More...</a><br/></td></tr>
-<tr class="separator:a13828bc649abcf7c2654c4376fb98b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ad6576cb047878e6d2aefc6f49195bb7b"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad6576cb047878e6d2aefc6f49195bb7b"></a>
-template&lt;typename value_t , typename index_t , typename interp_t , typename level_t &gt; </td></tr>
-<tr class="memitem:ad6576cb047878e6d2aefc6f49195bb7b"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="amgcl_8hpp.html#ad6576cb047878e6d2aefc6f49195bb7b">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classamgcl_1_1solver.html">amgcl::solver</a>&lt; value_t, index_t, interp_t, level_t &gt; &amp;amg)</td></tr>
-<tr class="memdesc:ad6576cb047878e6d2aefc6f49195bb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output some general information about the AMG hierarchy. <br/></td></tr>
-<tr class="separator:ad6576cb047878e6d2aefc6f49195bb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Generic algebraic multigrid framework. </p>

@@ -1,4 +1,4 @@
-<map id="amgcl/cg.hpp" name="amgcl/cg.hpp">
-<area shape="rect" id="node3" href="$common_8hpp.html" title="Common definitions for amgcl. " alt="" coords="86,80,236,107"/>
-<area shape="rect" id="node4" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling. " alt="" coords="261,80,389,107"/>
+<map id="amgcl/solver/cg.hpp" name="amgcl/solver/cg.hpp">
+<area shape="rect" id="node3" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="172,80,361,107"/>
+<area shape="rect" id="node7" href="$util_8hpp.html" title="Various utilities. " alt="" coords="451,155,553,181"/>
 </map>

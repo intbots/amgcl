@@ -1,0 +1,7 @@
+<map id="amgcl/backend/block_crs.hpp" name="amgcl/backend/block_crs.hpp">
+<area shape="rect" id="node4" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="391,179,580,205"/>
+<area shape="rect" id="node10" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="699,96,872,123"/>
+<area shape="rect" id="node8" href="$util_8hpp.html" title="Various utilities. " alt="" coords="601,261,703,288"/>
+<area shape="rect" id="node16" href="$gaussj_8hpp.html" title="Inverse of a dense matrix with Gauss&#45;Jordan algorithm. " alt="" coords="706,179,864,205"/>
+<area shape="rect" id="node18" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="1547,179,1717,205"/>
+</map>

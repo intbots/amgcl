@@ -1,26 +1,30 @@
-\form#0:\[A^H = R A^h P.\]
-\form#1:$R = P^T.$
-\form#2:$\alpha$
-\form#3:$\alpha>1$
-\form#4:$1/\alpha$
-\form#5:\[I_h^HA_hI_H^h \to \frac{1}{\alpha}I_h^HA_hI_H^h.\]
-\form#6:$\varepsilon_{str}$
-\form#7:$i$
-\form#8:$j$
-\form#9:\[|a_{ij}| \geq \varepsilon_{str}\sqrt{a_{ii} a_{jj}}\quad \text{with fixed} \quad 0 < \varepsilon_{str} < 1.\]
-\form#10:\[-a_{ij} \geq \varepsilon_{str}\max\limits_{a_{ik}<0}|a_{ik}|\quad \text{with fixed} \quad 0 < \varepsilon_{str} < 1.\]
-\form#11:$\varepsilon_{str}=0.25$
-\form#12:$\varepsilon_{tr}$
-\form#13:$\varepsilon_{tr}=0.2$
-\form#14:\[|a_{ij}| \geq \varepsilon\sqrt{a_{ii} a_{jj}}\quad \text{with fixed} \quad \varepsilon = \varepsilon_{str} \left( \frac{1}{2} \right)^l,\]
-\form#15:$l$
-\form#16:$\omega$
-\form#17:$\tilde P$
-\form#18:$P$
-\form#19:\[P = \left( I - \omega D^{-1} A^F \right) \tilde P.\]
-\form#20:$A^F = (a_{ij}^F)$
-\form#21:\[ a_{ij}^F = \begin{cases} a_{ij} \quad \text{if} \; j \in N_i\\ 0 \quad \text{otherwise} \end{cases}, \quad \text{if}\; i \neq j, \quad a_{ii}^F = a_{ii} - \sum\limits_{j=1,j\neq i}^n \left(a_{ij} - a_{ij}^F \right), \]
-\form#22:$N_i$
-\form#23:$D$
-\form#24:$A^F$
-\form#25:\[y = \alpha A x + \beta y \]
+\form#0:\[y = \alpha A x + \beta y.\]
+\form#1:\[r = rhs - Ax.\]
+\form#2:\[y = ax + by.\]
+\form#3:\[z = ax + by + cz.\]
+\form#4:\[z = \alpha xy + \beta z.\]
+\form#5:$A^H$
+\form#6:$A^H = R A^h P$
+\form#7:$\alpha$
+\form#8:$\alpha > 1$
+\form#9:$1 / \alpha$
+\form#10:\[I_h^HA_hI_H^h \to \frac{1}{\alpha}I_h^HA_hI_H^h.\]
+\form#11:$i$
+\form#12:$j$
+\form#13:$a_{ij}^2/a_{ii}a_{jj} > \varepsilon_{strong}$
+\form#14:$\varepsilon_{strong}$
+\form#15:$0 < \varepsilon_{strong} < 1.$
+\form#16:$\varepsilon_{str}$
+\form#17:\[-a_{ij} \geq \varepsilon_{str}\max\limits_{a_{ik}<0}|a_{ik}|\quad \text{with fixed} \quad 0 < \varepsilon_{str} < 1.\]
+\form#18:$\varepsilon_{str}=0.25$
+\form#19:$\varepsilon_{tr}$
+\form#20:$\varepsilon_{tr}=0.2$
+\form#21:$\omega$
+\form#22:$\tilde P$
+\form#23:$P$
+\form#24:\[P = \left( I - \omega D^{-1} A^F \right) \tilde P.\]
+\form#25:$A^F = (a_{ij}^F)$
+\form#26:\[ a_{ij}^F = \begin{cases} a_{ij} \quad \text{if} \; j \in N_i\\ 0 \quad \text{otherwise} \end{cases}, \quad \text{if}\; i \neq j, \quad a_{ii}^F = a_{ii} - \sum\limits_{j=1,j\neq i}^n \left(a_{ij} - a_{ij}^F \right), \]
+\form#27:$N_i$
+\form#28:$D$
+\form#29:$A^F$

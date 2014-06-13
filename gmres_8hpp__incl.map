@@ -1,3 +1,4 @@
-<map id="amgcl/gmres.hpp" name="amgcl/gmres.hpp">
-<area shape="rect" id="node5" href="$common_8hpp.html" title="Common definitions for amgcl. " alt="" coords="279,80,429,107"/>
+<map id="amgcl/solver/gmres.hpp" name="amgcl/solver/gmres.hpp">
+<area shape="rect" id="node7" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="673,80,863,107"/>
+<area shape="rect" id="node10" href="$util_8hpp.html" title="Various utilities. " alt="" coords="865,155,967,181"/>
 </map>

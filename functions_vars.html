@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>amgcl: Class Members - Variables</title>
+<title>AMGCL: Class Members - Variables</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,9 +18,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">amgcl
+   <div id="projectname">AMGCL
    </div>
-   <div id="projectbrief">Simple and generic AMG hierarchy builder</div>
+   <div id="projectbrief">C++ header only library for constructing an AMG hierarchy</div>
   </td>
  </tr>
  </tbody>
@@ -31,6 +31,7 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -54,151 +55,163 @@
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
-      <li><a href="#index_k"><span>k</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
+      <li><a href="#index_q"><span>q</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
-      <li><a href="#index_v"><span>v</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
 <div class="contents">
 &#160;
 
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>aggr
+: <a class="el" href="structamgcl_1_1coarsening_1_1aggregation_1_1params.html#a7b11038eddfb43b95e1129122ecfc838">amgcl::coarsening::aggregation&lt; Aggregates &gt;::params</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1smoothed__aggregation_1_1params.html#a86b534d3d85248aa225fc273f90feae3">amgcl::coarsening::smoothed_aggregation&lt; Aggregates &gt;::params</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1smoothed__aggr__emin_1_1params.html#aa875ca695ae989b6f9273b1a8f19d7f4">amgcl::coarsening::smoothed_aggr_emin&lt; Aggregates &gt;::params</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>backend
+: <a class="el" href="structamgcl_1_1amg_1_1params.html#a1adca988dff2620035e9f96a7505df5d">amgcl::amg&lt; Backend, Coarsening, Relax &gt;::params</a>
+</li>
+<li>block_size
+: <a class="el" href="structamgcl_1_1coarsening_1_1pointwise__aggregates_1_1params.html#ab92b8d6a8ce1fbeb60003cb26d08c7f5">amgcl::coarsening::pointwise_aggregates::params</a>
+, <a class="el" href="structamgcl_1_1backend_1_1block__crs_1_1params.html#a23028cde55f825ecc4a964cd3d6231ff">amgcl::backend::block_crs&lt; real &gt;::params</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>coarse_enough
-: <a class="el" href="structamgcl_1_1solver_1_1params.html#af3204a5505c2ef3cc7a37b6a461b770b">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params</a>
+: <a class="el" href="structamgcl_1_1amg_1_1params.html#ae775bc0c0696eaf8b3621b3393bf6af2">amgcl::amg&lt; Backend, Coarsening, Relax &gt;::params</a>
 </li>
-<li>col
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#aad880e3edf8394e5859b2921eb9a3b7f">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
-, <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#ae98a9f2b2c52eb6e1bb01f348b98611e">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
+<li>coarsening
+: <a class="el" href="structamgcl_1_1amg_1_1params.html#ae2aa93a125ed67f841a21383bb542f6f">amgcl::amg&lt; Backend, Coarsening, Relax &gt;::params</a>
 </li>
-<li>cols
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a80b25c2506709006d1ddb22bd3673047">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
-, <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#aa599821c27c20eb4e4ef245e13b062f0">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
+<li>count
+: <a class="el" href="classamgcl_1_1coarsening_1_1pointwise__aggregates.html#a7119c73af6c1688e64903ea2349c8c34">amgcl::coarsening::pointwise_aggregates</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1plain__aggregates.html#aa997db3eb0c809b9fdb24d22b7966d39">amgcl::coarsening::plain_aggregates</a>
 </li>
-<li>ctx
-: <a class="el" href="structamgcl_1_1level_1_1vexcl_1_1params.html#a54004b70691b242557c809685a9d0c9a">amgcl::level::vexcl&lt; Relaxation &gt;::params</a>
+<li>cusparse_handle
+: <a class="el" href="structamgcl_1_1backend_1_1cuda_1_1params.html#a8b24cd6ccfeabfb35ebec4b76dfdb2e9">amgcl::backend::cuda&lt; real &gt;::params</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
-<li>dof_per_node
-: <a class="el" href="structamgcl_1_1interp_1_1sa__emin_1_1params.html#a6a0115cb8d60d3f5cbde439b2ff4b3ba">amgcl::interp::sa_emin&lt; aggr_type &gt;::params</a>
+<li>damping
+: <a class="el" href="structamgcl_1_1relaxation_1_1damped__jacobi_1_1params.html#ace45ac6f8e5a40d532be3974a08a547a">amgcl::relaxation::damped_jacobi&lt; Backend &gt;::params</a>
+, <a class="el" href="structamgcl_1_1relaxation_1_1ilu0_1_1params.html#a3d5b8a344ebb17d9ec00ae3e21aca192">amgcl::relaxation::ilu0&lt; Backend &gt;::params</a>
+</li>
+<li>degree
+: <a class="el" href="structamgcl_1_1relaxation_1_1chebyshev_1_1params.html#aef42fbf83956865607758102d132cc68">amgcl::relaxation::chebyshev&lt; Backend &gt;::params</a>
+</li>
+<li>do_trunc
+: <a class="el" href="structamgcl_1_1coarsening_1_1ruge__stuben_1_1params.html#a79a6451f46680b69bf49f8be9494960a">amgcl::coarsening::ruge_stuben::params</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>eps_strong
-: <a class="el" href="structamgcl_1_1interp_1_1aggregation_1_1params.html#aaed8011c08c3dc5bf42c054720513e51">amgcl::interp::aggregation&lt; aggr_type &gt;::params</a>
-, <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a1f7ed4971df4d67fbbdca30dde7df299">amgcl::interp::classic::params</a>
-, <a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation_1_1params.html#adfd6f03cc6da1ecf4d6e1f2a6370429c">amgcl::interp::smoothed_aggregation&lt; aggr_type &gt;::params</a>
-, <a class="el" href="structamgcl_1_1interp_1_1sa__emin_1_1params.html#acc9c4e04767331244caaff938f386356">amgcl::interp::sa_emin&lt; aggr_type &gt;::params</a>
+: <a class="el" href="structamgcl_1_1coarsening_1_1plain__aggregates_1_1params.html#a79f040b86c2e7533d249765e1c09c625">amgcl::coarsening::plain_aggregates::params</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1ruge__stuben_1_1params.html#a41c09d99e84a7ac71f5ba0e8baf18756">amgcl::coarsening::ruge_stuben::params</a>
 </li>
-<li>eps_tr
-: <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a6c1eaf6f36acfc387cb39e1536889971">amgcl::interp::classic::params</a>
+<li>eps_trunc
+: <a class="el" href="structamgcl_1_1coarsening_1_1ruge__stuben_1_1params.html#af800d1049199ca817f028fb6c48206b6">amgcl::coarsening::ruge_stuben::params</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>interp
-: <a class="el" href="structamgcl_1_1solver_1_1params.html#a1c948a3d57170da73ea6f7e0b71371d5">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_k"></a>- k -</h3><ul>
-<li>kcycle
-: <a class="el" href="structamgcl_1_1level_1_1params.html#a3e373ce52ae16f49c579d7df4f440ef4">amgcl::level::params</a>
-</li>
-<li>kcycle_iterations
-: <a class="el" href="structamgcl_1_1level_1_1params.html#aa4fecc4e6c584e06f557429d232c10c4">amgcl::level::params</a>
+<li>id
+: <a class="el" href="structamgcl_1_1coarsening_1_1plain__aggregates.html#ad8ab05aa8b611b14776b20621801e2db">amgcl::coarsening::plain_aggregates</a>
+, <a class="el" href="classamgcl_1_1coarsening_1_1pointwise__aggregates.html#a5dbdebb671b366e99fe108374de5f42d">amgcl::coarsening::pointwise_aggregates</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
-<li>level
-: <a class="el" href="structamgcl_1_1solver_1_1params.html#a63eacfb2ca782d5761e769ef4a0c189a">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;::params</a>
+<li>lower
+: <a class="el" href="structamgcl_1_1relaxation_1_1chebyshev_1_1params.html#a5d7863f73139a94d89aecca021f35951">amgcl::relaxation::chebyshev&lt; Backend &gt;::params</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>M
-: <a class="el" href="structamgcl_1_1gmres__tag.html#af2d40de41c597b38601e995961f82189">amgcl::gmres_tag</a>
+: <a class="el" href="structamgcl_1_1solver_1_1gmres_1_1params.html#a269d33db61a03a421acc37793303dea6">amgcl::solver::gmres&lt; Backend &gt;::params</a>
 </li>
 <li>maxiter
-: <a class="el" href="structamgcl_1_1level_1_1params.html#a89b944c37ce87f3d2835a4abded298a9">amgcl::level::params</a>
-, <a class="el" href="structamgcl_1_1gmres__tag.html#a9be6f55190cef122f0248a7b461a5ce4">amgcl::gmres_tag</a>
-, <a class="el" href="structamgcl_1_1bicg__tag.html#a03d3f4e38bc9aee3f551c8fcb1e4f22e">amgcl::bicg_tag</a>
-, <a class="el" href="structamgcl_1_1cg__tag.html#a39054178af217173585caa1ddfc5d00f">amgcl::cg_tag</a>
+: <a class="el" href="structamgcl_1_1solver_1_1gmres_1_1params.html#a39882ea659c448b6004e9a6b8f53cd9f">amgcl::solver::gmres&lt; Backend &gt;::params</a>
+, <a class="el" href="structamgcl_1_1solver_1_1cg_1_1params.html#ae97d7606e23af228e7af5ed10816ae9d">amgcl::solver::cg&lt; Backend &gt;::params</a>
+, <a class="el" href="structamgcl_1_1solver_1_1bicgstab_1_1params.html#ab49218cc3076b18862ecfdf5d00917c7">amgcl::solver::bicgstab&lt; Backend &gt;::params</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
 <li>ncycle
-: <a class="el" href="structamgcl_1_1level_1_1params.html#af8da1197c4cede731f109756370f0408">amgcl::level::params</a>
+: <a class="el" href="structamgcl_1_1amg_1_1params.html#a165e9c7be1b5efb26006d8f49a0b902d">amgcl::amg&lt; Backend, Coarsening, Relax &gt;::params</a>
 </li>
 <li>npost
-: <a class="el" href="structamgcl_1_1level_1_1params.html#a3e779c58049318b0f96fcb9b916df2a1">amgcl::level::params</a>
+: <a class="el" href="structamgcl_1_1amg_1_1params.html#a03c823b18204d87b45c3f499332e7c86">amgcl::amg&lt; Backend, Coarsening, Relax &gt;::params</a>
 </li>
 <li>npre
-: <a class="el" href="structamgcl_1_1level_1_1params.html#aff1eb9c002cd8ca5e71b7936abdab176">amgcl::level::params</a>
+: <a class="el" href="structamgcl_1_1amg_1_1params.html#af752eaf00736e3e40212363e88d0121a">amgcl::amg&lt; Backend, Coarsening, Relax &gt;::params</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
 <li>over_interp
-: <a class="el" href="structamgcl_1_1interp_1_1aggregation_1_1params.html#a2acb360289682688d9ab00e43b754a7e">amgcl::interp::aggregation&lt; aggr_type &gt;::params</a>
+: <a class="el" href="structamgcl_1_1coarsening_1_1aggregation_1_1params.html#a12e8d54a876f4fd31521e1e4a7462fa9">amgcl::coarsening::aggregation&lt; Aggregates &gt;::params</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_q"></a>- q -</h3><ul>
+<li>q
+: <a class="el" href="structamgcl_1_1backend_1_1vexcl_1_1params.html#a8d022f7b4cab4c07ac055bbadc990ffb">amgcl::backend::vexcl&lt; real &gt;::params</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>relax
-: <a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation_1_1params.html#abb4fba8b868dc0d8272d346998b862b9">amgcl::interp::smoothed_aggregation&lt; aggr_type &gt;::params</a>
+: <a class="el" href="structamgcl_1_1amg_1_1params.html#adcf42be1eea5d52460686a5f85e1b416">amgcl::amg&lt; Backend, Coarsening, Relax &gt;::params</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1smoothed__aggregation_1_1params.html#aaee5c78c479e4b80caa66a6fc5e4707a">amgcl::coarsening::smoothed_aggregation&lt; Aggregates &gt;::params</a>
 </li>
-<li>row
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a652b8065057718daf96ae5ab5a5dbd41">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
-, <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#a130524c4c652b0b9ee288101044ffeb8">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
-</li>
-<li>rows
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#af929682c53b724c529f05d6d4e257b41">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
-, <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#a4bd95cd14b868ccbdf59d2f62ed63372">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>strong_connection
+: <a class="el" href="structamgcl_1_1coarsening_1_1plain__aggregates.html#a1bd263aeb33e03b4cc8bfe734a02ad51">amgcl::coarsening::plain_aggregates</a>
+, <a class="el" href="classamgcl_1_1coarsening_1_1pointwise__aggregates.html#a8357f92a5ffd16b11945ff5269d4bc44">amgcl::coarsening::pointwise_aggregates</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>tol
-: <a class="el" href="structamgcl_1_1cg__tag.html#a7a7a7edd0ab8d2086fe20a3fc7686571">amgcl::cg_tag</a>
-, <a class="el" href="structamgcl_1_1bicg__tag.html#a4817ba6d3a5fe318e65e68e8a329d908">amgcl::bicg_tag</a>
-, <a class="el" href="structamgcl_1_1level_1_1params.html#a07f88e91f902efdac8cee6588c10f6a7">amgcl::level::params</a>
-, <a class="el" href="structamgcl_1_1gmres__tag.html#a948a0ab88614854773e6f8bb15d06466">amgcl::gmres_tag</a>
-</li>
-<li>trunc_int
-: <a class="el" href="structamgcl_1_1interp_1_1classic_1_1params.html#a12bd0fbe4dc62825ff92e2d2303f69e9">amgcl::interp::classic::params</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
-<li>val
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#ac80a139dcdaab82a36969a4041e13f82">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
-, <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#a8149dfe165e15648e6f9765fa055063e">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
+: <a class="el" href="structamgcl_1_1solver_1_1bicgstab_1_1params.html#aef544d65c564cf7b6b7bd0de17d4f8d0">amgcl::solver::bicgstab&lt; Backend &gt;::params</a>
+, <a class="el" href="structamgcl_1_1solver_1_1gmres_1_1params.html#ad36f92439b918019b236c9946451bc50">amgcl::solver::gmres&lt; Backend &gt;::params</a>
+, <a class="el" href="structamgcl_1_1solver_1_1cg_1_1params.html#adb4d3694aff1156d01bf04c9a1599629">amgcl::solver::cg&lt; Backend &gt;::params</a>
 </li>
 </ul>
 </div><!-- contents -->

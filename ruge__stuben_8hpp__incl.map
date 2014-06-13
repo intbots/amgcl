@@ -1,0 +1,9 @@
+<map id="amgcl/coarsening/ruge_stuben.hpp" name="amgcl/coarsening/ruge_stuben.hpp">
+<area shape="rect" id="node6" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="736,277,909,304"/>
+<area shape="rect" id="node13" href="$util_8hpp.html" title="Various utilities. " alt="" coords="1490,443,1592,469"/>
+<area shape="rect" id="node21" href="$scaled__galerkin_8hpp.html" title="Scaled Galerkin operator. " alt="" coords="441,97,599,138"/>
+<area shape="rect" id="node15" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="795,360,984,387"/>
+<area shape="rect" id="node18" href="$gaussj_8hpp.html" title="Inverse of a dense matrix with Gauss&#45;Jordan algorithm. " alt="" coords="1059,360,1217,387"/>
+<area shape="rect" id="node20" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="549,360,720,387"/>
+<area shape="rect" id="node22" href="$galerkin_8hpp.html" title="Galerkin operator. " alt="" coords="441,187,599,229"/>
+</map>

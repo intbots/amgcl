@@ -1,4 +1,7 @@
 <map id="amgcl/amgcl.hpp" name="amgcl/amgcl.hpp">
-<area shape="rect" id="node11" href="$spmat_8hpp.html" title="A set of routines to work with sparse matrices in CRS format. " alt="" coords="1289,88,1423,115"/>
-<area shape="rect" id="node18" href="$tictoc_8hpp.html" title="TIC and TOC macros for internal profiling. " alt="" coords="1448,88,1576,115"/>
+<area shape="rect" id="node11" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="1037,88,1211,115"/>
+<area shape="rect" id="node18" href="$util_8hpp.html" title="Various utilities. " alt="" coords="1270,261,1372,288"/>
+<area shape="rect" id="node20" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="1527,179,1716,205"/>
+<area shape="rect" id="node22" href="$gaussj_8hpp.html" title="Inverse of a dense matrix with Gauss&#45;Jordan algorithm. " alt="" coords="411,179,569,205"/>
+<area shape="rect" id="node24" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="1281,179,1452,205"/>
 </map>

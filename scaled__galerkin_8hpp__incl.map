@@ -1,0 +1,8 @@
+<map id="amgcl/coarsening/detail/scaled_galerkin.hpp" name="amgcl/coarsening/detail/scaled_galerkin.hpp">
+<area shape="rect" id="node3" href="$galerkin_8hpp.html" title="Galerkin operator. " alt="" coords="175,97,333,138"/>
+<area shape="rect" id="node6" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="623,187,796,213"/>
+<area shape="rect" id="node13" href="$util_8hpp.html" title="Various utilities. " alt="" coords="735,352,837,379"/>
+<area shape="rect" id="node15" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="411,269,600,296"/>
+<area shape="rect" id="node18" href="$gaussj_8hpp.html" title="Inverse of a dense matrix with Gauss&#45;Jordan algorithm. " alt="" coords="1507,269,1665,296"/>
+<area shape="rect" id="node20" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="1312,269,1483,296"/>
+</map>

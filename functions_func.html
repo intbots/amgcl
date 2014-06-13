@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>amgcl: Class Members - Functions</title>
+<title>AMGCL: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,9 +18,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">amgcl
+   <div id="projectname">AMGCL
    </div>
-   <div id="projectbrief">Simple and generic AMG hierarchy builder</div>
+   <div id="projectbrief">C++ header only library for constructing an AMG hierarchy</div>
   </td>
  </tr>
  </tbody>
@@ -31,6 +31,7 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -55,12 +56,14 @@
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
-      <li><a href="#index_n"><span>n</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
-      <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
     </ul>
@@ -70,70 +73,132 @@
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
-<li>aggregates()
-: <a class="el" href="structamgcl_1_1aggr_1_1plain.html#aebfe0b8f27a391abc6eac11f80547f1e">amgcl::aggr::plain</a>
+<li>amg()
+: <a class="el" href="classamgcl_1_1amg.html#a2b6fdc18970f927fef3609cb1970fd72">amgcl::amg&lt; Backend, Coarsening, Relax &gt;</a>
 </li>
-<li>apply()
-: <a class="el" href="classamgcl_1_1solver.html#a30a50c9e322e3312849995d9ff8fb8de">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
+<li>apply_post()
+: <a class="el" href="classamgcl_1_1relaxation_1_1chebyshev.html#ac82551c3f64666560e1e6b661cda874f">amgcl::relaxation::chebyshev&lt; Backend &gt;</a>
+, <a class="el" href="structamgcl_1_1relaxation_1_1gauss__seidel.html#a7799a5eda520a768eebecad11f3726f2">amgcl::relaxation::gauss_seidel&lt; Backend &gt;</a>
+, <a class="el" href="structamgcl_1_1relaxation_1_1ilu0.html#a8ca269c902690c9cf1b6f13253fab4e0">amgcl::relaxation::ilu0&lt; Backend &gt;</a>
+, <a class="el" href="structamgcl_1_1relaxation_1_1damped__jacobi.html#a55adc29a90cc0fa44ff33057fd09eb3c">amgcl::relaxation::damped_jacobi&lt; Backend &gt;</a>
+, <a class="el" href="structamgcl_1_1relaxation_1_1spai0.html#ae9d8bd520b16f45b8d96b7d8fc77d6b0">amgcl::relaxation::spai0&lt; Backend &gt;</a>
+</li>
+<li>apply_pre()
+: <a class="el" href="structamgcl_1_1relaxation_1_1damped__jacobi.html#a652d04aad9c439b28f3dffa2864d6db9">amgcl::relaxation::damped_jacobi&lt; Backend &gt;</a>
+, <a class="el" href="structamgcl_1_1relaxation_1_1ilu0.html#a6b135a487466268ce0b9ed842a66de5e">amgcl::relaxation::ilu0&lt; Backend &gt;</a>
+, <a class="el" href="structamgcl_1_1relaxation_1_1spai0.html#a6ffa21d8b2d84d407f0cff183116e494">amgcl::relaxation::spai0&lt; Backend &gt;</a>
+, <a class="el" href="classamgcl_1_1relaxation_1_1chebyshev.html#a5286b1a30a92b54edac8573520f5d34c">amgcl::relaxation::chebyshev&lt; Backend &gt;</a>
+, <a class="el" href="structamgcl_1_1relaxation_1_1gauss__seidel.html#a1b19b66426181e7f8cc49227e729742b">amgcl::relaxation::gauss_seidel&lt; Backend &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>bcrs()
+: <a class="el" href="structamgcl_1_1backend_1_1bcrs.html#a7a041da729f6b522b36f39ce1733ba0d">amgcl::backend::bcrs&lt; V, C, P &gt;</a>
+</li>
+<li>bicgstab()
+: <a class="el" href="classamgcl_1_1solver_1_1bicgstab.html#ad3c59082d420c4137f3fa7804d114efd">amgcl::solver::bicgstab&lt; Backend &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
-<li>clear()
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a06f2189d0b2304cdeb0d5a8fbe40bc03">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
+<li>cg()
+: <a class="el" href="classamgcl_1_1solver_1_1cg.html#ab2e29f03c9b6ad0d9d8c29be4f8fea3b">amgcl::solver::cg&lt; Backend &gt;</a>
 </li>
-<li>cuda_matrix()
-: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__HYB_01_4.html#a5890cd04a996ef3f91c81b018c04f580">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_HYB &gt;</a>
-, <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__CRS_01_4.html#af8ebeac1fdfd2935e76738c4e308227a">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_CRS &gt;</a>
-, <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__HYB_01_4.html#a5d3d3872aec2ca6000c70b1471521144">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_HYB &gt;</a>
+<li>chebyshev()
+: <a class="el" href="classamgcl_1_1relaxation_1_1chebyshev.html#aa49ccc14f75c59c4d5e9373ffb11521d">amgcl::relaxation::chebyshev&lt; Backend &gt;</a>
 </li>
-<li>cusparseCreate()
-: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__CRS_01_4.html#a255b616a379ee27ab5bd035b36130a45">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_CRS &gt;</a>
-, <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__HYB_01_4.html#ac9745900dded3cc3538aae2078a45b61">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_HYB &gt;</a>
+<li>coarse_operator()
+: <a class="el" href="structamgcl_1_1coarsening_1_1ruge__stuben.html#abed36016bf93103052332fc58d1f1a9a">amgcl::coarsening::ruge_stuben</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1smoothed__aggregation.html#af92521a1452241dabd826e31d6907ed7">amgcl::coarsening::smoothed_aggregation&lt; Aggregates &gt;</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1aggregation.html#a7ffe95b0a81d6fca88b884fc2234a3cd">amgcl::coarsening::aggregation&lt; Aggregates &gt;</a>
 </li>
-<li>cusparseDestroy()
-: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__CRS_01_4.html#a13134c8c849fe1812f373634986f80c1">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_CRS &gt;</a>
-, <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__HYB_01_4.html#a71e2151fe5f0efb97da0e2fa47aed2ab">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_HYB &gt;</a>
+<li>copy_matrix()
+: <a class="el" href="structamgcl_1_1backend_1_1builtin.html#a6f2e33c71b00a987002fe55272bd8446">amgcl::backend::builtin&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1cuda.html#aa5d6d160966f1f0d0324e140d7d146f9">amgcl::backend::cuda&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1eigen.html#afd4f2465df63d2b427a9b2db5b327239">amgcl::backend::eigen&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1vexcl.html#aa5e7d2bb6c354098ca22f84b3e2f7c4a">amgcl::backend::vexcl&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1blaze.html#a17d4a9e161cf21c2202c2116ec8bfc8c">amgcl::backend::blaze&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1viennacl.html#a5011c4f028edbbac53642123381ac7e0">amgcl::backend::viennacl&lt; Matrix &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1block__crs.html#a8260b91f6c2547614d07384a2b57927d">amgcl::backend::block_crs&lt; real &gt;</a>
+</li>
+<li>copy_vector()
+: <a class="el" href="structamgcl_1_1backend_1_1vexcl.html#a927ce718b51331086dfbf32e66dfce36">amgcl::backend::vexcl&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1block__crs.html#a33f746dd77f7b11d74a9a7328674f5b3">amgcl::backend::block_crs&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1builtin.html#aaa39e2dceec3d7e5a6c66979829c06c3">amgcl::backend::builtin&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1cuda.html#a31c482a218e27843779ef46beaa8c44b">amgcl::backend::cuda&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1eigen.html#a0318633b4b915abb7582b316b4ee4f53">amgcl::backend::eigen&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1block__crs.html#a9020a4ac85224af8cbba8a5d5755c9cb">amgcl::backend::block_crs&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1blaze.html#a10ac7d6471a313b3bd9b694144546c8d">amgcl::backend::blaze&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1viennacl.html#add8a87a89e4a22ca4554a8e11501763f">amgcl::backend::viennacl&lt; Matrix &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1vexcl.html#a3efcb602dd5c20b751578f299c9e6801">amgcl::backend::vexcl&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1viennacl.html#aa02e7dc5fc16f214aa15f7d55fdb873e">amgcl::backend::viennacl&lt; Matrix &gt;</a>
+</li>
+<li>create_vector()
+: <a class="el" href="structamgcl_1_1backend_1_1block__crs.html#ac31c660c94fea8d6322c14da6c5d29e6">amgcl::backend::block_crs&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1blaze.html#aa5caad9bc9973aef73970a7854733501">amgcl::backend::blaze&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1vexcl.html#af83b1e9fc34afdc831e3034159ea559f">amgcl::backend::vexcl&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1eigen.html#adde02dd8ed7d7b8147429fecc7bb67df">amgcl::backend::eigen&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1cuda.html#a883253787ebe607d8fa8548f17f73c3a">amgcl::backend::cuda&lt; real &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1viennacl.html#a8ced146d8e1d5bf20ba2f1a9dc0e0af1">amgcl::backend::viennacl&lt; Matrix &gt;</a>
+, <a class="el" href="structamgcl_1_1backend_1_1builtin.html#a2d2dc6adeac8ca5cdc5f232e416b6230">amgcl::backend::builtin&lt; real &gt;</a>
+</li>
+<li>cycle()
+: <a class="el" href="classamgcl_1_1amg.html#acf5b5f34611cb45449895883d1e36712">amgcl::amg&lt; Backend, Coarsening, Relax &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>damped_jacobi()
+: <a class="el" href="structamgcl_1_1relaxation_1_1damped__jacobi.html#a081e9bf1aec7d695f8e9a8d23ed4e731">amgcl::relaxation::damped_jacobi&lt; Backend &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>gauss_seidel()
+: <a class="el" href="structamgcl_1_1relaxation_1_1gauss__seidel.html#aed88d55336e28dac8da58f4642cd250d">amgcl::relaxation::gauss_seidel&lt; Backend &gt;</a>
+</li>
+<li>gmres()
+: <a class="el" href="classamgcl_1_1solver_1_1gmres.html#a4632facb8f185dc4125a5d74801d98ab">amgcl::solver::gmres&lt; Backend &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>interp()
-: <a class="el" href="structamgcl_1_1interp_1_1aggregation.html#a3424d2cb7b69471aa7409ff9f0b1f9ac">amgcl::interp::aggregation&lt; aggr_type &gt;</a>
-, <a class="el" href="structamgcl_1_1interp_1_1smoothed__aggregation.html#aa101abe2a95cfb58fb64033d874d5543">amgcl::interp::smoothed_aggregation&lt; aggr_type &gt;</a>
-, <a class="el" href="structamgcl_1_1interp_1_1sa__emin.html#ae51e3354555d4d6c94045d63d2fb016c">amgcl::interp::sa_emin&lt; aggr_type &gt;</a>
-, <a class="el" href="classamgcl_1_1interp_1_1classic.html#a111ab2071c26b5998c283f50cf473a0f">amgcl::interp::classic</a>
+<li>ilu0()
+: <a class="el" href="structamgcl_1_1relaxation_1_1ilu0.html#adba4372c77480cc64a910abe69460636">amgcl::relaxation::ilu0&lt; Backend &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
-<li>matrix()
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a47f7b0d6c9662058ef5433a7d132a49e">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
-</li>
-<li>matrix_map()
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix__map.html#a248328d2bd6909204c05c80efdfaec5e">amgcl::sparse::matrix_map&lt; value_t, index_t &gt;</a>
-</li>
-<li>mul()
-: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__CRS_01_4.html#a77427c5d0d8c163419e31c3a6618f8fa">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_CRS &gt;</a>
-, <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__HYB_01_4.html#aa1812bcfc25b011945eac2391c778f96">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_HYB &gt;</a>
+<li>make_solver()
+: <a class="el" href="classamgcl_1_1make__solver.html#abe3ef812e9c1cba4a03d4323aa8f7132">amgcl::make_solver&lt; Backend, Coarsening, Relax, IterativeSolver &gt;</a>
 </li>
 </ul>
 
 
-<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
-<li>nonzeros()
-: <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__HYB_01_4.html#a91f5a19bae0d2a41e1580e4ea72f8c15">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_HYB &gt;</a>
-, <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__CRS_01_4.html#aa5b4c360827d001ed91d8a8d7ee1f456">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_CRS &gt;</a>
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>operator()()
+: <a class="el" href="classamgcl_1_1amg.html#ab5f1f23e57b3b3a866634650f1554a02">amgcl::amg&lt; Backend, Coarsening, Relax &gt;</a>
+, <a class="el" href="classamgcl_1_1solver_1_1gmres.html#afb8dd13e2634d2817350d84ba8326381">amgcl::solver::gmres&lt; Backend &gt;</a>
+, <a class="el" href="classamgcl_1_1solver_1_1cg.html#a01d76afaa1d696acf8351831130af8e9">amgcl::solver::cg&lt; Backend &gt;</a>
+, <a class="el" href="classamgcl_1_1solver_1_1bicgstab.html#a017593c583c2d0d29f663a707e9285d4">amgcl::solver::bicgstab&lt; Backend &gt;</a>
+, <a class="el" href="classamgcl_1_1make__solver.html#a145b033524bf9357084fcfe39e97c2d7">amgcl::make_solver&lt; Backend, Coarsening, Relax, IterativeSolver &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
-<li>print()
-: <a class="el" href="classamgcl_1_1solver.html#a15e4849c9eb61e0c623ab1ca1d0bd480">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
+<li>plain_aggregates()
+: <a class="el" href="structamgcl_1_1coarsening_1_1plain__aggregates.html#affb34b00c1bf552b7af7f51016079629">amgcl::coarsening::plain_aggregates</a>
+</li>
+<li>pointwise_aggregates()
+: <a class="el" href="classamgcl_1_1coarsening_1_1pointwise__aggregates.html#a4ebb71048044a94bdd178b0a3d04cb91">amgcl::coarsening::pointwise_aggregates</a>
 </li>
 <li>profiler()
 : <a class="el" href="classamgcl_1_1profiler.html#a110b31cf89c6192b22dfc3e2fea8926e">amgcl::profiler&lt; clock, SHIFT_WIDTH &gt;</a>
@@ -141,30 +206,9 @@
 </ul>
 
 
-<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>reserve()
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a810850ae9be13ae215fb4cc074ddb914">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
-</li>
-<li>resize()
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a3695a15502bedca9c38aab23da59a080">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
-</li>
-</ul>
-
-
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
-<li>size()
-: <a class="el" href="classamgcl_1_1solver.html#ab8b0f8b8bf46de764e731809790a00c4">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
-, <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__HYB_01_4.html#a551402cb4f6893cf0e0a1bff6f41d343">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_HYB &gt;</a>
-, <a class="el" href="classamgcl_1_1sparse_1_1cuda__matrix_3_01value__type_00_01GPU__MATRIX__CRS_01_4.html#a4b85b1d9eadea4e14c2707b3dba24af7">amgcl::sparse::cuda_matrix&lt; value_type, GPU_MATRIX_CRS &gt;</a>
-</li>
-<li>solve()
-: <a class="el" href="classamgcl_1_1solver.html#a330dbfc5587bb481e09228221af7cf4c">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
-</li>
-<li>solver()
-: <a class="el" href="classamgcl_1_1solver.html#ad99ee74042b47beb941b11e2690ca28a">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
-</li>
-<li>swap()
-: <a class="el" href="structamgcl_1_1sparse_1_1matrix.html#a770a0a2484cd81bc9bfd08b393acc4c8">amgcl::sparse::matrix&lt; value_t, index_t &gt;</a>
+<li>spai0()
+: <a class="el" href="structamgcl_1_1relaxation_1_1spai0.html#a0f63c043448f53305f0c1a8d3472e20f">amgcl::relaxation::spai0&lt; Backend &gt;</a>
 </li>
 </ul>
 
@@ -177,7 +221,13 @@
 : <a class="el" href="classamgcl_1_1profiler.html#acdca5bad241c9909f2c722a436ab5f5a">amgcl::profiler&lt; clock, SHIFT_WIDTH &gt;</a>
 </li>
 <li>top_matrix()
-: <a class="el" href="classamgcl_1_1solver.html#ae3d24864e0f266f241702f27918a8201">amgcl::solver&lt; value_t, index_t, interp_t, level_t &gt;</a>
+: <a class="el" href="classamgcl_1_1amg.html#a4b775ef70fcf96a296a45674f580f5ff">amgcl::amg&lt; Backend, Coarsening, Relax &gt;</a>
+</li>
+<li>transfer_operators()
+: <a class="el" href="structamgcl_1_1coarsening_1_1ruge__stuben.html#a7f7deb0b6af1f9df021727f3e86f52b9">amgcl::coarsening::ruge_stuben</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1aggregation.html#af5e6ca7a4633627e822d42ea949ef4f2">amgcl::coarsening::aggregation&lt; Aggregates &gt;</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1smoothed__aggr__emin.html#a70c55ed71665555efe960d2f95f72dff">amgcl::coarsening::smoothed_aggr_emin&lt; Aggregates &gt;</a>
+, <a class="el" href="structamgcl_1_1coarsening_1_1smoothed__aggregation.html#afbb09b3f98dc51611398e8e5af183901">amgcl::coarsening::smoothed_aggregation&lt; Aggregates &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

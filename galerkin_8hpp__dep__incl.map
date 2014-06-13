@@ -1,0 +1,7 @@
+<map id="amgcl/coarsening/detail/galerkin.hpp" name="amgcl/coarsening/detail/galerkin.hpp">
+<area shape="rect" id="node2" href="$scaled__galerkin_8hpp.html" title="Scaled Galerkin operator. " alt="" coords="141,97,299,138"/>
+<area shape="rect" id="node5" href="$smoothed__aggr__emin_8hpp.html" title="Smoothed aggregation with energy minimization coarsening. " alt="" coords="323,97,508,138"/>
+<area shape="rect" id="node6" href="$smoothed__aggregation_8hpp.html" title="Smoothed aggregation coarsening scheme. " alt="" coords="533,97,717,138"/>
+<area shape="rect" id="node3" href="$aggregation_8hpp.html" title="Non&#45;smoothed aggregation coarsening. " alt="" coords="5,195,224,221"/>
+<area shape="rect" id="node4" href="$ruge__stuben_8hpp.html" title="Ruge&#45;Stuben coarsening with direct interpolation. " alt="" coords="249,187,401,229"/>
+</map>
