@@ -1,15 +1,20 @@
 <map id="amgcl/backend/builtin.hpp" name="amgcl/backend/builtin.hpp">
-<area shape="rect" id="node2" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework. " alt="" coords="5,88,125,115"/>
-<area shape="rect" id="node3" href="$block__crs_8hpp.html" title="Sparse matrix in block&#45;CRS format. " alt="" coords="150,81,295,122"/>
-<area shape="rect" id="node4" href="$cuda_8hpp.html" title="VexCL backend. " alt="" coords="319,88,485,115"/>
-<area shape="rect" id="node5" href="$eigen_8hpp.html" title="Sparse matrix in CRS format. " alt="" coords="511,88,681,115"/>
-<area shape="rect" id="node6" href="$viennacl_8hpp.html" title="Blaze backend. " alt="" coords="705,88,892,115"/>
-<area shape="rect" id="node7" href="$aggregation_8hpp.html" title="Non&#45;smoothed aggregation coarsening. " alt="" coords="911,269,1131,296"/>
-<area shape="rect" id="node8" href="$galerkin_8hpp.html" title="Galerkin operator. " alt="" coords="1038,81,1196,122"/>
-<area shape="rect" id="node10" href="$ruge__stuben_8hpp.html" title="Ruge&#45;Stuben coarsening with direct interpolation. " alt="" coords="1213,262,1365,303"/>
-<area shape="rect" id="node11" href="$smoothed__aggr__emin_8hpp.html" title="Smoothed aggregation with energy minimization coarsening. " alt="" coords="867,171,1052,213"/>
-<area shape="rect" id="node12" href="$smoothed__aggregation_8hpp.html" title="Smoothed aggregation coarsening scheme. " alt="" coords="1259,171,1444,213"/>
-<area shape="rect" id="node13" href="$plain__aggregates_8hpp.html" title="Plain aggregation. " alt="" coords="1520,81,1673,122"/>
-<area shape="rect" id="node14" href="$pointwise__aggregates_8hpp.html" title="Pointwise aggregation. " alt="" coords="1570,171,1752,213"/>
-<area shape="rect" id="node9" href="$scaled__galerkin_8hpp.html" title="Scaled Galerkin operator. " alt="" coords="1077,171,1235,213"/>
+<area shape="rect" id="node2" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework. " alt="" coords="5,269,125,296"/>
+<area shape="rect" id="node5" href="$block__crs_8hpp.html" title="Sparse matrix in block&#45;CRS format. " alt="" coords="1013,81,1157,122"/>
+<area shape="rect" id="node6" href="$cuda_8hpp.html" title="VexCL backend. " alt="" coords="1093,179,1259,205"/>
+<area shape="rect" id="node7" href="$default__direct__solver_8hpp.html" title="Default direct solver for coarse level. " alt="" coords="1284,81,1455,122"/>
+<area shape="rect" id="node8" href="$vexcl_8hpp.html" title="VexCL backend. " alt="" coords="1284,179,1455,205"/>
+<area shape="rect" id="node9" href="$viennacl_8hpp.html" title="Blaze backend. " alt="" coords="1479,179,1665,205"/>
+<area shape="rect" id="node10" href="$backend_2eigen_8hpp.html" title="Sparse matrix in CRS format. " alt="" coords="1529,88,1700,115"/>
+<area shape="rect" id="node11" href="$aggregation_8hpp.html" title="Non&#45;smoothed aggregation coarsening. " alt="" coords="150,269,369,296"/>
+<area shape="rect" id="node12" href="$galerkin_8hpp.html" title="Galerkin operator. " alt="" coords="549,81,707,122"/>
+<area shape="rect" id="node14" href="$ruge__stuben_8hpp.html" title="Ruge&#45;Stuben coarsening with direct interpolation. " alt="" coords="394,262,547,303"/>
+<area shape="rect" id="node15" href="$smoothed__aggr__emin_8hpp.html" title="Smoothed aggregation with energy minimization coarsening. " alt="" coords="466,171,651,213"/>
+<area shape="rect" id="node16" href="$smoothed__aggregation_8hpp.html" title="Smoothed aggregation coarsening scheme. " alt="" coords="675,171,860,213"/>
+<area shape="rect" id="node17" href="$plain__aggregates_8hpp.html" title="Plain aggregation. " alt="" coords="783,81,936,122"/>
+<area shape="rect" id="node18" href="$pointwise__aggregates_8hpp.html" title="Pointwise aggregation. " alt="" coords="885,171,1067,213"/>
+<area shape="rect" id="node19" href="$solver_2eigen_8hpp.html" title="Wrapper around eigen direct solvers. " alt="" coords="1725,88,1880,115"/>
+<area shape="rect" id="node3" href="$runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl classes. " alt="" coords="463,352,592,379"/>
+<area shape="rect" id="node4" href="$mpi_2runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl mpi classes. " alt="" coords="451,427,604,453"/>
+<area shape="rect" id="node13" href="$scaled__galerkin_8hpp.html" title="Scaled Galerkin operator. " alt="" coords="283,171,441,213"/>
 </map>

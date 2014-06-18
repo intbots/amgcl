@@ -61,6 +61,8 @@
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;boost/tuple/tuple.hpp&gt;</code><br/>
 <code>#include &lt;<a class="el" href="interface_8hpp.html">amgcl/backend/interface.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="default__inner__product_8hpp.html">amgcl/solver/detail/default_inner_product.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="util_8hpp.html">amgcl/util.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cg.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -68,15 +70,24 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="cg_8hpp__incl.png" border="0" usemap="#amgcl_2solver_2cg_8hpp" alt=""/></div>
 <map name="amgcl_2solver_2cg_8hpp" id="amgcl_2solver_2cg_8hpp">
-<area shape="rect" id="node3" href="interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="172,80,361,107"/><area shape="rect" id="node7" href="util_8hpp.html" title="Various utilities. " alt="" coords="451,155,553,181"/></map>
+<area shape="rect" id="node3" href="interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="197,171,387,197"/><area shape="rect" id="node7" href="util_8hpp.html" title="Various utilities. " alt="" coords="441,245,543,272"/><area shape="rect" id="node10" href="default__inner__product_8hpp.html" title="Default inner product getter for iterative solvers. " alt="" coords="279,81,453,122"/></map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="cg_8hpp__dep__incl.png" border="0" usemap="#amgcl_2solver_2cg_8hppdep" alt=""/></div>
+<map name="amgcl_2solver_2cg_8hppdep" id="amgcl_2solver_2cg_8hppdep">
+<area shape="rect" id="node2" href="runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl classes. " alt="" coords="17,80,145,107"/><area shape="rect" id="node3" href="mpi_2runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl mpi classes. " alt="" coords="4,155,157,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1cg.html">amgcl::solver::cg&lt; Backend &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1cg.html">amgcl::solver::cg&lt; Backend, InnerProduct &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conjugate Gradients iterative solver.  <a href="classamgcl_1_1solver_1_1cg.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1cg_1_1params.html">amgcl::solver::cg&lt; Backend &gt;::params</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1cg_1_1params.html">amgcl::solver::cg&lt; Backend, InnerProduct &gt;::params</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solver parameters.  <a href="structamgcl_1_1solver_1_1cg_1_1params.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">

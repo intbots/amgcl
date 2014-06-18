@@ -1,4 +1,6 @@
 <map id="amgcl/solver/bicgstab.hpp" name="amgcl/solver/bicgstab.hpp">
-<area shape="rect" id="node3" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="249,80,439,107"/>
-<area shape="rect" id="node7" href="$util_8hpp.html" title="Various utilities. " alt="" coords="441,155,543,181"/>
+<area shape="rect" id="node3" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="451,245,641,272"/>
+<area shape="rect" id="node7" href="$util_8hpp.html" title="Various utilities. " alt="" coords="156,320,258,347"/>
+<area shape="rect" id="node10" href="$bicgstabl_8hpp.html" title="BiCGStab(L) iterative method. " alt="" coords="169,80,346,107"/>
+<area shape="rect" id="node12" href="$default__inner__product_8hpp.html" title="Default inner product getter for iterative solvers. " alt="" coords="467,155,641,197"/>
 </map>

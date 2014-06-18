@@ -1,4 +1,9 @@
 <map id="amgcl/backend/vexcl.hpp" name="amgcl/backend/vexcl.hpp">
-<area shape="rect" id="node5" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="497,80,687,107"/>
-<area shape="rect" id="node9" href="$util_8hpp.html" title="Various utilities. " alt="" coords="777,155,879,181"/>
+<area shape="rect" id="node6" href="$util_8hpp.html" title="Various utilities. " alt="" coords="990,427,1092,453"/>
+<area shape="rect" id="node9" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="841,171,1015,197"/>
+<area shape="rect" id="node27" href="$default__direct__solver_8hpp.html" title="Default direct solver for coarse level. " alt="" coords="1337,81,1508,122"/>
+<area shape="rect" id="node16" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="412,344,601,371"/>
+<area shape="rect" id="node19" href="$solver_2skyline__lu_8hpp.html" title="Skyline LU factorization solver. " alt="" coords="555,246,695,287"/>
+<area shape="rect" id="node22" href="$inverse_8hpp.html" title="Inverse of a dense matrix. " alt="" coords="1059,253,1221,280"/>
+<area shape="rect" id="node26" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="720,253,891,280"/>
 </map>

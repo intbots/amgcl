@@ -1,0 +1,9 @@
+<map id="amgcl/solver/detail/default_inner_product.hpp" name="amgcl/solver/detail/default_inner_product.hpp">
+<area shape="rect" id="node2" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework. " alt="" coords="5,171,125,197"/>
+<area shape="rect" id="node5" href="$cg_8hpp.html" title="Conjugate Gradient method. " alt="" coords="151,171,289,197"/>
+<area shape="rect" id="node6" href="$bicgstabl_8hpp.html" title="BiCGStab(L) iterative method. " alt="" coords="239,96,416,123"/>
+<area shape="rect" id="node7" href="$bicgstab_8hpp.html" title="BiCGStab iterative method. " alt="" coords="365,171,539,197"/>
+<area shape="rect" id="node8" href="$gmres_8hpp.html" title="GMRES method. " alt="" coords="495,96,656,123"/>
+<area shape="rect" id="node3" href="$runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl classes. " alt="" coords="262,245,391,272"/>
+<area shape="rect" id="node4" href="$mpi_2runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl mpi classes. " alt="" coords="249,320,403,347"/>
+</map>

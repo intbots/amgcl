@@ -61,6 +61,8 @@
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;boost/tuple/tuple.hpp&gt;</code><br/>
 <code>#include &lt;<a class="el" href="interface_8hpp.html">amgcl/backend/interface.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="bicgstabl_8hpp.html">amgcl/solver/bicgstabl.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="default__inner__product_8hpp.html">amgcl/solver/detail/default_inner_product.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="util_8hpp.html">amgcl/util.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for bicgstab.hpp:</div>
@@ -69,15 +71,24 @@
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="bicgstab_8hpp__incl.png" border="0" usemap="#amgcl_2solver_2bicgstab_8hpp" alt=""/></div>
 <map name="amgcl_2solver_2bicgstab_8hpp" id="amgcl_2solver_2bicgstab_8hpp">
-<area shape="rect" id="node3" href="interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="249,80,439,107"/><area shape="rect" id="node7" href="util_8hpp.html" title="Various utilities. " alt="" coords="441,155,543,181"/></map>
+<area shape="rect" id="node3" href="interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="451,245,641,272"/><area shape="rect" id="node7" href="util_8hpp.html" title="Various utilities. " alt="" coords="156,320,258,347"/><area shape="rect" id="node10" href="bicgstabl_8hpp.html" title="BiCGStab(L) iterative method. " alt="" coords="169,80,346,107"/><area shape="rect" id="node12" href="default__inner__product_8hpp.html" title="Default inner product getter for iterative solvers. " alt="" coords="467,155,641,197"/></map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="bicgstab_8hpp__dep__incl.png" border="0" usemap="#amgcl_2solver_2bicgstab_8hppdep" alt=""/></div>
+<map name="amgcl_2solver_2bicgstab_8hppdep" id="amgcl_2solver_2bicgstab_8hppdep">
+<area shape="rect" id="node2" href="runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl classes. " alt="" coords="27,80,156,107"/><area shape="rect" id="node3" href="mpi_2runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl mpi classes. " alt="" coords="15,155,168,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1bicgstab.html">amgcl::solver::bicgstab&lt; Backend &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1bicgstab.html">amgcl::solver::bicgstab&lt; Backend, InnerProduct &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">BiCGStab iterative solver.  <a href="classamgcl_1_1solver_1_1bicgstab.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1bicgstab_1_1params.html">amgcl::solver::bicgstab&lt; Backend &gt;::params</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1solver_1_1bicgstab_1_1params.html">amgcl::solver::bicgstab&lt; Backend, InnerProduct &gt;::params</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solver parameters.  <a href="structamgcl_1_1solver_1_1bicgstab_1_1params.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">

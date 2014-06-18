@@ -52,6 +52,7 @@
 <ul>
 <li><a href="#getting-started">Getting started</a><ul>
 <li><a href="#backends">Backends</a></li>
+<li><a href="#matrix-adapters">Matrix adapters</a></li>
 <li><a href="#coarsening">Coarsening strategies</a></li>
 <li><a href="#relaxation">Relaxation schemes</a></li>
 <li><a href="#solvers">Solvers</a></li>
@@ -83,7 +84,7 @@
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="builtin_8hpp.html">amgcl/backend/builtin.hpp</a>&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// Allows to specify system matrix as a tuple of sizes and ranges (as in Boost.Range).</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="crs__tuple_8hpp.html">amgcl/backend/crs_tuple.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="crs__tuple_8hpp.html">amgcl/adapter/crs_tuple.hpp</a>&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">// Classic Ruge-Stuben coarsening algorithm</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ruge__stuben_8hpp.html">amgcl/coarsening/ruge_stuben.hpp</a>&gt;</span></div>
@@ -113,7 +114,7 @@
 <div class="line">    <span class="comment">// Note that this step only depends on the matrix. Hence, the constructed</span></div>
 <div class="line">    <span class="comment">// instance may be reused for several right-hand sides.</span></div>
 <div class="line">    <span class="comment">// The matrix is specified as a tuple of sizes and ranges.</span></div>
-<div class="line">    AMG amg( boost::tie(n, val, col, ptr) );</div>
+<div class="line">    AMG amg( boost::tie(n, ptr, col, val) );</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Output some information about the constructed hierarchy:</span></div>
 <div class="line">    std::cout &lt;&lt; amg &lt;&lt; std::endl;</div>
@@ -146,7 +147,7 @@
 <div class="line">    amgcl::coarsening::ruge_stuben,</div>
 <div class="line">    <a class="code" href="structamgcl_1_1relaxation_1_1damped__jacobi.html">amgcl::relaxation::damped_jacobi</a>,</div>
 <div class="line">    <a class="code" href="classamgcl_1_1solver_1_1bicgstab.html">amgcl::solver::bicgstab</a></div>
-<div class="line">    &gt; solve( boost::tie(n, val, col, ptr) );</div>
+<div class="line">    &gt; solve( boost::tie(n, ptr, col, val) );</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// ...</span></div>
 <div class="line"></div>
@@ -163,21 +164,79 @@
 <li><code><a class="el" href="structamgcl_1_1backend_1_1vexcl.html" title="VexCL backend. ">amgcl::backend::vexcl</a>&lt;value_type&gt;</code> (<a href="amgcl/backend/vexcl.hpp">amgcl/backend/vexcl.hpp</a>). The <code>vexcl</code> backend uses <a href="http://github.com/ddemidov/vexcl">VexCL</a> library for accelerating the solution phase. VexCL is a C++ vector expression template library for OpenCL/CUDA. VexCL is able to utilize several compute devices at once.</li>
 <li><code><a class="el" href="structamgcl_1_1backend_1_1viennacl.html" title="ViennaCL backend. ">amgcl::backend::viennacl</a>&lt;matrix_type&gt;</code> (<a href="amgcl/backend/viennacl.hpp">amgcl/backend/viennacl.hpp</a>). The <code>viennacl</code> backend is built on top of <a href="http://viennacl.sourceforge.net">ViennaCL</a> library which is a free open-source linear algebra library for computations on many-core architectures (GPUs, MIC) and multi-core CPUs.</li>
 <li><code><a class="el" href="structamgcl_1_1backend_1_1cuda.html" title="CUDA backend. ">amgcl::backend::cuda</a>&lt;value_type&gt;</code> (<a href="amgcl/backend/cuda.hpp">amgcl/backend/cuda.hpp</a>). Uses CUDA libraries CUSPARSE and Thrust for matrix and vector operations.</li>
-<li><code>amgcl::backend::crs_tuple&lt;value_type&gt;</code> (<a href="amgcl/backend/crs_tuple.hpp">amgcl/backend/crs_tuple.hpp</a>). The <code>crs_tuple</code> backend is in fact not a usable backend. It only exists to facilitate construction of <code><a class="el" href="classamgcl_1_1amg.html" title="Algebraic multigrid method. ">amgcl::amg</a>&lt;&gt;</code> instances from user matrices strored in CRS format. A <code>boost::tuple</code> of matrix dimensions and ranges of nonzero values, columns, and row pointers may be used. The example above illustrates how the backend may be used with <code>std::vector&lt;&gt;</code>s. Below is an example that uses raw pointers:</li>
 </ul>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> n;       <span class="comment">// Matrix size.</span></div>
+<h3><a class="anchor" id="matrix-adapters"></a>Matrix adapters</h3>
+<p>AMGCL provides several adapters for common sparse matrix formats. An adapter allows to construct an AMG hierarchy directly from the matrix format it adapts.</p>
+<ul>
+<li><code>amgcl::adapter::crs_tuple&lt;value_type&gt;</code> (<a href="amgcl/adapter/crs_tuple.hpp">amgcl/adapter/crs_tuple.hpp</a>). The <code>crs_tuple</code> adapter facilitates construction of <code><a class="el" href="classamgcl_1_1amg.html" title="Algebraic multigrid method. ">amgcl::amg</a>&lt;&gt;</code> instances from user matrices strored in CRS format. A <code>boost::tuple</code> of matrix size and ranges of nonzero values, columns, and row pointers may be used. The example below constructs an AMG preconditioner from a matrix stored in raw pointers: <div class="fragment"><div class="line"><span class="keywordtype">int</span> n;       <span class="comment">// Matrix size.</span></div>
 <div class="line"><span class="keywordtype">double</span> *val; <span class="comment">// Values.</span></div>
 <div class="line"><span class="keywordtype">int</span>    *col; <span class="comment">// Column numbers.</span></div>
 <div class="line"><span class="keywordtype">int</span>    *ptr  <span class="comment">// Row pointers into the above arrays.</span></div>
 <div class="line"></div>
 <div class="line">AMG amg( boost::make_tuple(</div>
 <div class="line">            n,</div>
-<div class="line">            boost::make_iterator_range(val, val + ptr[n]),</div>
+<div class="line">            boost::make_iterator_range(ptr, ptr + n + 1),</div>
 <div class="line">            boost::make_iterator_range(col, col + ptr[n]),</div>
-<div class="line">            boost::make_iterator_range(ptr, ptr + n + 1)</div>
+<div class="line">            boost::make_iterator_range(val, val + ptr[n])</div>
 <div class="line">            )</div>
 <div class="line">        );</div>
-</div><!-- fragment --><h3><a class="anchor" id="coarsening"></a>Coarsening strategies</h3>
+</div><!-- fragment --></li>
+<li><code>amgcl::adapter::crs_builder&lt;RowBuilder&gt;</code> (<a href="amgcl/adapter/crs_builder.hpp">amgcl/adapter/crs_builder.hpp</a>). The adapter backend does not need fully constructed matrix in CRS format (which would be copied into AMG anyway), but builds matrix rows as needed. This results in reduced memory requirements. There is a convenience function <code>make_matrix(const RowBuilder&amp;)</code> that returns a <code>crs_builder&lt;RowBuilder&gt;</code> instance. Here is an example of 2D poisson problem construction: <div class="fragment"><div class="line"><span class="keyword">struct </span>poisson_2d {</div>
+<div class="line">    <span class="keyword">typedef</span> <span class="keywordtype">double</span> val_type;</div>
+<div class="line">    <span class="keyword">typedef</span> <span class="keywordtype">long</span>   col_type;</div>
+<div class="line"></div>
+<div class="line">    poisson_2d(<span class="keywordtype">size_t</span> n) : n(n), h2i((n - 1) * (n - 1)) {}</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Number of rows in the constructed matrix:</span></div>
+<div class="line">    <span class="keywordtype">size_t</span> <a class="code" href="namespaceamgcl_1_1backend.html#a1e967f0ac7c298a24c8c68e3f43bb3b2">rows</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> n * n; }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Estimated number of nonzeros in the problem:</span></div>
+<div class="line">    <span class="keywordtype">size_t</span> <a class="code" href="namespaceamgcl_1_1backend.html#a9e2dd785d22f6ed49726854860727191">nonzeros</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> 5 * <a class="code" href="namespaceamgcl_1_1backend.html#a1e967f0ac7c298a24c8c68e3f43bb3b2">rows</a>(); }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Fills column numbers and values of nonzero elements in the given matrix row.</span></div>
+<div class="line">    <span class="keywordtype">void</span> operator()(<span class="keywordtype">size_t</span> row,</div>
+<div class="line">            std::vector&lt;col_type&gt; &amp;col,</div>
+<div class="line">            std::vector&lt;val_type&gt; &amp;val</div>
+<div class="line">            )<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keywordtype">size_t</span> i = row % n;</div>
+<div class="line">        <span class="keywordtype">size_t</span> j = row / n;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (j &gt; 0) {</div>
+<div class="line">            col.push_back(row - n);</div>
+<div class="line">            val.push_back(-h2i);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (i &gt; 0) {</div>
+<div class="line">            col.push_back(row - 1);</div>
+<div class="line">            val.push_back(-h2i);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        col.push_back(row);</div>
+<div class="line">        val.push_back(4 * h2i);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (i + 1 &lt; n) {</div>
+<div class="line">            col.push_back(row + 1);</div>
+<div class="line">            val.push_back(-h2i);</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (j + 1 &lt; n) {</div>
+<div class="line">            col.push_back(row + n);</div>
+<div class="line">            val.push_back(-h2i);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">private</span>:</div>
+<div class="line">        <span class="keywordtype">size_t</span> n;</div>
+<div class="line">        <span class="keywordtype">double</span> h2i;</div>
+<div class="line">};</div>
+<div class="line"></div>
+<div class="line">amgcl::adapter::make_solver&lt;</div>
+<div class="line">    Backend, Coarsening, Relaxation, IterativeSolver</div>
+<div class="line">    &gt; solve( <a class="code" href="namespaceamgcl_1_1adapter.html#a92ed107ef2d7ea731d1a1bb2e1488b47">amgcl::backend::make_matrix</a>( poisson_2d(m) ) );</div>
+</div><!-- fragment --></li>
+</ul>
+<h3><a class="anchor" id="coarsening"></a>Coarsening strategies</h3>
 <p>A coarsener in AMGCL is a class that takes a system matrix and returns three operators:</p>
 <ol type="1">
 <li>Restriction operator <code>R</code> that downsamples the residual error to a coarser level in AMG hierarchy,</li>
@@ -190,7 +249,7 @@
 <li>Aggregation based coarsening strategies. Aggregation based coarseners are implemented as class templates with a single template parameter. The parameter controls how fine-level variables are subdivided into aggregates. Possible choices are <code><a class="el" href="structamgcl_1_1coarsening_1_1plain__aggregates.html" title="Plain aggregation. ">amgcl::coarsening::plain_aggregates</a></code> (<a href="amgcl/coarsening/plain_aggregates.hpp">amgcl/coarsening/plain_aggregates.hpp</a>) and <code><a class="el" href="classamgcl_1_1coarsening_1_1pointwise__aggregates.html" title="Pointwise aggregation. ">amgcl::coarsening::pointwise_aggregates</a></code> (<a href="amgcl/coarsening/pointwise_aggregates.hpp">amgcl/coarsening/pointwise_aggregates.hpp</a>). The latter may be used when a system of coupled PDEs is solved. In this case the aggregation acts on grid points instead of individual variables.<ul>
 <li>Non-smoothed aggregation: <code><a class="el" href="structamgcl_1_1coarsening_1_1aggregation.html" title="Non-smoothed aggregation. ">amgcl::coarsening::aggregation</a>&lt;Aggregates&gt;</code> (<a href="amgcl/coarsening/aggregation.hpp">amgcl/coarsening/aggregation.hpp</a>).</li>
 <li>Smoothed aggregation: <code><a class="el" href="structamgcl_1_1coarsening_1_1smoothed__aggregation.html" title="Smoothed aggregation coarsening. ">amgcl::coarsening::smoothed_aggregation</a>&lt;Aggregates&gt;</code> (<a href="amgcl/coarsening/smoothed_aggregation.hpp">amgcl/coarsening/smoothed_aggregation.hpp</a>).</li>
-<li>Smoothed aggregation with energy minimization (see [4]): <code><a class="el" href="structamgcl_1_1coarsening_1_1smoothed__aggr__emin.html" title="Smoothed aggregation with energy minimization. ">amgcl::coarsening::smoothed_aggr_emin</a>&lt;Aggregates&gt;</code> (<a href="amgcl/coarsening/smoothed_aggr_emin.hpp">amgcl/coarsening/smoothed_aggr_emin.hpp</a>).</li>
+<li>Smoothed aggregation with energy minimization (see [6]): <code><a class="el" href="structamgcl_1_1coarsening_1_1smoothed__aggr__emin.html" title="Smoothed aggregation with energy minimization. ">amgcl::coarsening::smoothed_aggr_emin</a>&lt;Aggregates&gt;</code> (<a href="amgcl/coarsening/smoothed_aggr_emin.hpp">amgcl/coarsening/smoothed_aggr_emin.hpp</a>).</li>
 </ul>
 </li>
 </ul>
@@ -209,6 +268,7 @@
 <ul>
 <li>Conjugate Gradients solver: <code><a class="el" href="classamgcl_1_1solver_1_1cg.html" title="Conjugate Gradients iterative solver. ">amgcl::solver::cg</a>&lt;Backend&gt;</code> (<a href="amgcl/solver/cg.hpp">amgcl/solver/cg.hpp</a>).</li>
 <li>BiCGStab: <code><a class="el" href="classamgcl_1_1solver_1_1bicgstab.html" title="BiCGStab iterative solver. ">amgcl::solver::bicgstab</a>&lt;Backend&gt;</code> (<a href="amgcl/solver/bicgstab.hpp">amgcl/solver/bicgstab.hpp</a>).</li>
+<li>BiCGStab(L): <code><a class="el" href="classamgcl_1_1solver_1_1bicgstabl.html" title="BiCGStab(L) iterative solver. ">amgcl::solver::bicgstabl</a>&lt;Backend&gt;</code> (<a href="amgcl/solver/bicgstabl.hpp">amgcl/solver/bicgstabl.hpp</a>).</li>
 <li>GMRES: <code><a class="el" href="classamgcl_1_1solver_1_1gmres.html" title="GMRES iterative solver. ">amgcl::solver::gmres</a>&lt;Backend&gt;</code> (<a href="amgcl/solver/gmres.hpp">amgcl/solver/gmres.hpp</a>).</li>
 </ul>
 <p>Each solver in AMGCL is a class template. Its single template parameter specifies the backend to use. This allows to preallocate necessary resources at class construction. Obviously, the solver backend has to coincide with the AMG backend.</p>
@@ -305,7 +365,10 @@
 <li>R. Barrett, M. Berry, T. F. Chan, J. Demmel, J. Donato, J. Dongarra, V. Eijkhout, R. Pozo, C. Romine, and H. Van der Vorst. Templates for the Solution of Linear Systems: Building Blocks for Iterative Methods, 2nd Edition. SIAM, Philadelphia, PA, 1994.</li>
 <li>O. Bröker and M. J. Grote. Sparse approximate inverse smoothers for geometric and algebraic multigrid. Applied numerical mathematics, 41(1):61–80, 2002.</li>
 <li>D. E. Demidov and D. V. Shevchenko. Modification of algebraic multigrid for effective gpgpu-based solution of nonstationary hydrodynamics problems. Journal of Computational Science, 3(6):460–462, 2012.</li>
+<li>J. Frank and C. Vuik. On the construction of deflation-based preconditioners. SIAM Journal on Scientific Computing, 23(2):442–462, 2001.</li>
+<li>Pascal Hénon, Pierre Ramet, and Jean Roman. Pastix: a high-performance parallel direct solver for sparse symmetric positive definite systems. Parallel Computing, 28(2):301–321, 2002.</li>
 <li>M. Sala and R. S. Tuminaro. A new petrov-galerkin smoothed aggregation preconditioner for nonsymmetric linear systems. SIAM Journal on Scientific Computing, 31(1):143–166, 2008.</li>
+<li>G. L. G. Sleijpen and D. R. Fokkema. Bicgstab (l) for linear equations involving unsymmetric matrices with complex spectrum. Electronic Transactions on Numerical Analysis, 1(11):2000, 1993.</li>
 <li>K. Stuben. Algebraic multigrid (AMG): an introduction with applications. GMD Report 70, GMD, Sankt Augustin, Germany, 1999.</li>
 <li>U. Trottenberg, C. Oosterlee, and A. Schüller. Multigrid. Academic Press, London, 2001. 631 p.</li>
 <li>P. Vanek, J. Mandel, and M. Brezina. Algebraic multigrid by smoothed aggregation for second and fourth order elliptic problems. Computing, 56(3):179–196, 1996.</li>

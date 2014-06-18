@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>AMGCL: amgcl::solver::cg&lt; Backend &gt; Class Template Reference</title>
+<title>AMGCL: amgcl::solver::cg&lt; Backend, InnerProduct &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -57,7 +57,7 @@
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classamgcl_1_1solver_1_1cg-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">amgcl::solver::cg&lt; Backend &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__solvers.html">Solvers</a></div></div>  </div>
+<div class="title">amgcl::solver::cg&lt; Backend, InnerProduct &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__solvers.html">Solvers</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -74,33 +74,33 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a5abb37edbcf4609c10fd62aac5d703de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5abb37edbcf4609c10fd62aac5d703de"></a>
+<tr class="memitem:adff597a3b950179a0890a2a7683633e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adff597a3b950179a0890a2a7683633e6"></a>
 typedef Backend::vector&#160;</td><td class="memItemRight" valign="bottom"><b>vector</b></td></tr>
-<tr class="separator:a5abb37edbcf4609c10fd62aac5d703de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ef88308af1f1ff03cb6690954e0a0fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ef88308af1f1ff03cb6690954e0a0fa"></a>
+<tr class="separator:adff597a3b950179a0890a2a7683633e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef04e700e3a150c4e6c0b0f76d6ab63"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ef04e700e3a150c4e6c0b0f76d6ab63"></a>
 typedef Backend::value_type&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b></td></tr>
-<tr class="separator:a7ef88308af1f1ff03cb6690954e0a0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73644ce4b8a45b33a31455fc7aab3919"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73644ce4b8a45b33a31455fc7aab3919"></a>
+<tr class="separator:a3ef04e700e3a150c4e6c0b0f76d6ab63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ef0fb09108ce353f71cff7e80407ff7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ef0fb09108ce353f71cff7e80407ff7"></a>
 typedef Backend::params&#160;</td><td class="memItemRight" valign="bottom"><b>backend_params</b></td></tr>
-<tr class="separator:a73644ce4b8a45b33a31455fc7aab3919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a8ef0fb09108ce353f71cff7e80407ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab2e29f03c9b6ad0d9d8c29be4f8fea3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1cg.html#ab2e29f03c9b6ad0d9d8c29be4f8fea3b">cg</a> (size_t n, const <a class="el" href="structamgcl_1_1solver_1_1cg_1_1params.html">params</a> &amp;prm=<a class="el" href="structamgcl_1_1solver_1_1cg_1_1params.html">params</a>(), const backend_params &amp;backend_prm=backend_params())</td></tr>
-<tr class="memdesc:ab2e29f03c9b6ad0d9d8c29be4f8fea3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preallocates necessary data structures.  <a href="#ab2e29f03c9b6ad0d9d8c29be4f8fea3b">More...</a><br/></td></tr>
-<tr class="separator:ab2e29f03c9b6ad0d9d8c29be4f8fea3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac494a3b0f4db9ca6ccfe0a09f4011a4b"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class Precond , class Vec1 , class Vec2 &gt; </td></tr>
-<tr class="memitem:ac494a3b0f4db9ca6ccfe0a09f4011a4b"><td class="memTemplItemLeft" align="right" valign="top">boost::tuple&lt; size_t, value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1cg.html#ac494a3b0f4db9ca6ccfe0a09f4011a4b">operator()</a> (Matrix const &amp;A, Precond const &amp;P, Vec1 const &amp;rhs, Vec2 &amp;x) const </td></tr>
-<tr class="memdesc:ac494a3b0f4db9ca6ccfe0a09f4011a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the linear system for the given system matrix.  <a href="#ac494a3b0f4db9ca6ccfe0a09f4011a4b">More...</a><br/></td></tr>
-<tr class="separator:ac494a3b0f4db9ca6ccfe0a09f4011a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d76afaa1d696acf8351831130af8e9"><td class="memTemplParams" colspan="2">template&lt;class Precond , class Vec1 , class Vec2 &gt; </td></tr>
-<tr class="memitem:a01d76afaa1d696acf8351831130af8e9"><td class="memTemplItemLeft" align="right" valign="top">boost::tuple&lt; size_t, value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1cg.html#a01d76afaa1d696acf8351831130af8e9">operator()</a> (Precond const &amp;P, Vec1 const &amp;rhs, Vec2 &amp;x) const </td></tr>
-<tr class="memdesc:a01d76afaa1d696acf8351831130af8e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the linear system for the same matrix that was used for the AMG preconditioner construction.  <a href="#a01d76afaa1d696acf8351831130af8e9">More...</a><br/></td></tr>
-<tr class="separator:a01d76afaa1d696acf8351831130af8e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e65f5b2f8e1fa0c8375e29c61ce354"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1cg.html#a24e65f5b2f8e1fa0c8375e29c61ce354">cg</a> (size_t n, const <a class="el" href="structamgcl_1_1solver_1_1cg_1_1params.html">params</a> &amp;prm=<a class="el" href="structamgcl_1_1solver_1_1cg_1_1params.html">params</a>(), const backend_params &amp;backend_prm=backend_params(), const InnerProduct &amp;inner_product=InnerProduct())</td></tr>
+<tr class="memdesc:a24e65f5b2f8e1fa0c8375e29c61ce354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preallocates necessary data structures.  <a href="#a24e65f5b2f8e1fa0c8375e29c61ce354">More...</a><br/></td></tr>
+<tr class="separator:a24e65f5b2f8e1fa0c8375e29c61ce354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf054b82178c20488fa26cf501cf3aa"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class Precond , class Vec1 , class Vec2 &gt; </td></tr>
+<tr class="memitem:a8bf054b82178c20488fa26cf501cf3aa"><td class="memTemplItemLeft" align="right" valign="top">boost::tuple&lt; size_t, value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1cg.html#a8bf054b82178c20488fa26cf501cf3aa">operator()</a> (Matrix const &amp;A, Precond const &amp;P, Vec1 const &amp;rhs, Vec2 &amp;x) const </td></tr>
+<tr class="memdesc:a8bf054b82178c20488fa26cf501cf3aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the linear system for the given system matrix.  <a href="#a8bf054b82178c20488fa26cf501cf3aa">More...</a><br/></td></tr>
+<tr class="separator:a8bf054b82178c20488fa26cf501cf3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473e6271a933849ca038f73d21874e3b"><td class="memTemplParams" colspan="2">template&lt;class Precond , class Vec1 , class Vec2 &gt; </td></tr>
+<tr class="memitem:a473e6271a933849ca038f73d21874e3b"><td class="memTemplItemLeft" align="right" valign="top">boost::tuple&lt; size_t, value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1cg.html#a473e6271a933849ca038f73d21874e3b">operator()</a> (Precond const &amp;P, Vec1 const &amp;rhs, Vec2 &amp;x) const </td></tr>
+<tr class="memdesc:a473e6271a933849ca038f73d21874e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the linear system for the same matrix that was used for the AMG preconditioner construction.  <a href="#a473e6271a933849ca038f73d21874e3b">More...</a><br/></td></tr>
+<tr class="separator:a473e6271a933849ca038f73d21874e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class Backend&gt;<br/>
-class amgcl::solver::cg&lt; Backend &gt;</h3>
+<div class="textblock"><h3>template&lt;class Backend, class InnerProduct = detail::default_inner_product&gt;<br/>
+class amgcl::solver::cg&lt; Backend, InnerProduct &gt;</h3>
 
 <p>Conjugate Gradients iterative solver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -111,17 +111,17 @@ class amgcl::solver::cg&lt; Backend &gt;</h3>
 </dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="citelist.html#CITEREF_Barrett1994">[1]</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab2e29f03c9b6ad0d9d8c29be4f8fea3b"></a>
+<a class="anchor" id="a24e65f5b2f8e1fa0c8375e29c61ce354"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Backend &gt; </div>
+template&lt;class Backend , class InnerProduct  = detail::default_inner_product&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamgcl_1_1solver_1_1cg.html">amgcl::solver::cg</a>&lt; Backend &gt;::<a class="el" href="classamgcl_1_1solver_1_1cg.html">cg</a> </td>
+          <td class="memname"><a class="el" href="classamgcl_1_1solver_1_1cg.html">amgcl::solver::cg</a>&lt; Backend, InnerProduct &gt;::<a class="el" href="classamgcl_1_1solver_1_1cg.html">cg</a> </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>n</em>, </td>
@@ -136,7 +136,13 @@ template&lt;class Backend &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const backend_params &amp;&#160;</td>
-          <td class="paramname"><em>backend_prm</em> = <code>backend_params()</code>&#160;</td>
+          <td class="paramname"><em>backend_prm</em> = <code>backend_params()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const InnerProduct &amp;&#160;</td>
+          <td class="paramname"><em>inner_product</em> = <code>InnerProduct()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -164,11 +170,11 @@ template&lt;class Backend &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac494a3b0f4db9ca6ccfe0a09f4011a4b"></a>
+<a class="anchor" id="a8bf054b82178c20488fa26cf501cf3aa"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Backend &gt; </div>
+template&lt;class Backend , class InnerProduct  = detail::default_inner_product&gt; </div>
 <div class="memtemplate">
 template&lt;class Matrix , class Precond , class Vec1 , class Vec2 &gt; </div>
 <table class="mlabels">
@@ -176,7 +182,7 @@ template&lt;class Matrix , class Precond , class Vec1 , class Vec2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">boost::tuple&lt;size_t, value_type&gt; <a class="el" href="classamgcl_1_1solver_1_1cg.html">amgcl::solver::cg</a>&lt; Backend &gt;::operator() </td>
+          <td class="memname">boost::tuple&lt;size_t, value_type&gt; <a class="el" href="classamgcl_1_1solver_1_1cg.html">amgcl::solver::cg</a>&lt; Backend, InnerProduct &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">Matrix const &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -226,11 +232,11 @@ template&lt;class Matrix , class Precond , class Vec1 , class Vec2 &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a01d76afaa1d696acf8351831130af8e9"></a>
+<a class="anchor" id="a473e6271a933849ca038f73d21874e3b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Backend &gt; </div>
+template&lt;class Backend , class InnerProduct  = detail::default_inner_product&gt; </div>
 <div class="memtemplate">
 template&lt;class Precond , class Vec1 , class Vec2 &gt; </div>
 <table class="mlabels">
@@ -238,7 +244,7 @@ template&lt;class Precond , class Vec1 , class Vec2 &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">boost::tuple&lt;size_t, value_type&gt; <a class="el" href="classamgcl_1_1solver_1_1cg.html">amgcl::solver::cg</a>&lt; Backend &gt;::operator() </td>
+          <td class="memname">boost::tuple&lt;size_t, value_type&gt; <a class="el" href="classamgcl_1_1solver_1_1cg.html">amgcl::solver::cg</a>&lt; Backend, InnerProduct &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">Precond const &amp;&#160;</td>
           <td class="paramname"><em>P</em>, </td>

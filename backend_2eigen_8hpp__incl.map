@@ -1,0 +1,8 @@
+<map id="amgcl/backend/eigen.hpp" name="amgcl/backend/eigen.hpp">
+<area shape="rect" id="node6" href="$util_8hpp.html" title="Various utilities. " alt="" coords="1245,336,1347,363"/>
+<area shape="rect" id="node9" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="644,80,817,107"/>
+<area shape="rect" id="node18" href="$solver_2skyline__lu_8hpp.html" title="Skyline LU factorization solver. " alt="" coords="1257,155,1397,197"/>
+<area shape="rect" id="node15" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="733,253,923,280"/>
+<area shape="rect" id="node21" href="$inverse_8hpp.html" title="Inverse of a dense matrix. " alt="" coords="1473,163,1636,189"/>
+<area shape="rect" id="node25" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="1012,163,1183,189"/>
+</map>

@@ -1,0 +1,27 @@
+<map id="amgcl/runtime.hpp" name="amgcl/runtime.hpp">
+<area shape="rect" id="node7" href="$amgcl_8hpp.html" title="Generic algebraic multigrid framework. " alt="" coords="739,269,860,296"/>
+<area shape="rect" id="node23" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="1184,541,1373,568"/>
+<area shape="rect" id="node32" href="$ruge__stuben_8hpp.html" title="Ruge&#45;Stuben coarsening with direct interpolation. " alt="" coords="2315,81,2468,122"/>
+<area shape="rect" id="node35" href="$pointwise__aggregates_8hpp.html" title="Pointwise aggregation. " alt="" coords="4731,171,4913,213"/>
+<area shape="rect" id="node37" href="$aggregation_8hpp.html" title="Non&#45;smoothed aggregation coarsening. " alt="" coords="2538,88,2757,115"/>
+<area shape="rect" id="node38" href="$smoothed__aggregation_8hpp.html" title="Smoothed aggregation coarsening scheme. " alt="" coords="2977,171,3161,213"/>
+<area shape="rect" id="node39" href="$smoothed__aggr__emin_8hpp.html" title="Smoothed aggregation with energy minimization coarsening. " alt="" coords="3478,171,3663,213"/>
+<area shape="rect" id="node41" href="$gauss__seidel_8hpp.html" title="Gauss&#45;Seidel relaxation scheme. " alt="" coords="926,443,1081,485"/>
+<area shape="rect" id="node42" href="$ilu0_8hpp.html" title="Incomplete LU relaxation scheme. " alt="" coords="1797,360,1963,387"/>
+<area shape="rect" id="node43" href="$damped__jacobi_8hpp.html" title="Damped Jacobi relaxation scheme. " alt="" coords="1987,353,2153,394"/>
+<area shape="rect" id="node44" href="$spai0_8hpp.html" title="Sparse approximate inverse relaxation scheme. " alt="" coords="1595,360,1772,387"/>
+<area shape="rect" id="node45" href="$chebyshev_8hpp.html" title="Chebyshev polynomial smoother. " alt="" coords="3827,360,4036,387"/>
+<area shape="rect" id="node47" href="$cg_8hpp.html" title="Conjugate Gradient method. " alt="" coords="773,360,912,387"/>
+<area shape="rect" id="node48" href="$bicgstab_8hpp.html" title="BiCGStab iterative method. " alt="" coords="1038,269,1212,296"/>
+<area shape="rect" id="node49" href="$bicgstabl_8hpp.html" title="BiCGStab(L) iterative method. " alt="" coords="1089,360,1265,387"/>
+<area shape="rect" id="node50" href="$gmres_8hpp.html" title="GMRES method. " alt="" coords="2178,360,2339,387"/>
+<area shape="rect" id="node16" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="3327,360,3500,387"/>
+<area shape="rect" id="node22" href="$util_8hpp.html" title="Various utilities. " alt="" coords="2090,624,2192,651"/>
+<area shape="rect" id="node31" href="$default__inner__product_8hpp.html" title="Default inner product getter for iterative solvers. " alt="" coords="1106,443,1280,485"/>
+<area shape="rect" id="node25" href="$solver_2skyline__lu_8hpp.html" title="Skyline LU factorization solver. " alt="" coords="3309,443,3449,485"/>
+<area shape="rect" id="node27" href="$inverse_8hpp.html" title="Inverse of a dense matrix. " alt="" coords="3525,451,3688,477"/>
+<area shape="rect" id="node30" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="4075,451,4245,477"/>
+<area shape="rect" id="node33" href="$scaled__galerkin_8hpp.html" title="Scaled Galerkin operator. " alt="" coords="2686,171,2844,213"/>
+<area shape="rect" id="node34" href="$galerkin_8hpp.html" title="Galerkin operator. " alt="" coords="2990,262,3148,303"/>
+<area shape="rect" id="node36" href="$plain__aggregates_8hpp.html" title="Plain aggregation. " alt="" coords="4275,262,4428,303"/>
+</map>

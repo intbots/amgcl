@@ -85,6 +85,11 @@ typedef <a class="el" href="classamgcl_1_1backend_1_1cuda__hyb__matrix.html">cud
 typedef thrust::device_vector<br class="typebreak"/>
 &lt; real &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vector</b></td></tr>
 <tr class="separator:a5f31363eb1e053aa6f52e49cea93b34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa92233bae01c3d76718a92784028346a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa92233bae01c3d76718a92784028346a"></a>
+typedef <br class="typebreak"/>
+detail::default_direct_solver<br class="typebreak"/>
+&lt; <a class="el" href="structamgcl_1_1backend_1_1cuda.html">cuda</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>direct_solver</b></td></tr>
+<tr class="separator:aa92233bae01c3d76718a92784028346a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -110,6 +115,11 @@ static boost::shared_ptr&lt; vector &gt;&#160;</td><td class="memItemRight" vali
 static boost::shared_ptr&lt; vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1backend_1_1cuda.html#a883253787ebe607d8fa8548f17f73c3a">create_vector</a> (size_t size, const <a class="el" href="structamgcl_1_1backend_1_1cuda_1_1params.html">params</a> &amp;)</td></tr>
 <tr class="memdesc:a883253787ebe607d8fa8548f17f73c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create vector of the specified size. <br/></td></tr>
 <tr class="separator:a883253787ebe607d8fa8548f17f73c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce66d7e348f3394330cc3e3a794ebec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ce66d7e348f3394330cc3e3a794ebec"></a>
+static boost::shared_ptr<br class="typebreak"/>
+&lt; direct_solver &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1backend_1_1cuda.html#a5ce66d7e348f3394330cc3e3a794ebec">create_solver</a> (boost::shared_ptr&lt; typename <a class="el" href="structamgcl_1_1backend_1_1builtin.html">builtin</a>&lt; real &gt;::<a class="el" href="classamgcl_1_1backend_1_1cuda__hyb__matrix.html">matrix</a> &gt; A, const <a class="el" href="structamgcl_1_1backend_1_1cuda_1_1params.html">params</a> &amp;prm)</td></tr>
+<tr class="memdesc:a5ce66d7e348f3394330cc3e3a794ebec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create direct solver for coarse level. <br/></td></tr>
+<tr class="separator:a5ce66d7e348f3394330cc3e3a794ebec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename real&gt;<br/>

@@ -90,6 +90,9 @@ index_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>matrix</b>
 typedef Eigen::Matrix<br class="typebreak"/>
 &lt; value_type, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vector</b></td></tr>
 <tr class="separator:ac0e69179c04596338e2e388e08b5c567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f9161cf5b936a79a2e45eece34bb8af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f9161cf5b936a79a2e45eece34bb8af"></a>
+typedef <a class="el" href="classamgcl_1_1solver_1_1skyline__lu.html">solver::skyline_lu</a>&lt; real &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>direct_solver</b></td></tr>
+<tr class="separator:a0f9161cf5b936a79a2e45eece34bb8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -109,6 +112,11 @@ static boost::shared_ptr&lt; vector &gt;&#160;</td><td class="memItemRight" vali
 static boost::shared_ptr&lt; vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1backend_1_1eigen.html#adde02dd8ed7d7b8147429fecc7bb67df">create_vector</a> (size_t size, const <a class="el" href="structamgcl_1_1backend_1_1eigen_1_1params.html">params</a> &amp;)</td></tr>
 <tr class="memdesc:adde02dd8ed7d7b8147429fecc7bb67df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create vector of the specified size. <br/></td></tr>
 <tr class="separator:adde02dd8ed7d7b8147429fecc7bb67df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee39c0d63e19de212498c681268c6eec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee39c0d63e19de212498c681268c6eec"></a>
+static boost::shared_ptr<br class="typebreak"/>
+&lt; <a class="el" href="classamgcl_1_1solver_1_1skyline__lu.html">direct_solver</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamgcl_1_1backend_1_1eigen.html#aee39c0d63e19de212498c681268c6eec">create_solver</a> (boost::shared_ptr&lt; typename <a class="el" href="structamgcl_1_1backend_1_1builtin.html">builtin</a>&lt; real &gt;::matrix &gt; A, const <a class="el" href="structamgcl_1_1backend_1_1eigen_1_1params.html">params</a> &amp;)</td></tr>
+<tr class="memdesc:aee39c0d63e19de212498c681268c6eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create direct solver for coarse level. <br/></td></tr>
+<tr class="separator:aee39c0d63e19de212498c681268c6eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename real&gt;<br/>
@@ -123,7 +131,7 @@ struct amgcl::backend::eigen&lt; real &gt;</h3>
   </dd>
 </dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>amgcl/backend/<a class="el" href="eigen_8hpp.html">eigen.hpp</a></li>
+<li>amgcl/backend/<a class="el" href="backend_2eigen_8hpp.html">eigen.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,4 +1,6 @@
 <map id="amgcl/coarsening/detail/scaled_galerkin.hpp" name="amgcl/coarsening/detail/scaled_galerkin.hpp">
 <area shape="rect" id="node2" href="$aggregation_8hpp.html" title="Non&#45;smoothed aggregation coarsening. " alt="" coords="5,104,224,131"/>
-<area shape="rect" id="node3" href="$ruge__stuben_8hpp.html" title="Ruge&#45;Stuben coarsening with direct interpolation. " alt="" coords="249,97,401,138"/>
+<area shape="rect" id="node5" href="$ruge__stuben_8hpp.html" title="Ruge&#45;Stuben coarsening with direct interpolation. " alt="" coords="249,97,401,138"/>
+<area shape="rect" id="node3" href="$runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl classes. " alt="" coords="155,187,284,213"/>
+<area shape="rect" id="node4" href="$mpi_2runtime_8hpp.html" title="Runtime&#45;configurable wrappers around amgcl mpi classes. " alt="" coords="143,261,296,288"/>
 </map>

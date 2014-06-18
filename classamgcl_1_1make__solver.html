@@ -54,7 +54,6 @@
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classamgcl_1_1make__solver-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">amgcl::make_solver&lt; Backend, Coarsening, Relax, IterativeSolver &gt; Class Template Reference</div>  </div>
@@ -71,13 +70,15 @@ Public Types</h2></td></tr>
 <tr class="memitem:acf0ab6e880c866fdc351c135bf9888e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf0ab6e880c866fdc351c135bf9888e6"></a>
 typedef Backend::value_type&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b></td></tr>
 <tr class="separator:acf0ab6e880c866fdc351c135bf9888e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80a854e1ba88d8795f08c4dbc5ccf19f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80a854e1ba88d8795f08c4dbc5ccf19f"></a>
-typedef <a class="el" href="classamgcl_1_1amg.html">amg</a>&lt; Backend, <br class="typebreak"/>
+<tr class="memitem:a15d5e876ea09faa8bc8901a10f9b8490"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15d5e876ea09faa8bc8901a10f9b8490"></a>
+typedef <a class="el" href="classamgcl_1_1amg.html">amgcl::amg</a>&lt; Backend, <br class="typebreak"/>
 Coarsening, Relax &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>AMG</b></td></tr>
-<tr class="separator:a80a854e1ba88d8795f08c4dbc5ccf19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22bdfa940454e9f3433a8bab3134b60e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22bdfa940454e9f3433a8bab3134b60e"></a>
-typedef IterativeSolver&lt; Backend &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Solver</b></td></tr>
-<tr class="separator:a22bdfa940454e9f3433a8bab3134b60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a15d5e876ea09faa8bc8901a10f9b8490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad687dc46a5778873336b0e77742f2d62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad687dc46a5778873336b0e77742f2d62"></a>
+typedef IterativeSolver<br class="typebreak"/>
+&lt; Backend, <br class="typebreak"/>
+solver::detail::default_inner_product &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Solver</b></td></tr>
+<tr class="separator:ad687dc46a5778873336b0e77742f2d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00aa47eacca89cd65050042a1d00c859"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00aa47eacca89cd65050042a1d00c859"></a>
 typedef <a class="el" href="structamgcl_1_1amg_1_1params.html">AMG::params</a>&#160;</td><td class="memItemRight" valign="bottom"><b>AMG_params</b></td></tr>
 <tr class="separator:a00aa47eacca89cd65050042a1d00c859"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,15 +101,17 @@ template&lt;class Matrix &gt; </td></tr>
 <tr class="memitem:a145b033524bf9357084fcfe39e97c2d7"><td class="memTemplItemLeft" align="right" valign="top">boost::tuple&lt; size_t, value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1make__solver.html#a145b033524bf9357084fcfe39e97c2d7">operator()</a> (Vec1 const &amp;rhs, Vec2 &amp;x) const </td></tr>
 <tr class="memdesc:a145b033524bf9357084fcfe39e97c2d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the linear system for the given right-hand side.  <a href="#a145b033524bf9357084fcfe39e97c2d7">More...</a><br/></td></tr>
 <tr class="separator:a145b033524bf9357084fcfe39e97c2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a4db58e55b49e97de6d41e3a9a123a00f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4db58e55b49e97de6d41e3a9a123a00f"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="classamgcl_1_1make__solver.html">make_solver</a> &amp;s)</td></tr>
-<tr class="separator:a4db58e55b49e97de6d41e3a9a123a00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3e06854caf94c0280d152da133672d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3e06854caf94c0280d152da133672d8"></a>
+const <a class="el" href="classamgcl_1_1amg.html">AMG</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1make__solver.html#ac3e06854caf94c0280d152da133672d8">amg</a> () const </td></tr>
+<tr class="memdesc:ac3e06854caf94c0280d152da133672d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the constructed AMG hierarchy. <br/></td></tr>
+<tr class="separator:ac3e06854caf94c0280d152da133672d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36166212e7b1949eba3330d61feba720"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36166212e7b1949eba3330d61feba720"></a>
+const Solver &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1make__solver.html#a36166212e7b1949eba3330d61feba720">solver</a> () const </td></tr>
+<tr class="memdesc:a36166212e7b1949eba3330d61feba720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the iterative solver. <br/></td></tr>
+<tr class="separator:a36166212e7b1949eba3330d61feba720"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class Backend, class Coarsening, template&lt; class &gt; class Relax, template&lt; class &gt; class IterativeSolver&gt;<br/>
+<div class="textblock"><h3>template&lt;class Backend, class Coarsening, template&lt; class &gt; class Relax, template&lt; class, class &gt; class IterativeSolver&gt;<br/>
 class amgcl::make_solver&lt; Backend, Coarsening, Relax, IterativeSolver &gt;</h3>
 
 <p>Convenience class that creates a pair of AMG preconditioner and iterative solver. </p>
@@ -117,7 +120,7 @@ class amgcl::make_solver&lt; Backend, Coarsening, Relax, IterativeSolver &gt;</h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Backend , class Coarsening , template&lt; class &gt; class Relax, template&lt; class &gt; class IterativeSolver&gt; </div>
+template&lt;class Backend , class Coarsening , template&lt; class &gt; class Relax, template&lt; class, class &gt; class IterativeSolver&gt; </div>
 <div class="memtemplate">
 template&lt;class Matrix , class Vec1 , class Vec2 &gt; </div>
 <table class="mlabels">
@@ -172,7 +175,7 @@ template&lt;class Matrix , class Vec1 , class Vec2 &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Backend , class Coarsening , template&lt; class &gt; class Relax, template&lt; class &gt; class IterativeSolver&gt; </div>
+template&lt;class Backend , class Coarsening , template&lt; class &gt; class Relax, template&lt; class, class &gt; class IterativeSolver&gt; </div>
 <div class="memtemplate">
 template&lt;class Vec1 , class Vec2 &gt; </div>
 <table class="mlabels">

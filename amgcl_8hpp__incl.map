@@ -1,7 +1,9 @@
 <map id="amgcl/amgcl.hpp" name="amgcl/amgcl.hpp">
-<area shape="rect" id="node11" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="1037,88,1211,115"/>
-<area shape="rect" id="node18" href="$util_8hpp.html" title="Various utilities. " alt="" coords="1270,261,1372,288"/>
-<area shape="rect" id="node20" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="1527,179,1716,205"/>
-<area shape="rect" id="node22" href="$gaussj_8hpp.html" title="Inverse of a dense matrix with Gauss&#45;Jordan algorithm. " alt="" coords="411,179,569,205"/>
-<area shape="rect" id="node24" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="1281,179,1452,205"/>
+<area shape="rect" id="node11" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="1303,88,1476,115"/>
+<area shape="rect" id="node18" href="$util_8hpp.html" title="Various utilities. " alt="" coords="1669,352,1771,379"/>
+<area shape="rect" id="node31" href="$default__inner__product_8hpp.html" title="Default inner product getter for iterative solvers. " alt="" coords="482,81,656,122"/>
+<area shape="rect" id="node21" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="843,269,1032,296"/>
+<area shape="rect" id="node23" href="$solver_2skyline__lu_8hpp.html" title="Skyline LU factorization solver. " alt="" coords="1372,171,1512,213"/>
+<area shape="rect" id="node26" href="$inverse_8hpp.html" title="Inverse of a dense matrix. " alt="" coords="1639,179,1801,205"/>
+<area shape="rect" id="node30" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="1076,179,1247,205"/>
 </map>

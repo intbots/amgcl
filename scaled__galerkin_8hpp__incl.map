@@ -1,8 +1,9 @@
 <map id="amgcl/coarsening/detail/scaled_galerkin.hpp" name="amgcl/coarsening/detail/scaled_galerkin.hpp">
 <area shape="rect" id="node3" href="$galerkin_8hpp.html" title="Galerkin operator. " alt="" coords="175,97,333,138"/>
-<area shape="rect" id="node6" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="623,187,796,213"/>
-<area shape="rect" id="node13" href="$util_8hpp.html" title="Various utilities. " alt="" coords="735,352,837,379"/>
-<area shape="rect" id="node15" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="411,269,600,296"/>
-<area shape="rect" id="node18" href="$gaussj_8hpp.html" title="Inverse of a dense matrix with Gauss&#45;Jordan algorithm. " alt="" coords="1507,269,1665,296"/>
-<area shape="rect" id="node20" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="1312,269,1483,296"/>
+<area shape="rect" id="node6" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="631,187,804,213"/>
+<area shape="rect" id="node13" href="$util_8hpp.html" title="Various utilities. " alt="" coords="638,443,740,469"/>
+<area shape="rect" id="node16" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="437,360,627,387"/>
+<area shape="rect" id="node19" href="$solver_2skyline__lu_8hpp.html" title="Skyline LU factorization solver. " alt="" coords="701,262,841,303"/>
+<area shape="rect" id="node22" href="$inverse_8hpp.html" title="Inverse of a dense matrix. " alt="" coords="1112,269,1275,296"/>
+<area shape="rect" id="node26" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="917,269,1088,296"/>
 </map>

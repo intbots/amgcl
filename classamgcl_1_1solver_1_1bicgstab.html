@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>AMGCL: amgcl::solver::bicgstab&lt; Backend &gt; Class Template Reference</title>
+<title>AMGCL: amgcl::solver::bicgstab&lt; Backend, InnerProduct &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -57,7 +57,7 @@
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classamgcl_1_1solver_1_1bicgstab-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">amgcl::solver::bicgstab&lt; Backend &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__solvers.html">Solvers</a></div></div>  </div>
+<div class="title">amgcl::solver::bicgstab&lt; Backend, InnerProduct &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__solvers.html">Solvers</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -65,6 +65,24 @@
  <a href="classamgcl_1_1solver_1_1bicgstab.html#details">More...</a></p>
 
 <p><code>#include &lt;bicgstab.hpp&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for amgcl::solver::bicgstab&lt; Backend, InnerProduct &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classamgcl_1_1solver_1_1bicgstab__inherit__graph.png" border="0" usemap="#amgcl_1_1solver_1_1bicgstab_3_01Backend_00_01InnerProduct_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="amgcl_1_1solver_1_1bicgstab_3_01Backend_00_01InnerProduct_01_4_inherit__map" id="amgcl_1_1solver_1_1bicgstab_3_01Backend_00_01InnerProduct_01_4_inherit__map">
+<area shape="rect" id="node2" href="classamgcl_1_1solver_1_1bicgstabl.html" title="BiCGStab(L) iterative solver. " alt="" coords="5,6,184,47"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for amgcl::solver::bicgstab&lt; Backend, InnerProduct &gt;:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classamgcl_1_1solver_1_1bicgstab__coll__graph.png" border="0" usemap="#amgcl_1_1solver_1_1bicgstab_3_01Backend_00_01InnerProduct_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="amgcl_1_1solver_1_1bicgstab_3_01Backend_00_01InnerProduct_01_4_coll__map" id="amgcl_1_1solver_1_1bicgstab_3_01Backend_00_01InnerProduct_01_4_coll__map">
+<area shape="rect" id="node2" href="classamgcl_1_1solver_1_1bicgstabl.html" title="BiCGStab(L) iterative solver. " alt="" coords="5,6,184,47"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -74,33 +92,48 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a460bcd9adeaf1dfd14340903e1a7c618"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a460bcd9adeaf1dfd14340903e1a7c618"></a>
-typedef Backend::vector&#160;</td><td class="memItemRight" valign="bottom"><b>vector</b></td></tr>
-<tr class="separator:a460bcd9adeaf1dfd14340903e1a7c618"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a9eba2ad85422205eec19e5b10c0d65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a9eba2ad85422205eec19e5b10c0d65"></a>
+<tr class="memitem:ac5c6936b16b025df2b5dad68b97ce2cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5c6936b16b025df2b5dad68b97ce2cb"></a>
+typedef <a class="el" href="classamgcl_1_1solver_1_1bicgstabl.html">bicgstabl</a>&lt; Backend, <br class="typebreak"/>
+InnerProduct &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Base</b></td></tr>
+<tr class="separator:ac5c6936b16b025df2b5dad68b97ce2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa47f5a2287d1662b71570198a00d8fa7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa47f5a2287d1662b71570198a00d8fa7"></a>
 typedef Backend::value_type&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b></td></tr>
-<tr class="separator:a6a9eba2ad85422205eec19e5b10c0d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f834e0b3bbd0641b06fe74de5d52235"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f834e0b3bbd0641b06fe74de5d52235"></a>
+<tr class="separator:aa47f5a2287d1662b71570198a00d8fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa106ad6ecff3729718f407739a1c1155"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa106ad6ecff3729718f407739a1c1155"></a>
 typedef Backend::params&#160;</td><td class="memItemRight" valign="bottom"><b>backend_params</b></td></tr>
-<tr class="separator:a7f834e0b3bbd0641b06fe74de5d52235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aa106ad6ecff3729718f407739a1c1155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classamgcl_1_1solver_1_1bicgstabl"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classamgcl_1_1solver_1_1bicgstabl')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classamgcl_1_1solver_1_1bicgstabl.html">amgcl::solver::bicgstabl&lt; Backend, InnerProduct &gt;</a></td></tr>
+<tr class="memitem:a5061a0e6bbd968b54a933464806955e2 inherit pub_types_classamgcl_1_1solver_1_1bicgstabl"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5061a0e6bbd968b54a933464806955e2"></a>
+typedef Backend::vector&#160;</td><td class="memItemRight" valign="bottom"><b>vector</b></td></tr>
+<tr class="separator:a5061a0e6bbd968b54a933464806955e2 inherit pub_types_classamgcl_1_1solver_1_1bicgstabl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f37fb9682de800c8fc0717d0ac55f3 inherit pub_types_classamgcl_1_1solver_1_1bicgstabl"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09f37fb9682de800c8fc0717d0ac55f3"></a>
+typedef Backend::value_type&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b></td></tr>
+<tr class="separator:a09f37fb9682de800c8fc0717d0ac55f3 inherit pub_types_classamgcl_1_1solver_1_1bicgstabl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f674673ea196c13c7026d63bd74663a inherit pub_types_classamgcl_1_1solver_1_1bicgstabl"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f674673ea196c13c7026d63bd74663a"></a>
+typedef Backend::params&#160;</td><td class="memItemRight" valign="bottom"><b>backend_params</b></td></tr>
+<tr class="separator:a9f674673ea196c13c7026d63bd74663a inherit pub_types_classamgcl_1_1solver_1_1bicgstabl"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad3c59082d420c4137f3fa7804d114efd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1bicgstab.html#ad3c59082d420c4137f3fa7804d114efd">bicgstab</a> (size_t n, const <a class="el" href="structamgcl_1_1solver_1_1bicgstab_1_1params.html">params</a> &amp;prm=<a class="el" href="structamgcl_1_1solver_1_1bicgstab_1_1params.html">params</a>(), const backend_params &amp;backend_prm=backend_params())</td></tr>
-<tr class="memdesc:ad3c59082d420c4137f3fa7804d114efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preallocates necessary data structures.  <a href="#ad3c59082d420c4137f3fa7804d114efd">More...</a><br/></td></tr>
-<tr class="separator:ad3c59082d420c4137f3fa7804d114efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf53fbc927b964ba451387c85869c87b"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class Precond , class Vec1 , class Vec2 &gt; </td></tr>
-<tr class="memitem:acf53fbc927b964ba451387c85869c87b"><td class="memTemplItemLeft" align="right" valign="top">boost::tuple&lt; size_t, value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1bicgstab.html#acf53fbc927b964ba451387c85869c87b">operator()</a> (Matrix const &amp;A, Precond const &amp;P, Vec1 const &amp;rhs, Vec2 &amp;x) const </td></tr>
-<tr class="memdesc:acf53fbc927b964ba451387c85869c87b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the linear system for the given system matrix.  <a href="#acf53fbc927b964ba451387c85869c87b">More...</a><br/></td></tr>
-<tr class="separator:acf53fbc927b964ba451387c85869c87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a017593c583c2d0d29f663a707e9285d4"><td class="memTemplParams" colspan="2">template&lt;class Precond , class Vec1 , class Vec2 &gt; </td></tr>
-<tr class="memitem:a017593c583c2d0d29f663a707e9285d4"><td class="memTemplItemLeft" align="right" valign="top">boost::tuple&lt; size_t, value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1bicgstab.html#a017593c583c2d0d29f663a707e9285d4">operator()</a> (Precond const &amp;P, Vec1 const &amp;rhs, Vec2 &amp;x) const </td></tr>
-<tr class="memdesc:a017593c583c2d0d29f663a707e9285d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the linear system for the same matrix that was used for the AMG preconditioner construction.  <a href="#a017593c583c2d0d29f663a707e9285d4">More...</a><br/></td></tr>
-<tr class="separator:a017593c583c2d0d29f663a707e9285d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb3c6bbd0f6f7ba1a758e13e28707fa5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1bicgstab.html#adb3c6bbd0f6f7ba1a758e13e28707fa5">bicgstab</a> (size_t n, const <a class="el" href="structamgcl_1_1solver_1_1bicgstab_1_1params.html">params</a> &amp;prm=<a class="el" href="structamgcl_1_1solver_1_1bicgstab_1_1params.html">params</a>(), const backend_params &amp;backend_prm=backend_params(), const InnerProduct &amp;inner_product=InnerProduct())</td></tr>
+<tr class="memdesc:adb3c6bbd0f6f7ba1a758e13e28707fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preallocates necessary data structures.  <a href="#adb3c6bbd0f6f7ba1a758e13e28707fa5">More...</a><br/></td></tr>
+<tr class="separator:adb3c6bbd0f6f7ba1a758e13e28707fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamgcl_1_1solver_1_1bicgstabl')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamgcl_1_1solver_1_1bicgstabl.html">amgcl::solver::bicgstabl&lt; Backend, InnerProduct &gt;</a></td></tr>
+<tr class="memitem:a7ff1cb4107011cec4a3f2ced5af96220 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1bicgstabl.html#a7ff1cb4107011cec4a3f2ced5af96220">bicgstabl</a> (size_t n, const <a class="el" href="structamgcl_1_1solver_1_1bicgstabl_1_1params.html">params</a> &amp;prm=<a class="el" href="structamgcl_1_1solver_1_1bicgstabl_1_1params.html">params</a>(), const backend_params &amp;backend_prm=backend_params(), const InnerProduct &amp;inner_product=InnerProduct())</td></tr>
+<tr class="memdesc:a7ff1cb4107011cec4a3f2ced5af96220 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preallocates necessary data structures.  <a href="#a7ff1cb4107011cec4a3f2ced5af96220">More...</a><br/></td></tr>
+<tr class="separator:a7ff1cb4107011cec4a3f2ced5af96220 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3da405a1571ca09e5f178b4651ba52e4 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="memTemplParams" colspan="2">template&lt;class Matrix , class Precond , class Vec1 , class Vec2 &gt; </td></tr>
+<tr class="memitem:a3da405a1571ca09e5f178b4651ba52e4 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="memTemplItemLeft" align="right" valign="top">boost::tuple&lt; size_t, value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1bicgstabl.html#a3da405a1571ca09e5f178b4651ba52e4">operator()</a> (Matrix const &amp;A, Precond const &amp;P, Vec1 const &amp;rhs, Vec2 &amp;x) const </td></tr>
+<tr class="memdesc:a3da405a1571ca09e5f178b4651ba52e4 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the linear system for the given system matrix.  <a href="#a3da405a1571ca09e5f178b4651ba52e4">More...</a><br/></td></tr>
+<tr class="separator:a3da405a1571ca09e5f178b4651ba52e4 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f802482b62c52e4da763a50f86b1e0 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="memTemplParams" colspan="2">template&lt;class Precond , class Vec1 , class Vec2 &gt; </td></tr>
+<tr class="memitem:af9f802482b62c52e4da763a50f86b1e0 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="memTemplItemLeft" align="right" valign="top">boost::tuple&lt; size_t, value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1solver_1_1bicgstabl.html#af9f802482b62c52e4da763a50f86b1e0">operator()</a> (Precond const &amp;P, Vec1 const &amp;rhs, Vec2 &amp;x) const </td></tr>
+<tr class="memdesc:af9f802482b62c52e4da763a50f86b1e0 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the linear system for the same matrix that was used for the AMG preconditioner construction.  <a href="#af9f802482b62c52e4da763a50f86b1e0">More...</a><br/></td></tr>
+<tr class="separator:af9f802482b62c52e4da763a50f86b1e0 inherit pub_methods_classamgcl_1_1solver_1_1bicgstabl"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class Backend&gt;<br/>
-class amgcl::solver::bicgstab&lt; Backend &gt;</h3>
+<div class="textblock"><h3>template&lt;class Backend, class InnerProduct = detail::default_inner_product&gt;<br/>
+class amgcl::solver::bicgstab&lt; Backend, InnerProduct &gt;</h3>
 
 <p>BiCGStab iterative solver. </p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -111,17 +144,17 @@ class amgcl::solver::bicgstab&lt; Backend &gt;</h3>
 </dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="citelist.html#CITEREF_Barrett1994">[1]</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad3c59082d420c4137f3fa7804d114efd"></a>
+<a class="anchor" id="adb3c6bbd0f6f7ba1a758e13e28707fa5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Backend &gt; </div>
+template&lt;class Backend , class InnerProduct  = detail::default_inner_product&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classamgcl_1_1solver_1_1bicgstab.html">amgcl::solver::bicgstab</a>&lt; Backend &gt;::<a class="el" href="classamgcl_1_1solver_1_1bicgstab.html">bicgstab</a> </td>
+          <td class="memname"><a class="el" href="classamgcl_1_1solver_1_1bicgstab.html">amgcl::solver::bicgstab</a>&lt; Backend, InnerProduct &gt;::<a class="el" href="classamgcl_1_1solver_1_1bicgstab.html">bicgstab</a> </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>n</em>, </td>
@@ -136,7 +169,13 @@ template&lt;class Backend &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const backend_params &amp;&#160;</td>
-          <td class="paramname"><em>backend_prm</em> = <code>backend_params()</code>&#160;</td>
+          <td class="paramname"><em>backend_prm</em> = <code>backend_params()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const InnerProduct &amp;&#160;</td>
+          <td class="paramname"><em>inner_product</em> = <code>InnerProduct()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -157,123 +196,6 @@ template&lt;class Backend &gt; </div>
     <tr><td class="paramname">n</td><td>The system size. </td></tr>
     <tr><td class="paramname">prm</td><td>Solver parameters. </td></tr>
     <tr><td class="paramname">backend_prm</td><td>Backend parameters. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acf53fbc927b964ba451387c85869c87b"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Backend &gt; </div>
-<div class="memtemplate">
-template&lt;class Matrix , class Precond , class Vec1 , class Vec2 &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">boost::tuple&lt;size_t, value_type&gt; <a class="el" href="classamgcl_1_1solver_1_1bicgstab.html">amgcl::solver::bicgstab</a>&lt; Backend &gt;::operator() </td>
-          <td>(</td>
-          <td class="paramtype">Matrix const &amp;&#160;</td>
-          <td class="paramname"><em>A</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Precond const &amp;&#160;</td>
-          <td class="paramname"><em>P</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vec1 const &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vec2 &amp;&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Solves the linear system for the given system matrix. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">A</td><td>System matrix. </td></tr>
-    <tr><td class="paramname">P</td><td>Preconditioner. </td></tr>
-    <tr><td class="paramname">rhs</td><td>Right-hand side. </td></tr>
-    <tr><td class="paramname">x</td><td>Solution vector.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>The system matrix may differ from the matrix used for the AMG preconditioner construction. This may be used for the solution of non-stationary problems with slowly changing coefficients. There is a strong chance that AMG built for one time step will act as a reasonably good preconditioner for several subsequent time steps <a class="el" href="citelist.html#CITEREF_Demidov2012">[3]</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a017593c583c2d0d29f663a707e9285d4"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Backend &gt; </div>
-<div class="memtemplate">
-template&lt;class Precond , class Vec1 , class Vec2 &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">boost::tuple&lt;size_t, value_type&gt; <a class="el" href="classamgcl_1_1solver_1_1bicgstab.html">amgcl::solver::bicgstab</a>&lt; Backend &gt;::operator() </td>
-          <td>(</td>
-          <td class="paramtype">Precond const &amp;&#160;</td>
-          <td class="paramname"><em>P</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vec1 const &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vec2 &amp;&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Solves the linear system for the same matrix that was used for the AMG preconditioner construction. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">P</td><td>AMG preconditioner. </td></tr>
-    <tr><td class="paramname">rhs</td><td>Right-hand side. </td></tr>
-    <tr><td class="paramname">x</td><td>Solution vector. </td></tr>
   </table>
   </dd>
 </dl>

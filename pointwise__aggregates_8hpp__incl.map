@@ -1,8 +1,9 @@
 <map id="amgcl/coarsening/pointwise_aggregates.hpp" name="amgcl/coarsening/pointwise_aggregates.hpp">
-<area shape="rect" id="node6" href="$util_8hpp.html" title="Various utilities. " alt="" coords="1353,352,1455,379"/>
-<area shape="rect" id="node8" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="934,187,1107,213"/>
-<area shape="rect" id="node19" href="$plain__aggregates_8hpp.html" title="Plain aggregation. " alt="" coords="1629,97,1782,138"/>
-<area shape="rect" id="node14" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="675,269,865,296"/>
-<area shape="rect" id="node16" href="$gaussj_8hpp.html" title="Inverse of a dense matrix with Gauss&#45;Jordan algorithm. " alt="" coords="1581,269,1739,296"/>
-<area shape="rect" id="node18" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="1335,269,1506,296"/>
+<area shape="rect" id="node6" href="$util_8hpp.html" title="Various utilities. " alt="" coords="769,443,871,469"/>
+<area shape="rect" id="node9" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="1007,187,1180,213"/>
+<area shape="rect" id="node25" href="$plain__aggregates_8hpp.html" title="Plain aggregation. " alt="" coords="232,97,385,138"/>
+<area shape="rect" id="node15" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="1420,360,1609,387"/>
+<area shape="rect" id="node17" href="$solver_2skyline__lu_8hpp.html" title="Skyline LU factorization solver. " alt="" coords="1191,262,1331,303"/>
+<area shape="rect" id="node20" href="$inverse_8hpp.html" title="Inverse of a dense matrix. " alt="" coords="953,269,1116,296"/>
+<area shape="rect" id="node24" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="759,269,929,296"/>
 </map>

@@ -1,0 +1,8 @@
+<map id="amgcl/backend/detail/default_direct_solver.hpp" name="amgcl/backend/detail/default_direct_solver.hpp">
+<area shape="rect" id="node4" href="$builtin_8hpp.html" title="Builtin backend. " alt="" coords="631,96,804,123"/>
+<area shape="rect" id="node11" href="$util_8hpp.html" title="Various utilities. " alt="" coords="638,352,740,379"/>
+<area shape="rect" id="node14" href="$interface_8hpp.html" title="Backend interface required for AMG. " alt="" coords="437,269,627,296"/>
+<area shape="rect" id="node17" href="$solver_2skyline__lu_8hpp.html" title="Skyline LU factorization solver. " alt="" coords="701,171,841,213"/>
+<area shape="rect" id="node20" href="$inverse_8hpp.html" title="Inverse of a dense matrix. " alt="" coords="1112,179,1275,205"/>
+<area shape="rect" id="node24" href="$sort__row_8hpp.html" title="Sort row of CRS matrix by columns. " alt="" coords="917,179,1088,205"/>
+</map>

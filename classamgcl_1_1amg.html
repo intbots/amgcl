@@ -107,12 +107,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b6fdc18970f927fef3609cb1970fd72"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1amg.html#a2b6fdc18970f927fef3609cb1970fd72">amg</a> (const Matrix &amp;M, const <a class="el" href="structamgcl_1_1amg_1_1params.html">params</a> &amp;p=<a class="el" href="structamgcl_1_1amg_1_1params.html">params</a>())</td></tr>
 <tr class="memdesc:a2b6fdc18970f927fef3609cb1970fd72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the AMG hierarchy for the system matrix.  <a href="#a2b6fdc18970f927fef3609cb1970fd72">More...</a><br/></td></tr>
 <tr class="separator:a2b6fdc18970f927fef3609cb1970fd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf5b5f34611cb45449895883d1e36712"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1amg.html#acf5b5f34611cb45449895883d1e36712">cycle</a> (const vector &amp;rhs, vector &amp;x) const </td></tr>
-<tr class="memdesc:acf5b5f34611cb45449895883d1e36712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single V-cycle for the given right-hand side and solution.  <a href="#acf5b5f34611cb45449895883d1e36712">More...</a><br/></td></tr>
-<tr class="separator:acf5b5f34611cb45449895883d1e36712"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f1f23e57b3b3a866634650f1554a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1amg.html#ab5f1f23e57b3b3a866634650f1554a02">operator()</a> (const vector &amp;rhs, vector &amp;x) const </td></tr>
-<tr class="memdesc:ab5f1f23e57b3b3a866634650f1554a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single V-cycle after clearing x.  <a href="#ab5f1f23e57b3b3a866634650f1554a02">More...</a><br/></td></tr>
-<tr class="separator:ab5f1f23e57b3b3a866634650f1554a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd370e574a17c4e215ab7109aed7e790"><td class="memTemplParams" colspan="2">template&lt;class Vec1 , class Vec2 &gt; </td></tr>
+<tr class="memitem:abd370e574a17c4e215ab7109aed7e790"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1amg.html#abd370e574a17c4e215ab7109aed7e790">cycle</a> (const Vec1 &amp;rhs, Vec2 &amp;x) const </td></tr>
+<tr class="memdesc:abd370e574a17c4e215ab7109aed7e790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single V-cycle for the given right-hand side and solution.  <a href="#abd370e574a17c4e215ab7109aed7e790">More...</a><br/></td></tr>
+<tr class="separator:abd370e574a17c4e215ab7109aed7e790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b20ea3fcf10f9e0777b7a940625215"><td class="memTemplParams" colspan="2">template&lt;class Vec1 , class Vec2 &gt; </td></tr>
+<tr class="memitem:ae9b20ea3fcf10f9e0777b7a940625215"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1amg.html#ae9b20ea3fcf10f9e0777b7a940625215">apply</a> (const Vec1 &amp;rhs, Vec2 &amp;x) const </td></tr>
+<tr class="memdesc:ae9b20ea3fcf10f9e0777b7a940625215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs single V-cycle after clearing x.  <a href="#ae9b20ea3fcf10f9e0777b7a940625215">More...</a><br/></td></tr>
+<tr class="separator:ae9b20ea3fcf10f9e0777b7a940625215"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b775ef70fcf96a296a45674f580f5ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b775ef70fcf96a296a45674f580f5ff"></a>
 const matrix &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1amg.html#a4b775ef70fcf96a296a45674f580f5ff">top_matrix</a> () const </td></tr>
 <tr class="memdesc:a4b775ef70fcf96a296a45674f580f5ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the system matrix from the finest level. <br/></td></tr>
@@ -126,17 +128,18 @@ struct <a class="el" href="structamgcl_1_1amg_1_1params.html">amgcl::amg::params
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a7abd9aaf602e641f9b797432085ba518"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7abd9aaf602e641f9b797432085ba518"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamgcl_1_1amg.html#a7abd9aaf602e641f9b797432085ba518">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classamgcl_1_1amg.html">amg</a> &amp;a)</td></tr>
-<tr class="memdesc:a7abd9aaf602e641f9b797432085ba518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs information about the AMG hierarchy to output stream. <br/></td></tr>
-<tr class="separator:a7abd9aaf602e641f9b797432085ba518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5265cbf90b3076013196f86b2cf3ccdb"><td class="memTemplParams" colspan="2"><a class="anchor" id="a5265cbf90b3076013196f86b2cf3ccdb"></a>
+template&lt;class B , class C , template&lt; class &gt; class R&gt; </td></tr>
+<tr class="memitem:a5265cbf90b3076013196f86b2cf3ccdb"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamgcl_1_1amg.html#a5265cbf90b3076013196f86b2cf3ccdb">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classamgcl_1_1amg.html">amg</a>&lt; B, C, R &gt; &amp;a)</td></tr>
+<tr class="memdesc:a5265cbf90b3076013196f86b2cf3ccdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends information about the AMG hierarchy to output stream. <br/></td></tr>
+<tr class="separator:a5265cbf90b3076013196f86b2cf3ccdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Backend, class Coarsening, template&lt; class &gt; class Relax&gt;<br/>
 class amgcl::amg&lt; Backend, Coarsening, Relax &gt;</h3>
 
 <p>Algebraic multigrid method. </p>
-<p>AMG is one the most effective methods for solution of large sparse unstructured systems of equations, arising, for example, from discretization of PDEs on unstructured grids <a class="el" href="citelist.html#CITEREF_Trottenberg2001">[6]</a>. The method can be used as a black-box solver for various computational problems, since it does not require any information about the underlying geometry.</p>
+<p>AMG is one the most effective methods for solution of large sparse unstructured systems of equations, arising, for example, from discretization of PDEs on unstructured grids <a class="el" href="citelist.html#CITEREF_Trottenberg2001">[9]</a>. The method can be used as a black-box solver for various computational problems, since it does not require any information about the underlying geometry.</p>
 <p>The three template parameters allow the user to select the exact components of the method:</p>
 <ol type="1">
 <li><em>Backend</em> to transfer the constructed hierarchy to,</li>
@@ -190,75 +193,32 @@ template&lt;class Matrix &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="crs__tuple_8hpp.html" title="Specify sparse matrix as a tuple of CRS arrays. ">amgcl/backend/crs_tuple.hpp</a> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="crs__tuple_8hpp.html" title="Specify sparse matrix as a tuple of CRS arrays.Example: ">amgcl/adapter/crs_tuple.hpp</a> </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acf5b5f34611cb45449895883d1e36712"></a>
+<a class="anchor" id="ae9b20ea3fcf10f9e0777b7a940625215"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Backend , class Coarsening , template&lt; class &gt; class Relax&gt; </div>
+<div class="memtemplate">
+template&lt;class Vec1 , class Vec2 &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classamgcl_1_1amg.html">amgcl::amg</a>&lt; Backend, Coarsening, Relax &gt;::cycle </td>
+          <td class="memname">void <a class="el" href="classamgcl_1_1amg.html">amgcl::amg</a>&lt; Backend, Coarsening, Relax &gt;::apply </td>
           <td>(</td>
-          <td class="paramtype">const vector &amp;&#160;</td>
+          <td class="paramtype">const Vec1 &amp;&#160;</td>
           <td class="paramname"><em>rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector &amp;&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Performs single V-cycle for the given right-hand side and solution. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rhs</td><td>Right-hand side vector. </td></tr>
-    <tr><td class="paramname">x</td><td>Solution vector. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ab5f1f23e57b3b3a866634650f1554a02"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Backend , class Coarsening , template&lt; class &gt; class Relax&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classamgcl_1_1amg.html">amgcl::amg</a>&lt; Backend, Coarsening, Relax &gt;::operator() </td>
-          <td>(</td>
-          <td class="paramtype">const vector &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">vector &amp;&#160;</td>
+          <td class="paramtype">Vec2 &amp;&#160;</td>
           <td class="paramname"><em>x</em>&#160;</td>
         </tr>
         <tr>
@@ -276,6 +236,53 @@ template&lt;class Backend , class Coarsening , template&lt; class &gt; class Rel
 
 <p>Performs single V-cycle after clearing x. </p>
 <p>This is intended for use as a preconditioning procedure.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>Right-hand side vector. </td></tr>
+    <tr><td class="paramname">x</td><td>Solution vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abd370e574a17c4e215ab7109aed7e790"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Backend , class Coarsening , template&lt; class &gt; class Relax&gt; </div>
+<div class="memtemplate">
+template&lt;class Vec1 , class Vec2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamgcl_1_1amg.html">amgcl::amg</a>&lt; Backend, Coarsening, Relax &gt;::cycle </td>
+          <td>(</td>
+          <td class="paramtype">const Vec1 &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vec2 &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Performs single V-cycle for the given right-hand side and solution. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rhs</td><td>Right-hand side vector. </td></tr>
