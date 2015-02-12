@@ -72,6 +72,14 @@ find_package(Boost COMPONENTS ${BOOST_COMPONENTS})
 include_directories( ${Boost_INCLUDE_DIRS} )
 
 #----------------------------------------------------------------------------
+# Find range-v3 (https://github.com/ericniebler/range-v3)
+#----------------------------------------------------------------------------
+set(RANGE_V3_ROOT $ENV{RANGE_V3_ROOT} CACHE STRING "VexCL root")
+if (RANGE_V3_ROOT)
+    include_directories( ${RANGE_V3_ROOT} )
+endif()
+
+#----------------------------------------------------------------------------
 # Find VexCL
 #----------------------------------------------------------------------------
 set(VEXCL_ROOT $ENV{VEXCL_ROOT} CACHE STRING "VexCL root")
