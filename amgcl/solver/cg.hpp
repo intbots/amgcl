@@ -32,6 +32,11 @@ THE SOFTWARE.
  */
 
 #include <boost/tuple/tuple.hpp>
+
+#include <range/v3/range_facade.hpp>
+#include <range/v3/algorithm/for_each.hpp>
+#include <range/v3/view/take_while.hpp>
+
 #include <amgcl/backend/interface.hpp>
 #include <amgcl/solver/detail/default_inner_product.hpp>
 #include <amgcl/util.hpp>
@@ -106,6 +111,75 @@ class cg {
               inner_product(inner_product)
         { }
 
+        template <class M, class P, class F, class X>
+        struct range : public ranges::range_facade< range<M, P, F, X> > {
+            public:
+                range(
+                        cg const &S,
+                        M  const &A,
+                        P  const &p,
+                        F  const &f,
+                        X        &x
+                     ) : S(&S), A(&A), p(&p), f(&f), x(&x)
+                {
+                    S.init(A, p, f, x);
+                }
+
+                decltype(auto) current() const {
+                    return boost::make_tuple(S->iter, sqrt(S->rho1) / S->norm_rhs);
+                }
+
+            private:
+                friend ranges::range_access;
+
+                cg const *S;
+                M  const *A;
+                P  const *p;
+                F  const *f;
+                X        *x;
+
+                void next() {
+                    S->step(*A, *p, *f, *x);
+                }
+
+                struct cursor {
+                    range *m_rng;
+
+                    cursor() = default;
+
+                    explicit cursor(range &rng) : m_rng(&rng) {}
+
+                    decltype(auto) current() const {
+                        return m_rng->current();
+                    }
+
+                    bool done() const {
+                        return false;
+                    }
+
+                    void next() {
+                        m_rng->next();
+                    }
+
+                };
+
+                cursor begin_cursor() {
+                    return cursor(*this);
+                }
+
+        };
+
+        template <class M, class P, class F, class X>
+        range<M, P, F, X> make_range(
+                M const &A,
+                P const &p,
+                F const &f,
+                X       &x
+                ) const
+        {
+            return range<M, P, F, X>(*this, A, p, f, x);
+        }
+
         /// Solves the linear system for the given system matrix.
         /**
          * \param A   System matrix.
@@ -128,42 +202,28 @@ class cg {
                 Vec2          &x
                 ) const
         {
-            backend::residual(rhs, A, x, *r);
-            value_type norm_rhs = norm(rhs);
-            if (norm_rhs < amgcl::detail::eps<value_type>(n)) {
-                backend::clear(x);
-                return boost::make_tuple(0, norm_rhs);
-            }
-
-            value_type eps  = prm.tol * norm_rhs;
-            value_type eps2 = eps * eps;
-            value_type rho1 = 2 * eps2, rho2 = 0;
-            value_type res_norm = norm(*r);
-
             size_t iter = 0;
-            for(; iter < prm.maxiter && rho1 > eps2; ++iter) {
-                P.apply(*r, *s);
+            auto approx = make_range(A, P, rhs, x);
 
-                rho2 = rho1;
-                rho1 = inner_product(*r, *s);
+            auto history = ranges::view::take_while(
+                    approx,
+                    [maxiter=prm.maxiter, tol=prm.tol](auto t) {
+                        return boost::get<0>(t) < maxiter &&
+                               boost::get<1>(t) > tol;
+                    });
 
-                if (iter)
-                    backend::axpby(1, *s, rho1 / rho2, *p);
-                else
-                    backend::copy(*s, *p);
+            ranges::for_each(
+                    history,
+                    [&iter](auto t) {
+                        iter = boost::get<0>(t);
+                        std::cout
+                            << boost::get<0>(t) << ": "
+                            << boost::get<1>(t)
+                            << std::endl;
+                    }
+                    );
 
-                backend::spmv(1, A, *p, 0, *q);
-
-                value_type alpha = rho1 / inner_product(*q, *p);
-
-                backend::axpby( alpha, *p, 1,  x);
-                backend::axpby(-alpha, *q, 1, *r);
-            }
-
-            backend::residual(rhs, A, x, *r);
-            res_norm = norm(*r);
-
-            return boost::make_tuple(iter, res_norm / norm_rhs);
+            return approx.current();
         }
 
         /// Solves the linear system for the same matrix that was used for the AMG preconditioner construction.
@@ -181,6 +241,7 @@ class cg {
         {
             return (*this)(P.top_matrix(), P, rhs, x);
         }
+
     private:
         params prm;
         size_t n;
@@ -190,11 +251,56 @@ class cg {
         boost::shared_ptr<vector> p;
         boost::shared_ptr<vector> q;
 
+        mutable size_t     iter;
+        mutable value_type rho1, rho2, norm_rhs;
+
         InnerProduct inner_product;
 
         template <class Vec>
         value_type norm(const Vec &x) const {
             return sqrt(inner_product(x, x));
+        }
+
+        template <class Matrix, class Precond, class Vec1, class Vec2>
+        void init(
+                Matrix  const &A,
+                Precond const &,
+                Vec1    const &rhs,
+                Vec2          &x
+                ) const
+        {
+            backend::residual(rhs, A, x, *r);
+            norm_rhs = norm(*r);
+            rho1 = norm_rhs * norm_rhs;
+            iter = 0;
+        }
+
+        template <class Matrix, class Precond, class Vec1, class Vec2>
+        void step(
+                Matrix  const &A,
+                Precond const &P,
+                Vec1    const &rhs,
+                Vec2          &x
+                ) const
+        {
+            P.apply(*r, *s);
+
+            rho2 = rho1;
+            rho1 = inner_product(*r, *s);
+
+            if (iter)
+                backend::axpby(1, *s, rho1 / rho2, *p);
+            else
+                backend::copy(*s, *p);
+
+            backend::spmv(1, A, *p, 0, *q);
+
+            value_type alpha = rho1 / inner_product(*q, *p);
+
+            backend::axpby( alpha, *p, 1,  x);
+            backend::axpby(-alpha, *q, 1, *r);
+
+            ++iter;
         }
 };
 
