@@ -36,6 +36,7 @@ THE SOFTWARE.
 #include <range/v3/range_facade.hpp>
 #include <range/v3/algorithm/for_each.hpp>
 #include <range/v3/view/take_while.hpp>
+#include <range/v3/range_for.hpp>
 
 #include <amgcl/backend/interface.hpp>
 #include <amgcl/solver/detail/default_inner_product.hpp>
@@ -202,26 +203,23 @@ class cg {
                 Vec2          &x
                 ) const
         {
-            size_t iter = 0;
             auto approx = make_range(A, P, rhs, x);
 
-            auto history = ranges::view::take_while(
-                    approx,
-                    [maxiter=prm.maxiter, tol=prm.tol](auto t) {
-                        return boost::get<0>(t) < maxiter &&
-                               boost::get<1>(t) > tol;
-                    });
-
-            ranges::for_each(
-                    history,
-                    [&iter](auto t) {
-                        iter = boost::get<0>(t);
-                        std::cout
-                            << boost::get<0>(t) << ": "
-                            << boost::get<1>(t)
-                            << std::endl;
-                    }
-                    );
+            RANGES_FOR(
+                    auto t,
+                    ranges::view::take_while(
+                        approx,
+                        [maxiter=prm.maxiter, tol=prm.tol](auto t) {
+                            return boost::get<0>(t) < maxiter &&
+                                   boost::get<1>(t) > tol;
+                        })
+                    )
+            {
+                std::cout
+                    << boost::get<0>(t) << ": "
+                    << boost::get<1>(t)
+                    << std::endl;
+            }
 
             return approx.current();
         }
