@@ -13,14 +13,14 @@ if (OpenMP_CXX_FLAGS)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif ()
 
-#----------------------------------------------------------------------------
-# Find Eigen
-#----------------------------------------------------------------------------
-find_path(EIGEN_INCLUDE Eigen/SparseCore PATH_SUFFIXES eigen3)
-if (EIGEN_INCLUDE)
-    include_directories(${EIGEN_INCLUDE})
-    add_definitions(-DAMGCL_HAVE_EIGEN)
-endif()
+# #----------------------------------------------------------------------------
+# # Find Eigen
+# #----------------------------------------------------------------------------
+# find_path(EIGEN_INCLUDE Eigen/SparseCore PATH_SUFFIXES eigen3)
+# if (EIGEN_INCLUDE)
+#     include_directories(${EIGEN_INCLUDE})
+#     add_definitions(-DAMGCL_HAVE_EIGEN)
+# endif()
 
 #----------------------------------------------------------------------------
 # Find Blaze
